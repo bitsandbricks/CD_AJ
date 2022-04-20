@@ -1,0 +1,23 @@
+
+# Analisis de texto
+
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics('imagenes/textos.jpg')
+```
+
+
+**Contenido TBD!**
+
+
+## Ejercicios
+
+I. ?
+
+II. ??
+
+III. ???
+
+IV. ????
+
+V. ?????
