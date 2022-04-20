@@ -378,8 +378,8 @@ III. Elijamos uno de los mapas anteriores e incorporarle una o más geometrías 
 
 ---
 
-Con eso cerramos el capítulo, y el libro.
+Con eso cerramos el capítulo, y el manual.
 
-Mientras tanto, mi mensaje final es fácil de resumir. Espero que "Ciencia de Datos para Gente Sociable" haya sido una introducción satisfactoria al análisis, modelado y visualización de información, y tan sólo el inicio de un largo y gratificante recorrido.
+Sólo queda un mensaje final, que es fácil de resumir. Esperamos haber provisto una introducción satisfactoria al análisis, modelado y visualización de información, y que haya sido tan sólo el inicio de un largo y gratificante recorrido.
 
 ¡Gracias por haber leído hasta aquí! 

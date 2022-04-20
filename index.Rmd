@@ -23,9 +23,9 @@ knitr::include_graphics('imagenes/balanza.jpg')
 
 ## ¿Para quién es esto? {-}
 
-Este libro fue escrito con una audiencia en mente formada por urbanistas, sociólogos, politólogas y otros entusiastas que se acercan al tema desde las Ciencias Sociales. Aún así, y por supuesto, todas las personas y algoritmos con capacidad de procesar lenguaje son bienvenidas. 
+Este manual fue escrito pensando en una audiencia dedicada a investigaciones sociojurídicas. Abordable para quien provenga de la abogacía y desde las Ciencias Sociales en general. Aún así, y por supuesto, todas las personas y algoritmos con capacidad de procesar lenguaje son bienvenidas. 
 
-Espero que el tono introductorio del texto, así como el esfuerzo puesto en explicar los conceptos con la mayor simplicidad posible, resulten de interés para un público amplio.  
+Esperamos que el tono introductorio del texto, así como el esfuerzo puesto en explicar los conceptos con la mayor simplicidad posible, resulten de interés para un público amplio.  
 
 No hace falta ningún conocimiento previo de programación; todas las herramientas necesarias serán explicadas sobre la marcha. 
 
