@@ -94,9 +94,9 @@ mensaje <- "Hola mundo"
 mensaje
 ```
 
-Dos de ellas (la primera y la última) mostraron una salida en pantalla, y la del medio, no. Esto es porque algunas funciones entregan algo como resultado algo -un número, un texto, un gráfico, u otros tipos de salida que ya veremos- mientras que otras hacen su tarea silenciosamente sin expresar nada. En este caso, la función silenciosa fue la de asignación: `mensaje <- "Hola mundo"` es una instrucción que le pide a R que cree una variable llamada "mensaje" (o que la encuentre si ya existe) y que le asigne como valor el texto "Hola mundo". ¿Cómo sabemos que la instrucción se llevó a cabo, a pesar de no producir una salida? En general, es un tema de confianza. Si una instrucción no genera un mensaje de error, si es silenciosa, se asume que pudo cumplir su cometido. En este caso, además lo hemos verificado. La línea final, `mensaje` pide a R que busque la variable, y muestre en pantalla su contenido (esa es una característica muy práctica del lenguaje: para saber el contenido de una variable, basta con escribirla y ejecutar la línea). Y al hacerlo, comprobamos que la variable contiene precisamente lo que hemos tipeado.
+Dos de ellas (la primera y la última) mostraron una salida en pantalla, y la del medio, no. Esto es porque algunas operaciones entregan algo como resultado -un número, un texto, un gráfico, u otros tipos de salida que ya veremos- mientras que otras hacen su tarea silenciosamente sin expresar nada. En este caso, la operación silenciosa fue la de asignación: `mensaje <- "Hola mundo"` es una instrucción que le pide a R que cree una variable llamada "mensaje" (o que la encuentre si ya existe) y que le asigne como valor el texto "Hola mundo". ¿Cómo sabemos que la instrucción se llevó a cabo, a pesar de no producir una salida? En general, es un tema de confianza. Si una instrucción no genera un mensaje de error, si es silenciosa, se asume que pudo cumplir su cometido. En este caso, además lo hemos verificado. La línea final, `mensaje` pide a R que busque la variable, y muestre en pantalla su contenido (esa es una característica muy práctica del lenguaje: para saber el contenido de una variable, basta con escribirla y ejecutar la línea). Y al hacerlo, comprobamos que la variable contiene precisamente lo que hemos tipeado.
 
-De paso, hay que mencionar que la creación y manipulación de variables es un concepto clave en programación. Trabajar con variables nos permite almacenar valores para usarlos después, además de hacer nuestro código más fácil de leer y compartir con otros, en especial cuando usamos nombre de variable auto-explicativos. Como ejemplo de ésto ultimo comparemos
+De paso, hay que mencionar que la creación y manipulación de variables es un concepto clave en programación. Trabajar con variables nos permite almacenar valores para usarlos después, además de hacer nuestro código más fácil de leer y compartir con otros, en especial cuando usamos nombres de variable auto-explicativos. Como ejemplo de ésto ultimo comparemos
 
 ```{r}
 
@@ -140,10 +140,14 @@ mortalidad
 
 Vemos que la tabla tiene 15 filas (una por [cada comuna de la ciudad](https://es.wikipedia.org/wiki/Comunas_de_la_ciudad_de_Buenos_Aires)) y 2 columnas (una que indica la comuna, y otra con el valor de mortalidad infantil para el año 2016).
 
+:::tip
+Sobre __dataframes__ y __datasets__: En R, las tablas son llamadas __dataframes__. El dataframe es el objeto por excelencia del análisis de datos. En concepto, es muy similar a una tabla de Excel; ambos formatos guardan información en celdas identificadas por fila y columna. El dataframe es una estructura de datos digitales en forma de tabla.
 
-En R, las tablas son llamadas `dataframes`. El dataframe es el objeto por excelencia del análisis de datos. En concepto, es muy similar a una tabla de Excel; al fin y al cabo, ambos formatos guardan información en celdas identificadas por fila y columna.
+Es probable que nos crucemos con un término similar: __dataset__ (o "data set"). Este otro anglicismo se refiere a cualquier colección de datos, también típicamente en formato de tabla, que se publica o comparte. Por ejemplo si un organismo de gobierno publica sus gastos mensuales en internet, en cualquier formato fácil de descargar y abrir, decimos que ofrece "un dataset de gastos".  
+:::
 
-Algunas funciones útiles para explorar un dataframe que no conocemos son `dim()`, que nos da las dimensiones del dataframe (cantidad de filas y columnas), `names()` que nos dice como se llaman sus columnas (que en general representan variables), y `head()` que nos permite echar un vistazo rápido al contenido, mostrando sólo las seis primeras filas (ésto es útil porque con frecuencia trabajamos con dataframes que contienen miles o millones de filas, con lo que no tiene sentido tratar de volcar todas en pantalla).
+
+Algunas funciones útiles para explorar un dataframe son `dim()`, que nos da las dimensiones del dataframe (cantidad de filas y columnas), `names()` que nos dice como se llaman sus columnas (que en general representan variables), y `head()` que nos permite echar un vistazo rápido al contenido, mostrando sólo las seis primeras filas (ésto es útil porque con frecuencia trabajamos con dataframes que contienen miles o millones de filas, por lo que no tiene sentido tratar de volcar todas en pantalla).
 
 ```{r}
 dim(mortalidad)
@@ -182,7 +186,7 @@ ggplot(mortalidad) +
     geom_col(aes(x = factor(Comuna), y = Tasa2016))
 ```
 
-Para realizar una visualización con ésta herramienta, siempre se comienza con la función ggplot(), que crea un eje de coordenadas sobre el cual se pueden agregar capas. El primer parámetro que recibe ggplot() es el dataset que queremos usar para el gráfico; en nuestro caso, ggplot(mortalidad). Ejecutar sólo ggplot(mortalidad) nos devuelve un gráfico vacío; la gracia está en agregar una o más capas especificando cómo queremos mostrar los datos. Estas capas se agregan con un signo `+`.
+Para realizar una visualización con ésta herramienta, siempre se comienza con la función ggplot(), que crea un eje de coordenadas sobre el cual se pueden agregar capas. El primer parámetro que recibe ggplot() es el dataframe que queremos usar para el gráfico; en nuestro caso, ggplot(mortalidad). Ejecutar sólo ggplot(mortalidad) nos devuelve un gráfico vacío; la gracia está en agregar una o más capas especificando cómo queremos mostrar los datos. Estas capas se agregan con un signo `+`.
 
 En nuestro ejemplo, `geom_col()` crea columnas cuya posición en el eje de las x depende de la variable "Comuna", mientas que la altura (posición en el eje de las y) depende del valor de la variable "Tasa2016". Existen muchas funciones de tipo "geom_XXX", que agregan distintas clases de capas al gráfico: geom_point, geom_polygon, geom_text y muchos, muchos más que iremos viendo más adelante.
 

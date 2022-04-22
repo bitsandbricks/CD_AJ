@@ -12,3 +12,26 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/* -----------div tips------------- */
+
+  div.tip, div.warning {
+    padding: 1em;
+    margin: 1em 0;
+    padding-left: 100px;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    min-height: 120px;
+    color: #1f5386;
+    background-color: #dfedff;
+    border: solid 5px #bed3ec;
+  }
+
+div.tip {
+  background-image: url("imagenes/tip.png");
+}
+
+div.warning {
+ background-image: url("imagenes/advertencia.png");
+}
