@@ -339,7 +339,6 @@ ggplot(mortalidad) +
 ```
 
 
-
 ### ¿Cuál es la diferencia en mortalidad infantil entre el sur y el norte de la Ciudad Autónoma de Buenos Aires?
 
 En base a lo que descubrimos, vamos a responder en forma sucinta:

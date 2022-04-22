@@ -51,3 +51,5 @@ visualizando-información-geográfica
 volcando-en-el-mapa-información-de-múltiples-fuentes
 combinando-capas-geográficas
 ejercicios-4
+fig:unnamed-chunk-2
+fig:unnamed-chunk-3

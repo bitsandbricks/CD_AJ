@@ -30,8 +30,14 @@ pre code {
 
 div.tip {
   background-image: url("imagenes/tip.png");
+  color: #1f5386;
+  background-color: #dfedff;
+  border: solid 5px #bed3ec;
 }
 
 div.warning {
- background-image: url("imagenes/advertencia.png");
+ background-image: url("imagenes/alerta.png");
+ color: #861f1f;
+ background-color: #ffdfdf;
+ border: solid 5px #ecbebe;
 }
