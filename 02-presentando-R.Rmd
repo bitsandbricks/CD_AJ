@@ -360,7 +360,7 @@ II. Escribamos y ejecutemos el código R necesario para:
 - mostrar sus dimensiones (cantidad de filas y columnas)
 - mostrar un resumen del contenido de cada una de las columnas
 
-¡Eso es todo por ahora! Al resolverlo, habremos aprendido dos tareas simples pero fundamentales: cómo acceder nuestros propios datos, y como crear un reporte con nuestros resultados.
+¡Eso es todo por ahora! Al resolverlo, habremos aprendido dos tareas simples pero fundamentales: cómo acceder a nuestros propios datos, y como crear un reporte con nuestros resultados.
 
 
 Pistas:

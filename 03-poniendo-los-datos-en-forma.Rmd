@@ -24,7 +24,6 @@ Comenzamos por acceder al archivo con los registros para cargarlo en R como un d
 
 ```{r}
 atencion_ciudadano <- read.csv("http://bitsandbricks.github.io/data/gcba_suaci_barrios.csv")
-
 ```
 
 Lo primero que deberíamos hacer con un dataframe que no conocemos es usar la función `str()`, que nos indica su estructura (por _structure_ en inglés):
@@ -35,14 +34,35 @@ str(atencion_ciudadano)
 
 Para empezar, nos enteramos que el objeto que estamos analizando es un dataframe ("data.frame"). Eso ya lo sabíamos, pero como `str()` puede usarse con cualquier clase de objeto en R, en ocasiones resultará que estamos ante un vector, una lista u otra clase de criatura. A continuación aparecen las dimensiones del dataframe: 57.432 observaciones (filas) con 5 variables (columnas). Los nombres de las columnas son PERIODO, RUBRO, TIPO_PRESTACION, BARRIO y total. Con eso ya podemos inferir que cada observación en el dataframe contiene la cantidad total de solicitudes según concepto, rubro y tipo de prestación (aunque no sepamos bien de que se tratan esas variables), en un período dado y en cada barrio. 
 
-Con `str()` también obtenemos el tipo de datos representados pro cada variable, y un ejemplo de los valores contenidos en las primeras filas. _PERIODO_ y _total_ son variables de tipo "int", es decir, números enteros o _integers_ en inglés. El resto de las variables son de tipo "Factor"; en R las variables categóricas reciben el nombre de factores. ¿Y cómo sabe R que _RUBRO_ o _BARRIO_ son categorías? La culpable es la función `read.csv()` que usamos al principio. Si no se le aclara lo contrario, `read.csv()` interpreta como factores a todas las columnas que contienen texto. Para avisarle que no lo haga, hay que usar el parámetro `stringsAsFactors`, así: `misdatos <- read.csv("archivo_con_mis_datos", stringsAsFactors = FALSE)`. En general es buena idea evitar que los campos de texto se asuman como factores, pero en éste caso está bien: todas las columnas de texto, en efecto, contienen variables categóricas. (Ante la duda, una variable es categórica cuando es razonable considerar que se elige entre un conjunto finito de variables posibles; por ejemplo, los barrios de Buenos Aires son un conjunto finito y predeterminado).
+Con `str()` también obtenemos el tipo de datos representados pro cada variable, y un ejemplo de los valores contenidos en las primeras filas. _PERIODO_ y _total_ son variables de tipo "int", es decir, números enteros o _integers_ en inglés. El resto de las variables son de tipo "chr"; en R las variables de texto reciben el nombre de _characters_, caracteres. 
 
-
-La siguiente función a utilizar cuando estamos conociendo el contenido de un set de datos es `summary()`, que nos dará un resumen en forma de estadísticas descriptivas para las variables numéricas (cuartiles y mediana) y un vistazo a las categorías más representadas par los factores.  
+La siguiente función a utilizar cuando estamos conociendo el contenido de un set de datos es `summary()`, que nos dará un resumen en forma de estadísticas descriptivas para las variables numéricas (cuartiles y mediana) .
 
 ```{r}
 summary(atencion_ciudadano)
 ```
+
+Para las variables de texto `summary()` no tiene mucho que decir. Aquí sería bueno que nos mostrara algún dato, quizás los valores más frecuentes, ¿verdad?. Eso va a ocurrir pero sólo cuando esas columnas con texto contengan variables categóricas, que en R reciben el tipo "factor" en lugar de "chr". 
+
+:::tip
+Una variable es categórica cuando es razonable considerar que se elige entre un conjunto finito de variables posibles; por ejemplo, los barrios de Buenos Aires son un conjunto finito y predeterminado. 
+:::
+
+¿Pero cómo puede saber R si _RUBRO_ o _BARRIO_ son categorías? Pues podemos avisarle al cargar los datos con la función `read.csv()` que usamos al principio. Para que `read.csv()` interprete como variables categóricas a todas las columnas que contienen texto se usa el parámetro `stringsAsFactors`, así: `misdatos <- read.csv("archivo_con_mis_datos", stringsAsFactors = TRUE)`. En general es buena idea evitar que los campos de texto se asuman como factores, pero en éste caso está bien: aquí todas las columnas de texto, en efecto, contienen variables categóricas. 
+
+Veamos que pasa si lo intentamos. Volvemos a leer el mismo dataset, esta vez con `stringsAsFactors = TRUE`
+
+```{r}
+atencion_ciudadano <- read.csv("http://bitsandbricks.github.io/data/gcba_suaci_barrios.csv", stringsAsFactors = TRUE)
+```
+
+.. y pedimos su resumen:
+
+
+```{r}
+summary(atencion_ciudadano)
+```
+¡Esta vez obtuvimos un ranking con las categorías más frecuentes!
 
 Las categorías posibles para un factor son llamadas "niveles" (_levels_). Para ver todos los niveles del factor BARRIO, es decir todos los barrios representados en la columna con la variable BARRIO, podemos usar la función `levels()`
 
