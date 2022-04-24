@@ -34,7 +34,7 @@ str(atencion_ciudadano)
 
 Para empezar, nos enteramos que el objeto que estamos analizando es un dataframe ("data.frame"). Eso ya lo sabíamos, pero como `str()` puede usarse con cualquier clase de objeto en R, en ocasiones resultará que estamos ante un vector, una lista u otra clase de criatura. A continuación aparecen las dimensiones del dataframe: 57.432 observaciones (filas) con 5 variables (columnas). Los nombres de las columnas son PERIODO, RUBRO, TIPO_PRESTACION, BARRIO y total. Con eso ya podemos inferir que cada observación en el dataframe contiene la cantidad total de solicitudes según concepto, rubro y tipo de prestación (aunque no sepamos bien de que se tratan esas variables), en un período dado y en cada barrio. 
 
-Con `str()` también obtenemos el tipo de datos representados pro cada variable, y un ejemplo de los valores contenidos en las primeras filas. _PERIODO_ y _total_ son variables de tipo "int", es decir, números enteros o _integers_ en inglés. El resto de las variables son de tipo "chr"; en R las variables de texto reciben el nombre de _characters_, caracteres. 
+Con `str()` también obtenemos el tipo de datos representados por cada variable, y un ejemplo de los valores contenidos en las primeras filas. _PERIODO_ y _total_ son variables de tipo "int", es decir, números enteros o _integers_ en inglés. El resto de las variables son de tipo "chr"; en R las variables de texto reciben el nombre de _characters_, caracteres. 
 
 La siguiente función a utilizar cuando estamos conociendo el contenido de un set de datos es `summary()`, que nos dará un resumen en forma de estadísticas descriptivas para las variables numéricas (cuartiles y mediana) .
 
