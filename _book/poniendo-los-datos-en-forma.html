@@ -319,7 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Manos a la obra. Descargamos el dataframe con barrios y comunas:</p>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="poniendo-los-datos-en-forma.html#cb64-1"></a>barrios_comunas &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;http://bitsandbricks.github.io/data/barrios_comunas.csv&quot;</span>)</span></code></pre></div>
 <div class="warning">
-<p>Si recibimos un mensaje de error al estilo de <code>[...] Error in left_join(atencion_ciudadano, barrios_comunas) :    could not find function "left_join</code> es muy probable que nos hayamos olvidado de activar las funciones de Tidyverse. En ese caso, sólo necesitamos ejecutar <code>library(tidyverse)</code> e intentar de nuevo.</p>
+<p>Si recibimos un mensaje de error al estilo de <strong><code>[...] Error in left_join(atencion_ciudadano, barrios_comunas) :    could not find function "left_join"</code></strong> es muy probable que nos hayamos olvidado de activar las funciones de Tidyverse. En ese caso, sólo necesitamos ejecutar <code>library(tidyverse)</code> e intentar de nuevo.</p>
 </div>
 <p>Echamos un vistazo, comprobando que existe BARRIOS, una columna en común que lo relaciona con el dataframe de atención al ciudadano,</p>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="poniendo-los-datos-en-forma.html#cb65-1"></a>barrios_comunas</span></code></pre></div>

@@ -90,8 +90,8 @@ barrios_comunas <- read.csv("http://bitsandbricks.github.io/data/barrios_comunas
 
 
 :::warning
-Si recibimos un mensaje de error al estilo de `[...] Error in left_join(atencion_ciudadano, barrios_comunas) : 
-  could not find function "left_join` es muy probable que nos hayamos olvidado de activar las funciones de Tidyverse. En ese caso, sólo necesitamos ejecutar `library(tidyverse)` e intentar de nuevo.
+Si recibimos un mensaje de error al estilo de __`[...] Error in left_join(atencion_ciudadano, barrios_comunas) : 
+  could not find function "left_join"`__ es muy probable que nos hayamos olvidado de activar las funciones de Tidyverse. En ese caso, sólo necesitamos ejecutar `library(tidyverse)` e intentar de nuevo.
 :::
 
 Echamos un vistazo, comprobando que existe BARRIOS, una columna en común que lo relaciona con el dataframe de atención al ciudadano,
