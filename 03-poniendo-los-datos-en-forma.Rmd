@@ -81,14 +81,20 @@ Para expresarlo con un ejemplo concreto: hemos visto que los registros de atenci
 
 Existe una gran variedad de funciones que permiten combinar tablas relacionadas entre sí por una o varias variables en común. Para nuestro propósito, alcanza con conocer una: `left_join()`. La función toma como parámetros dos dataframes (que son tablas al fin y al cabo) busca las variables que tengan el mismo nombre y usándolas como referencia completa la primera de ellas, la de la izquierda, con los datos nuevos que aporta la segunda. `left_join` devuelve un dataframe nuevo con los datos combinados.  
 
-Manos a la obra. Descargamos el dataframe con barrios y comunas,
+Manos a la obra. Descargamos el dataframe con barrios y comunas:
 
 ```{r}
 barrios_comunas <- read.csv("http://bitsandbricks.github.io/data/barrios_comunas.csv")
 
 ```
 
-echamos un vistazo, comprobando que existe BARRIOS, una columna en común que lo relaciona con el dataframe de atención al ciudadano,
+
+:::warning
+Si recibimos un mensaje de error al estilo de `[...] Error in left_join(atencion_ciudadano, barrios_comunas) : 
+  could not find function "left_join` es muy probable que nos hayamos olvidado de activar las funciones de Tidyverse. En ese caso, sólo necesitamos ejecutar `library(tidyverse)` e intentar de nuevo.
+:::
+
+Echamos un vistazo, comprobando que existe BARRIOS, una columna en común que lo relaciona con el dataframe de atención al ciudadano,
 
 ```{r}
 barrios_comunas
@@ -124,7 +130,7 @@ atencion_ciudadano <- read.csv("atencion_ciudadano.csv")
 
 Y si queremos saber exactamente dónde ha guardado R nuestros datos, por ejemplo para abrirlos con otro programa, usamos la función `getwd` (por  _get working directory_ )
 
-```{r}
+```{r eval=FALSE}
 getwd()
 ```
 
