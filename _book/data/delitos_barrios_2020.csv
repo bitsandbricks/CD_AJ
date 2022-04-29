@@ -1,0 +1,3189 @@
+periodo,tipo,subtipo,barrio,total
+01/2020,Homicidio,Doloso,Barracas,1
+01/2020,Homicidio,Doloso,Nueva Pompeya,1
+01/2020,Homicidio,Doloso,Retiro,1
+01/2020,Homicidio,Doloso,Saavedra,1
+01/2020,Homicidio,Femicidio,Villa Devoto,1
+01/2020,Homicidio,Siniestro Vial,Balvanera,1
+01/2020,Homicidio,Siniestro Vial,Flores,1
+01/2020,Homicidio,Siniestro Vial,Monserrat,2
+01/2020,Homicidio,Siniestro Vial,Recoleta,1
+01/2020,Homicidio,Siniestro Vial,San Cristóbal,1
+01/2020,Homicidio,Siniestro Vial,Villa Crespo,1
+01/2020,Homicidio,Siniestro Vial,Villa Soldati,1
+01/2020,Hurto (sin violencia),,,5
+01/2020,Hurto (sin violencia),,Agronomía,14
+01/2020,Hurto (sin violencia),,Almagro,142
+01/2020,Hurto (sin violencia),,Balvanera,306
+01/2020,Hurto (sin violencia),,Barracas,75
+01/2020,Hurto (sin violencia),,Belgrano,142
+01/2020,Hurto (sin violencia),,Boca,46
+01/2020,Hurto (sin violencia),,Boedo,58
+01/2020,Hurto (sin violencia),,Caballito,157
+01/2020,Hurto (sin violencia),,Chacarita,36
+01/2020,Hurto (sin violencia),,Coghlan,12
+01/2020,Hurto (sin violencia),,Colegiales,50
+01/2020,Hurto (sin violencia),,Constitución,90
+01/2020,Hurto (sin violencia),,Flores,143
+01/2020,Hurto (sin violencia),,Floresta,58
+01/2020,Hurto (sin violencia),,Liniers,62
+01/2020,Hurto (sin violencia),,Mataderos,88
+01/2020,Hurto (sin violencia),,Monserrat,127
+01/2020,Hurto (sin violencia),,Monte Castro,25
+01/2020,Hurto (sin violencia),,Nueva Pompeya,61
+01/2020,Hurto (sin violencia),,Nuñez,66
+01/2020,Hurto (sin violencia),,Palermo,349
+01/2020,Hurto (sin violencia),,Parque Avellaneda,49
+01/2020,Hurto (sin violencia),,Parque Chacabuco,63
+01/2020,Hurto (sin violencia),,Parque Chas,17
+01/2020,Hurto (sin violencia),,Parque Patricios,55
+01/2020,Hurto (sin violencia),,Paternal,20
+01/2020,Hurto (sin violencia),,Puerto Madero,23
+01/2020,Hurto (sin violencia),,Recoleta,177
+01/2020,Hurto (sin violencia),,Retiro,130
+01/2020,Hurto (sin violencia),,Saavedra,61
+01/2020,Hurto (sin violencia),,San Cristóbal,51
+01/2020,Hurto (sin violencia),,San Nicolás,252
+01/2020,Hurto (sin violencia),,San Telmo,62
+01/2020,Hurto (sin violencia),,Vélez Sársfield,24
+01/2020,Hurto (sin violencia),,Versalles,14
+01/2020,Hurto (sin violencia),,Villa Crespo,83
+01/2020,Hurto (sin violencia),,Villa Del Parque,51
+01/2020,Hurto (sin violencia),,Villa Devoto,57
+01/2020,Hurto (sin violencia),,Villa Gral. Mitre,25
+01/2020,Hurto (sin violencia),,Villa Lugano,101
+01/2020,Hurto (sin violencia),,Villa Luro,31
+01/2020,Hurto (sin violencia),,Villa Ortuzar,21
+01/2020,Hurto (sin violencia),,Villa Pueyrredón,38
+01/2020,Hurto (sin violencia),,Villa Real,7
+01/2020,Hurto (sin violencia),,Villa Riachuelo,21
+01/2020,Hurto (sin violencia),,Villa Santa Rita,27
+01/2020,Hurto (sin violencia),,Villa Soldati,38
+01/2020,Hurto (sin violencia),,Villa Urquiza,77
+01/2020,Hurto (sin violencia),Hurto Automotor,Almagro,12
+01/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,11
+01/2020,Hurto (sin violencia),Hurto Automotor,Barracas,10
+01/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,4
+01/2020,Hurto (sin violencia),Hurto Automotor,Boca,1
+01/2020,Hurto (sin violencia),Hurto Automotor,Boedo,7
+01/2020,Hurto (sin violencia),Hurto Automotor,Caballito,28
+01/2020,Hurto (sin violencia),Hurto Automotor,Chacarita,4
+01/2020,Hurto (sin violencia),Hurto Automotor,Coghlan,3
+01/2020,Hurto (sin violencia),Hurto Automotor,Colegiales,4
+01/2020,Hurto (sin violencia),Hurto Automotor,Constitución,10
+01/2020,Hurto (sin violencia),Hurto Automotor,Flores,19
+01/2020,Hurto (sin violencia),Hurto Automotor,Floresta,8
+01/2020,Hurto (sin violencia),Hurto Automotor,Liniers,11
+01/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,18
+01/2020,Hurto (sin violencia),Hurto Automotor,Monserrat,2
+01/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,5
+01/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,9
+01/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,3
+01/2020,Hurto (sin violencia),Hurto Automotor,Palermo,19
+01/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,3
+01/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,6
+01/2020,Hurto (sin violencia),Hurto Automotor,Parque Chas,1
+01/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,14
+01/2020,Hurto (sin violencia),Hurto Automotor,Paternal,2
+01/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,5
+01/2020,Hurto (sin violencia),Hurto Automotor,Retiro,2
+01/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,7
+01/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,8
+01/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,2
+01/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,4
+01/2020,Hurto (sin violencia),Hurto Automotor,Versalles,2
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,8
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,2
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,7
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,8
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,22
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,8
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,4
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,9
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Real,1
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Riachuelo,5
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,5
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,10
+01/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,7
+01/2020,Lesiones,Siniestro Vial,,36
+01/2020,Lesiones,Siniestro Vial,Agronomía,2
+01/2020,Lesiones,Siniestro Vial,Almagro,27
+01/2020,Lesiones,Siniestro Vial,Balvanera,45
+01/2020,Lesiones,Siniestro Vial,Barracas,17
+01/2020,Lesiones,Siniestro Vial,Belgrano,17
+01/2020,Lesiones,Siniestro Vial,Boca,7
+01/2020,Lesiones,Siniestro Vial,Boedo,11
+01/2020,Lesiones,Siniestro Vial,Caballito,36
+01/2020,Lesiones,Siniestro Vial,Chacarita,15
+01/2020,Lesiones,Siniestro Vial,Coghlan,3
+01/2020,Lesiones,Siniestro Vial,Colegiales,9
+01/2020,Lesiones,Siniestro Vial,Constitución,21
+01/2020,Lesiones,Siniestro Vial,Flores,73
+01/2020,Lesiones,Siniestro Vial,Floresta,14
+01/2020,Lesiones,Siniestro Vial,Liniers,7
+01/2020,Lesiones,Siniestro Vial,Mataderos,9
+01/2020,Lesiones,Siniestro Vial,Monserrat,13
+01/2020,Lesiones,Siniestro Vial,Monte Castro,6
+01/2020,Lesiones,Siniestro Vial,Nueva Pompeya,16
+01/2020,Lesiones,Siniestro Vial,Nuñez,15
+01/2020,Lesiones,Siniestro Vial,Palermo,48
+01/2020,Lesiones,Siniestro Vial,Parque Avellaneda,13
+01/2020,Lesiones,Siniestro Vial,Parque Chacabuco,11
+01/2020,Lesiones,Siniestro Vial,Parque Chas,5
+01/2020,Lesiones,Siniestro Vial,Parque Patricios,14
+01/2020,Lesiones,Siniestro Vial,Paternal,1
+01/2020,Lesiones,Siniestro Vial,Puerto Madero,5
+01/2020,Lesiones,Siniestro Vial,Recoleta,30
+01/2020,Lesiones,Siniestro Vial,Retiro,16
+01/2020,Lesiones,Siniestro Vial,Saavedra,26
+01/2020,Lesiones,Siniestro Vial,San Cristóbal,18
+01/2020,Lesiones,Siniestro Vial,San Nicolás,18
+01/2020,Lesiones,Siniestro Vial,San Telmo,10
+01/2020,Lesiones,Siniestro Vial,Vélez Sársfield,6
+01/2020,Lesiones,Siniestro Vial,Versalles,2
+01/2020,Lesiones,Siniestro Vial,Villa Crespo,26
+01/2020,Lesiones,Siniestro Vial,Villa Del Parque,9
+01/2020,Lesiones,Siniestro Vial,Villa Devoto,22
+01/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,11
+01/2020,Lesiones,Siniestro Vial,Villa Lugano,17
+01/2020,Lesiones,Siniestro Vial,Villa Luro,2
+01/2020,Lesiones,Siniestro Vial,Villa Ortuzar,6
+01/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,11
+01/2020,Lesiones,Siniestro Vial,Villa Real,4
+01/2020,Lesiones,Siniestro Vial,Villa Riachuelo,7
+01/2020,Lesiones,Siniestro Vial,Villa Santa Rita,8
+01/2020,Lesiones,Siniestro Vial,Villa Soldati,4
+01/2020,Lesiones,Siniestro Vial,Villa Urquiza,17
+01/2020,Robo (con violencia),,,7
+01/2020,Robo (con violencia),,Agronomía,13
+01/2020,Robo (con violencia),,Almagro,206
+01/2020,Robo (con violencia),,Balvanera,323
+01/2020,Robo (con violencia),,Barracas,206
+01/2020,Robo (con violencia),,Belgrano,155
+01/2020,Robo (con violencia),,Boca,72
+01/2020,Robo (con violencia),,Boedo,54
+01/2020,Robo (con violencia),,Caballito,189
+01/2020,Robo (con violencia),,Chacarita,68
+01/2020,Robo (con violencia),,Coghlan,21
+01/2020,Robo (con violencia),,Colegiales,63
+01/2020,Robo (con violencia),,Constitución,166
+01/2020,Robo (con violencia),,Flores,250
+01/2020,Robo (con violencia),,Floresta,47
+01/2020,Robo (con violencia),,Liniers,55
+01/2020,Robo (con violencia),,Mataderos,89
+01/2020,Robo (con violencia),,Monserrat,88
+01/2020,Robo (con violencia),,Monte Castro,23
+01/2020,Robo (con violencia),,Nueva Pompeya,131
+01/2020,Robo (con violencia),,Nuñez,86
+01/2020,Robo (con violencia),,Palermo,362
+01/2020,Robo (con violencia),,Parque Avellaneda,77
+01/2020,Robo (con violencia),,Parque Chacabuco,116
+01/2020,Robo (con violencia),,Parque Chas,11
+01/2020,Robo (con violencia),,Parque Patricios,74
+01/2020,Robo (con violencia),,Paternal,17
+01/2020,Robo (con violencia),,Puerto Madero,15
+01/2020,Robo (con violencia),,Recoleta,185
+01/2020,Robo (con violencia),,Retiro,165
+01/2020,Robo (con violencia),,Saavedra,76
+01/2020,Robo (con violencia),,San Cristóbal,91
+01/2020,Robo (con violencia),,San Nicolás,159
+01/2020,Robo (con violencia),,San Telmo,45
+01/2020,Robo (con violencia),,Vélez Sársfield,33
+01/2020,Robo (con violencia),,Versalles,19
+01/2020,Robo (con violencia),,Villa Crespo,114
+01/2020,Robo (con violencia),,Villa Del Parque,42
+01/2020,Robo (con violencia),,Villa Devoto,55
+01/2020,Robo (con violencia),,Villa Gral. Mitre,28
+01/2020,Robo (con violencia),,Villa Lugano,153
+01/2020,Robo (con violencia),,Villa Luro,28
+01/2020,Robo (con violencia),,Villa Ortuzar,20
+01/2020,Robo (con violencia),,Villa Pueyrredón,33
+01/2020,Robo (con violencia),,Villa Real,7
+01/2020,Robo (con violencia),,Villa Riachuelo,20
+01/2020,Robo (con violencia),,Villa Santa Rita,37
+01/2020,Robo (con violencia),,Villa Soldati,81
+01/2020,Robo (con violencia),,Villa Urquiza,80
+01/2020,Robo (con violencia),Con uso de moto,Agronomía,2
+01/2020,Robo (con violencia),Con uso de moto,Almagro,10
+01/2020,Robo (con violencia),Con uso de moto,Balvanera,33
+01/2020,Robo (con violencia),Con uso de moto,Barracas,33
+01/2020,Robo (con violencia),Con uso de moto,Belgrano,24
+01/2020,Robo (con violencia),Con uso de moto,Boca,5
+01/2020,Robo (con violencia),Con uso de moto,Boedo,9
+01/2020,Robo (con violencia),Con uso de moto,Caballito,30
+01/2020,Robo (con violencia),Con uso de moto,Chacarita,8
+01/2020,Robo (con violencia),Con uso de moto,Coghlan,5
+01/2020,Robo (con violencia),Con uso de moto,Colegiales,17
+01/2020,Robo (con violencia),Con uso de moto,Constitución,9
+01/2020,Robo (con violencia),Con uso de moto,Flores,27
+01/2020,Robo (con violencia),Con uso de moto,Floresta,3
+01/2020,Robo (con violencia),Con uso de moto,Liniers,1
+01/2020,Robo (con violencia),Con uso de moto,Mataderos,2
+01/2020,Robo (con violencia),Con uso de moto,Monserrat,22
+01/2020,Robo (con violencia),Con uso de moto,Monte Castro,3
+01/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,10
+01/2020,Robo (con violencia),Con uso de moto,Nuñez,6
+01/2020,Robo (con violencia),Con uso de moto,Palermo,42
+01/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,9
+01/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,14
+01/2020,Robo (con violencia),Con uso de moto,Parque Chas,1
+01/2020,Robo (con violencia),Con uso de moto,Parque Patricios,15
+01/2020,Robo (con violencia),Con uso de moto,Paternal,4
+01/2020,Robo (con violencia),Con uso de moto,Puerto Madero,2
+01/2020,Robo (con violencia),Con uso de moto,Recoleta,13
+01/2020,Robo (con violencia),Con uso de moto,Retiro,12
+01/2020,Robo (con violencia),Con uso de moto,Saavedra,7
+01/2020,Robo (con violencia),Con uso de moto,San Cristóbal,6
+01/2020,Robo (con violencia),Con uso de moto,San Nicolás,15
+01/2020,Robo (con violencia),Con uso de moto,San Telmo,13
+01/2020,Robo (con violencia),Con uso de moto,Vélez Sársfield,3
+01/2020,Robo (con violencia),Con uso de moto,Versalles,3
+01/2020,Robo (con violencia),Con uso de moto,Villa Crespo,19
+01/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,2
+01/2020,Robo (con violencia),Con uso de moto,Villa Devoto,9
+01/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,5
+01/2020,Robo (con violencia),Con uso de moto,Villa Lugano,17
+01/2020,Robo (con violencia),Con uso de moto,Villa Luro,2
+01/2020,Robo (con violencia),Con uso de moto,Villa Ortuzar,3
+01/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,8
+01/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,3
+01/2020,Robo (con violencia),Con uso de moto,Villa Soldati,5
+01/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,9
+01/2020,Robo (con violencia),Robo Automotor,Balvanera,2
+01/2020,Robo (con violencia),Robo Automotor,Barracas,8
+01/2020,Robo (con violencia),Robo Automotor,Belgrano,3
+01/2020,Robo (con violencia),Robo Automotor,Boca,6
+01/2020,Robo (con violencia),Robo Automotor,Boedo,2
+01/2020,Robo (con violencia),Robo Automotor,Caballito,2
+01/2020,Robo (con violencia),Robo Automotor,Chacarita,1
+01/2020,Robo (con violencia),Robo Automotor,Flores,8
+01/2020,Robo (con violencia),Robo Automotor,Floresta,1
+01/2020,Robo (con violencia),Robo Automotor,Liniers,3
+01/2020,Robo (con violencia),Robo Automotor,Mataderos,4
+01/2020,Robo (con violencia),Robo Automotor,Monte Castro,3
+01/2020,Robo (con violencia),Robo Automotor,Nueva Pompeya,11
+01/2020,Robo (con violencia),Robo Automotor,Nuñez,1
+01/2020,Robo (con violencia),Robo Automotor,Parque Avellaneda,5
+01/2020,Robo (con violencia),Robo Automotor,Parque Chacabuco,5
+01/2020,Robo (con violencia),Robo Automotor,Parque Chas,1
+01/2020,Robo (con violencia),Robo Automotor,Parque Patricios,2
+01/2020,Robo (con violencia),Robo Automotor,Paternal,1
+01/2020,Robo (con violencia),Robo Automotor,Recoleta,1
+01/2020,Robo (con violencia),Robo Automotor,Retiro,1
+01/2020,Robo (con violencia),Robo Automotor,San Cristóbal,2
+01/2020,Robo (con violencia),Robo Automotor,San Nicolás,1
+01/2020,Robo (con violencia),Robo Automotor,San Telmo,2
+01/2020,Robo (con violencia),Robo Automotor,Vélez Sársfield,1
+01/2020,Robo (con violencia),Robo Automotor,Villa Crespo,1
+01/2020,Robo (con violencia),Robo Automotor,Villa Del Parque,2
+01/2020,Robo (con violencia),Robo Automotor,Villa Devoto,1
+01/2020,Robo (con violencia),Robo Automotor,Villa Gral. Mitre,1
+01/2020,Robo (con violencia),Robo Automotor,Villa Lugano,13
+01/2020,Robo (con violencia),Robo Automotor,Villa Luro,1
+01/2020,Robo (con violencia),Robo Automotor,Villa Ortuzar,1
+01/2020,Robo (con violencia),Robo Automotor,Villa Riachuelo,1
+01/2020,Robo (con violencia),Robo Automotor,Villa Soldati,6
+02/2020,Homicidio,Doloso,Barracas,2
+02/2020,Homicidio,Doloso,Boca,1
+02/2020,Homicidio,Doloso,Mataderos,1
+02/2020,Homicidio,Doloso,Retiro,4
+02/2020,Homicidio,Doloso,Villa Lugano,1
+02/2020,Homicidio,Siniestro Vial,Almagro,2
+02/2020,Homicidio,Siniestro Vial,Balvanera,1
+02/2020,Homicidio,Siniestro Vial,Constitución,1
+02/2020,Homicidio,Siniestro Vial,Parque Chas,1
+02/2020,Homicidio,Siniestro Vial,San Nicolás,1
+02/2020,Homicidio,Siniestro Vial,San Telmo,1
+02/2020,Homicidio,Siniestro Vial,Villa Devoto,1
+02/2020,Hurto (sin violencia),,,4
+02/2020,Hurto (sin violencia),,Agronomía,12
+02/2020,Hurto (sin violencia),,Almagro,130
+02/2020,Hurto (sin violencia),,Balvanera,303
+02/2020,Hurto (sin violencia),,Barracas,93
+02/2020,Hurto (sin violencia),,Belgrano,160
+02/2020,Hurto (sin violencia),,Boca,35
+02/2020,Hurto (sin violencia),,Boedo,48
+02/2020,Hurto (sin violencia),,Caballito,147
+02/2020,Hurto (sin violencia),,Chacarita,43
+02/2020,Hurto (sin violencia),,Coghlan,11
+02/2020,Hurto (sin violencia),,Colegiales,38
+02/2020,Hurto (sin violencia),,Constitución,105
+02/2020,Hurto (sin violencia),,Flores,136
+02/2020,Hurto (sin violencia),,Floresta,47
+02/2020,Hurto (sin violencia),,Liniers,48
+02/2020,Hurto (sin violencia),,Mataderos,76
+02/2020,Hurto (sin violencia),,Monserrat,156
+02/2020,Hurto (sin violencia),,Monte Castro,17
+02/2020,Hurto (sin violencia),,Nueva Pompeya,56
+02/2020,Hurto (sin violencia),,Nuñez,51
+02/2020,Hurto (sin violencia),,Palermo,393
+02/2020,Hurto (sin violencia),,Parque Avellaneda,45
+02/2020,Hurto (sin violencia),,Parque Chacabuco,53
+02/2020,Hurto (sin violencia),,Parque Chas,13
+02/2020,Hurto (sin violencia),,Parque Patricios,35
+02/2020,Hurto (sin violencia),,Paternal,11
+02/2020,Hurto (sin violencia),,Puerto Madero,9
+02/2020,Hurto (sin violencia),,Recoleta,164
+02/2020,Hurto (sin violencia),,Retiro,132
+02/2020,Hurto (sin violencia),,Saavedra,51
+02/2020,Hurto (sin violencia),,San Cristóbal,55
+02/2020,Hurto (sin violencia),,San Nicolás,247
+02/2020,Hurto (sin violencia),,San Telmo,46
+02/2020,Hurto (sin violencia),,Vélez Sársfield,20
+02/2020,Hurto (sin violencia),,Versalles,10
+02/2020,Hurto (sin violencia),,Villa Crespo,89
+02/2020,Hurto (sin violencia),,Villa Del Parque,46
+02/2020,Hurto (sin violencia),,Villa Devoto,67
+02/2020,Hurto (sin violencia),,Villa Gral. Mitre,42
+02/2020,Hurto (sin violencia),,Villa Lugano,88
+02/2020,Hurto (sin violencia),,Villa Luro,30
+02/2020,Hurto (sin violencia),,Villa Ortuzar,9
+02/2020,Hurto (sin violencia),,Villa Pueyrredón,50
+02/2020,Hurto (sin violencia),,Villa Real,7
+02/2020,Hurto (sin violencia),,Villa Riachuelo,16
+02/2020,Hurto (sin violencia),,Villa Santa Rita,38
+02/2020,Hurto (sin violencia),,Villa Soldati,49
+02/2020,Hurto (sin violencia),,Villa Urquiza,83
+02/2020,Hurto (sin violencia),Hurto Automotor,Agronomía,4
+02/2020,Hurto (sin violencia),Hurto Automotor,Almagro,11
+02/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,6
+02/2020,Hurto (sin violencia),Hurto Automotor,Barracas,6
+02/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,14
+02/2020,Hurto (sin violencia),Hurto Automotor,Boedo,15
+02/2020,Hurto (sin violencia),Hurto Automotor,Caballito,26
+02/2020,Hurto (sin violencia),Hurto Automotor,Chacarita,3
+02/2020,Hurto (sin violencia),Hurto Automotor,Coghlan,4
+02/2020,Hurto (sin violencia),Hurto Automotor,Colegiales,4
+02/2020,Hurto (sin violencia),Hurto Automotor,Constitución,2
+02/2020,Hurto (sin violencia),Hurto Automotor,Flores,17
+02/2020,Hurto (sin violencia),Hurto Automotor,Floresta,8
+02/2020,Hurto (sin violencia),Hurto Automotor,Liniers,6
+02/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,12
+02/2020,Hurto (sin violencia),Hurto Automotor,Monserrat,1
+02/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,3
+02/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,11
+02/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,10
+02/2020,Hurto (sin violencia),Hurto Automotor,Palermo,13
+02/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,5
+02/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,8
+02/2020,Hurto (sin violencia),Hurto Automotor,Parque Chas,1
+02/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,1
+02/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,7
+02/2020,Hurto (sin violencia),Hurto Automotor,Retiro,3
+02/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,2
+02/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,8
+02/2020,Hurto (sin violencia),Hurto Automotor,San Nicolás,2
+02/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,5
+02/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,5
+02/2020,Hurto (sin violencia),Hurto Automotor,Versalles,2
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,14
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,7
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,8
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,3
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,25
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,4
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,3
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,9
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Real,1
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Riachuelo,5
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,1
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,9
+02/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,12
+02/2020,Lesiones,Siniestro Vial,,31
+02/2020,Lesiones,Siniestro Vial,Agronomía,11
+02/2020,Lesiones,Siniestro Vial,Almagro,28
+02/2020,Lesiones,Siniestro Vial,Balvanera,36
+02/2020,Lesiones,Siniestro Vial,Barracas,20
+02/2020,Lesiones,Siniestro Vial,Belgrano,25
+02/2020,Lesiones,Siniestro Vial,Boca,6
+02/2020,Lesiones,Siniestro Vial,Boedo,18
+02/2020,Lesiones,Siniestro Vial,Caballito,24
+02/2020,Lesiones,Siniestro Vial,Chacarita,19
+02/2020,Lesiones,Siniestro Vial,Colegiales,7
+02/2020,Lesiones,Siniestro Vial,Constitución,17
+02/2020,Lesiones,Siniestro Vial,Flores,34
+02/2020,Lesiones,Siniestro Vial,Floresta,7
+02/2020,Lesiones,Siniestro Vial,Liniers,20
+02/2020,Lesiones,Siniestro Vial,Mataderos,26
+02/2020,Lesiones,Siniestro Vial,Monserrat,21
+02/2020,Lesiones,Siniestro Vial,Monte Castro,12
+02/2020,Lesiones,Siniestro Vial,Nueva Pompeya,13
+02/2020,Lesiones,Siniestro Vial,Nuñez,14
+02/2020,Lesiones,Siniestro Vial,Palermo,49
+02/2020,Lesiones,Siniestro Vial,Parque Avellaneda,11
+02/2020,Lesiones,Siniestro Vial,Parque Chacabuco,20
+02/2020,Lesiones,Siniestro Vial,Parque Chas,10
+02/2020,Lesiones,Siniestro Vial,Parque Patricios,8
+02/2020,Lesiones,Siniestro Vial,Paternal,8
+02/2020,Lesiones,Siniestro Vial,Puerto Madero,4
+02/2020,Lesiones,Siniestro Vial,Recoleta,30
+02/2020,Lesiones,Siniestro Vial,Retiro,27
+02/2020,Lesiones,Siniestro Vial,Saavedra,22
+02/2020,Lesiones,Siniestro Vial,San Cristóbal,23
+02/2020,Lesiones,Siniestro Vial,San Nicolás,34
+02/2020,Lesiones,Siniestro Vial,San Telmo,10
+02/2020,Lesiones,Siniestro Vial,Vélez Sársfield,4
+02/2020,Lesiones,Siniestro Vial,Versalles,6
+02/2020,Lesiones,Siniestro Vial,Villa Crespo,32
+02/2020,Lesiones,Siniestro Vial,Villa Del Parque,6
+02/2020,Lesiones,Siniestro Vial,Villa Devoto,23
+02/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,10
+02/2020,Lesiones,Siniestro Vial,Villa Lugano,15
+02/2020,Lesiones,Siniestro Vial,Villa Luro,5
+02/2020,Lesiones,Siniestro Vial,Villa Ortuzar,6
+02/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,6
+02/2020,Lesiones,Siniestro Vial,Villa Real,5
+02/2020,Lesiones,Siniestro Vial,Villa Riachuelo,4
+02/2020,Lesiones,Siniestro Vial,Villa Santa Rita,7
+02/2020,Lesiones,Siniestro Vial,Villa Soldati,9
+02/2020,Lesiones,Siniestro Vial,Villa Urquiza,16
+02/2020,Robo (con violencia),,,8
+02/2020,Robo (con violencia),,Agronomía,10
+02/2020,Robo (con violencia),,Almagro,174
+02/2020,Robo (con violencia),,Balvanera,296
+02/2020,Robo (con violencia),,Barracas,168
+02/2020,Robo (con violencia),,Belgrano,107
+02/2020,Robo (con violencia),,Boca,63
+02/2020,Robo (con violencia),,Boedo,72
+02/2020,Robo (con violencia),,Caballito,197
+02/2020,Robo (con violencia),,Chacarita,72
+02/2020,Robo (con violencia),,Coghlan,13
+02/2020,Robo (con violencia),,Colegiales,70
+02/2020,Robo (con violencia),,Constitución,168
+02/2020,Robo (con violencia),,Flores,190
+02/2020,Robo (con violencia),,Floresta,36
+02/2020,Robo (con violencia),,Liniers,61
+02/2020,Robo (con violencia),,Mataderos,96
+02/2020,Robo (con violencia),,Monserrat,82
+02/2020,Robo (con violencia),,Monte Castro,22
+02/2020,Robo (con violencia),,Nueva Pompeya,99
+02/2020,Robo (con violencia),,Nuñez,66
+02/2020,Robo (con violencia),,Palermo,356
+02/2020,Robo (con violencia),,Parque Avellaneda,62
+02/2020,Robo (con violencia),,Parque Chacabuco,108
+02/2020,Robo (con violencia),,Parque Chas,11
+02/2020,Robo (con violencia),,Parque Patricios,58
+02/2020,Robo (con violencia),,Paternal,19
+02/2020,Robo (con violencia),,Puerto Madero,10
+02/2020,Robo (con violencia),,Recoleta,171
+02/2020,Robo (con violencia),,Retiro,156
+02/2020,Robo (con violencia),,Saavedra,82
+02/2020,Robo (con violencia),,San Cristóbal,57
+02/2020,Robo (con violencia),,San Nicolás,148
+02/2020,Robo (con violencia),,San Telmo,46
+02/2020,Robo (con violencia),,Vélez Sársfield,33
+02/2020,Robo (con violencia),,Versalles,13
+02/2020,Robo (con violencia),,Villa Crespo,122
+02/2020,Robo (con violencia),,Villa Del Parque,34
+02/2020,Robo (con violencia),,Villa Devoto,44
+02/2020,Robo (con violencia),,Villa Gral. Mitre,32
+02/2020,Robo (con violencia),,Villa Lugano,150
+02/2020,Robo (con violencia),,Villa Luro,24
+02/2020,Robo (con violencia),,Villa Ortuzar,30
+02/2020,Robo (con violencia),,Villa Pueyrredón,20
+02/2020,Robo (con violencia),,Villa Real,4
+02/2020,Robo (con violencia),,Villa Riachuelo,19
+02/2020,Robo (con violencia),,Villa Santa Rita,17
+02/2020,Robo (con violencia),,Villa Soldati,108
+02/2020,Robo (con violencia),,Villa Urquiza,70
+02/2020,Robo (con violencia),Con uso de moto,Agronomía,4
+02/2020,Robo (con violencia),Con uso de moto,Almagro,8
+02/2020,Robo (con violencia),Con uso de moto,Balvanera,38
+02/2020,Robo (con violencia),Con uso de moto,Barracas,16
+02/2020,Robo (con violencia),Con uso de moto,Belgrano,19
+02/2020,Robo (con violencia),Con uso de moto,Boca,5
+02/2020,Robo (con violencia),Con uso de moto,Boedo,4
+02/2020,Robo (con violencia),Con uso de moto,Caballito,20
+02/2020,Robo (con violencia),Con uso de moto,Chacarita,6
+02/2020,Robo (con violencia),Con uso de moto,Coghlan,3
+02/2020,Robo (con violencia),Con uso de moto,Colegiales,1
+02/2020,Robo (con violencia),Con uso de moto,Constitución,17
+02/2020,Robo (con violencia),Con uso de moto,Flores,26
+02/2020,Robo (con violencia),Con uso de moto,Floresta,1
+02/2020,Robo (con violencia),Con uso de moto,Liniers,11
+02/2020,Robo (con violencia),Con uso de moto,Mataderos,3
+02/2020,Robo (con violencia),Con uso de moto,Monserrat,16
+02/2020,Robo (con violencia),Con uso de moto,Monte Castro,3
+02/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,18
+02/2020,Robo (con violencia),Con uso de moto,Nuñez,9
+02/2020,Robo (con violencia),Con uso de moto,Palermo,28
+02/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,8
+02/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,16
+02/2020,Robo (con violencia),Con uso de moto,Parque Chas,3
+02/2020,Robo (con violencia),Con uso de moto,Parque Patricios,17
+02/2020,Robo (con violencia),Con uso de moto,Paternal,1
+02/2020,Robo (con violencia),Con uso de moto,Recoleta,14
+02/2020,Robo (con violencia),Con uso de moto,Retiro,11
+02/2020,Robo (con violencia),Con uso de moto,Saavedra,6
+02/2020,Robo (con violencia),Con uso de moto,San Cristóbal,16
+02/2020,Robo (con violencia),Con uso de moto,San Nicolás,22
+02/2020,Robo (con violencia),Con uso de moto,San Telmo,12
+02/2020,Robo (con violencia),Con uso de moto,Vélez Sársfield,2
+02/2020,Robo (con violencia),Con uso de moto,Versalles,2
+02/2020,Robo (con violencia),Con uso de moto,Villa Crespo,12
+02/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,13
+02/2020,Robo (con violencia),Con uso de moto,Villa Devoto,7
+02/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,4
+02/2020,Robo (con violencia),Con uso de moto,Villa Lugano,9
+02/2020,Robo (con violencia),Con uso de moto,Villa Luro,1
+02/2020,Robo (con violencia),Con uso de moto,Villa Ortuzar,6
+02/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,3
+02/2020,Robo (con violencia),Con uso de moto,Villa Real,2
+02/2020,Robo (con violencia),Con uso de moto,Villa Riachuelo,1
+02/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,4
+02/2020,Robo (con violencia),Con uso de moto,Villa Soldati,15
+02/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,14
+02/2020,Robo (con violencia),Robo Automotor,Almagro,2
+02/2020,Robo (con violencia),Robo Automotor,Balvanera,1
+02/2020,Robo (con violencia),Robo Automotor,Barracas,7
+02/2020,Robo (con violencia),Robo Automotor,Belgrano,1
+02/2020,Robo (con violencia),Robo Automotor,Boca,9
+02/2020,Robo (con violencia),Robo Automotor,Boedo,3
+02/2020,Robo (con violencia),Robo Automotor,Caballito,2
+02/2020,Robo (con violencia),Robo Automotor,Coghlan,1
+02/2020,Robo (con violencia),Robo Automotor,Constitución,4
+02/2020,Robo (con violencia),Robo Automotor,Flores,2
+02/2020,Robo (con violencia),Robo Automotor,Floresta,1
+02/2020,Robo (con violencia),Robo Automotor,Liniers,1
+02/2020,Robo (con violencia),Robo Automotor,Mataderos,1
+02/2020,Robo (con violencia),Robo Automotor,Monserrat,1
+02/2020,Robo (con violencia),Robo Automotor,Monte Castro,1
+02/2020,Robo (con violencia),Robo Automotor,Nueva Pompeya,6
+02/2020,Robo (con violencia),Robo Automotor,Nuñez,3
+02/2020,Robo (con violencia),Robo Automotor,Parque Avellaneda,5
+02/2020,Robo (con violencia),Robo Automotor,Parque Chacabuco,6
+02/2020,Robo (con violencia),Robo Automotor,Parque Patricios,2
+02/2020,Robo (con violencia),Robo Automotor,San Cristóbal,1
+02/2020,Robo (con violencia),Robo Automotor,San Telmo,1
+02/2020,Robo (con violencia),Robo Automotor,Villa Devoto,3
+02/2020,Robo (con violencia),Robo Automotor,Villa Gral. Mitre,1
+02/2020,Robo (con violencia),Robo Automotor,Villa Lugano,8
+02/2020,Robo (con violencia),Robo Automotor,Villa Luro,2
+02/2020,Robo (con violencia),Robo Automotor,Villa Pueyrredón,2
+02/2020,Robo (con violencia),Robo Automotor,Villa Riachuelo,3
+02/2020,Robo (con violencia),Robo Automotor,Villa Santa Rita,1
+02/2020,Robo (con violencia),Robo Automotor,Villa Soldati,8
+02/2020,Robo (con violencia),Robo Automotor,Villa Urquiza,1
+03/2020,Homicidio,Doloso,Barracas,1
+03/2020,Homicidio,Doloso,Boca,1
+03/2020,Homicidio,Doloso,Palermo,1
+03/2020,Homicidio,Doloso,Retiro,2
+03/2020,Homicidio,Doloso,Saavedra,1
+03/2020,Homicidio,Doloso,Villa Lugano,1
+03/2020,Homicidio,Femicidio,Boedo,1
+03/2020,Homicidio,Femicidio,Nueva Pompeya,1
+03/2020,Homicidio,Siniestro Vial,Balvanera,2
+03/2020,Homicidio,Siniestro Vial,Belgrano,1
+03/2020,Homicidio,Siniestro Vial,Boedo,1
+03/2020,Homicidio,Siniestro Vial,Recoleta,1
+03/2020,Hurto (sin violencia),,,4
+03/2020,Hurto (sin violencia),,Agronomía,7
+03/2020,Hurto (sin violencia),,Almagro,75
+03/2020,Hurto (sin violencia),,Balvanera,173
+03/2020,Hurto (sin violencia),,Barracas,54
+03/2020,Hurto (sin violencia),,Belgrano,80
+03/2020,Hurto (sin violencia),,Boca,26
+03/2020,Hurto (sin violencia),,Boedo,39
+03/2020,Hurto (sin violencia),,Caballito,97
+03/2020,Hurto (sin violencia),,Chacarita,30
+03/2020,Hurto (sin violencia),,Coghlan,9
+03/2020,Hurto (sin violencia),,Colegiales,23
+03/2020,Hurto (sin violencia),,Constitución,49
+03/2020,Hurto (sin violencia),,Flores,86
+03/2020,Hurto (sin violencia),,Floresta,26
+03/2020,Hurto (sin violencia),,Liniers,30
+03/2020,Hurto (sin violencia),,Mataderos,50
+03/2020,Hurto (sin violencia),,Monserrat,81
+03/2020,Hurto (sin violencia),,Monte Castro,23
+03/2020,Hurto (sin violencia),,Nueva Pompeya,36
+03/2020,Hurto (sin violencia),,Nuñez,43
+03/2020,Hurto (sin violencia),,Palermo,221
+03/2020,Hurto (sin violencia),,Parque Avellaneda,17
+03/2020,Hurto (sin violencia),,Parque Chacabuco,38
+03/2020,Hurto (sin violencia),,Parque Chas,10
+03/2020,Hurto (sin violencia),,Parque Patricios,32
+03/2020,Hurto (sin violencia),,Paternal,11
+03/2020,Hurto (sin violencia),,Puerto Madero,3
+03/2020,Hurto (sin violencia),,Recoleta,98
+03/2020,Hurto (sin violencia),,Retiro,82
+03/2020,Hurto (sin violencia),,Saavedra,23
+03/2020,Hurto (sin violencia),,San Cristóbal,32
+03/2020,Hurto (sin violencia),,San Nicolás,161
+03/2020,Hurto (sin violencia),,San Telmo,28
+03/2020,Hurto (sin violencia),,Vélez Sársfield,20
+03/2020,Hurto (sin violencia),,Versalles,10
+03/2020,Hurto (sin violencia),,Villa Crespo,53
+03/2020,Hurto (sin violencia),,Villa Del Parque,25
+03/2020,Hurto (sin violencia),,Villa Devoto,43
+03/2020,Hurto (sin violencia),,Villa Gral. Mitre,16
+03/2020,Hurto (sin violencia),,Villa Lugano,59
+03/2020,Hurto (sin violencia),,Villa Luro,17
+03/2020,Hurto (sin violencia),,Villa Ortuzar,9
+03/2020,Hurto (sin violencia),,Villa Pueyrredón,22
+03/2020,Hurto (sin violencia),,Villa Real,5
+03/2020,Hurto (sin violencia),,Villa Riachuelo,12
+03/2020,Hurto (sin violencia),,Villa Santa Rita,17
+03/2020,Hurto (sin violencia),,Villa Soldati,30
+03/2020,Hurto (sin violencia),,Villa Urquiza,46
+03/2020,Hurto (sin violencia),Hurto Automotor,Agronomía,3
+03/2020,Hurto (sin violencia),Hurto Automotor,Almagro,11
+03/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,6
+03/2020,Hurto (sin violencia),Hurto Automotor,Barracas,11
+03/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,6
+03/2020,Hurto (sin violencia),Hurto Automotor,Boca,3
+03/2020,Hurto (sin violencia),Hurto Automotor,Boedo,8
+03/2020,Hurto (sin violencia),Hurto Automotor,Caballito,16
+03/2020,Hurto (sin violencia),Hurto Automotor,Chacarita,2
+03/2020,Hurto (sin violencia),Hurto Automotor,Colegiales,3
+03/2020,Hurto (sin violencia),Hurto Automotor,Constitución,4
+03/2020,Hurto (sin violencia),Hurto Automotor,Flores,18
+03/2020,Hurto (sin violencia),Hurto Automotor,Floresta,7
+03/2020,Hurto (sin violencia),Hurto Automotor,Liniers,4
+03/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,14
+03/2020,Hurto (sin violencia),Hurto Automotor,Monserrat,3
+03/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,2
+03/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,10
+03/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,7
+03/2020,Hurto (sin violencia),Hurto Automotor,Palermo,6
+03/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,3
+03/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,5
+03/2020,Hurto (sin violencia),Hurto Automotor,Parque Chas,2
+03/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,9
+03/2020,Hurto (sin violencia),Hurto Automotor,Paternal,4
+03/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,9
+03/2020,Hurto (sin violencia),Hurto Automotor,Retiro,2
+03/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,5
+03/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,7
+03/2020,Hurto (sin violencia),Hurto Automotor,San Nicolás,3
+03/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,3
+03/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,4
+03/2020,Hurto (sin violencia),Hurto Automotor,Versalles,2
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,8
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,5
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,15
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,7
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,13
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,5
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,3
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,7
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Real,1
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Riachuelo,4
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,1
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,4
+03/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,3
+03/2020,Lesiones,Siniestro Vial,,14
+03/2020,Lesiones,Siniestro Vial,Agronomía,1
+03/2020,Lesiones,Siniestro Vial,Almagro,20
+03/2020,Lesiones,Siniestro Vial,Balvanera,32
+03/2020,Lesiones,Siniestro Vial,Barracas,16
+03/2020,Lesiones,Siniestro Vial,Belgrano,14
+03/2020,Lesiones,Siniestro Vial,Boca,6
+03/2020,Lesiones,Siniestro Vial,Boedo,11
+03/2020,Lesiones,Siniestro Vial,Caballito,18
+03/2020,Lesiones,Siniestro Vial,Chacarita,5
+03/2020,Lesiones,Siniestro Vial,Colegiales,2
+03/2020,Lesiones,Siniestro Vial,Constitución,24
+03/2020,Lesiones,Siniestro Vial,Flores,28
+03/2020,Lesiones,Siniestro Vial,Floresta,6
+03/2020,Lesiones,Siniestro Vial,Liniers,10
+03/2020,Lesiones,Siniestro Vial,Mataderos,19
+03/2020,Lesiones,Siniestro Vial,Monserrat,21
+03/2020,Lesiones,Siniestro Vial,Monte Castro,3
+03/2020,Lesiones,Siniestro Vial,Nueva Pompeya,15
+03/2020,Lesiones,Siniestro Vial,Nuñez,7
+03/2020,Lesiones,Siniestro Vial,Palermo,31
+03/2020,Lesiones,Siniestro Vial,Parque Avellaneda,8
+03/2020,Lesiones,Siniestro Vial,Parque Chacabuco,12
+03/2020,Lesiones,Siniestro Vial,Parque Chas,1
+03/2020,Lesiones,Siniestro Vial,Parque Patricios,12
+03/2020,Lesiones,Siniestro Vial,Paternal,4
+03/2020,Lesiones,Siniestro Vial,Puerto Madero,4
+03/2020,Lesiones,Siniestro Vial,Recoleta,18
+03/2020,Lesiones,Siniestro Vial,Retiro,16
+03/2020,Lesiones,Siniestro Vial,Saavedra,6
+03/2020,Lesiones,Siniestro Vial,San Cristóbal,10
+03/2020,Lesiones,Siniestro Vial,San Nicolás,22
+03/2020,Lesiones,Siniestro Vial,San Telmo,3
+03/2020,Lesiones,Siniestro Vial,Vélez Sársfield,7
+03/2020,Lesiones,Siniestro Vial,Versalles,3
+03/2020,Lesiones,Siniestro Vial,Villa Crespo,18
+03/2020,Lesiones,Siniestro Vial,Villa Del Parque,5
+03/2020,Lesiones,Siniestro Vial,Villa Devoto,11
+03/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,7
+03/2020,Lesiones,Siniestro Vial,Villa Lugano,14
+03/2020,Lesiones,Siniestro Vial,Villa Luro,2
+03/2020,Lesiones,Siniestro Vial,Villa Ortuzar,4
+03/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,5
+03/2020,Lesiones,Siniestro Vial,Villa Real,2
+03/2020,Lesiones,Siniestro Vial,Villa Riachuelo,5
+03/2020,Lesiones,Siniestro Vial,Villa Santa Rita,8
+03/2020,Lesiones,Siniestro Vial,Villa Soldati,6
+03/2020,Lesiones,Siniestro Vial,Villa Urquiza,13
+03/2020,Robo (con violencia),,,6
+03/2020,Robo (con violencia),,Agronomía,7
+03/2020,Robo (con violencia),,Almagro,103
+03/2020,Robo (con violencia),,Balvanera,163
+03/2020,Robo (con violencia),,Barracas,126
+03/2020,Robo (con violencia),,Belgrano,74
+03/2020,Robo (con violencia),,Boca,48
+03/2020,Robo (con violencia),,Boedo,37
+03/2020,Robo (con violencia),,Caballito,112
+03/2020,Robo (con violencia),,Chacarita,45
+03/2020,Robo (con violencia),,Coghlan,6
+03/2020,Robo (con violencia),,Colegiales,26
+03/2020,Robo (con violencia),,Constitución,106
+03/2020,Robo (con violencia),,Flores,140
+03/2020,Robo (con violencia),,Floresta,30
+03/2020,Robo (con violencia),,Liniers,39
+03/2020,Robo (con violencia),,Mataderos,64
+03/2020,Robo (con violencia),,Monserrat,51
+03/2020,Robo (con violencia),,Monte Castro,17
+03/2020,Robo (con violencia),,Nueva Pompeya,73
+03/2020,Robo (con violencia),,Nuñez,46
+03/2020,Robo (con violencia),,Palermo,255
+03/2020,Robo (con violencia),,Parque Avellaneda,39
+03/2020,Robo (con violencia),,Parque Chacabuco,94
+03/2020,Robo (con violencia),,Parque Chas,4
+03/2020,Robo (con violencia),,Parque Patricios,39
+03/2020,Robo (con violencia),,Paternal,18
+03/2020,Robo (con violencia),,Puerto Madero,6
+03/2020,Robo (con violencia),,Recoleta,118
+03/2020,Robo (con violencia),,Retiro,114
+03/2020,Robo (con violencia),,Saavedra,44
+03/2020,Robo (con violencia),,San Cristóbal,46
+03/2020,Robo (con violencia),,San Nicolás,83
+03/2020,Robo (con violencia),,San Telmo,29
+03/2020,Robo (con violencia),,Vélez Sársfield,20
+03/2020,Robo (con violencia),,Versalles,5
+03/2020,Robo (con violencia),,Villa Crespo,65
+03/2020,Robo (con violencia),,Villa Del Parque,25
+03/2020,Robo (con violencia),,Villa Devoto,29
+03/2020,Robo (con violencia),,Villa Gral. Mitre,20
+03/2020,Robo (con violencia),,Villa Lugano,130
+03/2020,Robo (con violencia),,Villa Luro,12
+03/2020,Robo (con violencia),,Villa Ortuzar,17
+03/2020,Robo (con violencia),,Villa Pueyrredón,16
+03/2020,Robo (con violencia),,Villa Real,3
+03/2020,Robo (con violencia),,Villa Riachuelo,13
+03/2020,Robo (con violencia),,Villa Santa Rita,16
+03/2020,Robo (con violencia),,Villa Soldati,64
+03/2020,Robo (con violencia),,Villa Urquiza,34
+03/2020,Robo (con violencia),Con uso de moto,Agronomía,2
+03/2020,Robo (con violencia),Con uso de moto,Almagro,3
+03/2020,Robo (con violencia),Con uso de moto,Balvanera,30
+03/2020,Robo (con violencia),Con uso de moto,Barracas,11
+03/2020,Robo (con violencia),Con uso de moto,Belgrano,8
+03/2020,Robo (con violencia),Con uso de moto,Boca,3
+03/2020,Robo (con violencia),Con uso de moto,Boedo,3
+03/2020,Robo (con violencia),Con uso de moto,Caballito,14
+03/2020,Robo (con violencia),Con uso de moto,Chacarita,4
+03/2020,Robo (con violencia),Con uso de moto,Coghlan,1
+03/2020,Robo (con violencia),Con uso de moto,Colegiales,11
+03/2020,Robo (con violencia),Con uso de moto,Constitución,2
+03/2020,Robo (con violencia),Con uso de moto,Flores,19
+03/2020,Robo (con violencia),Con uso de moto,Floresta,2
+03/2020,Robo (con violencia),Con uso de moto,Liniers,3
+03/2020,Robo (con violencia),Con uso de moto,Mataderos,10
+03/2020,Robo (con violencia),Con uso de moto,Monserrat,14
+03/2020,Robo (con violencia),Con uso de moto,Monte Castro,2
+03/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,9
+03/2020,Robo (con violencia),Con uso de moto,Nuñez,3
+03/2020,Robo (con violencia),Con uso de moto,Palermo,15
+03/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,4
+03/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,8
+03/2020,Robo (con violencia),Con uso de moto,Parque Chas,1
+03/2020,Robo (con violencia),Con uso de moto,Parque Patricios,12
+03/2020,Robo (con violencia),Con uso de moto,Paternal,1
+03/2020,Robo (con violencia),Con uso de moto,Recoleta,8
+03/2020,Robo (con violencia),Con uso de moto,Retiro,7
+03/2020,Robo (con violencia),Con uso de moto,Saavedra,3
+03/2020,Robo (con violencia),Con uso de moto,San Cristóbal,6
+03/2020,Robo (con violencia),Con uso de moto,San Nicolás,13
+03/2020,Robo (con violencia),Con uso de moto,San Telmo,1
+03/2020,Robo (con violencia),Con uso de moto,Vélez Sársfield,4
+03/2020,Robo (con violencia),Con uso de moto,Villa Crespo,4
+03/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,6
+03/2020,Robo (con violencia),Con uso de moto,Villa Devoto,1
+03/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,4
+03/2020,Robo (con violencia),Con uso de moto,Villa Lugano,15
+03/2020,Robo (con violencia),Con uso de moto,Villa Luro,1
+03/2020,Robo (con violencia),Con uso de moto,Villa Ortuzar,3
+03/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,8
+03/2020,Robo (con violencia),Con uso de moto,Villa Real,2
+03/2020,Robo (con violencia),Con uso de moto,Villa Riachuelo,2
+03/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,4
+03/2020,Robo (con violencia),Con uso de moto,Villa Soldati,5
+03/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,10
+03/2020,Robo (con violencia),Robo Automotor,Almagro,1
+03/2020,Robo (con violencia),Robo Automotor,Balvanera,1
+03/2020,Robo (con violencia),Robo Automotor,Barracas,6
+03/2020,Robo (con violencia),Robo Automotor,Belgrano,2
+03/2020,Robo (con violencia),Robo Automotor,Boca,4
+03/2020,Robo (con violencia),Robo Automotor,Boedo,1
+03/2020,Robo (con violencia),Robo Automotor,Coghlan,1
+03/2020,Robo (con violencia),Robo Automotor,Constitución,1
+03/2020,Robo (con violencia),Robo Automotor,Flores,3
+03/2020,Robo (con violencia),Robo Automotor,Floresta,1
+03/2020,Robo (con violencia),Robo Automotor,Liniers,2
+03/2020,Robo (con violencia),Robo Automotor,Mataderos,1
+03/2020,Robo (con violencia),Robo Automotor,Monserrat,1
+03/2020,Robo (con violencia),Robo Automotor,Parque Avellaneda,1
+03/2020,Robo (con violencia),Robo Automotor,Parque Chacabuco,1
+03/2020,Robo (con violencia),Robo Automotor,Parque Patricios,5
+03/2020,Robo (con violencia),Robo Automotor,Paternal,1
+03/2020,Robo (con violencia),Robo Automotor,San Cristóbal,1
+03/2020,Robo (con violencia),Robo Automotor,San Telmo,1
+03/2020,Robo (con violencia),Robo Automotor,Vélez Sársfield,2
+03/2020,Robo (con violencia),Robo Automotor,Versalles,1
+03/2020,Robo (con violencia),Robo Automotor,Villa Del Parque,1
+03/2020,Robo (con violencia),Robo Automotor,Villa Devoto,1
+03/2020,Robo (con violencia),Robo Automotor,Villa Gral. Mitre,1
+03/2020,Robo (con violencia),Robo Automotor,Villa Lugano,2
+03/2020,Robo (con violencia),Robo Automotor,Villa Luro,1
+03/2020,Robo (con violencia),Robo Automotor,Villa Real,1
+03/2020,Robo (con violencia),Robo Automotor,Villa Riachuelo,1
+03/2020,Robo (con violencia),Robo Automotor,Villa Soldati,5
+03/2020,Robo (con violencia),Robo Automotor,Villa Urquiza,1
+04/2020,Homicidio,Doloso,Balvanera,1
+04/2020,Homicidio,Doloso,Constitución,1
+04/2020,Homicidio,Doloso,Flores,1
+04/2020,Homicidio,Doloso,Retiro,1
+04/2020,Homicidio,Femicidio,Palermo,1
+04/2020,Homicidio,Siniestro Vial,La Boca,1
+04/2020,Homicidio,Siniestro Vial,Mataderos,1
+04/2020,Homicidio,Siniestro Vial,Villa Lugano,1
+04/2020,Hurto (sin violencia),,,4
+04/2020,Hurto (sin violencia),,Agronomía,2
+04/2020,Hurto (sin violencia),,Almagro,24
+04/2020,Hurto (sin violencia),,Balvanera,38
+04/2020,Hurto (sin violencia),,Barracas,24
+04/2020,Hurto (sin violencia),,Belgrano,11
+04/2020,Hurto (sin violencia),,Boca,14
+04/2020,Hurto (sin violencia),,Boedo,12
+04/2020,Hurto (sin violencia),,Caballito,30
+04/2020,Hurto (sin violencia),,Chacarita,9
+04/2020,Hurto (sin violencia),,Coghlan,4
+04/2020,Hurto (sin violencia),,Colegiales,5
+04/2020,Hurto (sin violencia),,Constitución,20
+04/2020,Hurto (sin violencia),,Flores,28
+04/2020,Hurto (sin violencia),,Floresta,4
+04/2020,Hurto (sin violencia),,Liniers,8
+04/2020,Hurto (sin violencia),,Mataderos,18
+04/2020,Hurto (sin violencia),,Monserrat,12
+04/2020,Hurto (sin violencia),,Monte Castro,5
+04/2020,Hurto (sin violencia),,Nueva Pompeya,22
+04/2020,Hurto (sin violencia),,Nuñez,3
+04/2020,Hurto (sin violencia),,Palermo,29
+04/2020,Hurto (sin violencia),,Parque Avellaneda,12
+04/2020,Hurto (sin violencia),,Parque Chacabuco,17
+04/2020,Hurto (sin violencia),,Parque Chas,2
+04/2020,Hurto (sin violencia),,Parque Patricios,17
+04/2020,Hurto (sin violencia),,Paternal,1
+04/2020,Hurto (sin violencia),,Puerto Madero,1
+04/2020,Hurto (sin violencia),,Recoleta,34
+04/2020,Hurto (sin violencia),,Retiro,16
+04/2020,Hurto (sin violencia),,Saavedra,3
+04/2020,Hurto (sin violencia),,San Cristóbal,10
+04/2020,Hurto (sin violencia),,San Nicolás,15
+04/2020,Hurto (sin violencia),,San Telmo,2
+04/2020,Hurto (sin violencia),,Vélez Sársfield,9
+04/2020,Hurto (sin violencia),,Versalles,3
+04/2020,Hurto (sin violencia),,Villa Crespo,15
+04/2020,Hurto (sin violencia),,Villa Del Parque,11
+04/2020,Hurto (sin violencia),,Villa Devoto,12
+04/2020,Hurto (sin violencia),,Villa Gral. Mitre,4
+04/2020,Hurto (sin violencia),,Villa Lugano,11
+04/2020,Hurto (sin violencia),,Villa Luro,4
+04/2020,Hurto (sin violencia),,Villa Ortuzar,3
+04/2020,Hurto (sin violencia),,Villa Pueyrredón,7
+04/2020,Hurto (sin violencia),,Villa Real,2
+04/2020,Hurto (sin violencia),,Villa Riachuelo,6
+04/2020,Hurto (sin violencia),,Villa Santa Rita,4
+04/2020,Hurto (sin violencia),,Villa Soldati,11
+04/2020,Hurto (sin violencia),,Villa Urquiza,16
+04/2020,Hurto (sin violencia),Hurto Automotor,Almagro,1
+04/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,2
+04/2020,Hurto (sin violencia),Hurto Automotor,Barracas,3
+04/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,3
+04/2020,Hurto (sin violencia),Hurto Automotor,Boedo,2
+04/2020,Hurto (sin violencia),Hurto Automotor,Caballito,2
+04/2020,Hurto (sin violencia),Hurto Automotor,Flores,4
+04/2020,Hurto (sin violencia),Hurto Automotor,Floresta,1
+04/2020,Hurto (sin violencia),Hurto Automotor,Liniers,2
+04/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,1
+04/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,1
+04/2020,Hurto (sin violencia),Hurto Automotor,Palermo,4
+04/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,1
+04/2020,Hurto (sin violencia),Hurto Automotor,Paternal,1
+04/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,1
+04/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,1
+04/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,2
+04/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,2
+04/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,3
+04/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,2
+04/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,2
+04/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,1
+04/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,6
+04/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,1
+04/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,1
+04/2020,Lesiones,Siniestro Vial,,11
+04/2020,Lesiones,Siniestro Vial,Agronomía,1
+04/2020,Lesiones,Siniestro Vial,Almagro,9
+04/2020,Lesiones,Siniestro Vial,Balvanera,13
+04/2020,Lesiones,Siniestro Vial,Barracas,8
+04/2020,Lesiones,Siniestro Vial,Belgrano,10
+04/2020,Lesiones,Siniestro Vial,Boca,2
+04/2020,Lesiones,Siniestro Vial,Boedo,3
+04/2020,Lesiones,Siniestro Vial,Caballito,9
+04/2020,Lesiones,Siniestro Vial,Chacarita,1
+04/2020,Lesiones,Siniestro Vial,Coghlan,1
+04/2020,Lesiones,Siniestro Vial,Constitución,9
+04/2020,Lesiones,Siniestro Vial,Flores,9
+04/2020,Lesiones,Siniestro Vial,Floresta,2
+04/2020,Lesiones,Siniestro Vial,Liniers,5
+04/2020,Lesiones,Siniestro Vial,Mataderos,5
+04/2020,Lesiones,Siniestro Vial,Monserrat,3
+04/2020,Lesiones,Siniestro Vial,Monte Castro,4
+04/2020,Lesiones,Siniestro Vial,Nueva Pompeya,8
+04/2020,Lesiones,Siniestro Vial,Nuñez,4
+04/2020,Lesiones,Siniestro Vial,Palermo,11
+04/2020,Lesiones,Siniestro Vial,Parque Avellaneda,4
+04/2020,Lesiones,Siniestro Vial,Parque Chacabuco,4
+04/2020,Lesiones,Siniestro Vial,Parque Chas,1
+04/2020,Lesiones,Siniestro Vial,Parque Patricios,3
+04/2020,Lesiones,Siniestro Vial,Paternal,2
+04/2020,Lesiones,Siniestro Vial,Recoleta,5
+04/2020,Lesiones,Siniestro Vial,Retiro,3
+04/2020,Lesiones,Siniestro Vial,Saavedra,5
+04/2020,Lesiones,Siniestro Vial,San Cristóbal,1
+04/2020,Lesiones,Siniestro Vial,San Nicolás,4
+04/2020,Lesiones,Siniestro Vial,Versalles,2
+04/2020,Lesiones,Siniestro Vial,Villa Crespo,8
+04/2020,Lesiones,Siniestro Vial,Villa Del Parque,5
+04/2020,Lesiones,Siniestro Vial,Villa Devoto,4
+04/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,5
+04/2020,Lesiones,Siniestro Vial,Villa Lugano,9
+04/2020,Lesiones,Siniestro Vial,Villa Luro,2
+04/2020,Lesiones,Siniestro Vial,Villa Ortuzar,2
+04/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,3
+04/2020,Lesiones,Siniestro Vial,Villa Real,1
+04/2020,Lesiones,Siniestro Vial,Villa Riachuelo,2
+04/2020,Lesiones,Siniestro Vial,Villa Santa Rita,3
+04/2020,Lesiones,Siniestro Vial,Villa Urquiza,5
+04/2020,Robo (con violencia),,,6
+04/2020,Robo (con violencia),,Agronomía,2
+04/2020,Robo (con violencia),,Almagro,34
+04/2020,Robo (con violencia),,Balvanera,58
+04/2020,Robo (con violencia),,Barracas,60
+04/2020,Robo (con violencia),,Belgrano,15
+04/2020,Robo (con violencia),,Boca,25
+04/2020,Robo (con violencia),,Boedo,20
+04/2020,Robo (con violencia),,Caballito,36
+04/2020,Robo (con violencia),,Chacarita,22
+04/2020,Robo (con violencia),,Coghlan,2
+04/2020,Robo (con violencia),,Colegiales,4
+04/2020,Robo (con violencia),,Constitución,28
+04/2020,Robo (con violencia),,Flores,67
+04/2020,Robo (con violencia),,Floresta,10
+04/2020,Robo (con violencia),,Liniers,3
+04/2020,Robo (con violencia),,Mataderos,21
+04/2020,Robo (con violencia),,Monserrat,18
+04/2020,Robo (con violencia),,Monte Castro,2
+04/2020,Robo (con violencia),,Nueva Pompeya,57
+04/2020,Robo (con violencia),,Nuñez,6
+04/2020,Robo (con violencia),,Palermo,68
+04/2020,Robo (con violencia),,Parque Avellaneda,18
+04/2020,Robo (con violencia),,Parque Chacabuco,41
+04/2020,Robo (con violencia),,Parque Chas,1
+04/2020,Robo (con violencia),,Parque Patricios,32
+04/2020,Robo (con violencia),,Paternal,3
+04/2020,Robo (con violencia),,Recoleta,52
+04/2020,Robo (con violencia),,Retiro,50
+04/2020,Robo (con violencia),,Saavedra,12
+04/2020,Robo (con violencia),,San Cristóbal,15
+04/2020,Robo (con violencia),,San Nicolás,23
+04/2020,Robo (con violencia),,San Telmo,9
+04/2020,Robo (con violencia),,Vélez Sársfield,3
+04/2020,Robo (con violencia),,Versalles,1
+04/2020,Robo (con violencia),,Villa Crespo,30
+04/2020,Robo (con violencia),,Villa Del Parque,10
+04/2020,Robo (con violencia),,Villa Devoto,8
+04/2020,Robo (con violencia),,Villa Gral. Mitre,5
+04/2020,Robo (con violencia),,Villa Lugano,47
+04/2020,Robo (con violencia),,Villa Luro,7
+04/2020,Robo (con violencia),,Villa Ortuzar,2
+04/2020,Robo (con violencia),,Villa Riachuelo,6
+04/2020,Robo (con violencia),,Villa Santa Rita,4
+04/2020,Robo (con violencia),,Villa Soldati,36
+04/2020,Robo (con violencia),,Villa Urquiza,8
+04/2020,Robo (con violencia),Con uso de moto,Almagro,2
+04/2020,Robo (con violencia),Con uso de moto,Balvanera,8
+04/2020,Robo (con violencia),Con uso de moto,Barracas,2
+04/2020,Robo (con violencia),Con uso de moto,Belgrano,3
+04/2020,Robo (con violencia),Con uso de moto,Boca,2
+04/2020,Robo (con violencia),Con uso de moto,Boedo,1
+04/2020,Robo (con violencia),Con uso de moto,Caballito,5
+04/2020,Robo (con violencia),Con uso de moto,Chacarita,3
+04/2020,Robo (con violencia),Con uso de moto,Colegiales,2
+04/2020,Robo (con violencia),Con uso de moto,Constitución,1
+04/2020,Robo (con violencia),Con uso de moto,Flores,6
+04/2020,Robo (con violencia),Con uso de moto,Floresta,2
+04/2020,Robo (con violencia),Con uso de moto,Liniers,4
+04/2020,Robo (con violencia),Con uso de moto,Mataderos,3
+04/2020,Robo (con violencia),Con uso de moto,Monserrat,2
+04/2020,Robo (con violencia),Con uso de moto,Monte Castro,1
+04/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,4
+04/2020,Robo (con violencia),Con uso de moto,Nuñez,1
+04/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,1
+04/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,2
+04/2020,Robo (con violencia),Con uso de moto,Parque Patricios,3
+04/2020,Robo (con violencia),Con uso de moto,Paternal,1
+04/2020,Robo (con violencia),Con uso de moto,Recoleta,3
+04/2020,Robo (con violencia),Con uso de moto,Retiro,1
+04/2020,Robo (con violencia),Con uso de moto,San Cristóbal,4
+04/2020,Robo (con violencia),Con uso de moto,San Nicolás,1
+04/2020,Robo (con violencia),Con uso de moto,Vélez Sársfield,1
+04/2020,Robo (con violencia),Con uso de moto,Versalles,1
+04/2020,Robo (con violencia),Con uso de moto,Villa Crespo,2
+04/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,2
+04/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,2
+04/2020,Robo (con violencia),Con uso de moto,Villa Lugano,2
+04/2020,Robo (con violencia),Con uso de moto,Villa Luro,2
+04/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,1
+04/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,4
+04/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,1
+04/2020,Robo (con violencia),Robo Automotor,Boca,1
+04/2020,Robo (con violencia),Robo Automotor,Constitución,1
+04/2020,Robo (con violencia),Robo Automotor,Nueva Pompeya,1
+04/2020,Robo (con violencia),Robo Automotor,Parque Patricios,1
+04/2020,Robo (con violencia),Robo Automotor,Paternal,1
+04/2020,Robo (con violencia),Robo Automotor,Villa Soldati,1
+05/2020,Homicidio,Doloso,Barracas,2
+05/2020,Homicidio,Doloso,Caballito,1
+05/2020,Homicidio,Doloso,Constitución,3
+05/2020,Homicidio,Doloso,Parque Avellaneda,1
+05/2020,Homicidio,Doloso,Retiro,1
+05/2020,Homicidio,Doloso,Villa Soldati,1
+05/2020,Homicidio,Femicidio,Almagro,1
+05/2020,Homicidio,Siniestro Vial,Balvanera,1
+05/2020,Homicidio,Siniestro Vial,Belgrano,1
+05/2020,Homicidio,Siniestro Vial,Villa Crespo,1
+05/2020,Homicidio,Siniestro Vial,Villa Lugano,1
+05/2020,Hurto (sin violencia),,,6
+05/2020,Hurto (sin violencia),,Agronomía,3
+05/2020,Hurto (sin violencia),,Almagro,36
+05/2020,Hurto (sin violencia),,Balvanera,61
+05/2020,Hurto (sin violencia),,Barracas,32
+05/2020,Hurto (sin violencia),,Belgrano,29
+05/2020,Hurto (sin violencia),,Boca,16
+05/2020,Hurto (sin violencia),,Boedo,27
+05/2020,Hurto (sin violencia),,Caballito,53
+05/2020,Hurto (sin violencia),,Chacarita,15
+05/2020,Hurto (sin violencia),,Coghlan,5
+05/2020,Hurto (sin violencia),,Colegiales,11
+05/2020,Hurto (sin violencia),,Constitución,22
+05/2020,Hurto (sin violencia),,Flores,38
+05/2020,Hurto (sin violencia),,Floresta,7
+05/2020,Hurto (sin violencia),,Liniers,11
+05/2020,Hurto (sin violencia),,Mataderos,17
+05/2020,Hurto (sin violencia),,Monserrat,23
+05/2020,Hurto (sin violencia),,Monte Castro,5
+05/2020,Hurto (sin violencia),,Nueva Pompeya,23
+05/2020,Hurto (sin violencia),,Nuñez,10
+05/2020,Hurto (sin violencia),,Palermo,54
+05/2020,Hurto (sin violencia),,Parque Avellaneda,20
+05/2020,Hurto (sin violencia),,Parque Chacabuco,22
+05/2020,Hurto (sin violencia),,Parque Chas,3
+05/2020,Hurto (sin violencia),,Parque Patricios,35
+05/2020,Hurto (sin violencia),,Paternal,12
+05/2020,Hurto (sin violencia),,Recoleta,48
+05/2020,Hurto (sin violencia),,Retiro,17
+05/2020,Hurto (sin violencia),,Saavedra,12
+05/2020,Hurto (sin violencia),,San Cristóbal,28
+05/2020,Hurto (sin violencia),,San Nicolás,16
+05/2020,Hurto (sin violencia),,San Telmo,7
+05/2020,Hurto (sin violencia),,Vélez Sársfield,11
+05/2020,Hurto (sin violencia),,Versalles,6
+05/2020,Hurto (sin violencia),,Villa Crespo,22
+05/2020,Hurto (sin violencia),,Villa Del Parque,15
+05/2020,Hurto (sin violencia),,Villa Devoto,18
+05/2020,Hurto (sin violencia),,Villa Gral. Mitre,11
+05/2020,Hurto (sin violencia),,Villa Lugano,45
+05/2020,Hurto (sin violencia),,Villa Luro,11
+05/2020,Hurto (sin violencia),,Villa Ortuzar,7
+05/2020,Hurto (sin violencia),,Villa Pueyrredón,3
+05/2020,Hurto (sin violencia),,Villa Real,4
+05/2020,Hurto (sin violencia),,Villa Riachuelo,3
+05/2020,Hurto (sin violencia),,Villa Santa Rita,13
+05/2020,Hurto (sin violencia),,Villa Soldati,26
+05/2020,Hurto (sin violencia),,Villa Urquiza,14
+05/2020,Hurto (sin violencia),Hurto Automotor,Almagro,6
+05/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,3
+05/2020,Hurto (sin violencia),Hurto Automotor,Barracas,3
+05/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,4
+05/2020,Hurto (sin violencia),Hurto Automotor,Boca,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Boedo,2
+05/2020,Hurto (sin violencia),Hurto Automotor,Caballito,8
+05/2020,Hurto (sin violencia),Hurto Automotor,Chacarita,2
+05/2020,Hurto (sin violencia),Hurto Automotor,Coghlan,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Flores,9
+05/2020,Hurto (sin violencia),Hurto Automotor,Liniers,2
+05/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,6
+05/2020,Hurto (sin violencia),Hurto Automotor,Monserrat,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,2
+05/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,3
+05/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,2
+05/2020,Hurto (sin violencia),Hurto Automotor,Palermo,2
+05/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,3
+05/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,4
+05/2020,Hurto (sin violencia),Hurto Automotor,Parque Chas,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,4
+05/2020,Hurto (sin violencia),Hurto Automotor,Paternal,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,2
+05/2020,Hurto (sin violencia),Hurto Automotor,Retiro,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,1
+05/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,4
+05/2020,Hurto (sin violencia),Hurto Automotor,San Nicolás,1
+05/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,4
+05/2020,Hurto (sin violencia),Hurto Automotor,Versalles,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,4
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,2
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,9
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,4
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Riachuelo,1
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,2
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,4
+05/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,1
+05/2020,Lesiones,Siniestro Vial,,23
+05/2020,Lesiones,Siniestro Vial,Agronomía,2
+05/2020,Lesiones,Siniestro Vial,Almagro,12
+05/2020,Lesiones,Siniestro Vial,Balvanera,16
+05/2020,Lesiones,Siniestro Vial,Barracas,10
+05/2020,Lesiones,Siniestro Vial,Belgrano,16
+05/2020,Lesiones,Siniestro Vial,Boca,2
+05/2020,Lesiones,Siniestro Vial,Boedo,4
+05/2020,Lesiones,Siniestro Vial,Caballito,20
+05/2020,Lesiones,Siniestro Vial,Chacarita,8
+05/2020,Lesiones,Siniestro Vial,Coghlan,1
+05/2020,Lesiones,Siniestro Vial,Colegiales,1
+05/2020,Lesiones,Siniestro Vial,Constitución,9
+05/2020,Lesiones,Siniestro Vial,Flores,23
+05/2020,Lesiones,Siniestro Vial,Floresta,5
+05/2020,Lesiones,Siniestro Vial,Liniers,4
+05/2020,Lesiones,Siniestro Vial,Mataderos,7
+05/2020,Lesiones,Siniestro Vial,Monserrat,5
+05/2020,Lesiones,Siniestro Vial,Monte Castro,3
+05/2020,Lesiones,Siniestro Vial,Nueva Pompeya,10
+05/2020,Lesiones,Siniestro Vial,Nuñez,4
+05/2020,Lesiones,Siniestro Vial,Palermo,18
+05/2020,Lesiones,Siniestro Vial,Parque Avellaneda,4
+05/2020,Lesiones,Siniestro Vial,Parque Chacabuco,5
+05/2020,Lesiones,Siniestro Vial,Parque Chas,3
+05/2020,Lesiones,Siniestro Vial,Parque Patricios,2
+05/2020,Lesiones,Siniestro Vial,Paternal,3
+05/2020,Lesiones,Siniestro Vial,Puerto Madero,1
+05/2020,Lesiones,Siniestro Vial,Recoleta,15
+05/2020,Lesiones,Siniestro Vial,Retiro,13
+05/2020,Lesiones,Siniestro Vial,Saavedra,3
+05/2020,Lesiones,Siniestro Vial,San Cristóbal,10
+05/2020,Lesiones,Siniestro Vial,San Nicolás,4
+05/2020,Lesiones,Siniestro Vial,San Telmo,4
+05/2020,Lesiones,Siniestro Vial,Versalles,4
+05/2020,Lesiones,Siniestro Vial,Villa Crespo,13
+05/2020,Lesiones,Siniestro Vial,Villa Del Parque,4
+05/2020,Lesiones,Siniestro Vial,Villa Devoto,8
+05/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,5
+05/2020,Lesiones,Siniestro Vial,Villa Lugano,7
+05/2020,Lesiones,Siniestro Vial,Villa Luro,4
+05/2020,Lesiones,Siniestro Vial,Villa Ortuzar,1
+05/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,3
+05/2020,Lesiones,Siniestro Vial,Villa Real,3
+05/2020,Lesiones,Siniestro Vial,Villa Riachuelo,2
+05/2020,Lesiones,Siniestro Vial,Villa Santa Rita,3
+05/2020,Lesiones,Siniestro Vial,Villa Soldati,2
+05/2020,Lesiones,Siniestro Vial,Villa Urquiza,6
+05/2020,Robo (con violencia),,,4
+05/2020,Robo (con violencia),,Agronomía,2
+05/2020,Robo (con violencia),,Almagro,46
+05/2020,Robo (con violencia),,Balvanera,81
+05/2020,Robo (con violencia),,Barracas,120
+05/2020,Robo (con violencia),,Belgrano,46
+05/2020,Robo (con violencia),,Boca,36
+05/2020,Robo (con violencia),,Boedo,37
+05/2020,Robo (con violencia),,Caballito,55
+05/2020,Robo (con violencia),,Chacarita,22
+05/2020,Robo (con violencia),,Coghlan,2
+05/2020,Robo (con violencia),,Colegiales,13
+05/2020,Robo (con violencia),,Constitución,52
+05/2020,Robo (con violencia),,Flores,78
+05/2020,Robo (con violencia),,Floresta,18
+05/2020,Robo (con violencia),,Liniers,18
+05/2020,Robo (con violencia),,Mataderos,46
+05/2020,Robo (con violencia),,Monserrat,24
+05/2020,Robo (con violencia),,Monte Castro,7
+05/2020,Robo (con violencia),,Nueva Pompeya,64
+05/2020,Robo (con violencia),,Nuñez,19
+05/2020,Robo (con violencia),,Palermo,99
+05/2020,Robo (con violencia),,Parque Avellaneda,30
+05/2020,Robo (con violencia),,Parque Chacabuco,42
+05/2020,Robo (con violencia),,Parque Chas,1
+05/2020,Robo (con violencia),,Parque Patricios,52
+05/2020,Robo (con violencia),,Paternal,6
+05/2020,Robo (con violencia),,Puerto Madero,1
+05/2020,Robo (con violencia),,Recoleta,94
+05/2020,Robo (con violencia),,Retiro,41
+05/2020,Robo (con violencia),,Saavedra,16
+05/2020,Robo (con violencia),,San Cristóbal,30
+05/2020,Robo (con violencia),,San Nicolás,39
+05/2020,Robo (con violencia),,San Telmo,16
+05/2020,Robo (con violencia),,Vélez Sársfield,5
+05/2020,Robo (con violencia),,Versalles,2
+05/2020,Robo (con violencia),,Villa Crespo,48
+05/2020,Robo (con violencia),,Villa Del Parque,14
+05/2020,Robo (con violencia),,Villa Devoto,4
+05/2020,Robo (con violencia),,Villa Gral. Mitre,12
+05/2020,Robo (con violencia),,Villa Lugano,69
+05/2020,Robo (con violencia),,Villa Luro,17
+05/2020,Robo (con violencia),,Villa Ortuzar,3
+05/2020,Robo (con violencia),,Villa Pueyrredón,8
+05/2020,Robo (con violencia),,Villa Real,3
+05/2020,Robo (con violencia),,Villa Riachuelo,5
+05/2020,Robo (con violencia),,Villa Santa Rita,11
+05/2020,Robo (con violencia),,Villa Soldati,57
+05/2020,Robo (con violencia),,Villa Urquiza,19
+05/2020,Robo (con violencia),Con uso de moto,,1
+05/2020,Robo (con violencia),Con uso de moto,Almagro,8
+05/2020,Robo (con violencia),Con uso de moto,Balvanera,8
+05/2020,Robo (con violencia),Con uso de moto,Barracas,6
+05/2020,Robo (con violencia),Con uso de moto,Belgrano,5
+05/2020,Robo (con violencia),Con uso de moto,Boca,2
+05/2020,Robo (con violencia),Con uso de moto,Boedo,6
+05/2020,Robo (con violencia),Con uso de moto,Caballito,12
+05/2020,Robo (con violencia),Con uso de moto,Coghlan,1
+05/2020,Robo (con violencia),Con uso de moto,Colegiales,4
+05/2020,Robo (con violencia),Con uso de moto,Constitución,8
+05/2020,Robo (con violencia),Con uso de moto,Flores,6
+05/2020,Robo (con violencia),Con uso de moto,Liniers,4
+05/2020,Robo (con violencia),Con uso de moto,Mataderos,5
+05/2020,Robo (con violencia),Con uso de moto,Monserrat,1
+05/2020,Robo (con violencia),Con uso de moto,Monte Castro,1
+05/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,8
+05/2020,Robo (con violencia),Con uso de moto,Nuñez,4
+05/2020,Robo (con violencia),Con uso de moto,Palermo,9
+05/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,3
+05/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,7
+05/2020,Robo (con violencia),Con uso de moto,Parque Chas,1
+05/2020,Robo (con violencia),Con uso de moto,Parque Patricios,12
+05/2020,Robo (con violencia),Con uso de moto,Paternal,3
+05/2020,Robo (con violencia),Con uso de moto,Recoleta,3
+05/2020,Robo (con violencia),Con uso de moto,Retiro,1
+05/2020,Robo (con violencia),Con uso de moto,Saavedra,4
+05/2020,Robo (con violencia),Con uso de moto,San Cristóbal,8
+05/2020,Robo (con violencia),Con uso de moto,San Nicolás,3
+05/2020,Robo (con violencia),Con uso de moto,San Telmo,2
+05/2020,Robo (con violencia),Con uso de moto,Villa Crespo,4
+05/2020,Robo (con violencia),Con uso de moto,Villa Devoto,1
+05/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,3
+05/2020,Robo (con violencia),Con uso de moto,Villa Lugano,5
+05/2020,Robo (con violencia),Con uso de moto,Villa Luro,1
+05/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,5
+05/2020,Robo (con violencia),Con uso de moto,Villa Soldati,4
+05/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,4
+05/2020,Robo (con violencia),Robo Automotor,Barracas,2
+05/2020,Robo (con violencia),Robo Automotor,Flores,4
+05/2020,Robo (con violencia),Robo Automotor,Floresta,1
+05/2020,Robo (con violencia),Robo Automotor,Liniers,1
+05/2020,Robo (con violencia),Robo Automotor,Mataderos,1
+05/2020,Robo (con violencia),Robo Automotor,Villa Lugano,2
+05/2020,Robo (con violencia),Robo Automotor,Villa Luro,1
+05/2020,Robo (con violencia),Robo Automotor,Villa Riachuelo,1
+05/2020,Robo (con violencia),Robo Automotor,Villa Soldati,3
+06/2020,Homicidio,Doloso,Constitución,1
+06/2020,Homicidio,Doloso,Flores,1
+06/2020,Homicidio,Doloso,Palermo,1
+06/2020,Homicidio,Doloso,Paternal,1
+06/2020,Homicidio,Doloso,Villa Lugano,1
+06/2020,Homicidio,Femicidio,Villa Soldati,1
+06/2020,Homicidio,Siniestro Vial,Caballito,1
+06/2020,Homicidio,Siniestro Vial,Liniers,1
+06/2020,Homicidio,Siniestro Vial,Mataderos,1
+06/2020,Hurto (sin violencia),,,4
+06/2020,Hurto (sin violencia),,Agronomía,7
+06/2020,Hurto (sin violencia),,Almagro,58
+06/2020,Hurto (sin violencia),,Balvanera,107
+06/2020,Hurto (sin violencia),,Barracas,27
+06/2020,Hurto (sin violencia),,Belgrano,38
+06/2020,Hurto (sin violencia),,Boca,16
+06/2020,Hurto (sin violencia),,Boedo,19
+06/2020,Hurto (sin violencia),,Caballito,76
+06/2020,Hurto (sin violencia),,Chacarita,10
+06/2020,Hurto (sin violencia),,Coghlan,3
+06/2020,Hurto (sin violencia),,Colegiales,18
+06/2020,Hurto (sin violencia),,Constitución,23
+06/2020,Hurto (sin violencia),,Flores,48
+06/2020,Hurto (sin violencia),,Floresta,19
+06/2020,Hurto (sin violencia),,Liniers,21
+06/2020,Hurto (sin violencia),,Mataderos,36
+06/2020,Hurto (sin violencia),,Monserrat,25
+06/2020,Hurto (sin violencia),,Monte Castro,14
+06/2020,Hurto (sin violencia),,Nueva Pompeya,29
+06/2020,Hurto (sin violencia),,Nuñez,27
+06/2020,Hurto (sin violencia),,Palermo,85
+06/2020,Hurto (sin violencia),,Parque Avellaneda,12
+06/2020,Hurto (sin violencia),,Parque Chacabuco,15
+06/2020,Hurto (sin violencia),,Parque Chas,7
+06/2020,Hurto (sin violencia),,Parque Patricios,44
+06/2020,Hurto (sin violencia),,Paternal,7
+06/2020,Hurto (sin violencia),,Puerto Madero,1
+06/2020,Hurto (sin violencia),,Recoleta,62
+06/2020,Hurto (sin violencia),,Retiro,17
+06/2020,Hurto (sin violencia),,Saavedra,14
+06/2020,Hurto (sin violencia),,San Cristóbal,35
+06/2020,Hurto (sin violencia),,San Nicolás,23
+06/2020,Hurto (sin violencia),,San Telmo,4
+06/2020,Hurto (sin violencia),,Vélez Sársfield,7
+06/2020,Hurto (sin violencia),,Versalles,3
+06/2020,Hurto (sin violencia),,Villa Crespo,41
+06/2020,Hurto (sin violencia),,Villa Del Parque,25
+06/2020,Hurto (sin violencia),,Villa Devoto,25
+06/2020,Hurto (sin violencia),,Villa Gral. Mitre,15
+06/2020,Hurto (sin violencia),,Villa Lugano,30
+06/2020,Hurto (sin violencia),,Villa Luro,10
+06/2020,Hurto (sin violencia),,Villa Ortuzar,11
+06/2020,Hurto (sin violencia),,Villa Pueyrredón,14
+06/2020,Hurto (sin violencia),,Villa Real,4
+06/2020,Hurto (sin violencia),,Villa Riachuelo,7
+06/2020,Hurto (sin violencia),,Villa Santa Rita,11
+06/2020,Hurto (sin violencia),,Villa Soldati,21
+06/2020,Hurto (sin violencia),,Villa Urquiza,21
+06/2020,Hurto (sin violencia),Hurto Automotor,Agronomía,1
+06/2020,Hurto (sin violencia),Hurto Automotor,Almagro,8
+06/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,8
+06/2020,Hurto (sin violencia),Hurto Automotor,Barracas,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Boca,1
+06/2020,Hurto (sin violencia),Hurto Automotor,Boedo,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Caballito,18
+06/2020,Hurto (sin violencia),Hurto Automotor,Coghlan,3
+06/2020,Hurto (sin violencia),Hurto Automotor,Colegiales,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Flores,12
+06/2020,Hurto (sin violencia),Hurto Automotor,Floresta,1
+06/2020,Hurto (sin violencia),Hurto Automotor,Liniers,3
+06/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,8
+06/2020,Hurto (sin violencia),Hurto Automotor,Monserrat,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,1
+06/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,6
+06/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,1
+06/2020,Hurto (sin violencia),Hurto Automotor,Palermo,7
+06/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,3
+06/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,5
+06/2020,Hurto (sin violencia),Hurto Automotor,Parque Chas,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,4
+06/2020,Hurto (sin violencia),Hurto Automotor,Paternal,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,2
+06/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,3
+06/2020,Hurto (sin violencia),Hurto Automotor,San Nicolás,1
+06/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,7
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,1
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,1
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,3
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,6
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,1
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,2
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,5
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Riachuelo,1
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,1
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,3
+06/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,5
+06/2020,Lesiones,Siniestro Vial,,11
+06/2020,Lesiones,Siniestro Vial,Agronomía,5
+06/2020,Lesiones,Siniestro Vial,Almagro,12
+06/2020,Lesiones,Siniestro Vial,Balvanera,22
+06/2020,Lesiones,Siniestro Vial,Barracas,9
+06/2020,Lesiones,Siniestro Vial,Belgrano,5
+06/2020,Lesiones,Siniestro Vial,Boca,2
+06/2020,Lesiones,Siniestro Vial,Boedo,8
+06/2020,Lesiones,Siniestro Vial,Caballito,14
+06/2020,Lesiones,Siniestro Vial,Chacarita,3
+06/2020,Lesiones,Siniestro Vial,Coghlan,1
+06/2020,Lesiones,Siniestro Vial,Colegiales,5
+06/2020,Lesiones,Siniestro Vial,Constitución,14
+06/2020,Lesiones,Siniestro Vial,Flores,15
+06/2020,Lesiones,Siniestro Vial,Floresta,3
+06/2020,Lesiones,Siniestro Vial,Liniers,10
+06/2020,Lesiones,Siniestro Vial,Mataderos,11
+06/2020,Lesiones,Siniestro Vial,Monserrat,4
+06/2020,Lesiones,Siniestro Vial,Monte Castro,3
+06/2020,Lesiones,Siniestro Vial,Nueva Pompeya,13
+06/2020,Lesiones,Siniestro Vial,Nuñez,4
+06/2020,Lesiones,Siniestro Vial,Palermo,11
+06/2020,Lesiones,Siniestro Vial,Parque Avellaneda,3
+06/2020,Lesiones,Siniestro Vial,Parque Chacabuco,7
+06/2020,Lesiones,Siniestro Vial,Parque Chas,2
+06/2020,Lesiones,Siniestro Vial,Parque Patricios,7
+06/2020,Lesiones,Siniestro Vial,Paternal,3
+06/2020,Lesiones,Siniestro Vial,Recoleta,11
+06/2020,Lesiones,Siniestro Vial,Retiro,11
+06/2020,Lesiones,Siniestro Vial,Saavedra,5
+06/2020,Lesiones,Siniestro Vial,San Cristóbal,11
+06/2020,Lesiones,Siniestro Vial,San Nicolás,4
+06/2020,Lesiones,Siniestro Vial,San Telmo,5
+06/2020,Lesiones,Siniestro Vial,Vélez Sársfield,2
+06/2020,Lesiones,Siniestro Vial,Versalles,3
+06/2020,Lesiones,Siniestro Vial,Villa Crespo,12
+06/2020,Lesiones,Siniestro Vial,Villa Del Parque,9
+06/2020,Lesiones,Siniestro Vial,Villa Devoto,10
+06/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,6
+06/2020,Lesiones,Siniestro Vial,Villa Lugano,10
+06/2020,Lesiones,Siniestro Vial,Villa Luro,2
+06/2020,Lesiones,Siniestro Vial,Villa Ortuzar,3
+06/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,1
+06/2020,Lesiones,Siniestro Vial,Villa Real,2
+06/2020,Lesiones,Siniestro Vial,Villa Riachuelo,2
+06/2020,Lesiones,Siniestro Vial,Villa Santa Rita,7
+06/2020,Lesiones,Siniestro Vial,Villa Soldati,3
+06/2020,Lesiones,Siniestro Vial,Villa Urquiza,2
+06/2020,Robo (con violencia),,Agronomía,2
+06/2020,Robo (con violencia),,Almagro,70
+06/2020,Robo (con violencia),,Balvanera,113
+06/2020,Robo (con violencia),,Barracas,98
+06/2020,Robo (con violencia),,Belgrano,71
+06/2020,Robo (con violencia),,Boca,37
+06/2020,Robo (con violencia),,Boedo,32
+06/2020,Robo (con violencia),,Caballito,68
+06/2020,Robo (con violencia),,Chacarita,19
+06/2020,Robo (con violencia),,Coghlan,10
+06/2020,Robo (con violencia),,Colegiales,39
+06/2020,Robo (con violencia),,Constitución,49
+06/2020,Robo (con violencia),,Flores,88
+06/2020,Robo (con violencia),,Floresta,15
+06/2020,Robo (con violencia),,Liniers,22
+06/2020,Robo (con violencia),,Mataderos,35
+06/2020,Robo (con violencia),,Monserrat,21
+06/2020,Robo (con violencia),,Monte Castro,8
+06/2020,Robo (con violencia),,Nueva Pompeya,57
+06/2020,Robo (con violencia),,Nuñez,18
+06/2020,Robo (con violencia),,Palermo,152
+06/2020,Robo (con violencia),,Parque Avellaneda,35
+06/2020,Robo (con violencia),,Parque Chacabuco,51
+06/2020,Robo (con violencia),,Parque Chas,3
+06/2020,Robo (con violencia),,Parque Patricios,51
+06/2020,Robo (con violencia),,Paternal,4
+06/2020,Robo (con violencia),,Puerto Madero,3
+06/2020,Robo (con violencia),,Recoleta,99
+06/2020,Robo (con violencia),,Retiro,54
+06/2020,Robo (con violencia),,Saavedra,11
+06/2020,Robo (con violencia),,San Cristóbal,44
+06/2020,Robo (con violencia),,San Nicolás,46
+06/2020,Robo (con violencia),,San Telmo,9
+06/2020,Robo (con violencia),,Vélez Sársfield,13
+06/2020,Robo (con violencia),,Versalles,4
+06/2020,Robo (con violencia),,Villa Crespo,49
+06/2020,Robo (con violencia),,Villa Del Parque,13
+06/2020,Robo (con violencia),,Villa Devoto,16
+06/2020,Robo (con violencia),,Villa Gral. Mitre,8
+06/2020,Robo (con violencia),,Villa Lugano,80
+06/2020,Robo (con violencia),,Villa Luro,19
+06/2020,Robo (con violencia),,Villa Ortuzar,5
+06/2020,Robo (con violencia),,Villa Pueyrredón,6
+06/2020,Robo (con violencia),,Villa Real,1
+06/2020,Robo (con violencia),,Villa Riachuelo,10
+06/2020,Robo (con violencia),,Villa Santa Rita,15
+06/2020,Robo (con violencia),,Villa Soldati,47
+06/2020,Robo (con violencia),,Villa Urquiza,30
+06/2020,Robo (con violencia),Con uso de moto,Agronomía,1
+06/2020,Robo (con violencia),Con uso de moto,Almagro,7
+06/2020,Robo (con violencia),Con uso de moto,Balvanera,25
+06/2020,Robo (con violencia),Con uso de moto,Barracas,10
+06/2020,Robo (con violencia),Con uso de moto,Belgrano,16
+06/2020,Robo (con violencia),Con uso de moto,Boca,1
+06/2020,Robo (con violencia),Con uso de moto,Boedo,6
+06/2020,Robo (con violencia),Con uso de moto,Caballito,21
+06/2020,Robo (con violencia),Con uso de moto,Coghlan,2
+06/2020,Robo (con violencia),Con uso de moto,Colegiales,5
+06/2020,Robo (con violencia),Con uso de moto,Constitución,9
+06/2020,Robo (con violencia),Con uso de moto,Flores,15
+06/2020,Robo (con violencia),Con uso de moto,Floresta,1
+06/2020,Robo (con violencia),Con uso de moto,Liniers,2
+06/2020,Robo (con violencia),Con uso de moto,Mataderos,6
+06/2020,Robo (con violencia),Con uso de moto,Monserrat,11
+06/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,10
+06/2020,Robo (con violencia),Con uso de moto,Nuñez,2
+06/2020,Robo (con violencia),Con uso de moto,Palermo,6
+06/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,6
+06/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,13
+06/2020,Robo (con violencia),Con uso de moto,Parque Chas,2
+06/2020,Robo (con violencia),Con uso de moto,Parque Patricios,4
+06/2020,Robo (con violencia),Con uso de moto,Paternal,2
+06/2020,Robo (con violencia),Con uso de moto,Recoleta,9
+06/2020,Robo (con violencia),Con uso de moto,Retiro,2
+06/2020,Robo (con violencia),Con uso de moto,Saavedra,5
+06/2020,Robo (con violencia),Con uso de moto,San Cristóbal,7
+06/2020,Robo (con violencia),Con uso de moto,San Nicolás,6
+06/2020,Robo (con violencia),Con uso de moto,San Telmo,2
+06/2020,Robo (con violencia),Con uso de moto,Vélez Sársfield,1
+06/2020,Robo (con violencia),Con uso de moto,Villa Crespo,3
+06/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,4
+06/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,2
+06/2020,Robo (con violencia),Con uso de moto,Villa Lugano,2
+06/2020,Robo (con violencia),Con uso de moto,Villa Luro,2
+06/2020,Robo (con violencia),Con uso de moto,Villa Ortuzar,3
+06/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,3
+06/2020,Robo (con violencia),Con uso de moto,Villa Real,1
+06/2020,Robo (con violencia),Con uso de moto,Villa Riachuelo,1
+06/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,2
+06/2020,Robo (con violencia),Con uso de moto,Villa Soldati,3
+06/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,9
+06/2020,Robo (con violencia),Robo Automotor,Almagro,1
+06/2020,Robo (con violencia),Robo Automotor,Balvanera,1
+06/2020,Robo (con violencia),Robo Automotor,Barracas,2
+06/2020,Robo (con violencia),Robo Automotor,Boca,2
+06/2020,Robo (con violencia),Robo Automotor,Boedo,1
+06/2020,Robo (con violencia),Robo Automotor,Chacarita,1
+06/2020,Robo (con violencia),Robo Automotor,Flores,3
+06/2020,Robo (con violencia),Robo Automotor,Floresta,1
+06/2020,Robo (con violencia),Robo Automotor,Mataderos,3
+06/2020,Robo (con violencia),Robo Automotor,Nueva Pompeya,1
+06/2020,Robo (con violencia),Robo Automotor,Nuñez,1
+06/2020,Robo (con violencia),Robo Automotor,Parque Avellaneda,1
+06/2020,Robo (con violencia),Robo Automotor,San Cristóbal,1
+06/2020,Robo (con violencia),Robo Automotor,San Nicolás,1
+06/2020,Robo (con violencia),Robo Automotor,San Telmo,2
+06/2020,Robo (con violencia),Robo Automotor,Vélez Sársfield,1
+06/2020,Robo (con violencia),Robo Automotor,Villa Crespo,1
+06/2020,Robo (con violencia),Robo Automotor,Villa Lugano,4
+06/2020,Robo (con violencia),Robo Automotor,Villa Soldati,3
+07/2020,Homicidio,Doloso,Barracas,4
+07/2020,Homicidio,Doloso,Belgrano,1
+07/2020,Homicidio,Doloso,Flores,1
+07/2020,Homicidio,Doloso,Parque Chacabuco,1
+07/2020,Homicidio,Doloso,Recoleta,1
+07/2020,Homicidio,Doloso,Retiro,2
+07/2020,Homicidio,Femicidio,Belgrano,1
+07/2020,Homicidio,Femicidio,Constitución,1
+07/2020,Homicidio,Siniestro Vial,Nuñez,1
+07/2020,Homicidio,Siniestro Vial,Villa Crespo,1
+07/2020,Hurto (sin violencia),,Agronomía,2
+07/2020,Hurto (sin violencia),,Almagro,61
+07/2020,Hurto (sin violencia),,Balvanera,105
+07/2020,Hurto (sin violencia),,Barracas,33
+07/2020,Hurto (sin violencia),,Belgrano,39
+07/2020,Hurto (sin violencia),,Boca,18
+07/2020,Hurto (sin violencia),,Boedo,44
+07/2020,Hurto (sin violencia),,Caballito,60
+07/2020,Hurto (sin violencia),,Chacarita,15
+07/2020,Hurto (sin violencia),,Coghlan,2
+07/2020,Hurto (sin violencia),,Colegiales,16
+07/2020,Hurto (sin violencia),,Constitución,33
+07/2020,Hurto (sin violencia),,Flores,36
+07/2020,Hurto (sin violencia),,Floresta,14
+07/2020,Hurto (sin violencia),,Liniers,18
+07/2020,Hurto (sin violencia),,Mataderos,25
+07/2020,Hurto (sin violencia),,Monserrat,24
+07/2020,Hurto (sin violencia),,Monte Castro,19
+07/2020,Hurto (sin violencia),,Nueva Pompeya,29
+07/2020,Hurto (sin violencia),,Nuñez,20
+07/2020,Hurto (sin violencia),,Palermo,95
+07/2020,Hurto (sin violencia),,Parque Avellaneda,18
+07/2020,Hurto (sin violencia),,Parque Chacabuco,20
+07/2020,Hurto (sin violencia),,Parque Chas,3
+07/2020,Hurto (sin violencia),,Parque Patricios,31
+07/2020,Hurto (sin violencia),,Paternal,7
+07/2020,Hurto (sin violencia),,Recoleta,66
+07/2020,Hurto (sin violencia),,Retiro,19
+07/2020,Hurto (sin violencia),,Saavedra,23
+07/2020,Hurto (sin violencia),,San Cristóbal,42
+07/2020,Hurto (sin violencia),,San Nicolás,29
+07/2020,Hurto (sin violencia),,San Telmo,11
+07/2020,Hurto (sin violencia),,Vélez Sársfield,13
+07/2020,Hurto (sin violencia),,Versalles,3
+07/2020,Hurto (sin violencia),,Villa Crespo,36
+07/2020,Hurto (sin violencia),,Villa Del Parque,26
+07/2020,Hurto (sin violencia),,Villa Devoto,31
+07/2020,Hurto (sin violencia),,Villa Gral. Mitre,16
+07/2020,Hurto (sin violencia),,Villa Lugano,56
+07/2020,Hurto (sin violencia),,Villa Luro,14
+07/2020,Hurto (sin violencia),,Villa Ortuzar,6
+07/2020,Hurto (sin violencia),,Villa Pueyrredón,22
+07/2020,Hurto (sin violencia),,Villa Real,1
+07/2020,Hurto (sin violencia),,Villa Riachuelo,8
+07/2020,Hurto (sin violencia),,Villa Santa Rita,13
+07/2020,Hurto (sin violencia),,Villa Soldati,21
+07/2020,Hurto (sin violencia),,Villa Urquiza,27
+07/2020,Hurto (sin violencia),Hurto Automotor,Agronomía,3
+07/2020,Hurto (sin violencia),Hurto Automotor,Almagro,13
+07/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,8
+07/2020,Hurto (sin violencia),Hurto Automotor,Barracas,2
+07/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,4
+07/2020,Hurto (sin violencia),Hurto Automotor,Boca,1
+07/2020,Hurto (sin violencia),Hurto Automotor,Boedo,6
+07/2020,Hurto (sin violencia),Hurto Automotor,Caballito,7
+07/2020,Hurto (sin violencia),Hurto Automotor,Colegiales,4
+07/2020,Hurto (sin violencia),Hurto Automotor,Constitución,3
+07/2020,Hurto (sin violencia),Hurto Automotor,Flores,7
+07/2020,Hurto (sin violencia),Hurto Automotor,Floresta,2
+07/2020,Hurto (sin violencia),Hurto Automotor,Liniers,2
+07/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,4
+07/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,4
+07/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,4
+07/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,3
+07/2020,Hurto (sin violencia),Hurto Automotor,Palermo,11
+07/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,3
+07/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,3
+07/2020,Hurto (sin violencia),Hurto Automotor,Parque Chas,2
+07/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,5
+07/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,3
+07/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,2
+07/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,2
+07/2020,Hurto (sin violencia),Hurto Automotor,San Nicolás,2
+07/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,2
+07/2020,Hurto (sin violencia),Hurto Automotor,Versalles,1
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,9
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,4
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,7
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,3
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,13
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,1
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,4
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Real,1
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Riachuelo,1
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,2
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,4
+07/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,5
+07/2020,Lesiones,Siniestro Vial,,22
+07/2020,Lesiones,Siniestro Vial,Agronomía,4
+07/2020,Lesiones,Siniestro Vial,Almagro,3
+07/2020,Lesiones,Siniestro Vial,Balvanera,22
+07/2020,Lesiones,Siniestro Vial,Barracas,7
+07/2020,Lesiones,Siniestro Vial,Belgrano,10
+07/2020,Lesiones,Siniestro Vial,Boca,17
+07/2020,Lesiones,Siniestro Vial,Boedo,5
+07/2020,Lesiones,Siniestro Vial,Caballito,19
+07/2020,Lesiones,Siniestro Vial,Chacarita,11
+07/2020,Lesiones,Siniestro Vial,Coghlan,2
+07/2020,Lesiones,Siniestro Vial,Colegiales,1
+07/2020,Lesiones,Siniestro Vial,Constitución,11
+07/2020,Lesiones,Siniestro Vial,Flores,13
+07/2020,Lesiones,Siniestro Vial,Floresta,6
+07/2020,Lesiones,Siniestro Vial,Liniers,2
+07/2020,Lesiones,Siniestro Vial,Mataderos,16
+07/2020,Lesiones,Siniestro Vial,Monserrat,8
+07/2020,Lesiones,Siniestro Vial,Monte Castro,8
+07/2020,Lesiones,Siniestro Vial,Nueva Pompeya,17
+07/2020,Lesiones,Siniestro Vial,Nuñez,7
+07/2020,Lesiones,Siniestro Vial,Palermo,22
+07/2020,Lesiones,Siniestro Vial,Parque Avellaneda,9
+07/2020,Lesiones,Siniestro Vial,Parque Chacabuco,10
+07/2020,Lesiones,Siniestro Vial,Parque Chas,5
+07/2020,Lesiones,Siniestro Vial,Parque Patricios,4
+07/2020,Lesiones,Siniestro Vial,Paternal,4
+07/2020,Lesiones,Siniestro Vial,Recoleta,14
+07/2020,Lesiones,Siniestro Vial,Retiro,3
+07/2020,Lesiones,Siniestro Vial,Saavedra,12
+07/2020,Lesiones,Siniestro Vial,San Cristóbal,14
+07/2020,Lesiones,Siniestro Vial,San Nicolás,2
+07/2020,Lesiones,Siniestro Vial,San Telmo,3
+07/2020,Lesiones,Siniestro Vial,Vélez Sársfield,4
+07/2020,Lesiones,Siniestro Vial,Versalles,1
+07/2020,Lesiones,Siniestro Vial,Villa Crespo,12
+07/2020,Lesiones,Siniestro Vial,Villa Del Parque,3
+07/2020,Lesiones,Siniestro Vial,Villa Devoto,7
+07/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,5
+07/2020,Lesiones,Siniestro Vial,Villa Lugano,10
+07/2020,Lesiones,Siniestro Vial,Villa Luro,7
+07/2020,Lesiones,Siniestro Vial,Villa Ortuzar,5
+07/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,4
+07/2020,Lesiones,Siniestro Vial,Villa Riachuelo,3
+07/2020,Lesiones,Siniestro Vial,Villa Santa Rita,8
+07/2020,Lesiones,Siniestro Vial,Villa Soldati,4
+07/2020,Lesiones,Siniestro Vial,Villa Urquiza,13
+07/2020,Robo (con violencia),,,2
+07/2020,Robo (con violencia),,Almagro,74
+07/2020,Robo (con violencia),,Balvanera,127
+07/2020,Robo (con violencia),,Barracas,94
+07/2020,Robo (con violencia),,Belgrano,55
+07/2020,Robo (con violencia),,Boca,44
+07/2020,Robo (con violencia),,Boedo,31
+07/2020,Robo (con violencia),,Caballito,96
+07/2020,Robo (con violencia),,Chacarita,24
+07/2020,Robo (con violencia),,Coghlan,8
+07/2020,Robo (con violencia),,Colegiales,23
+07/2020,Robo (con violencia),,Constitución,64
+07/2020,Robo (con violencia),,Flores,115
+07/2020,Robo (con violencia),,Floresta,18
+07/2020,Robo (con violencia),,Liniers,29
+07/2020,Robo (con violencia),,Mataderos,59
+07/2020,Robo (con violencia),,Monserrat,29
+07/2020,Robo (con violencia),,Monte Castro,9
+07/2020,Robo (con violencia),,Nueva Pompeya,57
+07/2020,Robo (con violencia),,Nuñez,25
+07/2020,Robo (con violencia),,Palermo,156
+07/2020,Robo (con violencia),,Parque Avellaneda,20
+07/2020,Robo (con violencia),,Parque Chacabuco,45
+07/2020,Robo (con violencia),,Parque Chas,3
+07/2020,Robo (con violencia),,Parque Patricios,37
+07/2020,Robo (con violencia),,Paternal,4
+07/2020,Robo (con violencia),,Puerto Madero,2
+07/2020,Robo (con violencia),,Recoleta,116
+07/2020,Robo (con violencia),,Retiro,63
+07/2020,Robo (con violencia),,Saavedra,30
+07/2020,Robo (con violencia),,San Cristóbal,35
+07/2020,Robo (con violencia),,San Nicolás,50
+07/2020,Robo (con violencia),,San Telmo,10
+07/2020,Robo (con violencia),,Vélez Sársfield,10
+07/2020,Robo (con violencia),,Versalles,7
+07/2020,Robo (con violencia),,Villa Crespo,50
+07/2020,Robo (con violencia),,Villa Del Parque,16
+07/2020,Robo (con violencia),,Villa Devoto,10
+07/2020,Robo (con violencia),,Villa Gral. Mitre,19
+07/2020,Robo (con violencia),,Villa Lugano,108
+07/2020,Robo (con violencia),,Villa Luro,8
+07/2020,Robo (con violencia),,Villa Ortuzar,12
+07/2020,Robo (con violencia),,Villa Pueyrredón,14
+07/2020,Robo (con violencia),,Villa Real,4
+07/2020,Robo (con violencia),,Villa Riachuelo,8
+07/2020,Robo (con violencia),,Villa Santa Rita,6
+07/2020,Robo (con violencia),,Villa Soldati,64
+07/2020,Robo (con violencia),,Villa Urquiza,21
+07/2020,Robo (con violencia),Con uso de moto,Agronomía,1
+07/2020,Robo (con violencia),Con uso de moto,Almagro,10
+07/2020,Robo (con violencia),Con uso de moto,Balvanera,30
+07/2020,Robo (con violencia),Con uso de moto,Barracas,8
+07/2020,Robo (con violencia),Con uso de moto,Belgrano,9
+07/2020,Robo (con violencia),Con uso de moto,Boca,3
+07/2020,Robo (con violencia),Con uso de moto,Boedo,7
+07/2020,Robo (con violencia),Con uso de moto,Caballito,19
+07/2020,Robo (con violencia),Con uso de moto,Chacarita,1
+07/2020,Robo (con violencia),Con uso de moto,Coghlan,1
+07/2020,Robo (con violencia),Con uso de moto,Colegiales,4
+07/2020,Robo (con violencia),Con uso de moto,Constitución,6
+07/2020,Robo (con violencia),Con uso de moto,Flores,15
+07/2020,Robo (con violencia),Con uso de moto,Floresta,2
+07/2020,Robo (con violencia),Con uso de moto,Liniers,1
+07/2020,Robo (con violencia),Con uso de moto,Mataderos,7
+07/2020,Robo (con violencia),Con uso de moto,Monserrat,4
+07/2020,Robo (con violencia),Con uso de moto,Monte Castro,1
+07/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,5
+07/2020,Robo (con violencia),Con uso de moto,Nuñez,2
+07/2020,Robo (con violencia),Con uso de moto,Palermo,19
+07/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,3
+07/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,7
+07/2020,Robo (con violencia),Con uso de moto,Parque Chas,2
+07/2020,Robo (con violencia),Con uso de moto,Parque Patricios,7
+07/2020,Robo (con violencia),Con uso de moto,Paternal,1
+07/2020,Robo (con violencia),Con uso de moto,Recoleta,8
+07/2020,Robo (con violencia),Con uso de moto,Retiro,3
+07/2020,Robo (con violencia),Con uso de moto,Saavedra,2
+07/2020,Robo (con violencia),Con uso de moto,San Cristóbal,10
+07/2020,Robo (con violencia),Con uso de moto,San Nicolás,4
+07/2020,Robo (con violencia),Con uso de moto,Vélez Sársfield,5
+07/2020,Robo (con violencia),Con uso de moto,Versalles,2
+07/2020,Robo (con violencia),Con uso de moto,Villa Crespo,6
+07/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,2
+07/2020,Robo (con violencia),Con uso de moto,Villa Devoto,2
+07/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,6
+07/2020,Robo (con violencia),Con uso de moto,Villa Lugano,6
+07/2020,Robo (con violencia),Con uso de moto,Villa Luro,1
+07/2020,Robo (con violencia),Con uso de moto,Villa Ortuzar,2
+07/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,5
+07/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,2
+07/2020,Robo (con violencia),Con uso de moto,Villa Soldati,6
+07/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,7
+07/2020,Robo (con violencia),Robo Automotor,Agronomía,1
+07/2020,Robo (con violencia),Robo Automotor,Almagro,1
+07/2020,Robo (con violencia),Robo Automotor,Balvanera,1
+07/2020,Robo (con violencia),Robo Automotor,Barracas,12
+07/2020,Robo (con violencia),Robo Automotor,Belgrano,1
+07/2020,Robo (con violencia),Robo Automotor,Boca,12
+07/2020,Robo (con violencia),Robo Automotor,Boedo,6
+07/2020,Robo (con violencia),Robo Automotor,Caballito,2
+07/2020,Robo (con violencia),Robo Automotor,Flores,2
+07/2020,Robo (con violencia),Robo Automotor,Liniers,1
+07/2020,Robo (con violencia),Robo Automotor,Mataderos,1
+07/2020,Robo (con violencia),Robo Automotor,Nueva Pompeya,4
+07/2020,Robo (con violencia),Robo Automotor,Nuñez,1
+07/2020,Robo (con violencia),Robo Automotor,Parque Avellaneda,2
+07/2020,Robo (con violencia),Robo Automotor,Parque Chacabuco,9
+07/2020,Robo (con violencia),Robo Automotor,Parque Chas,1
+07/2020,Robo (con violencia),Robo Automotor,Parque Patricios,5
+07/2020,Robo (con violencia),Robo Automotor,Paternal,1
+07/2020,Robo (con violencia),Robo Automotor,Retiro,1
+07/2020,Robo (con violencia),Robo Automotor,San Cristóbal,5
+07/2020,Robo (con violencia),Robo Automotor,San Telmo,4
+07/2020,Robo (con violencia),Robo Automotor,Vélez Sársfield,1
+07/2020,Robo (con violencia),Robo Automotor,Villa Gral. Mitre,1
+07/2020,Robo (con violencia),Robo Automotor,Villa Lugano,8
+07/2020,Robo (con violencia),Robo Automotor,Villa Luro,1
+07/2020,Robo (con violencia),Robo Automotor,Villa Soldati,5
+08/2020,Homicidio,Doloso,Barracas,4
+08/2020,Homicidio,Doloso,Belgrano,1
+08/2020,Homicidio,Doloso,Boca,1
+08/2020,Homicidio,Doloso,Caballito,1
+08/2020,Homicidio,Doloso,Chacarita,3
+08/2020,Homicidio,Doloso,Constitución,1
+08/2020,Homicidio,Doloso,Flores,2
+08/2020,Homicidio,Doloso,Nueva Pompeya,1
+08/2020,Homicidio,Doloso,Recoleta,1
+08/2020,Homicidio,Doloso,San Cristóbal,1
+08/2020,Homicidio,Doloso,Villa Santa Rita,1
+08/2020,Homicidio,Femicidio Intrafamiliar,Villa Urquiza,1
+08/2020,Homicidio,Siniestro Vial,Balvanera,1
+08/2020,Homicidio,Siniestro Vial,Palermo,2
+08/2020,Homicidio,Siniestro Vial,Parque Chacabuco,1
+08/2020,Homicidio,Siniestro Vial,Villa Soldati,1
+08/2020,Hurto (sin violencia),,,2
+08/2020,Hurto (sin violencia),,Agronomía,5
+08/2020,Hurto (sin violencia),,Almagro,73
+08/2020,Hurto (sin violencia),,Balvanera,112
+08/2020,Hurto (sin violencia),,Barracas,36
+08/2020,Hurto (sin violencia),,Belgrano,57
+08/2020,Hurto (sin violencia),,Boca,16
+08/2020,Hurto (sin violencia),,Boedo,33
+08/2020,Hurto (sin violencia),,Caballito,74
+08/2020,Hurto (sin violencia),,Chacarita,20
+08/2020,Hurto (sin violencia),,Coghlan,3
+08/2020,Hurto (sin violencia),,Colegiales,25
+08/2020,Hurto (sin violencia),,Constitución,33
+08/2020,Hurto (sin violencia),,Flores,77
+08/2020,Hurto (sin violencia),,Floresta,31
+08/2020,Hurto (sin violencia),,Liniers,29
+08/2020,Hurto (sin violencia),,Mataderos,23
+08/2020,Hurto (sin violencia),,Monserrat,12
+08/2020,Hurto (sin violencia),,Monte Castro,17
+08/2020,Hurto (sin violencia),,Nueva Pompeya,33
+08/2020,Hurto (sin violencia),,Nuñez,25
+08/2020,Hurto (sin violencia),,Palermo,122
+08/2020,Hurto (sin violencia),,Parque Avellaneda,25
+08/2020,Hurto (sin violencia),,Parque Chacabuco,23
+08/2020,Hurto (sin violencia),,Parque Chas,10
+08/2020,Hurto (sin violencia),,Parque Patricios,28
+08/2020,Hurto (sin violencia),,Paternal,13
+08/2020,Hurto (sin violencia),,Puerto Madero,2
+08/2020,Hurto (sin violencia),,Recoleta,71
+08/2020,Hurto (sin violencia),,Retiro,23
+08/2020,Hurto (sin violencia),,Saavedra,22
+08/2020,Hurto (sin violencia),,San Cristóbal,35
+08/2020,Hurto (sin violencia),,San Nicolás,24
+08/2020,Hurto (sin violencia),,San Telmo,19
+08/2020,Hurto (sin violencia),,Vélez Sársfield,13
+08/2020,Hurto (sin violencia),,Versalles,9
+08/2020,Hurto (sin violencia),,Villa Crespo,58
+08/2020,Hurto (sin violencia),,Villa Del Parque,27
+08/2020,Hurto (sin violencia),,Villa Devoto,36
+08/2020,Hurto (sin violencia),,Villa Gral. Mitre,16
+08/2020,Hurto (sin violencia),,Villa Lugano,51
+08/2020,Hurto (sin violencia),,Villa Luro,22
+08/2020,Hurto (sin violencia),,Villa Ortuzar,13
+08/2020,Hurto (sin violencia),,Villa Pueyrredón,22
+08/2020,Hurto (sin violencia),,Villa Real,10
+08/2020,Hurto (sin violencia),,Villa Riachuelo,9
+08/2020,Hurto (sin violencia),,Villa Santa Rita,14
+08/2020,Hurto (sin violencia),,Villa Soldati,24
+08/2020,Hurto (sin violencia),,Villa Urquiza,47
+08/2020,Hurto (sin violencia),Hurto Automotor,Almagro,15
+08/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,8
+08/2020,Hurto (sin violencia),Hurto Automotor,Barracas,1
+08/2020,Hurto (sin violencia),Hurto Automotor,Boedo,9
+08/2020,Hurto (sin violencia),Hurto Automotor,Caballito,14
+08/2020,Hurto (sin violencia),Hurto Automotor,Chacarita,2
+08/2020,Hurto (sin violencia),Hurto Automotor,Coghlan,1
+08/2020,Hurto (sin violencia),Hurto Automotor,Colegiales,2
+08/2020,Hurto (sin violencia),Hurto Automotor,Constitución,3
+08/2020,Hurto (sin violencia),Hurto Automotor,Flores,8
+08/2020,Hurto (sin violencia),Hurto Automotor,Floresta,4
+08/2020,Hurto (sin violencia),Hurto Automotor,Liniers,7
+08/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,7
+08/2020,Hurto (sin violencia),Hurto Automotor,Monserrat,2
+08/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,2
+08/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,6
+08/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,2
+08/2020,Hurto (sin violencia),Hurto Automotor,Palermo,10
+08/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,1
+08/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,3
+08/2020,Hurto (sin violencia),Hurto Automotor,Parque Chas,3
+08/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,4
+08/2020,Hurto (sin violencia),Hurto Automotor,Paternal,1
+08/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,5
+08/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,2
+08/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,1
+08/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,1
+08/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,2
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,6
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,3
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,4
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,4
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,10
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,2
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,1
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,2
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Real,1
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Riachuelo,2
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,4
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,3
+08/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,2
+08/2020,Lesiones,Siniestro Vial,,28
+08/2020,Lesiones,Siniestro Vial,Agronomía,2
+08/2020,Lesiones,Siniestro Vial,Almagro,16
+08/2020,Lesiones,Siniestro Vial,Balvanera,23
+08/2020,Lesiones,Siniestro Vial,Barracas,11
+08/2020,Lesiones,Siniestro Vial,Belgrano,14
+08/2020,Lesiones,Siniestro Vial,Boca,14
+08/2020,Lesiones,Siniestro Vial,Boedo,18
+08/2020,Lesiones,Siniestro Vial,Caballito,29
+08/2020,Lesiones,Siniestro Vial,Chacarita,5
+08/2020,Lesiones,Siniestro Vial,Coghlan,1
+08/2020,Lesiones,Siniestro Vial,Colegiales,2
+08/2020,Lesiones,Siniestro Vial,Constitución,8
+08/2020,Lesiones,Siniestro Vial,Flores,24
+08/2020,Lesiones,Siniestro Vial,Floresta,7
+08/2020,Lesiones,Siniestro Vial,Liniers,8
+08/2020,Lesiones,Siniestro Vial,Mataderos,17
+08/2020,Lesiones,Siniestro Vial,Monserrat,12
+08/2020,Lesiones,Siniestro Vial,Monte Castro,4
+08/2020,Lesiones,Siniestro Vial,Nueva Pompeya,16
+08/2020,Lesiones,Siniestro Vial,Nuñez,5
+08/2020,Lesiones,Siniestro Vial,Palermo,34
+08/2020,Lesiones,Siniestro Vial,Parque Avellaneda,9
+08/2020,Lesiones,Siniestro Vial,Parque Chacabuco,17
+08/2020,Lesiones,Siniestro Vial,Parque Chas,4
+08/2020,Lesiones,Siniestro Vial,Parque Patricios,7
+08/2020,Lesiones,Siniestro Vial,Paternal,2
+08/2020,Lesiones,Siniestro Vial,Puerto Madero,1
+08/2020,Lesiones,Siniestro Vial,Recoleta,11
+08/2020,Lesiones,Siniestro Vial,Retiro,7
+08/2020,Lesiones,Siniestro Vial,Saavedra,8
+08/2020,Lesiones,Siniestro Vial,San Cristóbal,7
+08/2020,Lesiones,Siniestro Vial,San Nicolás,12
+08/2020,Lesiones,Siniestro Vial,San Telmo,2
+08/2020,Lesiones,Siniestro Vial,Versalles,4
+08/2020,Lesiones,Siniestro Vial,Villa Crespo,11
+08/2020,Lesiones,Siniestro Vial,Villa Del Parque,7
+08/2020,Lesiones,Siniestro Vial,Villa Devoto,7
+08/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,7
+08/2020,Lesiones,Siniestro Vial,Villa Lugano,10
+08/2020,Lesiones,Siniestro Vial,Villa Luro,5
+08/2020,Lesiones,Siniestro Vial,Villa Ortuzar,5
+08/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,8
+08/2020,Lesiones,Siniestro Vial,Villa Real,5
+08/2020,Lesiones,Siniestro Vial,Villa Riachuelo,4
+08/2020,Lesiones,Siniestro Vial,Villa Santa Rita,7
+08/2020,Lesiones,Siniestro Vial,Villa Soldati,5
+08/2020,Lesiones,Siniestro Vial,Villa Urquiza,2
+08/2020,Robo (con violencia),,,3
+08/2020,Robo (con violencia),,Agronomía,5
+08/2020,Robo (con violencia),,Almagro,119
+08/2020,Robo (con violencia),,Balvanera,123
+08/2020,Robo (con violencia),,Barracas,73
+08/2020,Robo (con violencia),,Belgrano,78
+08/2020,Robo (con violencia),,Boca,34
+08/2020,Robo (con violencia),,Boedo,26
+08/2020,Robo (con violencia),,Caballito,107
+08/2020,Robo (con violencia),,Chacarita,30
+08/2020,Robo (con violencia),,Coghlan,7
+08/2020,Robo (con violencia),,Colegiales,38
+08/2020,Robo (con violencia),,Constitución,65
+08/2020,Robo (con violencia),,Flores,105
+08/2020,Robo (con violencia),,Floresta,27
+08/2020,Robo (con violencia),,Liniers,37
+08/2020,Robo (con violencia),,Mataderos,46
+08/2020,Robo (con violencia),,Monserrat,27
+08/2020,Robo (con violencia),,Monte Castro,10
+08/2020,Robo (con violencia),,Nueva Pompeya,52
+08/2020,Robo (con violencia),,Nuñez,27
+08/2020,Robo (con violencia),,Palermo,165
+08/2020,Robo (con violencia),,Parque Avellaneda,44
+08/2020,Robo (con violencia),,Parque Chacabuco,48
+08/2020,Robo (con violencia),,Parque Chas,5
+08/2020,Robo (con violencia),,Parque Patricios,33
+08/2020,Robo (con violencia),,Paternal,17
+08/2020,Robo (con violencia),,Puerto Madero,5
+08/2020,Robo (con violencia),,Recoleta,113
+08/2020,Robo (con violencia),,Retiro,72
+08/2020,Robo (con violencia),,Saavedra,32
+08/2020,Robo (con violencia),,San Cristóbal,39
+08/2020,Robo (con violencia),,San Nicolás,53
+08/2020,Robo (con violencia),,San Telmo,22
+08/2020,Robo (con violencia),,Vélez Sársfield,20
+08/2020,Robo (con violencia),,Versalles,7
+08/2020,Robo (con violencia),,Villa Crespo,64
+08/2020,Robo (con violencia),,Villa Del Parque,27
+08/2020,Robo (con violencia),,Villa Devoto,19
+08/2020,Robo (con violencia),,Villa Gral. Mitre,20
+08/2020,Robo (con violencia),,Villa Lugano,84
+08/2020,Robo (con violencia),,Villa Luro,19
+08/2020,Robo (con violencia),,Villa Ortuzar,5
+08/2020,Robo (con violencia),,Villa Pueyrredón,11
+08/2020,Robo (con violencia),,Villa Real,4
+08/2020,Robo (con violencia),,Villa Riachuelo,9
+08/2020,Robo (con violencia),,Villa Santa Rita,12
+08/2020,Robo (con violencia),,Villa Soldati,51
+08/2020,Robo (con violencia),,Villa Urquiza,31
+08/2020,Robo (con violencia),Con uso de moto,,2
+08/2020,Robo (con violencia),Con uso de moto,Almagro,7
+08/2020,Robo (con violencia),Con uso de moto,Balvanera,21
+08/2020,Robo (con violencia),Con uso de moto,Barracas,16
+08/2020,Robo (con violencia),Con uso de moto,Belgrano,14
+08/2020,Robo (con violencia),Con uso de moto,Boca,8
+08/2020,Robo (con violencia),Con uso de moto,Boedo,11
+08/2020,Robo (con violencia),Con uso de moto,Caballito,25
+08/2020,Robo (con violencia),Con uso de moto,Chacarita,1
+08/2020,Robo (con violencia),Con uso de moto,Coghlan,1
+08/2020,Robo (con violencia),Con uso de moto,Colegiales,7
+08/2020,Robo (con violencia),Con uso de moto,Constitución,3
+08/2020,Robo (con violencia),Con uso de moto,Flores,22
+08/2020,Robo (con violencia),Con uso de moto,Floresta,8
+08/2020,Robo (con violencia),Con uso de moto,Liniers,6
+08/2020,Robo (con violencia),Con uso de moto,Mataderos,4
+08/2020,Robo (con violencia),Con uso de moto,Monserrat,12
+08/2020,Robo (con violencia),Con uso de moto,Monte Castro,4
+08/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,4
+08/2020,Robo (con violencia),Con uso de moto,Nuñez,5
+08/2020,Robo (con violencia),Con uso de moto,Palermo,28
+08/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,5
+08/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,12
+08/2020,Robo (con violencia),Con uso de moto,Parque Chas,1
+08/2020,Robo (con violencia),Con uso de moto,Parque Patricios,6
+08/2020,Robo (con violencia),Con uso de moto,Recoleta,5
+08/2020,Robo (con violencia),Con uso de moto,Retiro,7
+08/2020,Robo (con violencia),Con uso de moto,Saavedra,3
+08/2020,Robo (con violencia),Con uso de moto,San Cristóbal,6
+08/2020,Robo (con violencia),Con uso de moto,San Nicolás,2
+08/2020,Robo (con violencia),Con uso de moto,San Telmo,3
+08/2020,Robo (con violencia),Con uso de moto,Vélez Sársfield,2
+08/2020,Robo (con violencia),Con uso de moto,Versalles,1
+08/2020,Robo (con violencia),Con uso de moto,Villa Crespo,3
+08/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,3
+08/2020,Robo (con violencia),Con uso de moto,Villa Devoto,4
+08/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,4
+08/2020,Robo (con violencia),Con uso de moto,Villa Lugano,9
+08/2020,Robo (con violencia),Con uso de moto,Villa Luro,1
+08/2020,Robo (con violencia),Con uso de moto,Villa Ortuzar,5
+08/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,5
+08/2020,Robo (con violencia),Con uso de moto,Villa Real,1
+08/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,3
+08/2020,Robo (con violencia),Con uso de moto,Villa Soldati,4
+08/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,11
+08/2020,Robo (con violencia),Robo Automotor,Almagro,1
+08/2020,Robo (con violencia),Robo Automotor,Balvanera,1
+08/2020,Robo (con violencia),Robo Automotor,Barracas,5
+08/2020,Robo (con violencia),Robo Automotor,Boca,6
+08/2020,Robo (con violencia),Robo Automotor,Boedo,2
+08/2020,Robo (con violencia),Robo Automotor,Caballito,4
+08/2020,Robo (con violencia),Robo Automotor,Chacarita,1
+08/2020,Robo (con violencia),Robo Automotor,Flores,4
+08/2020,Robo (con violencia),Robo Automotor,Floresta,1
+08/2020,Robo (con violencia),Robo Automotor,Mataderos,2
+08/2020,Robo (con violencia),Robo Automotor,Nueva Pompeya,10
+08/2020,Robo (con violencia),Robo Automotor,Nuñez,1
+08/2020,Robo (con violencia),Robo Automotor,Palermo,2
+08/2020,Robo (con violencia),Robo Automotor,Parque Avellaneda,1
+08/2020,Robo (con violencia),Robo Automotor,Parque Chacabuco,5
+08/2020,Robo (con violencia),Robo Automotor,Parque Patricios,2
+08/2020,Robo (con violencia),Robo Automotor,Recoleta,1
+08/2020,Robo (con violencia),Robo Automotor,Saavedra,2
+08/2020,Robo (con violencia),Robo Automotor,San Cristóbal,1
+08/2020,Robo (con violencia),Robo Automotor,San Telmo,2
+08/2020,Robo (con violencia),Robo Automotor,Vélez Sársfield,2
+08/2020,Robo (con violencia),Robo Automotor,Villa Crespo,2
+08/2020,Robo (con violencia),Robo Automotor,Villa Gral. Mitre,1
+08/2020,Robo (con violencia),Robo Automotor,Villa Lugano,3
+08/2020,Robo (con violencia),Robo Automotor,Villa Luro,3
+08/2020,Robo (con violencia),Robo Automotor,Villa Ortuzar,1
+08/2020,Robo (con violencia),Robo Automotor,Villa Soldati,9
+08/2020,Robo (con violencia),Robo Automotor,Villa Urquiza,1
+09/2020,Homicidio,Doloso,Balvanera,1
+09/2020,Homicidio,Doloso,Barracas,1
+09/2020,Homicidio,Doloso,Belgrano,1
+09/2020,Homicidio,Doloso,Boca,1
+09/2020,Homicidio,Doloso,Chacarita,1
+09/2020,Homicidio,Doloso,Constitución,1
+09/2020,Homicidio,Doloso,Mataderos,1
+09/2020,Homicidio,Doloso,Palermo,1
+09/2020,Homicidio,Doloso,San Nicolás,1
+09/2020,Homicidio,Doloso,Villa Pueyrredón,1
+09/2020,Homicidio,Siniestro Vial,Mataderos,1
+09/2020,Homicidio,Siniestro Vial,Parque Chacabuco,1
+09/2020,Homicidio,Siniestro Vial,Retiro,2
+09/2020,Homicidio,Siniestro Vial,Villa Lugano,1
+09/2020,Homicidio,Travesticidio/Transfemicidio,Barracas,1
+09/2020,Hurto (sin violencia),,Agronomía,3
+09/2020,Hurto (sin violencia),,Almagro,70
+09/2020,Hurto (sin violencia),,Balvanera,108
+09/2020,Hurto (sin violencia),,Barracas,60
+09/2020,Hurto (sin violencia),,Belgrano,60
+09/2020,Hurto (sin violencia),,Boca,14
+09/2020,Hurto (sin violencia),,Boedo,34
+09/2020,Hurto (sin violencia),,Caballito,89
+09/2020,Hurto (sin violencia),,Chacarita,33
+09/2020,Hurto (sin violencia),,Coghlan,6
+09/2020,Hurto (sin violencia),,Colegiales,25
+09/2020,Hurto (sin violencia),,Constitución,32
+09/2020,Hurto (sin violencia),,Flores,85
+09/2020,Hurto (sin violencia),,Floresta,39
+09/2020,Hurto (sin violencia),,Liniers,30
+09/2020,Hurto (sin violencia),,Mataderos,50
+09/2020,Hurto (sin violencia),,Monserrat,34
+09/2020,Hurto (sin violencia),,Monte Castro,11
+09/2020,Hurto (sin violencia),,Nueva Pompeya,29
+09/2020,Hurto (sin violencia),,Nuñez,25
+09/2020,Hurto (sin violencia),,Palermo,152
+09/2020,Hurto (sin violencia),,Parque Avellaneda,23
+09/2020,Hurto (sin violencia),,Parque Chacabuco,26
+09/2020,Hurto (sin violencia),,Parque Chas,6
+09/2020,Hurto (sin violencia),,Parque Patricios,31
+09/2020,Hurto (sin violencia),,Paternal,11
+09/2020,Hurto (sin violencia),,Puerto Madero,2
+09/2020,Hurto (sin violencia),,Recoleta,82
+09/2020,Hurto (sin violencia),,Retiro,23
+09/2020,Hurto (sin violencia),,Saavedra,38
+09/2020,Hurto (sin violencia),,San Cristóbal,38
+09/2020,Hurto (sin violencia),,San Nicolás,47
+09/2020,Hurto (sin violencia),,San Telmo,14
+09/2020,Hurto (sin violencia),,Vélez Sársfield,12
+09/2020,Hurto (sin violencia),,Versalles,7
+09/2020,Hurto (sin violencia),,Villa Crespo,52
+09/2020,Hurto (sin violencia),,Villa Del Parque,23
+09/2020,Hurto (sin violencia),,Villa Devoto,27
+09/2020,Hurto (sin violencia),,Villa Gral. Mitre,14
+09/2020,Hurto (sin violencia),,Villa Lugano,56
+09/2020,Hurto (sin violencia),,Villa Luro,20
+09/2020,Hurto (sin violencia),,Villa Ortuzar,9
+09/2020,Hurto (sin violencia),,Villa Pueyrredón,28
+09/2020,Hurto (sin violencia),,Villa Real,8
+09/2020,Hurto (sin violencia),,Villa Riachuelo,10
+09/2020,Hurto (sin violencia),,Villa Santa Rita,16
+09/2020,Hurto (sin violencia),,Villa Soldati,25
+09/2020,Hurto (sin violencia),,Villa Urquiza,46
+09/2020,Hurto (sin violencia),Hurto Automotor,Almagro,10
+09/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,7
+09/2020,Hurto (sin violencia),Hurto Automotor,Barracas,5
+09/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,2
+09/2020,Hurto (sin violencia),Hurto Automotor,Boca,2
+09/2020,Hurto (sin violencia),Hurto Automotor,Boedo,8
+09/2020,Hurto (sin violencia),Hurto Automotor,Caballito,20
+09/2020,Hurto (sin violencia),Hurto Automotor,Chacarita,2
+09/2020,Hurto (sin violencia),Hurto Automotor,Coghlan,3
+09/2020,Hurto (sin violencia),Hurto Automotor,Colegiales,1
+09/2020,Hurto (sin violencia),Hurto Automotor,Constitución,2
+09/2020,Hurto (sin violencia),Hurto Automotor,Flores,13
+09/2020,Hurto (sin violencia),Hurto Automotor,Floresta,1
+09/2020,Hurto (sin violencia),Hurto Automotor,Liniers,9
+09/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,13
+09/2020,Hurto (sin violencia),Hurto Automotor,Monserrat,2
+09/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,2
+09/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,3
+09/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,1
+09/2020,Hurto (sin violencia),Hurto Automotor,Palermo,4
+09/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,6
+09/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,8
+09/2020,Hurto (sin violencia),Hurto Automotor,Parque Chas,3
+09/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,4
+09/2020,Hurto (sin violencia),Hurto Automotor,Paternal,2
+09/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,7
+09/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,2
+09/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,8
+09/2020,Hurto (sin violencia),Hurto Automotor,San Nicolás,3
+09/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,2
+09/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,7
+09/2020,Hurto (sin violencia),Hurto Automotor,Versalles,1
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,12
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,1
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,6
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,4
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,18
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,1
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,2
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,6
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Real,1
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Riachuelo,6
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,4
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,4
+09/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,11
+09/2020,Lesiones,Siniestro Vial,,28
+09/2020,Lesiones,Siniestro Vial,Agronomía,5
+09/2020,Lesiones,Siniestro Vial,Almagro,26
+09/2020,Lesiones,Siniestro Vial,Balvanera,24
+09/2020,Lesiones,Siniestro Vial,Barracas,15
+09/2020,Lesiones,Siniestro Vial,Belgrano,7
+09/2020,Lesiones,Siniestro Vial,Boca,15
+09/2020,Lesiones,Siniestro Vial,Boedo,11
+09/2020,Lesiones,Siniestro Vial,Caballito,18
+09/2020,Lesiones,Siniestro Vial,Chacarita,11
+09/2020,Lesiones,Siniestro Vial,Coghlan,1
+09/2020,Lesiones,Siniestro Vial,Colegiales,3
+09/2020,Lesiones,Siniestro Vial,Constitución,12
+09/2020,Lesiones,Siniestro Vial,Flores,25
+09/2020,Lesiones,Siniestro Vial,Floresta,9
+09/2020,Lesiones,Siniestro Vial,Liniers,10
+09/2020,Lesiones,Siniestro Vial,Mataderos,18
+09/2020,Lesiones,Siniestro Vial,Monserrat,13
+09/2020,Lesiones,Siniestro Vial,Monte Castro,3
+09/2020,Lesiones,Siniestro Vial,Nueva Pompeya,14
+09/2020,Lesiones,Siniestro Vial,Nuñez,3
+09/2020,Lesiones,Siniestro Vial,Palermo,26
+09/2020,Lesiones,Siniestro Vial,Parque Avellaneda,11
+09/2020,Lesiones,Siniestro Vial,Parque Chacabuco,13
+09/2020,Lesiones,Siniestro Vial,Parque Chas,2
+09/2020,Lesiones,Siniestro Vial,Parque Patricios,6
+09/2020,Lesiones,Siniestro Vial,Paternal,4
+09/2020,Lesiones,Siniestro Vial,Puerto Madero,1
+09/2020,Lesiones,Siniestro Vial,Recoleta,16
+09/2020,Lesiones,Siniestro Vial,Retiro,8
+09/2020,Lesiones,Siniestro Vial,Saavedra,8
+09/2020,Lesiones,Siniestro Vial,San Cristóbal,14
+09/2020,Lesiones,Siniestro Vial,San Nicolás,8
+09/2020,Lesiones,Siniestro Vial,San Telmo,1
+09/2020,Lesiones,Siniestro Vial,Vélez Sársfield,3
+09/2020,Lesiones,Siniestro Vial,Versalles,5
+09/2020,Lesiones,Siniestro Vial,Villa Crespo,20
+09/2020,Lesiones,Siniestro Vial,Villa Del Parque,9
+09/2020,Lesiones,Siniestro Vial,Villa Devoto,10
+09/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,6
+09/2020,Lesiones,Siniestro Vial,Villa Lugano,14
+09/2020,Lesiones,Siniestro Vial,Villa Luro,7
+09/2020,Lesiones,Siniestro Vial,Villa Ortuzar,5
+09/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,9
+09/2020,Lesiones,Siniestro Vial,Villa Real,4
+09/2020,Lesiones,Siniestro Vial,Villa Riachuelo,3
+09/2020,Lesiones,Siniestro Vial,Villa Santa Rita,12
+09/2020,Lesiones,Siniestro Vial,Villa Soldati,3
+09/2020,Lesiones,Siniestro Vial,Villa Urquiza,13
+09/2020,Robo (con violencia),,,1
+09/2020,Robo (con violencia),,Agronomía,1
+09/2020,Robo (con violencia),,Almagro,114
+09/2020,Robo (con violencia),,Balvanera,122
+09/2020,Robo (con violencia),,Barracas,98
+09/2020,Robo (con violencia),,Belgrano,73
+09/2020,Robo (con violencia),,Boca,36
+09/2020,Robo (con violencia),,Boedo,31
+09/2020,Robo (con violencia),,Caballito,98
+09/2020,Robo (con violencia),,Chacarita,34
+09/2020,Robo (con violencia),,Coghlan,11
+09/2020,Robo (con violencia),,Colegiales,35
+09/2020,Robo (con violencia),,Constitución,67
+09/2020,Robo (con violencia),,Flores,120
+09/2020,Robo (con violencia),,Floresta,26
+09/2020,Robo (con violencia),,Liniers,33
+09/2020,Robo (con violencia),,Mataderos,52
+09/2020,Robo (con violencia),,Monserrat,27
+09/2020,Robo (con violencia),,Monte Castro,10
+09/2020,Robo (con violencia),,Nueva Pompeya,41
+09/2020,Robo (con violencia),,Nuñez,35
+09/2020,Robo (con violencia),,Palermo,204
+09/2020,Robo (con violencia),,Parque Avellaneda,43
+09/2020,Robo (con violencia),,Parque Chacabuco,43
+09/2020,Robo (con violencia),,Parque Chas,6
+09/2020,Robo (con violencia),,Parque Patricios,41
+09/2020,Robo (con violencia),,Paternal,9
+09/2020,Robo (con violencia),,Puerto Madero,3
+09/2020,Robo (con violencia),,Recoleta,114
+09/2020,Robo (con violencia),,Retiro,89
+09/2020,Robo (con violencia),,Saavedra,30
+09/2020,Robo (con violencia),,San Cristóbal,36
+09/2020,Robo (con violencia),,San Nicolás,48
+09/2020,Robo (con violencia),,San Telmo,21
+09/2020,Robo (con violencia),,Vélez Sársfield,23
+09/2020,Robo (con violencia),,Versalles,7
+09/2020,Robo (con violencia),,Villa Crespo,55
+09/2020,Robo (con violencia),,Villa Del Parque,15
+09/2020,Robo (con violencia),,Villa Devoto,22
+09/2020,Robo (con violencia),,Villa Gral. Mitre,20
+09/2020,Robo (con violencia),,Villa Lugano,106
+09/2020,Robo (con violencia),,Villa Luro,14
+09/2020,Robo (con violencia),,Villa Ortuzar,8
+09/2020,Robo (con violencia),,Villa Pueyrredón,12
+09/2020,Robo (con violencia),,Villa Real,1
+09/2020,Robo (con violencia),,Villa Riachuelo,10
+09/2020,Robo (con violencia),,Villa Santa Rita,17
+09/2020,Robo (con violencia),,Villa Soldati,81
+09/2020,Robo (con violencia),,Villa Urquiza,32
+09/2020,Robo (con violencia),Con uso de moto,Agronomía,1
+09/2020,Robo (con violencia),Con uso de moto,Almagro,8
+09/2020,Robo (con violencia),Con uso de moto,Balvanera,22
+09/2020,Robo (con violencia),Con uso de moto,Barracas,12
+09/2020,Robo (con violencia),Con uso de moto,Belgrano,18
+09/2020,Robo (con violencia),Con uso de moto,Boedo,7
+09/2020,Robo (con violencia),Con uso de moto,Caballito,21
+09/2020,Robo (con violencia),Con uso de moto,Chacarita,1
+09/2020,Robo (con violencia),Con uso de moto,Coghlan,2
+09/2020,Robo (con violencia),Con uso de moto,Colegiales,10
+09/2020,Robo (con violencia),Con uso de moto,Constitución,12
+09/2020,Robo (con violencia),Con uso de moto,Flores,17
+09/2020,Robo (con violencia),Con uso de moto,Floresta,3
+09/2020,Robo (con violencia),Con uso de moto,Liniers,4
+09/2020,Robo (con violencia),Con uso de moto,Mataderos,10
+09/2020,Robo (con violencia),Con uso de moto,Monserrat,7
+09/2020,Robo (con violencia),Con uso de moto,Monte Castro,4
+09/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,13
+09/2020,Robo (con violencia),Con uso de moto,Nuñez,5
+09/2020,Robo (con violencia),Con uso de moto,Palermo,20
+09/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,5
+09/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,9
+09/2020,Robo (con violencia),Con uso de moto,Parque Chas,1
+09/2020,Robo (con violencia),Con uso de moto,Parque Patricios,7
+09/2020,Robo (con violencia),Con uso de moto,Paternal,2
+09/2020,Robo (con violencia),Con uso de moto,Recoleta,3
+09/2020,Robo (con violencia),Con uso de moto,Retiro,3
+09/2020,Robo (con violencia),Con uso de moto,Saavedra,1
+09/2020,Robo (con violencia),Con uso de moto,San Cristóbal,19
+09/2020,Robo (con violencia),Con uso de moto,San Nicolás,3
+09/2020,Robo (con violencia),Con uso de moto,San Telmo,1
+09/2020,Robo (con violencia),Con uso de moto,Vélez Sársfield,3
+09/2020,Robo (con violencia),Con uso de moto,Versalles,1
+09/2020,Robo (con violencia),Con uso de moto,Villa Crespo,5
+09/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,3
+09/2020,Robo (con violencia),Con uso de moto,Villa Devoto,1
+09/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,7
+09/2020,Robo (con violencia),Con uso de moto,Villa Lugano,12
+09/2020,Robo (con violencia),Con uso de moto,Villa Ortuzar,1
+09/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,2
+09/2020,Robo (con violencia),Con uso de moto,Villa Riachuelo,3
+09/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,2
+09/2020,Robo (con violencia),Con uso de moto,Villa Soldati,6
+09/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,9
+09/2020,Robo (con violencia),Robo Automotor,Balvanera,1
+09/2020,Robo (con violencia),Robo Automotor,Barracas,9
+09/2020,Robo (con violencia),Robo Automotor,Flores,4
+09/2020,Robo (con violencia),Robo Automotor,Liniers,1
+09/2020,Robo (con violencia),Robo Automotor,Mataderos,2
+09/2020,Robo (con violencia),Robo Automotor,Monte Castro,3
+09/2020,Robo (con violencia),Robo Automotor,Nueva Pompeya,1
+09/2020,Robo (con violencia),Robo Automotor,Nuñez,1
+09/2020,Robo (con violencia),Robo Automotor,Parque Avellaneda,2
+09/2020,Robo (con violencia),Robo Automotor,Parque Chacabuco,3
+09/2020,Robo (con violencia),Robo Automotor,Parque Chas,1
+09/2020,Robo (con violencia),Robo Automotor,Paternal,1
+09/2020,Robo (con violencia),Robo Automotor,San Cristóbal,2
+09/2020,Robo (con violencia),Robo Automotor,San Telmo,2
+09/2020,Robo (con violencia),Robo Automotor,Villa Devoto,1
+09/2020,Robo (con violencia),Robo Automotor,Villa Gral. Mitre,1
+09/2020,Robo (con violencia),Robo Automotor,Villa Lugano,10
+09/2020,Robo (con violencia),Robo Automotor,Villa Pueyrredón,1
+09/2020,Robo (con violencia),Robo Automotor,Villa Riachuelo,1
+09/2020,Robo (con violencia),Robo Automotor,Villa Soldati,3
+10/2020,Homicidio,Doloso,Barracas,1
+10/2020,Homicidio,Doloso,Constitución,2
+10/2020,Homicidio,Doloso,Flores,1
+10/2020,Homicidio,Doloso,Nuñez,1
+10/2020,Homicidio,Doloso,Retiro,1
+10/2020,Homicidio,Doloso,Villa Lugano,1
+10/2020,Homicidio,Siniestro Vial,Caballito,1
+10/2020,Homicidio,Siniestro Vial,Chacarita,1
+10/2020,Homicidio,Siniestro Vial,Retiro,1
+10/2020,Homicidio,Siniestro Vial,Villa Del Parque,1
+10/2020,Homicidio,Siniestro Vial,Villa Riachuelo,1
+10/2020,Homicidio,Siniestro Vial,Villa Soldati,1
+10/2020,Hurto (sin violencia),,,6
+10/2020,Hurto (sin violencia),,Agronomía,5
+10/2020,Hurto (sin violencia),,Almagro,84
+10/2020,Hurto (sin violencia),,Balvanera,129
+10/2020,Hurto (sin violencia),,Barracas,56
+10/2020,Hurto (sin violencia),,Belgrano,78
+10/2020,Hurto (sin violencia),,Boca,24
+10/2020,Hurto (sin violencia),,Boedo,31
+10/2020,Hurto (sin violencia),,Caballito,84
+10/2020,Hurto (sin violencia),,Chacarita,22
+10/2020,Hurto (sin violencia),,Coghlan,7
+10/2020,Hurto (sin violencia),,Colegiales,23
+10/2020,Hurto (sin violencia),,Constitución,39
+10/2020,Hurto (sin violencia),,Flores,108
+10/2020,Hurto (sin violencia),,Floresta,42
+10/2020,Hurto (sin violencia),,Liniers,22
+10/2020,Hurto (sin violencia),,Mataderos,58
+10/2020,Hurto (sin violencia),,Monserrat,35
+10/2020,Hurto (sin violencia),,Monte Castro,28
+10/2020,Hurto (sin violencia),,Nueva Pompeya,35
+10/2020,Hurto (sin violencia),,Nuñez,28
+10/2020,Hurto (sin violencia),,Palermo,164
+10/2020,Hurto (sin violencia),,Parque Avellaneda,26
+10/2020,Hurto (sin violencia),,Parque Chacabuco,37
+10/2020,Hurto (sin violencia),,Parque Chas,8
+10/2020,Hurto (sin violencia),,Parque Patricios,39
+10/2020,Hurto (sin violencia),,Paternal,12
+10/2020,Hurto (sin violencia),,Recoleta,95
+10/2020,Hurto (sin violencia),,Retiro,33
+10/2020,Hurto (sin violencia),,Saavedra,35
+10/2020,Hurto (sin violencia),,San Cristóbal,35
+10/2020,Hurto (sin violencia),,San Nicolás,44
+10/2020,Hurto (sin violencia),,San Telmo,15
+10/2020,Hurto (sin violencia),,Vélez Sársfield,29
+10/2020,Hurto (sin violencia),,Versalles,6
+10/2020,Hurto (sin violencia),,Villa Crespo,57
+10/2020,Hurto (sin violencia),,Villa Del Parque,25
+10/2020,Hurto (sin violencia),,Villa Devoto,50
+10/2020,Hurto (sin violencia),,Villa Gral. Mitre,24
+10/2020,Hurto (sin violencia),,Villa Lugano,60
+10/2020,Hurto (sin violencia),,Villa Luro,14
+10/2020,Hurto (sin violencia),,Villa Ortuzar,7
+10/2020,Hurto (sin violencia),,Villa Pueyrredón,26
+10/2020,Hurto (sin violencia),,Villa Real,11
+10/2020,Hurto (sin violencia),,Villa Riachuelo,12
+10/2020,Hurto (sin violencia),,Villa Santa Rita,14
+10/2020,Hurto (sin violencia),,Villa Soldati,41
+10/2020,Hurto (sin violencia),,Villa Urquiza,42
+10/2020,Hurto (sin violencia),Hurto Automotor,Almagro,15
+10/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,10
+10/2020,Hurto (sin violencia),Hurto Automotor,Barracas,4
+10/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,6
+10/2020,Hurto (sin violencia),Hurto Automotor,Boca,4
+10/2020,Hurto (sin violencia),Hurto Automotor,Boedo,7
+10/2020,Hurto (sin violencia),Hurto Automotor,Caballito,14
+10/2020,Hurto (sin violencia),Hurto Automotor,Chacarita,2
+10/2020,Hurto (sin violencia),Hurto Automotor,Coghlan,1
+10/2020,Hurto (sin violencia),Hurto Automotor,Constitución,3
+10/2020,Hurto (sin violencia),Hurto Automotor,Flores,17
+10/2020,Hurto (sin violencia),Hurto Automotor,Floresta,13
+10/2020,Hurto (sin violencia),Hurto Automotor,Liniers,6
+10/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,19
+10/2020,Hurto (sin violencia),Hurto Automotor,Monserrat,3
+10/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,2
+10/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,3
+10/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,3
+10/2020,Hurto (sin violencia),Hurto Automotor,Palermo,17
+10/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,5
+10/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,4
+10/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,2
+10/2020,Hurto (sin violencia),Hurto Automotor,Paternal,1
+10/2020,Hurto (sin violencia),Hurto Automotor,Puerto Madero,1
+10/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,4
+10/2020,Hurto (sin violencia),Hurto Automotor,Retiro,1
+10/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,3
+10/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,9
+10/2020,Hurto (sin violencia),Hurto Automotor,San Nicolás,2
+10/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,3
+10/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,5
+10/2020,Hurto (sin violencia),Hurto Automotor,Versalles,3
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,11
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,3
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,6
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,4
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,20
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,7
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,1
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,5
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Riachuelo,7
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,2
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,7
+10/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,6
+10/2020,Lesiones,Siniestro Vial,,24
+10/2020,Lesiones,Siniestro Vial,Agronomía,2
+10/2020,Lesiones,Siniestro Vial,Almagro,14
+10/2020,Lesiones,Siniestro Vial,Balvanera,33
+10/2020,Lesiones,Siniestro Vial,Barracas,23
+10/2020,Lesiones,Siniestro Vial,Belgrano,8
+10/2020,Lesiones,Siniestro Vial,Boca,4
+10/2020,Lesiones,Siniestro Vial,Boedo,13
+10/2020,Lesiones,Siniestro Vial,Caballito,31
+10/2020,Lesiones,Siniestro Vial,Chacarita,11
+10/2020,Lesiones,Siniestro Vial,Coghlan,4
+10/2020,Lesiones,Siniestro Vial,Colegiales,3
+10/2020,Lesiones,Siniestro Vial,Constitución,14
+10/2020,Lesiones,Siniestro Vial,Flores,26
+10/2020,Lesiones,Siniestro Vial,Floresta,3
+10/2020,Lesiones,Siniestro Vial,Liniers,10
+10/2020,Lesiones,Siniestro Vial,Mataderos,23
+10/2020,Lesiones,Siniestro Vial,Monserrat,14
+10/2020,Lesiones,Siniestro Vial,Monte Castro,11
+10/2020,Lesiones,Siniestro Vial,Nueva Pompeya,14
+10/2020,Lesiones,Siniestro Vial,Nuñez,14
+10/2020,Lesiones,Siniestro Vial,Palermo,42
+10/2020,Lesiones,Siniestro Vial,Parque Avellaneda,14
+10/2020,Lesiones,Siniestro Vial,Parque Chacabuco,10
+10/2020,Lesiones,Siniestro Vial,Parque Chas,4
+10/2020,Lesiones,Siniestro Vial,Parque Patricios,14
+10/2020,Lesiones,Siniestro Vial,Paternal,4
+10/2020,Lesiones,Siniestro Vial,Puerto Madero,7
+10/2020,Lesiones,Siniestro Vial,Recoleta,17
+10/2020,Lesiones,Siniestro Vial,Retiro,7
+10/2020,Lesiones,Siniestro Vial,Saavedra,19
+10/2020,Lesiones,Siniestro Vial,San Cristóbal,10
+10/2020,Lesiones,Siniestro Vial,San Nicolás,10
+10/2020,Lesiones,Siniestro Vial,San Telmo,1
+10/2020,Lesiones,Siniestro Vial,Vélez Sársfield,3
+10/2020,Lesiones,Siniestro Vial,Versalles,6
+10/2020,Lesiones,Siniestro Vial,Villa Crespo,30
+10/2020,Lesiones,Siniestro Vial,Villa Del Parque,8
+10/2020,Lesiones,Siniestro Vial,Villa Devoto,12
+10/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,12
+10/2020,Lesiones,Siniestro Vial,Villa Lugano,21
+10/2020,Lesiones,Siniestro Vial,Villa Luro,12
+10/2020,Lesiones,Siniestro Vial,Villa Ortuzar,2
+10/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,9
+10/2020,Lesiones,Siniestro Vial,Villa Real,5
+10/2020,Lesiones,Siniestro Vial,Villa Riachuelo,2
+10/2020,Lesiones,Siniestro Vial,Villa Santa Rita,3
+10/2020,Lesiones,Siniestro Vial,Villa Soldati,6
+10/2020,Lesiones,Siniestro Vial,Villa Urquiza,14
+10/2020,Robo (con violencia),,,3
+10/2020,Robo (con violencia),,Agronomía,6
+10/2020,Robo (con violencia),,Almagro,160
+10/2020,Robo (con violencia),,Balvanera,161
+10/2020,Robo (con violencia),,Barracas,87
+10/2020,Robo (con violencia),,Belgrano,68
+10/2020,Robo (con violencia),,Boca,50
+10/2020,Robo (con violencia),,Boedo,45
+10/2020,Robo (con violencia),,Caballito,101
+10/2020,Robo (con violencia),,Chacarita,33
+10/2020,Robo (con violencia),,Coghlan,13
+10/2020,Robo (con violencia),,Colegiales,37
+10/2020,Robo (con violencia),,Constitución,72
+10/2020,Robo (con violencia),,Flores,163
+10/2020,Robo (con violencia),,Floresta,27
+10/2020,Robo (con violencia),,Liniers,26
+10/2020,Robo (con violencia),,Mataderos,61
+10/2020,Robo (con violencia),,Monserrat,35
+10/2020,Robo (con violencia),,Monte Castro,15
+10/2020,Robo (con violencia),,Nueva Pompeya,61
+10/2020,Robo (con violencia),,Nuñez,30
+10/2020,Robo (con violencia),,Palermo,218
+10/2020,Robo (con violencia),,Parque Avellaneda,55
+10/2020,Robo (con violencia),,Parque Chacabuco,67
+10/2020,Robo (con violencia),,Parque Chas,8
+10/2020,Robo (con violencia),,Parque Patricios,52
+10/2020,Robo (con violencia),,Paternal,16
+10/2020,Robo (con violencia),,Puerto Madero,1
+10/2020,Robo (con violencia),,Recoleta,141
+10/2020,Robo (con violencia),,Retiro,89
+10/2020,Robo (con violencia),,Saavedra,45
+10/2020,Robo (con violencia),,San Cristóbal,45
+10/2020,Robo (con violencia),,San Nicolás,66
+10/2020,Robo (con violencia),,San Telmo,21
+10/2020,Robo (con violencia),,Vélez Sársfield,22
+10/2020,Robo (con violencia),,Versalles,7
+10/2020,Robo (con violencia),,Villa Crespo,61
+10/2020,Robo (con violencia),,Villa Del Parque,33
+10/2020,Robo (con violencia),,Villa Devoto,37
+10/2020,Robo (con violencia),,Villa Gral. Mitre,21
+10/2020,Robo (con violencia),,Villa Lugano,96
+10/2020,Robo (con violencia),,Villa Luro,12
+10/2020,Robo (con violencia),,Villa Ortuzar,13
+10/2020,Robo (con violencia),,Villa Pueyrredón,18
+10/2020,Robo (con violencia),,Villa Real,5
+10/2020,Robo (con violencia),,Villa Riachuelo,14
+10/2020,Robo (con violencia),,Villa Santa Rita,22
+10/2020,Robo (con violencia),,Villa Soldati,85
+10/2020,Robo (con violencia),,Villa Urquiza,42
+10/2020,Robo (con violencia),Con uso de moto,Almagro,14
+10/2020,Robo (con violencia),Con uso de moto,Balvanera,33
+10/2020,Robo (con violencia),Con uso de moto,Barracas,9
+10/2020,Robo (con violencia),Con uso de moto,Belgrano,10
+10/2020,Robo (con violencia),Con uso de moto,Boedo,7
+10/2020,Robo (con violencia),Con uso de moto,Caballito,33
+10/2020,Robo (con violencia),Con uso de moto,Coghlan,2
+10/2020,Robo (con violencia),Con uso de moto,Colegiales,3
+10/2020,Robo (con violencia),Con uso de moto,Constitución,5
+10/2020,Robo (con violencia),Con uso de moto,Flores,16
+10/2020,Robo (con violencia),Con uso de moto,Floresta,2
+10/2020,Robo (con violencia),Con uso de moto,Liniers,7
+10/2020,Robo (con violencia),Con uso de moto,Mataderos,4
+10/2020,Robo (con violencia),Con uso de moto,Monserrat,7
+10/2020,Robo (con violencia),Con uso de moto,Monte Castro,2
+10/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,7
+10/2020,Robo (con violencia),Con uso de moto,Nuñez,5
+10/2020,Robo (con violencia),Con uso de moto,Palermo,20
+10/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,9
+10/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,17
+10/2020,Robo (con violencia),Con uso de moto,Parque Chas,4
+10/2020,Robo (con violencia),Con uso de moto,Parque Patricios,16
+10/2020,Robo (con violencia),Con uso de moto,Paternal,4
+10/2020,Robo (con violencia),Con uso de moto,Recoleta,12
+10/2020,Robo (con violencia),Con uso de moto,Saavedra,2
+10/2020,Robo (con violencia),Con uso de moto,San Cristóbal,8
+10/2020,Robo (con violencia),Con uso de moto,San Nicolás,7
+10/2020,Robo (con violencia),Con uso de moto,San Telmo,5
+10/2020,Robo (con violencia),Con uso de moto,Vélez Sársfield,2
+10/2020,Robo (con violencia),Con uso de moto,Villa Crespo,7
+10/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,3
+10/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,2
+10/2020,Robo (con violencia),Con uso de moto,Villa Lugano,4
+10/2020,Robo (con violencia),Con uso de moto,Villa Luro,1
+10/2020,Robo (con violencia),Con uso de moto,Villa Ortuzar,2
+10/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,3
+10/2020,Robo (con violencia),Con uso de moto,Villa Riachuelo,4
+10/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,1
+10/2020,Robo (con violencia),Con uso de moto,Villa Soldati,14
+10/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,18
+10/2020,Robo (con violencia),Robo Automotor,Balvanera,1
+10/2020,Robo (con violencia),Robo Automotor,Barracas,13
+10/2020,Robo (con violencia),Robo Automotor,Boca,1
+10/2020,Robo (con violencia),Robo Automotor,Boedo,1
+10/2020,Robo (con violencia),Robo Automotor,Chacarita,1
+10/2020,Robo (con violencia),Robo Automotor,Flores,1
+10/2020,Robo (con violencia),Robo Automotor,Floresta,1
+10/2020,Robo (con violencia),Robo Automotor,Liniers,1
+10/2020,Robo (con violencia),Robo Automotor,Mataderos,3
+10/2020,Robo (con violencia),Robo Automotor,Nueva Pompeya,3
+10/2020,Robo (con violencia),Robo Automotor,Nuñez,1
+10/2020,Robo (con violencia),Robo Automotor,Parque Avellaneda,1
+10/2020,Robo (con violencia),Robo Automotor,Parque Chacabuco,2
+10/2020,Robo (con violencia),Robo Automotor,Parque Patricios,1
+10/2020,Robo (con violencia),Robo Automotor,Recoleta,2
+10/2020,Robo (con violencia),Robo Automotor,San Telmo,1
+10/2020,Robo (con violencia),Robo Automotor,Vélez Sársfield,2
+10/2020,Robo (con violencia),Robo Automotor,Versalles,1
+10/2020,Robo (con violencia),Robo Automotor,Villa Del Parque,1
+10/2020,Robo (con violencia),Robo Automotor,Villa Lugano,7
+10/2020,Robo (con violencia),Robo Automotor,Villa Luro,1
+10/2020,Robo (con violencia),Robo Automotor,Villa Soldati,5
+11/2020,Homicidio,Doloso,Balvanera,2
+11/2020,Homicidio,Doloso,Barracas,2
+11/2020,Homicidio,Doloso,Chacarita,1
+11/2020,Homicidio,Doloso,Constitución,1
+11/2020,Homicidio,Doloso,Flores,2
+11/2020,Homicidio,Doloso,Nuñez,1
+11/2020,Homicidio,Doloso,Retiro,1
+11/2020,Homicidio,Doloso,Villa Lugano,2
+11/2020,Homicidio,Siniestro Vial,Balvanera,1
+11/2020,Homicidio,Siniestro Vial,Floresta,1
+11/2020,Homicidio,Siniestro Vial,Nueva Pompeya,1
+11/2020,Homicidio,Siniestro Vial,Palermo,1
+11/2020,Homicidio,Siniestro Vial,Parque Patricios,1
+11/2020,Homicidio,Siniestro Vial,Vélez Sársfield,1
+11/2020,Homicidio,Siniestro Vial,Villa Riachuelo,1
+11/2020,Homicidio,Siniestro Vial,Villa Santa Rita,1
+11/2020,Homicidio,Siniestro Vial,Villa Urquiza,1
+11/2020,Hurto (sin violencia),,,3
+11/2020,Hurto (sin violencia),,Agronomía,7
+11/2020,Hurto (sin violencia),,Almagro,84
+11/2020,Hurto (sin violencia),,Balvanera,173
+11/2020,Hurto (sin violencia),,Barracas,53
+11/2020,Hurto (sin violencia),,Belgrano,82
+11/2020,Hurto (sin violencia),,Boca,21
+11/2020,Hurto (sin violencia),,Boedo,40
+11/2020,Hurto (sin violencia),,Caballito,85
+11/2020,Hurto (sin violencia),,Chacarita,31
+11/2020,Hurto (sin violencia),,Coghlan,9
+11/2020,Hurto (sin violencia),,Colegiales,29
+11/2020,Hurto (sin violencia),,Constitución,44
+11/2020,Hurto (sin violencia),,Flores,116
+11/2020,Hurto (sin violencia),,Floresta,28
+11/2020,Hurto (sin violencia),,Liniers,48
+11/2020,Hurto (sin violencia),,Mataderos,56
+11/2020,Hurto (sin violencia),,Monserrat,42
+11/2020,Hurto (sin violencia),,Monte Castro,13
+11/2020,Hurto (sin violencia),,Nueva Pompeya,46
+11/2020,Hurto (sin violencia),,Nuñez,24
+11/2020,Hurto (sin violencia),,Palermo,230
+11/2020,Hurto (sin violencia),,Parque Avellaneda,39
+11/2020,Hurto (sin violencia),,Parque Chacabuco,31
+11/2020,Hurto (sin violencia),,Parque Chas,11
+11/2020,Hurto (sin violencia),,Parque Patricios,17
+11/2020,Hurto (sin violencia),,Paternal,16
+11/2020,Hurto (sin violencia),,Puerto Madero,2
+11/2020,Hurto (sin violencia),,Recoleta,119
+11/2020,Hurto (sin violencia),,Retiro,35
+11/2020,Hurto (sin violencia),,Saavedra,37
+11/2020,Hurto (sin violencia),,San Cristóbal,57
+11/2020,Hurto (sin violencia),,San Nicolás,59
+11/2020,Hurto (sin violencia),,San Telmo,18
+11/2020,Hurto (sin violencia),,Vélez Sársfield,14
+11/2020,Hurto (sin violencia),,Versalles,6
+11/2020,Hurto (sin violencia),,Villa Crespo,64
+11/2020,Hurto (sin violencia),,Villa Del Parque,37
+11/2020,Hurto (sin violencia),,Villa Devoto,48
+11/2020,Hurto (sin violencia),,Villa Gral. Mitre,23
+11/2020,Hurto (sin violencia),,Villa Lugano,69
+11/2020,Hurto (sin violencia),,Villa Luro,20
+11/2020,Hurto (sin violencia),,Villa Ortuzar,15
+11/2020,Hurto (sin violencia),,Villa Pueyrredón,26
+11/2020,Hurto (sin violencia),,Villa Real,7
+11/2020,Hurto (sin violencia),,Villa Riachuelo,17
+11/2020,Hurto (sin violencia),,Villa Santa Rita,18
+11/2020,Hurto (sin violencia),,Villa Soldati,32
+11/2020,Hurto (sin violencia),,Villa Urquiza,66
+11/2020,Hurto (sin violencia),Hurto Automotor,Agronomía,4
+11/2020,Hurto (sin violencia),Hurto Automotor,Almagro,11
+11/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,15
+11/2020,Hurto (sin violencia),Hurto Automotor,Barracas,11
+11/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,7
+11/2020,Hurto (sin violencia),Hurto Automotor,Boca,4
+11/2020,Hurto (sin violencia),Hurto Automotor,Boedo,3
+11/2020,Hurto (sin violencia),Hurto Automotor,Caballito,18
+11/2020,Hurto (sin violencia),Hurto Automotor,Chacarita,4
+11/2020,Hurto (sin violencia),Hurto Automotor,Coghlan,5
+11/2020,Hurto (sin violencia),Hurto Automotor,Colegiales,1
+11/2020,Hurto (sin violencia),Hurto Automotor,Constitución,3
+11/2020,Hurto (sin violencia),Hurto Automotor,Flores,14
+11/2020,Hurto (sin violencia),Hurto Automotor,Floresta,12
+11/2020,Hurto (sin violencia),Hurto Automotor,Liniers,13
+11/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,15
+11/2020,Hurto (sin violencia),Hurto Automotor,Monserrat,5
+11/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,5
+11/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,9
+11/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,3
+11/2020,Hurto (sin violencia),Hurto Automotor,Palermo,13
+11/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,9
+11/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,6
+11/2020,Hurto (sin violencia),Hurto Automotor,Parque Chas,1
+11/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,9
+11/2020,Hurto (sin violencia),Hurto Automotor,Paternal,1
+11/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,4
+11/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,2
+11/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,8
+11/2020,Hurto (sin violencia),Hurto Automotor,San Nicolás,1
+11/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,1
+11/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,2
+11/2020,Hurto (sin violencia),Hurto Automotor,Versalles,3
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,9
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,5
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,7
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,4
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,15
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,5
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,1
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,3
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Real,1
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Riachuelo,6
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,4
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,5
+11/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,6
+11/2020,Lesiones,Siniestro Vial,,33
+11/2020,Lesiones,Siniestro Vial,Agronomía,5
+11/2020,Lesiones,Siniestro Vial,Almagro,34
+11/2020,Lesiones,Siniestro Vial,Balvanera,36
+11/2020,Lesiones,Siniestro Vial,Barracas,11
+11/2020,Lesiones,Siniestro Vial,Belgrano,22
+11/2020,Lesiones,Siniestro Vial,Boca,17
+11/2020,Lesiones,Siniestro Vial,Boedo,11
+11/2020,Lesiones,Siniestro Vial,Caballito,19
+11/2020,Lesiones,Siniestro Vial,Chacarita,7
+11/2020,Lesiones,Siniestro Vial,Coghlan,2
+11/2020,Lesiones,Siniestro Vial,Colegiales,3
+11/2020,Lesiones,Siniestro Vial,Constitución,17
+11/2020,Lesiones,Siniestro Vial,Flores,38
+11/2020,Lesiones,Siniestro Vial,Floresta,5
+11/2020,Lesiones,Siniestro Vial,Liniers,17
+11/2020,Lesiones,Siniestro Vial,Mataderos,17
+11/2020,Lesiones,Siniestro Vial,Monserrat,13
+11/2020,Lesiones,Siniestro Vial,Monte Castro,6
+11/2020,Lesiones,Siniestro Vial,Nueva Pompeya,27
+11/2020,Lesiones,Siniestro Vial,Nuñez,19
+11/2020,Lesiones,Siniestro Vial,Palermo,51
+11/2020,Lesiones,Siniestro Vial,Parque Avellaneda,19
+11/2020,Lesiones,Siniestro Vial,Parque Chacabuco,8
+11/2020,Lesiones,Siniestro Vial,Parque Chas,4
+11/2020,Lesiones,Siniestro Vial,Parque Patricios,10
+11/2020,Lesiones,Siniestro Vial,Paternal,8
+11/2020,Lesiones,Siniestro Vial,Puerto Madero,8
+11/2020,Lesiones,Siniestro Vial,Recoleta,28
+11/2020,Lesiones,Siniestro Vial,Retiro,8
+11/2020,Lesiones,Siniestro Vial,Saavedra,27
+11/2020,Lesiones,Siniestro Vial,San Cristóbal,19
+11/2020,Lesiones,Siniestro Vial,San Nicolás,18
+11/2020,Lesiones,Siniestro Vial,San Telmo,6
+11/2020,Lesiones,Siniestro Vial,Vélez Sársfield,4
+11/2020,Lesiones,Siniestro Vial,Versalles,8
+11/2020,Lesiones,Siniestro Vial,Villa Crespo,23
+11/2020,Lesiones,Siniestro Vial,Villa Del Parque,7
+11/2020,Lesiones,Siniestro Vial,Villa Devoto,21
+11/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,13
+11/2020,Lesiones,Siniestro Vial,Villa Lugano,21
+11/2020,Lesiones,Siniestro Vial,Villa Luro,7
+11/2020,Lesiones,Siniestro Vial,Villa Ortuzar,3
+11/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,9
+11/2020,Lesiones,Siniestro Vial,Villa Real,5
+11/2020,Lesiones,Siniestro Vial,Villa Riachuelo,6
+11/2020,Lesiones,Siniestro Vial,Villa Santa Rita,7
+11/2020,Lesiones,Siniestro Vial,Villa Soldati,4
+11/2020,Lesiones,Siniestro Vial,Villa Urquiza,22
+11/2020,Robo (con violencia),,,3
+11/2020,Robo (con violencia),,Agronomía,7
+11/2020,Robo (con violencia),,Almagro,131
+11/2020,Robo (con violencia),,Balvanera,178
+11/2020,Robo (con violencia),,Barracas,120
+11/2020,Robo (con violencia),,Belgrano,86
+11/2020,Robo (con violencia),,Boca,73
+11/2020,Robo (con violencia),,Boedo,46
+11/2020,Robo (con violencia),,Caballito,119
+11/2020,Robo (con violencia),,Chacarita,36
+11/2020,Robo (con violencia),,Coghlan,10
+11/2020,Robo (con violencia),,Colegiales,28
+11/2020,Robo (con violencia),,Constitución,104
+11/2020,Robo (con violencia),,Flores,145
+11/2020,Robo (con violencia),,Floresta,25
+11/2020,Robo (con violencia),,Liniers,44
+11/2020,Robo (con violencia),,Mataderos,69
+11/2020,Robo (con violencia),,Monserrat,50
+11/2020,Robo (con violencia),,Monte Castro,14
+11/2020,Robo (con violencia),,Nueva Pompeya,82
+11/2020,Robo (con violencia),,Nuñez,41
+11/2020,Robo (con violencia),,Palermo,255
+11/2020,Robo (con violencia),,Parque Avellaneda,50
+11/2020,Robo (con violencia),,Parque Chacabuco,67
+11/2020,Robo (con violencia),,Parque Chas,8
+11/2020,Robo (con violencia),,Parque Patricios,56
+11/2020,Robo (con violencia),,Paternal,7
+11/2020,Robo (con violencia),,Puerto Madero,1
+11/2020,Robo (con violencia),,Recoleta,150
+11/2020,Robo (con violencia),,Retiro,79
+11/2020,Robo (con violencia),,Saavedra,68
+11/2020,Robo (con violencia),,San Cristóbal,51
+11/2020,Robo (con violencia),,San Nicolás,68
+11/2020,Robo (con violencia),,San Telmo,41
+11/2020,Robo (con violencia),,Vélez Sársfield,18
+11/2020,Robo (con violencia),,Versalles,12
+11/2020,Robo (con violencia),,Villa Crespo,92
+11/2020,Robo (con violencia),,Villa Del Parque,26
+11/2020,Robo (con violencia),,Villa Devoto,29
+11/2020,Robo (con violencia),,Villa Gral. Mitre,18
+11/2020,Robo (con violencia),,Villa Lugano,121
+11/2020,Robo (con violencia),,Villa Luro,15
+11/2020,Robo (con violencia),,Villa Ortuzar,13
+11/2020,Robo (con violencia),,Villa Pueyrredón,33
+11/2020,Robo (con violencia),,Villa Real,6
+11/2020,Robo (con violencia),,Villa Riachuelo,10
+11/2020,Robo (con violencia),,Villa Santa Rita,24
+11/2020,Robo (con violencia),,Villa Soldati,98
+11/2020,Robo (con violencia),,Villa Urquiza,44
+11/2020,Robo (con violencia),Con uso de moto,Agronomía,1
+11/2020,Robo (con violencia),Con uso de moto,Almagro,24
+11/2020,Robo (con violencia),Con uso de moto,Balvanera,28
+11/2020,Robo (con violencia),Con uso de moto,Barracas,20
+11/2020,Robo (con violencia),Con uso de moto,Belgrano,16
+11/2020,Robo (con violencia),Con uso de moto,Boca,3
+11/2020,Robo (con violencia),Con uso de moto,Boedo,5
+11/2020,Robo (con violencia),Con uso de moto,Caballito,18
+11/2020,Robo (con violencia),Con uso de moto,Colegiales,7
+11/2020,Robo (con violencia),Con uso de moto,Constitución,12
+11/2020,Robo (con violencia),Con uso de moto,Flores,30
+11/2020,Robo (con violencia),Con uso de moto,Floresta,8
+11/2020,Robo (con violencia),Con uso de moto,Liniers,3
+11/2020,Robo (con violencia),Con uso de moto,Mataderos,7
+11/2020,Robo (con violencia),Con uso de moto,Monserrat,6
+11/2020,Robo (con violencia),Con uso de moto,Monte Castro,5
+11/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,18
+11/2020,Robo (con violencia),Con uso de moto,Nuñez,3
+11/2020,Robo (con violencia),Con uso de moto,Palermo,17
+11/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,13
+11/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,13
+11/2020,Robo (con violencia),Con uso de moto,Parque Chas,2
+11/2020,Robo (con violencia),Con uso de moto,Parque Patricios,12
+11/2020,Robo (con violencia),Con uso de moto,Paternal,1
+11/2020,Robo (con violencia),Con uso de moto,Recoleta,20
+11/2020,Robo (con violencia),Con uso de moto,Retiro,3
+11/2020,Robo (con violencia),Con uso de moto,Saavedra,6
+11/2020,Robo (con violencia),Con uso de moto,San Cristóbal,10
+11/2020,Robo (con violencia),Con uso de moto,San Nicolás,6
+11/2020,Robo (con violencia),Con uso de moto,San Telmo,2
+11/2020,Robo (con violencia),Con uso de moto,Versalles,4
+11/2020,Robo (con violencia),Con uso de moto,Villa Crespo,7
+11/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,3
+11/2020,Robo (con violencia),Con uso de moto,Villa Devoto,3
+11/2020,Robo (con violencia),Con uso de moto,Villa Gral. Mitre,6
+11/2020,Robo (con violencia),Con uso de moto,Villa Lugano,10
+11/2020,Robo (con violencia),Con uso de moto,Villa Luro,1
+11/2020,Robo (con violencia),Con uso de moto,Villa Ortuzar,3
+11/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,2
+11/2020,Robo (con violencia),Con uso de moto,Villa Real,1
+11/2020,Robo (con violencia),Con uso de moto,Villa Riachuelo,2
+11/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,2
+11/2020,Robo (con violencia),Con uso de moto,Villa Soldati,9
+11/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,12
+11/2020,Robo (con violencia),Robo Automotor,Almagro,2
+11/2020,Robo (con violencia),Robo Automotor,Barracas,6
+11/2020,Robo (con violencia),Robo Automotor,Belgrano,2
+11/2020,Robo (con violencia),Robo Automotor,Boca,2
+11/2020,Robo (con violencia),Robo Automotor,Constitución,1
+11/2020,Robo (con violencia),Robo Automotor,Flores,2
+11/2020,Robo (con violencia),Robo Automotor,Mataderos,1
+11/2020,Robo (con violencia),Robo Automotor,Nueva Pompeya,4
+11/2020,Robo (con violencia),Robo Automotor,Nuñez,3
+11/2020,Robo (con violencia),Robo Automotor,Palermo,1
+11/2020,Robo (con violencia),Robo Automotor,Parque Chacabuco,2
+11/2020,Robo (con violencia),Robo Automotor,Parque Patricios,2
+11/2020,Robo (con violencia),Robo Automotor,Paternal,1
+11/2020,Robo (con violencia),Robo Automotor,Saavedra,1
+11/2020,Robo (con violencia),Robo Automotor,San Cristóbal,2
+11/2020,Robo (con violencia),Robo Automotor,Villa Devoto,2
+11/2020,Robo (con violencia),Robo Automotor,Villa Lugano,5
+11/2020,Robo (con violencia),Robo Automotor,Villa Luro,2
+11/2020,Robo (con violencia),Robo Automotor,Villa Riachuelo,2
+11/2020,Robo (con violencia),Robo Automotor,Villa Soldati,3
+12/2020,Homicidio,Doloso,Balvanera,1
+12/2020,Homicidio,Doloso,Boca,1
+12/2020,Homicidio,Doloso,Caballito,1
+12/2020,Homicidio,Doloso,Constitución,2
+12/2020,Homicidio,Doloso,Flores,1
+12/2020,Homicidio,Doloso,Retiro,5
+12/2020,Homicidio,Doloso,San Nicolás,1
+12/2020,Homicidio,Doloso,Villa Devoto,1
+12/2020,Homicidio,Doloso,Villa Lugano,1
+12/2020,Homicidio,Doloso,Villa Santa Rita,1
+12/2020,Homicidio,Femicidio,Flores,1
+12/2020,Homicidio,Femicidio,Palermo,1
+12/2020,Homicidio,Siniestro Vial,Balvanera,1
+12/2020,Homicidio,Siniestro Vial,Belgrano,1
+12/2020,Homicidio,Siniestro Vial,Constitución,2
+12/2020,Homicidio,Siniestro Vial,Flores,2
+12/2020,Homicidio,Siniestro Vial,Monte Castro,1
+12/2020,Homicidio,Siniestro Vial,Nueva Pompeya,1
+12/2020,Homicidio,Siniestro Vial,Parque Avellaneda,2
+12/2020,Homicidio,Siniestro Vial,Parque Chacabuco,1
+12/2020,Homicidio,Siniestro Vial,Paternal,1
+12/2020,Homicidio,Siniestro Vial,Recoleta,2
+12/2020,Homicidio,Siniestro Vial,Saavedra,2
+12/2020,Homicidio,Siniestro Vial,San Cristóbal,1
+12/2020,Homicidio,Siniestro Vial,San Nicolás,1
+12/2020,Homicidio,Siniestro Vial,Villa Devoto,1
+12/2020,Homicidio,Siniestro Vial,Villa Luro,1
+12/2020,Homicidio,Siniestro Vial,Villa Soldati,1
+12/2020,Homicidio,Travesticidio/Transfemicidio,Balvanera,1
+12/2020,Hurto (sin violencia),,,10
+12/2020,Hurto (sin violencia),,Agronomía,8
+12/2020,Hurto (sin violencia),,Almagro,71
+12/2020,Hurto (sin violencia),,Balvanera,189
+12/2020,Hurto (sin violencia),,Barracas,54
+12/2020,Hurto (sin violencia),,Belgrano,105
+12/2020,Hurto (sin violencia),,Boca,27
+12/2020,Hurto (sin violencia),,Boedo,44
+12/2020,Hurto (sin violencia),,Caballito,91
+12/2020,Hurto (sin violencia),,Chacarita,32
+12/2020,Hurto (sin violencia),,Coghlan,6
+12/2020,Hurto (sin violencia),,Colegiales,22
+12/2020,Hurto (sin violencia),,Constitución,49
+12/2020,Hurto (sin violencia),,Flores,130
+12/2020,Hurto (sin violencia),,Floresta,29
+12/2020,Hurto (sin violencia),,Liniers,37
+12/2020,Hurto (sin violencia),,Mataderos,48
+12/2020,Hurto (sin violencia),,Monserrat,39
+12/2020,Hurto (sin violencia),,Monte Castro,28
+12/2020,Hurto (sin violencia),,Nueva Pompeya,43
+12/2020,Hurto (sin violencia),,Nuñez,50
+12/2020,Hurto (sin violencia),,Palermo,255
+12/2020,Hurto (sin violencia),,Parque Avellaneda,40
+12/2020,Hurto (sin violencia),,Parque Chacabuco,36
+12/2020,Hurto (sin violencia),,Parque Chas,9
+12/2020,Hurto (sin violencia),,Parque Patricios,32
+12/2020,Hurto (sin violencia),,Paternal,27
+12/2020,Hurto (sin violencia),,Puerto Madero,2
+12/2020,Hurto (sin violencia),,Recoleta,108
+12/2020,Hurto (sin violencia),,Retiro,29
+12/2020,Hurto (sin violencia),,Saavedra,30
+12/2020,Hurto (sin violencia),,San Cristóbal,36
+12/2020,Hurto (sin violencia),,San Nicolás,54
+12/2020,Hurto (sin violencia),,San Telmo,19
+12/2020,Hurto (sin violencia),,Vélez Sársfield,10
+12/2020,Hurto (sin violencia),,Versalles,4
+12/2020,Hurto (sin violencia),,Villa Crespo,71
+12/2020,Hurto (sin violencia),,Villa Del Parque,36
+12/2020,Hurto (sin violencia),,Villa Devoto,49
+12/2020,Hurto (sin violencia),,Villa Gral. Mitre,24
+12/2020,Hurto (sin violencia),,Villa Lugano,65
+12/2020,Hurto (sin violencia),,Villa Luro,16
+12/2020,Hurto (sin violencia),,Villa Ortuzar,12
+12/2020,Hurto (sin violencia),,Villa Pueyrredón,24
+12/2020,Hurto (sin violencia),,Villa Real,17
+12/2020,Hurto (sin violencia),,Villa Riachuelo,11
+12/2020,Hurto (sin violencia),,Villa Santa Rita,22
+12/2020,Hurto (sin violencia),,Villa Soldati,40
+12/2020,Hurto (sin violencia),,Villa Urquiza,89
+12/2020,Hurto (sin violencia),Hurto Automotor,Agronomía,1
+12/2020,Hurto (sin violencia),Hurto Automotor,Almagro,8
+12/2020,Hurto (sin violencia),Hurto Automotor,Balvanera,10
+12/2020,Hurto (sin violencia),Hurto Automotor,Barracas,3
+12/2020,Hurto (sin violencia),Hurto Automotor,Belgrano,5
+12/2020,Hurto (sin violencia),Hurto Automotor,Boca,2
+12/2020,Hurto (sin violencia),Hurto Automotor,Boedo,3
+12/2020,Hurto (sin violencia),Hurto Automotor,Caballito,17
+12/2020,Hurto (sin violencia),Hurto Automotor,Coghlan,1
+12/2020,Hurto (sin violencia),Hurto Automotor,Colegiales,1
+12/2020,Hurto (sin violencia),Hurto Automotor,Constitución,5
+12/2020,Hurto (sin violencia),Hurto Automotor,Flores,12
+12/2020,Hurto (sin violencia),Hurto Automotor,Floresta,9
+12/2020,Hurto (sin violencia),Hurto Automotor,Liniers,15
+12/2020,Hurto (sin violencia),Hurto Automotor,Mataderos,13
+12/2020,Hurto (sin violencia),Hurto Automotor,Monserrat,6
+12/2020,Hurto (sin violencia),Hurto Automotor,Monte Castro,2
+12/2020,Hurto (sin violencia),Hurto Automotor,Nueva Pompeya,7
+12/2020,Hurto (sin violencia),Hurto Automotor,Nuñez,5
+12/2020,Hurto (sin violencia),Hurto Automotor,Palermo,11
+12/2020,Hurto (sin violencia),Hurto Automotor,Parque Avellaneda,5
+12/2020,Hurto (sin violencia),Hurto Automotor,Parque Chacabuco,8
+12/2020,Hurto (sin violencia),Hurto Automotor,Parque Chas,1
+12/2020,Hurto (sin violencia),Hurto Automotor,Parque Patricios,6
+12/2020,Hurto (sin violencia),Hurto Automotor,Paternal,3
+12/2020,Hurto (sin violencia),Hurto Automotor,Recoleta,5
+12/2020,Hurto (sin violencia),Hurto Automotor,Saavedra,1
+12/2020,Hurto (sin violencia),Hurto Automotor,San Cristóbal,9
+12/2020,Hurto (sin violencia),Hurto Automotor,San Nicolás,1
+12/2020,Hurto (sin violencia),Hurto Automotor,San Telmo,2
+12/2020,Hurto (sin violencia),Hurto Automotor,Vélez Sársfield,4
+12/2020,Hurto (sin violencia),Hurto Automotor,Versalles,2
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Crespo,8
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Del Parque,10
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Devoto,4
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Gral. Mitre,4
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Lugano,12
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Luro,6
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Ortuzar,1
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Pueyrredón,5
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Santa Rita,2
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Soldati,7
+12/2020,Hurto (sin violencia),Hurto Automotor,Villa Urquiza,7
+12/2020,Lesiones,Siniestro Vial,,45
+12/2020,Lesiones,Siniestro Vial,Almagro,25
+12/2020,Lesiones,Siniestro Vial,Balvanera,38
+12/2020,Lesiones,Siniestro Vial,Barracas,18
+12/2020,Lesiones,Siniestro Vial,Belgrano,22
+12/2020,Lesiones,Siniestro Vial,Boca,5
+12/2020,Lesiones,Siniestro Vial,Boedo,9
+12/2020,Lesiones,Siniestro Vial,Caballito,34
+12/2020,Lesiones,Siniestro Vial,Chacarita,14
+12/2020,Lesiones,Siniestro Vial,Coghlan,6
+12/2020,Lesiones,Siniestro Vial,Colegiales,8
+12/2020,Lesiones,Siniestro Vial,Constitución,13
+12/2020,Lesiones,Siniestro Vial,Flores,40
+12/2020,Lesiones,Siniestro Vial,Floresta,16
+12/2020,Lesiones,Siniestro Vial,Liniers,8
+12/2020,Lesiones,Siniestro Vial,Mataderos,34
+12/2020,Lesiones,Siniestro Vial,Monserrat,13
+12/2020,Lesiones,Siniestro Vial,Monte Castro,9
+12/2020,Lesiones,Siniestro Vial,Nueva Pompeya,15
+12/2020,Lesiones,Siniestro Vial,Nuñez,16
+12/2020,Lesiones,Siniestro Vial,Palermo,57
+12/2020,Lesiones,Siniestro Vial,Parque Avellaneda,11
+12/2020,Lesiones,Siniestro Vial,Parque Chacabuco,15
+12/2020,Lesiones,Siniestro Vial,Parque Chas,4
+12/2020,Lesiones,Siniestro Vial,Parque Patricios,7
+12/2020,Lesiones,Siniestro Vial,Paternal,6
+12/2020,Lesiones,Siniestro Vial,Puerto Madero,1
+12/2020,Lesiones,Siniestro Vial,Recoleta,9
+12/2020,Lesiones,Siniestro Vial,Retiro,14
+12/2020,Lesiones,Siniestro Vial,Saavedra,14
+12/2020,Lesiones,Siniestro Vial,San Cristóbal,9
+12/2020,Lesiones,Siniestro Vial,San Nicolás,6
+12/2020,Lesiones,Siniestro Vial,San Telmo,4
+12/2020,Lesiones,Siniestro Vial,Vélez Sársfield,13
+12/2020,Lesiones,Siniestro Vial,Versalles,11
+12/2020,Lesiones,Siniestro Vial,Villa Crespo,31
+12/2020,Lesiones,Siniestro Vial,Villa Del Parque,6
+12/2020,Lesiones,Siniestro Vial,Villa Devoto,17
+12/2020,Lesiones,Siniestro Vial,Villa Gral. Mitre,6
+12/2020,Lesiones,Siniestro Vial,Villa Lugano,16
+12/2020,Lesiones,Siniestro Vial,Villa Luro,13
+12/2020,Lesiones,Siniestro Vial,Villa Ortuzar,3
+12/2020,Lesiones,Siniestro Vial,Villa Pueyrredón,7
+12/2020,Lesiones,Siniestro Vial,Villa Real,4
+12/2020,Lesiones,Siniestro Vial,Villa Riachuelo,5
+12/2020,Lesiones,Siniestro Vial,Villa Santa Rita,7
+12/2020,Lesiones,Siniestro Vial,Villa Soldati,14
+12/2020,Lesiones,Siniestro Vial,Villa Urquiza,15
+12/2020,Robo (con violencia),,,8
+12/2020,Robo (con violencia),,Agronomía,9
+12/2020,Robo (con violencia),,Almagro,120
+12/2020,Robo (con violencia),,Balvanera,195
+12/2020,Robo (con violencia),,Barracas,97
+12/2020,Robo (con violencia),,Belgrano,126
+12/2020,Robo (con violencia),,Boca,66
+12/2020,Robo (con violencia),,Boedo,63
+12/2020,Robo (con violencia),,Caballito,114
+12/2020,Robo (con violencia),,Chacarita,53
+12/2020,Robo (con violencia),,Coghlan,15
+12/2020,Robo (con violencia),,Colegiales,34
+12/2020,Robo (con violencia),,Constitución,106
+12/2020,Robo (con violencia),,Flores,179
+12/2020,Robo (con violencia),,Floresta,35
+12/2020,Robo (con violencia),,Liniers,24
+12/2020,Robo (con violencia),,Mataderos,60
+12/2020,Robo (con violencia),,Monserrat,35
+12/2020,Robo (con violencia),,Monte Castro,18
+12/2020,Robo (con violencia),,Nueva Pompeya,77
+12/2020,Robo (con violencia),,Nuñez,48
+12/2020,Robo (con violencia),,Palermo,273
+12/2020,Robo (con violencia),,Parque Avellaneda,60
+12/2020,Robo (con violencia),,Parque Chacabuco,63
+12/2020,Robo (con violencia),,Parque Chas,6
+12/2020,Robo (con violencia),,Parque Patricios,51
+12/2020,Robo (con violencia),,Paternal,21
+12/2020,Robo (con violencia),,Puerto Madero,2
+12/2020,Robo (con violencia),,Recoleta,159
+12/2020,Robo (con violencia),,Retiro,92
+12/2020,Robo (con violencia),,Saavedra,43
+12/2020,Robo (con violencia),,San Cristóbal,72
+12/2020,Robo (con violencia),,San Nicolás,59
+12/2020,Robo (con violencia),,San Telmo,27
+12/2020,Robo (con violencia),,Vélez Sársfield,20
+12/2020,Robo (con violencia),,Versalles,13
+12/2020,Robo (con violencia),,Villa Crespo,70
+12/2020,Robo (con violencia),,Villa Del Parque,43
+12/2020,Robo (con violencia),,Villa Devoto,28
+12/2020,Robo (con violencia),,Villa Gral. Mitre,26
+12/2020,Robo (con violencia),,Villa Lugano,118
+12/2020,Robo (con violencia),,Villa Luro,18
+12/2020,Robo (con violencia),,Villa Ortuzar,11
+12/2020,Robo (con violencia),,Villa Pueyrredón,31
+12/2020,Robo (con violencia),,Villa Real,9
+12/2020,Robo (con violencia),,Villa Riachuelo,10
+12/2020,Robo (con violencia),,Villa Santa Rita,27
+12/2020,Robo (con violencia),,Villa Soldati,103
+12/2020,Robo (con violencia),,Villa Urquiza,61
+12/2020,Robo (con violencia),Con uso de moto,,2
+12/2020,Robo (con violencia),Con uso de moto,Almagro,30
+12/2020,Robo (con violencia),Con uso de moto,Balvanera,23
+12/2020,Robo (con violencia),Con uso de moto,Barracas,12
+12/2020,Robo (con violencia),Con uso de moto,Belgrano,18
+12/2020,Robo (con violencia),Con uso de moto,Boca,3
+12/2020,Robo (con violencia),Con uso de moto,Boedo,12
+12/2020,Robo (con violencia),Con uso de moto,Caballito,22
+12/2020,Robo (con violencia),Con uso de moto,Chacarita,1
+12/2020,Robo (con violencia),Con uso de moto,Coghlan,1
+12/2020,Robo (con violencia),Con uso de moto,Colegiales,2
+12/2020,Robo (con violencia),Con uso de moto,Constitución,13
+12/2020,Robo (con violencia),Con uso de moto,Flores,11
+12/2020,Robo (con violencia),Con uso de moto,Floresta,5
+12/2020,Robo (con violencia),Con uso de moto,Liniers,4
+12/2020,Robo (con violencia),Con uso de moto,Mataderos,10
+12/2020,Robo (con violencia),Con uso de moto,Monserrat,4
+12/2020,Robo (con violencia),Con uso de moto,Monte Castro,2
+12/2020,Robo (con violencia),Con uso de moto,Nueva Pompeya,17
+12/2020,Robo (con violencia),Con uso de moto,Nuñez,9
+12/2020,Robo (con violencia),Con uso de moto,Palermo,23
+12/2020,Robo (con violencia),Con uso de moto,Parque Avellaneda,5
+12/2020,Robo (con violencia),Con uso de moto,Parque Chacabuco,21
+12/2020,Robo (con violencia),Con uso de moto,Parque Chas,2
+12/2020,Robo (con violencia),Con uso de moto,Parque Patricios,6
+12/2020,Robo (con violencia),Con uso de moto,Recoleta,16
+12/2020,Robo (con violencia),Con uso de moto,Retiro,7
+12/2020,Robo (con violencia),Con uso de moto,Saavedra,6
+12/2020,Robo (con violencia),Con uso de moto,San Cristóbal,6
+12/2020,Robo (con violencia),Con uso de moto,San Nicolás,5
+12/2020,Robo (con violencia),Con uso de moto,San Telmo,1
+12/2020,Robo (con violencia),Con uso de moto,Vélez Sársfield,1
+12/2020,Robo (con violencia),Con uso de moto,Versalles,2
+12/2020,Robo (con violencia),Con uso de moto,Villa Crespo,3
+12/2020,Robo (con violencia),Con uso de moto,Villa Del Parque,4
+12/2020,Robo (con violencia),Con uso de moto,Villa Devoto,4
+12/2020,Robo (con violencia),Con uso de moto,Villa Lugano,7
+12/2020,Robo (con violencia),Con uso de moto,Villa Luro,1
+12/2020,Robo (con violencia),Con uso de moto,Villa Ortuzar,1
+12/2020,Robo (con violencia),Con uso de moto,Villa Pueyrredón,2
+12/2020,Robo (con violencia),Con uso de moto,Villa Real,1
+12/2020,Robo (con violencia),Con uso de moto,Villa Santa Rita,9
+12/2020,Robo (con violencia),Con uso de moto,Villa Soldati,9
+12/2020,Robo (con violencia),Con uso de moto,Villa Urquiza,13
+12/2020,Robo (con violencia),Robo Automotor,,1
+12/2020,Robo (con violencia),Robo Automotor,Balvanera,3
+12/2020,Robo (con violencia),Robo Automotor,Barracas,8
+12/2020,Robo (con violencia),Robo Automotor,Boca,3
+12/2020,Robo (con violencia),Robo Automotor,Caballito,1
+12/2020,Robo (con violencia),Robo Automotor,Liniers,3
+12/2020,Robo (con violencia),Robo Automotor,Mataderos,1
+12/2020,Robo (con violencia),Robo Automotor,Monserrat,1
+12/2020,Robo (con violencia),Robo Automotor,Nueva Pompeya,1
+12/2020,Robo (con violencia),Robo Automotor,Parque Chacabuco,2
+12/2020,Robo (con violencia),Robo Automotor,Parque Chas,2
+12/2020,Robo (con violencia),Robo Automotor,Parque Patricios,6
+12/2020,Robo (con violencia),Robo Automotor,Paternal,1
+12/2020,Robo (con violencia),Robo Automotor,Saavedra,1
+12/2020,Robo (con violencia),Robo Automotor,San Cristóbal,3
+12/2020,Robo (con violencia),Robo Automotor,Villa Lugano,6
+12/2020,Robo (con violencia),Robo Automotor,Villa Soldati,3
+12/2020,Robo (con violencia),Robo Automotor,Villa Urquiza,1
