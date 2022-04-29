@@ -10,7 +10,6 @@ options(scipen = 0)
 knitr::include_graphics('imagenes/visualizacion.jpg')
 ```
 
-
 La visualización de información es una de las técnica más poderosas, y a la vez más accesibles, de las que disponemos como analistas de datos. La visualización es el proceso de hacer visibles los contrastes, ritmos y eventos que los datos expresan, que no podemos percibir cuando vienen en forma de áridas listas de números y categorías.
 
 Vamos a aprender a realizar las visualizaciones más usadas, y las opciones de ajuste con las que podemos lograr que luzcan tal como queremos.
@@ -30,7 +29,7 @@ library(tidyverse)
 
 Y si no lo tenemos ya cargado, leemos de nuevo el dataframe con los registros de atención al ciudadano (esta versión incluye la columna "COMUNA"). 
 
-```{r eval=FALSE}
+```{r }
 atencion_ciudadano <- read.csv("http://bitsandbricks.github.io/data/gcba_suaci_comunas.csv")
 ```
 

@@ -176,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.2" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#filtrar-filas-con-filter"><i class="fa fa-check"></i><b>3.3.2</b> Filtrar filas con <code>filter()</code></a></li>
 <li class="chapter" data-level="3.3.3" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#ordenar-filas-con-arrange"><i class="fa fa-check"></i><b>3.3.3</b> Ordenar filas con <code>arrange()</code></a></li>
 <li class="chapter" data-level="3.3.4" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#agregar-nuevas-variables-con-mutate"><i class="fa fa-check"></i><b>3.3.4</b> Agregar nuevas variables con <code>mutate()</code></a></li>
-<li class="chapter" data-level="3.3.5" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#extraer-sumarios-con-summarise"><i class="fa fa-check"></i><b>3.3.5</b> Extraer sumarios con <code>summarise()</code></a></li>
+<li class="chapter" data-level="3.3.5" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#extraer-resúmenes-con-summarise"><i class="fa fa-check"></i><b>3.3.5</b> Extraer resúmenes con <code>summarise()</code></a></li>
 <li class="chapter" data-level="3.3.6" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#bonus-el-operador-pipe"><i class="fa fa-check"></i><b>3.3.6</b> ¡BONUS! El operador “pipe”: <code>%&gt;%</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a></li>
@@ -377,15 +377,17 @@ Figura 2.2: La interfaz de RStudio
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="una-presentación-a-toda-marcha-de-r.html#cb27-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;sf&quot;</span>)</span></code></pre></div>
 <p>Vale la pena insistir: Sólo es necesario instalar los paquetes una vez. De aquí en más, cada vez que queramos echar mano a las funciones incluidas en <code>sf</code>, sólo necesitamos activarlo pues ya estará listo en nuestro sistema. Pedimos a R que active el paquete así:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="una-presentación-a-toda-marcha-de-r.html#cb28-1"></a><span class="kw">library</span>(sf)</span></code></pre></div>
-<pre><code>## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1</code></pre>
+<pre><code>## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1; sf_use_s2() is TRUE</code></pre>
 <p>Luego, cargamos un archivo georeferenciado con las comunas de la Ciudad Autónoma de Buenos Aires, disponible online en formato <a href="https://es.wikipedia.org/wiki/GeoJSON"><em>geojson</em></a>, un estándar de representación de datos geográficos que es fácil de usar:</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="una-presentación-a-toda-marcha-de-r.html#cb30-1"></a>comunas &lt;-<span class="st"> </span><span class="kw">st_read</span>(<span class="st">&#39;https://bitsandbricks.github.io/data/CABA_comunas.geojson&#39;</span>)</span></code></pre></div>
-<pre><code>## Reading layer `CABA_comunas&#39; from data source `https://bitsandbricks.github.io/data/CABA_comunas.geojson&#39; using driver `GeoJSON&#39;
+<pre><code>## Reading layer `CABA_comunas&#39; from data source 
+##   `https://bitsandbricks.github.io/data/CABA_comunas.geojson&#39; 
+##   using driver `GeoJSON&#39;
 ## Simple feature collection with 15 features and 4 fields
-## geometry type:  MULTIPOLYGON
-## dimension:      XY
-## bbox:           xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754
-## geographic CRS: WGS 84</code></pre>
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754
+## Geodetic CRS:  WGS 84</code></pre>
 <p>Al igual que cuando usamos <code>read.csv()</code> para leer un archivo .csv y cargarlo como un dataframe, el comando <code>st_read()</code> hace lo propio con archivos de información geográfica, conocidos en la jerga como “shapefiles”. El resultado también es un dataframe, por lo cual podemos practicar el uso de las funciones que ya aprendimos, como dim(), names() y head().</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="una-presentación-a-toda-marcha-de-r.html#cb32-1"></a><span class="kw">dim</span>(comunas)</span></code></pre></div>
 <pre><code>## [1] 15  5</code></pre>
@@ -393,10 +395,10 @@ Figura 2.2: La interfaz de RStudio
 <pre><code>## [1] &quot;barrios&quot;   &quot;perimetro&quot; &quot;area&quot;      &quot;comunas&quot;   &quot;geometry&quot;</code></pre>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="una-presentación-a-toda-marcha-de-r.html#cb36-1"></a><span class="kw">head</span>(comunas)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 4 fields
-## geometry type:  MULTIPOLYGON
-## dimension:      XY
-## bbox:           xmin: -58.4627 ymin: -34.6625 xmax: -58.33514 ymax: -34.56935
-## geographic CRS: WGS 84
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -58.4627 ymin: -34.6625 xmax: -58.33514 ymax: -34.56935
+## Geodetic CRS:  WGS 84
 ##                                                                        barrios
 ## 1 CONSTITUCION - MONSERRAT - PUERTO MADERO -  RETIRO - SAN NICOLAS - SAN TELMO
 ## 2                                                                     RECOLETA
@@ -424,12 +426,14 @@ Figura 2.2: La interfaz de RStudio
 <p>Aprovechando que tenemos un mapa, deberíamos clasificar las comunas entre las que pertenecen al norte y las que pertenecen al sur de la ciudad. No hay una línea divisoria oficial, pero la traza de la Avenida Rivadavia suele ser tomada como frontera: Rivadavia es la <a href="https://www.clarin.com/ediciones-anteriores/avenida-rivadaviaun-largo-recorrido-contrastes_0_B1reo181CYe.html">“divisoria simbólica del Norte y el Sur de la Ciudad, con sus diferencias de desarrollo”</a></p>
 <p>Por esas casualidades de la vida, tengo un archivo geográfico que contiene la línea que dibuja a avenida Rivadavia al atravesar la ciudad. Lo bajamos:</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="una-presentación-a-toda-marcha-de-r.html#cb40-1"></a>rivadavia &lt;-<span class="st"> </span><span class="kw">st_read</span>(<span class="st">&#39;https://bitsandbricks.github.io/data/avenida_rivadavia.geojson&#39;</span>)</span></code></pre></div>
-<pre><code>## Reading layer `avenida_rivadavia&#39; from data source `https://bitsandbricks.github.io/data/avenida_rivadavia.geojson&#39; using driver `GeoJSON&#39;
+<pre><code>## Reading layer `avenida_rivadavia&#39; from data source 
+##   `https://bitsandbricks.github.io/data/avenida_rivadavia.geojson&#39; 
+##   using driver `GeoJSON&#39;
 ## Simple feature collection with 1 feature and 1 field
-## geometry type:  LINESTRING
-## dimension:      XY
-## bbox:           xmin: -58.53014 ymin: -34.63946 xmax: -58.37017 ymax: -34.60711
-## geographic CRS: WGS 84</code></pre>
+## Geometry type: LINESTRING
+## Dimension:     XY
+## Bounding box:  xmin: -58.53014 ymin: -34.63946 xmax: -58.37017 ymax: -34.60711
+## Geodetic CRS:  WGS 84</code></pre>
 <p>Y lo proyectamos sobre el mapa, como una capa adicional del gráfico de ggplot que definimos antes:</p>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="una-presentación-a-toda-marcha-de-r.html#cb42-1"></a><span class="kw">ggplot</span>(comunas) <span class="op">+</span></span>
 <span id="cb42-2"><a href="una-presentación-a-toda-marcha-de-r.html#cb42-2"></a><span class="st">    </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> comunas)) <span class="op">+</span></span>
@@ -452,10 +456,10 @@ Figura 2.2: La interfaz de RStudio
 <p>Verifiquemos el resultado:</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="una-presentación-a-toda-marcha-de-r.html#cb46-1"></a><span class="kw">head</span>(comunas)</span></code></pre></div>
 <pre><code>## Simple feature collection with 6 features and 5 fields
-## geometry type:  MULTIPOLYGON
-## dimension:      XY
-## bbox:           xmin: -58.4627 ymin: -34.6625 xmax: -58.33514 ymax: -34.56935
-## geographic CRS: WGS 84
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -58.4627 ymin: -34.6625 xmax: -58.33514 ymax: -34.56935
+## Geodetic CRS:  WGS 84
 ##                                                                        barrios
 ## 1 CONSTITUCION - MONSERRAT - PUERTO MADERO -  RETIRO - SAN NICOLAS - SAN TELMO
 ## 2                                                                     RECOLETA
