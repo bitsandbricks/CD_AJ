@@ -18,28 +18,28 @@ library(tidyverse)
 ```
 
 
-Vamos a practicar usando los registros del Sistema Único de Atención Ciudadana (SUACI) de la Ciudad Autónoma de Buenos Aires. El SUACI es el repositorio donde se integran las solicitudes y reclamos que los ciudadanos presentan a la ciudad por distintos canales: en persona, por teléfono o usando la aplicación [BA 147](https://gestioncolaborativa.buenosaires.gob.ar/prestaciones). Vamos a trabajar con una versión de los datos que ha sido simplificada para hacer más ameno el trabajo con ella. Quién quiera acceder a los datos en su esplendor de complejidad original, puede encontrarlos en el portal de datos abiertos de la ciudad: https://data.buenosaires.gob.ar/
+Vamos a practicar usando el dataset de delitos que publica el Ministerio de Justicia y Seguridad de la Ciudad Autónoma de Buenos Aires. Registra los homicidios, hurtos (sin violencia), lesiones y robos (con violencia) ocurridos en la ciudad durante el año 2020. Vamos a trabajar con una versión de los datos que ha sido simplificada para hacer más ameno el trabajo con ella. Quién quiera acceder a los datos en su esplendor de complejidad original, puede encontrarlos en el portal de datos abiertos de la ciudad: https://data.buenosaires.gob.ar/. 
 
-Comenzamos por acceder al archivo con los registros para cargarlo en R como un dataframe. Tendremos que ejercitar un poco la paciencia porque es un archivo de varios megas, que podría tardar unos minutos en ser descargado.  
+Comenzamos por acceder al archivo con los registros para cargarlo en R como un dataframe. Esto requiere de una conexión a internet, pero no debería tomar mucho tiempo en ser descargado.  
 
 ```{r}
-atencion_ciudadano <- read.csv("http://bitsandbricks.github.io/data/gcba_suaci_barrios.csv")
+delitos <- read.csv("https://cdaj.netlify.app/data/delitos_barrios.csv")
 ```
 
 Lo primero que deberíamos hacer con un dataframe que no conocemos es usar la función `str()`, que nos indica su estructura (por _structure_ en inglés):
 
 ```{r}
-str(atencion_ciudadano)
+str(delitos)
 ```
 
-Para empezar, nos enteramos que el objeto que estamos analizando es un dataframe ("data.frame"). Eso ya lo sabíamos, pero como `str()` puede usarse con cualquier clase de objeto en R, en ocasiones resultará que estamos ante un vector, una lista u otra clase de criatura. A continuación aparecen las dimensiones del dataframe: 57.432 observaciones (filas) con 5 variables (columnas). Los nombres de las columnas son PERIODO, RUBRO, TIPO_PRESTACION, BARRIO y total. Con eso ya podemos inferir que cada observación en el dataframe contiene la cantidad total de solicitudes según concepto, rubro y tipo de prestación (aunque no sepamos bien de que se tratan esas variables), en un período dado y en cada barrio. 
+Para empezar, nos enteramos que el objeto que estamos analizando es un dataframe ("data.frame"). Eso ya lo sabíamos, pero como `str()` puede usarse con cualquier clase de objeto en R, en ocasiones resultará que estamos ante un vector, una lista u otra clase de criatura. A continuación aparecen las dimensiones del dataframe: 3188 observaciones (filas) con 5 variables (columnas). Los nombres de las columnas son _periodo_, _tipo_, _subtipo_, _barrio_ y _total_. Con eso ya podemos inferir que cada observación en el dataframe contiene la cantidad total de delitos según tipo y subtipo (aunque no sepamos bien de que se tratan esas variables), en un período dado y en cada barrio. 
 
-Con `str()` también obtenemos el tipo de datos representados por cada variable, y un ejemplo de los valores contenidos en las primeras filas. _PERIODO_ y _total_ son variables de tipo "int", es decir, números enteros o _integers_ en inglés. El resto de las variables son de tipo "chr"; en R las variables de texto reciben el nombre de _characters_, caracteres. 
+Con `str()` también obtenemos el tipo de datos representados por cada variable, y un ejemplo de los valores contenidos en las primeras filas. La variable _total_ es de tipo "int", es decir, números enteros o _integers_ en inglés. El resto de las variables son de tipo "chr"; en R las variables de texto reciben el nombre de _characters_, caracteres. 
 
 La siguiente función a utilizar cuando estamos conociendo el contenido de un set de datos es `summary()`, que nos dará un resumen en forma de estadísticas descriptivas para las variables numéricas (cuartiles y mediana) .
 
 ```{r}
-summary(atencion_ciudadano)
+summary(delitos)
 ```
 
 Para las variables de texto `summary()` no tiene mucho que decir. Aquí sería bueno que nos mostrara algún dato, quizás los valores más frecuentes, ¿verdad?. Eso va a ocurrir pero sólo cuando esas columnas con texto contengan variables categóricas, que en R reciben el tipo "factor" en lugar de "chr". 
@@ -48,29 +48,29 @@ Para las variables de texto `summary()` no tiene mucho que decir. Aquí sería b
 Una variable es categórica cuando es razonable considerar que se elige entre un conjunto finito de variables posibles; por ejemplo, los barrios de Buenos Aires son un conjunto finito y predeterminado. 
 :::
 
-¿Pero cómo puede saber R si _RUBRO_ o _BARRIO_ son categorías? Pues podemos avisarle al cargar los datos con la función `read.csv()` que usamos al principio. Para que `read.csv()` interprete como variables categóricas a todas las columnas que contienen texto se usa el parámetro `stringsAsFactors`, así: `misdatos <- read.csv("archivo_con_mis_datos", stringsAsFactors = TRUE)`. En general es buena idea evitar que los campos de texto se asuman como factores, pero en éste caso está bien: aquí todas las columnas de texto, en efecto, contienen variables categóricas. 
+¿Pero cómo puede saber R si _tipo_ o _barrio_ son categorías? Pues podemos avisarle al cargar los datos con la función `read.csv()` que usamos al principio. Para que `read.csv()` interprete como variables categóricas a todas las columnas que contienen texto se usa el parámetro `stringsAsFactors`, así: `misdatos <- read.csv("archivo_con_mis_datos", stringsAsFactors = TRUE)`. En general es buena idea evitar que los campos de texto se asuman como factores, pero en éste caso está bien: aquí todas las columnas de texto, en efecto, contienen variables categóricas. 
 
 Veamos que pasa si lo intentamos. Volvemos a leer el mismo dataset, esta vez con `stringsAsFactors = TRUE`
 
 ```{r}
-atencion_ciudadano <- read.csv("http://bitsandbricks.github.io/data/gcba_suaci_barrios.csv", stringsAsFactors = TRUE)
+delitos <- read.csv("https://cdaj.netlify.app/data/delitos_barrios.csv", stringsAsFactors = TRUE)
 ```
 
 .. y pedimos su resumen:
 
 
 ```{r}
-summary(atencion_ciudadano)
+summary(delitos)
 ```
 ¡Esta vez obtuvimos un ranking con las categorías más frecuentes!
 
-Las categorías posibles para un factor son llamadas "niveles" (_levels_). Para ver todos los niveles del factor BARRIO, es decir todos los barrios representados en la columna con la variable BARRIO, podemos usar la función `levels()`
+Las categorías posibles para un factor son llamadas "niveles" (_levels_). Para ver todos los niveles del factor _barrio_, es decir todos los barrios representados en la columna con ese nombre de variable, podemos usar la función `levels()`
 
 ```{r}
-levels(atencion_ciudadano$BARRIO)
+levels(delitos$barrio)
 ```
 
-Para acceder en forma rápida al contenido de la columna BARRIO, hemos utilizado por primera vez un "truco" muy práctico. Para obtener el contenido de cualquier columna en particular, basta con el nombre del dataframe seguido del símbolo `$` y el nombre de la columna a extraer: `atencion_ciudadano$BARRIO`, o `atencion_ciudadano$total`, etc. 
+Para acceder en forma rápida al contenido de la columna _barrio_, hemos utilizado por primera vez un truco muy práctico. Para obtener el contenido de cualquier columna en particular, basta con el nombre del dataframe seguido del símbolo `$` y el nombre de la columna a extraer: `delitos$tipo`, o `delitos$total`, etc. 
 
 
 ## Cruzando variables: la operación `join`
