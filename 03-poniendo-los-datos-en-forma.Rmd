@@ -272,14 +272,18 @@ head(seleccion)
 Se trata de la lógica de conjuntos, o lógica *booleana*, que con un poco de suerte recordamos de nuestra época de escolares. Los símbolos importantes son `&`, `|`, y `!`: "y", "ó", y la negación que invierte preposiciones:
 
   - `a & b`        a y b
+  
   - `a | b`        a ó b
+  
   - `a & !b`       a, y no b
+  
   - `!a & b`       no a, y b
+  
   - `!(a & b)`     no (a y b) 
 
-Hemos visto ejemplos de `a & b` (`periodo == "08/2020",  tipo == "Homicidio"`, que `filter*()` toma como un `&`) y de `a | b` (cuando optamos por `barrio == "Retiro" | barrio == "Palermo"`)
+Hemos visto ejemplos de `a & b` (`periodo == "08/2020",  tipo == "Homicidio"`, que `filter()` toma como un `&`) y de `a | b` (cuando optamos por `barrio == "Retiro" | barrio == "Palermo"`)
 
-Un ejemplo de `a & !b`, filas en las que el tipo sea "Robo (con violencia)", y en las que el subtipo no sea "Robo Automotor":
+Un ejemplo de `a & !b` : pedimos filas en las que el tipo sea "Robo (con violencia)", y además el subtipo no sea "Robo Automotor":
 
 ```{r eval=FALSE}
 filter(delitos, tipo == "Robo (con violencia)" & !(subtipo == "Robo Automotor"))
