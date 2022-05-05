@@ -41,13 +41,12 @@ contactos_por_comuna <- atencion_ciudadano %>%
     summarise(miles_contactos = sum(total) / 1000 )
 
 contactos_por_comuna
-
 ```
 
 Lo que nos falta ahora es la cantidad de habitantes en cada comuna. _No problem_. El dato es fácil de conseguir, otra vez cortesía de la Dirección General de Estadística y Censos de la Ciudad de Buenos Aires. Traemos la proyección al año 2017 de la cantidad de habitantes por comuna. 
 
 ```{r}
-habitantes <- read.csv("http://bitsandbricks.github.io/data/gcba_pob_comunas_17.csv")
+habitantes <- read.csv("_book/data/comunas_poblacion_2020.csv")
 
 habitantes
 ```
