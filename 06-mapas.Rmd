@@ -177,7 +177,7 @@ En el capítulo 2 aprendimos a usar la función `left_join()` para combinar tabl
 
 Lo cargamos,
 
-```{r eval=FALSE}
+```{r}
 atencion_ciudadano <- read.csv("http://bitsandbricks.github.io/data/gcba_suaci_comunas.csv")
 ```
 
