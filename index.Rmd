@@ -12,6 +12,9 @@ github-repo: bitsandbricks/CD_AJ
 link-citations: yes
 site: bookdown::bookdown_site
 subtitle: "Una introducción a la exploración, análisis y visualización de datos para activistas"
+output:
+  bookdown::gitbook:
+    df_print: paged
 ---
 
 # {-}

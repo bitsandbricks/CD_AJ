@@ -2,8 +2,8 @@ fig:unnamed-chunk-4
 fig:unnamed-chunk-6
 fig:unnamed-chunk-7
 fig:unnamed-chunk-117
-fig:unnamed-chunk-120
-fig:unnamed-chunk-121
+fig:unnamed-chunk-140
+fig:unnamed-chunk-141
 qué-es-la-ciencia-de-datos
 qué-significa-hacer-ciencia-de-datos
 una-presentación-a-toda-marcha-de-r
@@ -42,6 +42,16 @@ preparando-una-visualización-para-compartir
 otras-visualizaciones
 ejercicios-2
 analisis-de-texto
+manipulación-de-texto
+metacaracteres
+comienzo-y-fin-de-línea
+clases-de-palabras
+lookaround
+primer-ejercicio
+consiguiendo-los-datos
+limpieza-de-datos
+análisis
+quienes-hablaron
 ejercicios-3
 información-geográfica-y-mapas
 los-datos-georreferenciados

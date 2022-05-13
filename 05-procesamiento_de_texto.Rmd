@@ -53,7 +53,6 @@ str_view(frutas, "an")
 Y ahora es donde comienzan a resultar interesantes las `regex`. Por ejemplo, el punto (.) puede reemplazar a cualquie caracter, excepto el salto de línea
 
 ```{r, message=FALSE}
-
 str_view(frutas, ".an")
 ```
 
@@ -65,7 +64,6 @@ str_view(oracion, ".as\\.")
 saludo <- c("Quiero saludar a los Sres. padres y las Sras. madres")
 str_view(saludo, "Sr.s\\.")
 str_view_all(saludo, "Sr.s\\.") #para que detecte todas las coincidencias y no solo la primera.
-
 ```
 
 ## Metacaracteres
@@ -136,20 +134,17 @@ str_view_all(discurso, "(?<=Sr.?\\.\\s)(?=\\w)\\w*")
 
 La desigualdad estructural de género se manifiesta también en las mayores dificultades que tienen las mujeres para acceder a posiciones de poder. Para comenzar a remediar esto, en diversos países se adoptaron medidas de acción positiva como son las leyes de cupo femenino para garantizar un determinado porcentaje *mínimo* de diputadas mujeres en relación con los varones.
 
-Así, en Argentina, en el año 1991 se adoptó una primera ley que estableció la obligatoriedad de garantizar una mujer entre los primeros tres candidates en las listas de diputados y así sucesivamente, para propender a alcanzar que accedan al 30% de las bancas en disputas. Recientemente, en el 2017 se aprobó una ley de paridad, en donde se debe garantizar el 50% de las bancas para las mujeres.
+Así, en Argentina, en el año 1991 se adoptó una primera ley que estableció la obligatoriedad de garantizar una mujer entre las primeros tres personas candidatas en las listas de diputados y así sucesivamente, para propender a alcanzar que accedan al 30% de las bancas en disputas. Recientemente, en el 2017 se aprobó una ley de paridad, en donde se debe garantizar el 50% de las bancas para las mujeres.
 
-Una compañera tuvo la idea de medir esta participación en la práctica, y para ello quizo contabilizar cuántas veces tomó la palabra una mujer y cuántas veces un varón, a partir de la implementación de la paridad. En este ejercicio vamos a intentar medir esto.
+Una compañera tuvo la idea de medir esta participación en la práctica, y para ello quiso contar cuántas veces tomó la palabra una mujer y cuántas veces un varón, a partir de la implementación de la paridad. En este ejercicio vamos a intentar medir esto.
 
 
-Antes de continuar, vamos a instalar dos paquetes nuevos de funciones: `pdftools`, que permite extraer el texto de archivos en formato PDF, y `flextable`, que nos permite crear de forma fácil bellas tablas y resúmenes de información. 
-Para instalarlos usamos `install.packages()`, tal como hicimos antes para instalar otros paquetes.
+Antes de continuar, vamos a instalar un nuevo paquetes de funciones: `pdftools`, que permite extraer el texto de archivos en formato PDF.
+
+Para instalarlo usamos `install.packages()`, tal como hicimos antes para instalar otros paquetes.
 
 ```{r eval=FALSE}
 install.packages("pdftools")
-```
-
-```{r eval=FALSE}
-install.packages("flextable")
 ```
 
 :::tip
@@ -163,7 +158,6 @@ La página de la Cámara de Diputados de Argentina tiene una pequeña sección d
 
 ```{r message=FALSE, warning=FALSE}
 library(pdftools)
-library(flextable)
 
 sesiones <- read.csv("https://cdaj.netlify.app/data/sesiones/sesiones.csv")
 ```
@@ -185,15 +179,20 @@ periodo138 <- periodo138 %>%
   mutate(reunion_nombre = paste0("138-", reunion_numero))
 
 periodo138 <- periodo138 %>% 
-  mutate(link = paste0("https://github.com/Demzayat/Demzayat/raw/main/sesiones/",reunion_nombre, ".pdf"))
-
+  mutate(link = paste0("https://cdaj.netlify.app/data/sesiones/", reunion_nombre, ".pdf"))
 ```
 
-Y ahora leemos los documentos y los agregamos a nuestra tabla. Las celdas no tienen limite de capacidad, y entonces colocamos cada version taquigrafica en una celda en la fila de la sesion respectiva. Para hacer esto usaremos la funcion `map` para que la función que lee pdfs (`pdf_text`) se ejecute cada vez en cada fila de nuestro dataframe.
+Nuestra lista de sesiones, ahora con una columna con el link a su transcripción, luce así:
 
 ```{r}
+periodo138
+```
+
+Y ahora leemos los documentos y los agregamos a nuestra tabla. Las celdas no tienen limite de capacidad, y entonces colocamos cada versión taquigráfica en una celda en la fila de la sesión respectiva. Para hacer esto usaremos la función `map` para que la función que lee PDFs (`pdf_text`) se ejecute cada vez en cada fila de nuestro dataframe.
+
+```{r cache=TRUE}
 periodo138 <- periodo138 %>% 
-  mutate(texto = map(link, pdf_text)) #puede demorar algunos minutos
+  mutate(texto = map(link, pdf_text)) # puede demorar algunos minutos!
 ```
 
 :::warning
@@ -229,13 +228,12 @@ cantidad <- limpio %>%
          ratio = round(varon/mujer,3)) %>% 
   select(-reunion_numero, -sesion_numero,-texto, -link, -sesion_camara, -periodo_id, -reunion_fin)
 
-flextable(cantidad) %>% autofit()
+cantidad
 ```
 
 
 Y si queremos ver el promedio, calculamos
 ```{r}
-
 mean(cantidad$ratio)
 ```
 
@@ -253,13 +251,13 @@ quienes <- limpio %>%
 listado <- tibble(as.data.frame(table(quienes$quienes[1]) )) %>% 
   arrange(desc(Freq))
 
+listado
 ```
 
 
 ## Ejercicios
 
-1. Y entonces podemos ver en concreto quién habló y cuántas veces lo hizo. Ahora, aparecen algunos "del"y "de". Cómo podríamos diferenciar a 
-DE LA SOTA, NATALIA;  DE LOREDO, RODRIGO;DE MARCHI, OMAR; DEL CAÑO, NICOLAS y 
-DEL PLA, ROMINA?
+1. En la última tabla pudimos ver en concreto quién habló y cuántas veces lo hizo. Pero notemos que aparecen algunos "DEL" y "DE" sueltos... ¡falta el resto de esos apellidos!. ¿Cómo podríamos obtener el apellido completo de
+`"DE LA SOTA, NATALIA"`,  `"DE LOREDO, RODRIGO"`, `"DEL PLA, ROMINA"`, etc?
 
-2. Descargue un tomo de jurisprudencia de la Corte Suprema de Justicia de la Nación (https://sjservicios.csjn.gov.ar/sj/tomosFallos.do?method=iniciar), o la similar en otros países,  y extraiga las citas a precedentes: "Fallos xxx:xxx"
+2. Descarguemos un tomo de jurisprudencia de la Corte Suprema de Justicia de la Nación (https://sjservicios.csjn.gov.ar/sj/tomosFallos.do?method=iniciar), o la similar en otros países, y extraigamos las citas a precedentes: `"Fallos xxx:xxx"`
