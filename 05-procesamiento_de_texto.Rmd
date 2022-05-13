@@ -257,7 +257,7 @@ listado
 
 ## Ejercicios
 
-1. En la última tabla pudimos ver en concreto quién habló y cuántas veces lo hizo. Pero notemos que aparecen algunos "DEL" y "DE" sueltos... ¡falta el resto de esos apellidos!. ¿Cómo podríamos obtener el apellido completo de
+1. En la última tabla pudimos ver en concreto quién habló y cuántas veces lo hizo. Pero notemos que aparecen algunos "del" y "de" sueltos... ¡falta el resto de esos apellidos!. ¿Cómo podríamos obtener el apellido completo de
 `"DE LA SOTA, NATALIA"`,  `"DE LOREDO, RODRIGO"`, `"DEL PLA, ROMINA"`, etc?
 
 2. Descarguemos un tomo de jurisprudencia de la Corte Suprema de Justicia de la Nación (https://sjservicios.csjn.gov.ar/sj/tomosFallos.do?method=iniciar), o la similar en otros países, y extraigamos las citas a precedentes: `"Fallos xxx:xxx"`
