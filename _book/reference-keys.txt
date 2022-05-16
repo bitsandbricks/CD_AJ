@@ -61,3 +61,15 @@ visualizando-información-geográfica
 volcando-en-el-mapa-información-de-múltiples-fuentes
 combinando-capas-geográficas
 ejercicios-4
+analisis-de-texto-1
+manipulación-de-texto-1
+metacaracteres-1
+comienzo-y-fin-de-línea-1
+clases-de-palabras-1
+lookaround-1
+primer-ejercicio-1
+consiguiendo-los-datos-1
+limpieza-de-datos-1
+análisis-1
+quienes-hablaron-1
+ejercicios-para-el-hogar

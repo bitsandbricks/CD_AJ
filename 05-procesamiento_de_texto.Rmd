@@ -1,17 +1,14 @@
-
 # Analisis de texto
-
 
 ```{r echo=FALSE, out.width="100%"}
 knitr::include_graphics('imagenes/textos.jpg')
 ```
 
-
 A veces, lo que queremos analizar es un texto. Los textos, audios e imágenes son datos no estructurados y hay que realizar algún tipo de preparación o estructuración para poder procesarlos automáticamente.
 
 En el análisis automático de texto se suelen partir los documentos, y armar lo que se llama un *bolsa de palabras*, donde se rompe la sintaxis . Ello sirve para medir frecuencias de palabras, cercanía entre ellas, clasificarlas como "positivas" o "negativas" sentimentalmente hablando, etc. La minería de texto tiene diversas herramientas para realizar este tipo de tareas.
 
-Las palabras, por su parte, son cadenas de caracteres, y también se pueden manipular de modo automático. Para hacer ello usaremos lo que se conoce como *expresiones regulares* ("regular expressions" o regex) que permitirá detectar patrones y manipularlos. Las `regex` son relativamente antiguas (circa 1980) y tuvieron un desarrollo paralelo a la ciencia de datos. Por ello, vienen en varios sabores, cada uno sutilmente diferente al otro. `R` utiliza `regex`a través de varios paquetes, entre ellos el `stringr` de la constelación `tidyverse`.
+Las palabras, por su parte, son cadenas de caracteres, y también se pueden manipular de modo automático. Para hacer ello usaremos lo que se conoce como *expresiones regulares* ("regular expressions" o regex) que permitirá detectar patrones y manipularlos. Las `regex` son relativamente antiguas (circa 1970) y tuvieron un desarrollo paralelo a la ciencia de datos. Por ello, vienen en varios sabores, cada uno sutilmente diferente al otro. `R` utiliza `regex`a través de varios paquetes, entre ellos el `stringr` de la constelación `tidyverse`.
 
 ## Manipulación de texto
 
@@ -21,12 +18,12 @@ En `stringr` todas las funciones comienza con `str_`. Usando RStudio, si se pres
 library(tidyverse)
 oracion <- c("Esta", "es", "una", "cadena", "de", "palabras.")
 oracion
-# con `collapse = " "` indicamos que queremos combinar los elementos separados con un espacio
+# con `collapse = " "` indicamos que queremos combinar los elementos y separarlos con un espacio
 oracion <- str_c(oracion, collapse = " ") 
 oracion
 ```
 
-Para extraer caracteres de una palabra se utiliza `str_sub`. Hay que señalar el comienzo y el final de lo que se quiera extraer:
+Para extraer caracteres de una palabra se utiliza `str_sub`. Hay que señalar el comienzo y el final de lo que se quiera extraer, con el número de la posición:
 
 ```{r}
 frutas <- c("Manzana", "Banana", "Pera")
@@ -43,20 +40,20 @@ str_to_sentence(str_c(frutas, collapse = " "))
 
 ```
 
-Una función muy importante nos permite detectar patrones, `str_detect`. Utilizaremos `str_view` para que la señale en el texto cuando la detecte:
+Una función muy importante nos permite detectar patrones, `str_detect`, que nos dice si es verdadero o falso que dicho patrón está en el objeto. Para verlo más en detalle, utilizaremos `str_view` para que la señale en el texto cuando la detecte:
 
 ```{r, message=FALSE}
 frutas
 str_view(frutas, "an")
 ```
 
-Y ahora es donde comienzan a resultar interesantes las `regex`. Por ejemplo, el punto (.) puede reemplazar a cualquie caracter, excepto el salto de línea
+Y ahora es donde comienzan a ponerse interesantes las `regex`. Por ejemplo, el punto (.) puede reemplazar a cualquie caracter, excepto el salto de línea
 
 ```{r, message=FALSE}
 str_view(frutas, ".an")
 ```
 
-Pero si el "punto" reemplaza a cualquier caracter, ¿cómo seleccionamos al caracter "."? Tenemos que utilizar un "escape" que le diga que estamos refiriendo al caracter y no al `regex`. para ello, se usa la barra invertida, que se denomina `escape`. Pero para que sepa que es un escape y no una barra invertida, debemos usar dos barras invertidas...
+Pero si el "punto" reemplaza a cualquier caracter, ¿cómo seleccionamos al caracter "."? Tenemos que utilizar un "escape" que le diga que estamos refiriendo al caracter y no al `regex`. para ello, se usa la barra invertida `\`, que se denomina `escape`. Pero, y entonces, ¿cómo difereciamos al escape de la barra invertida?: Para que sepa que es un escape y no una barra invertida, debemos *escaparla*, de modo que serán dos barras invertidas, más el caracter que queremos escapar...
 
 ```{r, message=FALSE}
 oracion
@@ -80,14 +77,14 @@ str_view(x, "a$")
 
 ### Clases de Palabras
 
-Cuando se usan los corchetes, se pueden coincidir una de varias opciones. Mientras que `a` identifica una "a" y `e` identifica una "e", `[ae]` identifica una "a" o una "e".
+Cuando se usan los corchetes, se pueden coincidir una de varias opciones. Mientras que `a` identifica una "a" y `e` identifica una "e", `[ae]` identifica ya sea una "a" o una "e". Esto es muy útil para las dudas ortográficas...
 
 ```{r message=FALSE}
 x <- "Esto es muy necesario, o nesesario?"
 str_view_all (x, "ne[cs]e[cs]ario")
 ```
 
-Se pueden listar muchas clases de caracteres. Por ejemplo
+Entre corchetes, se pueden listar muchas clases de caracteres. Por ejemplo:
 
 ```{r message=FALSE, warning=FALSE}
 x <- "Telefono: 3321-4430"
@@ -99,7 +96,7 @@ str_view(x, "[0-9]{4}.[0-9]{4}") #vean el punto entre los grupos de números
 (telefono <- str_extract(x, "[0-9]{4}.[0-9]{4}"))
 ```
 
-Con `str_extract()` asigné a una variable `telefono` el número que leimos automáticamente. Si esto está en un mail o formulario, o algún otro texto, puedo ejecutar el código y leer a través del `regex` lo que dice. Claro que para ello hay que conocer el tipo de texto que se trata: tengo que saber que el número de teléfono son ocho dígitos separados por un guión. Cuando sé que tipo de patrón estoy buscando, puedo armar un `regex` para leerlo y procesarlo _automágicamente_.
+Con `str_extract()` asignamos a la variable `telefono` el número que leimos automáticamente. Si esto está en un mail o formulario, o algún otro texto, puedo ejecutar el código y leer a través del `regex` lo que dice. Claro que para ello hay que conocer el tipo de texto que se trata: tengo que saber que el número de teléfono son ocho dígitos separados por un guión. Cuando sé que tipo de patrón estoy buscando, puedo armar un `regex` para leerlo y procesarlo *automágicamente*.
 
 Y si queremos identificar todos los números de telefono de una planilla, también lo podemos hacer de modo automático.
 
@@ -112,16 +109,34 @@ telefonos <- str_extract_all(listado, "[0-9]{4}.[0-9]{4}") %>%
 telefonos
 ```
 
+Hay otros metacaracteres muy útiles. `[a-z]`es una secuencia de todas las letras en minúscula; `[A-Z]` en mayúscula. Para elegir todos los dígitos, lo podemos hacer con `\\d`, y todos los no dígitos con `\\D`. Con `\\w` todos los caracteres alfanuméricos ([a-zA-Z0-9\_]) y con `\\W` todos los no alfanuméricos (símbolos, puntos, etc). Con `\\s` podemos elegir todos los espacios en blanco.
 
-Hay otros metacaracteres muy útiles. `[a-z]`es una secuencia de todas las letras en minúscula; `[A-Z]` en mayúscula. Para elegir todos los dígitos, lo podemos hacer con `\\d`, y todos los no dígitos con `\\D`. Con `\\w` todos los caracteres alfanuméricos ([a-zA-Z0-9_]) y con `\\W` todos los no alfanuméricos (símbolos, puntos, etc). Con `\\s` podemos elegir todos los espacios en blanco.
+Luego, un [\^ ] niega lo anterior: [\^a-z] matchea lo que no tenga alguna letra (Ojo, `^` actúa distinto si está dentro o fuera de los corchetes. Fuera es un ancla de inicio de línea, dentro es negación de lo siguiente). Una que es muy importante es la alternación `|`, donde matchea una expresión u otra: `"(Julio|Jul)"` para detectar tanto cuando dice "Julio" o si dice "Jul". Los paréntesis se usan igual que en matemática, para encerrar conceptos y tratarlos como un único concepto (por ejemplo, para que comience con Julio o Jul puedo poner: `^(Julio|Jul)`. Sin los paréntesis, sólo buscaría que no comience con "J").
 
-Luego, un [\^ ] niega lo anterior: [\^a-z] matchea lo que no tenga alguna letra (Ojo, `^` actúa distinto si está dentro o fuera de los corchetes. Fuera es un ancla de inicio de línea, dentro es negación de lo siguiente). Una que es muy importante es la alternación `|`, donde matchea una expresión u otra: `"(Julio|Jul)"` para detectar tanto cuando dice "Julio" o si dice "Jul". Los paréntesis se usan igual que en  matemática, para encerrar conceptos y tratarlos como un único concepto (por ejemplo, para que comience con Julio o Jul puedo poner: `^(Julio|Jul)`. Sin los paréntesis, sólo buscaría que no comience con "J").
+También hay otros metacaracteres para indicar repeticiones: `?` repite el anterior una vez: `.?` será cualquier caracter una vez, o ninguno (es opcional). Luego `+` repetirá una vez al menos y el resto opcional. Y `*` repetirá muchas veces de modo opcional. Como vimos, en este *sabor* de regex, un número entre corchetes dice exacto cuántas veces se debe repetir el patrón: {4}.
 
-El listado es el siguiente: ![](https://www.researchgate.net/profile/Osama-Amehdi/publication/289116519/figure/tbl1/AS:786584169377792@1564547688801/The-most-common-metacharacters-in-regular-expression.png)
+El listado es el siguiente:
+
+| Metacaracter | Nombre                          | Selecciona                                                                     |
+|--------------|--------------|---------------------------------------------|
+| \d           | Dígito                          | un dígito                                                                      |
+| \s           | Espacio en blanco               | cualquier espacio en blanco incluyendo espacios, tabuladores, saltos de línea, |
+| [a-z,A-Z]    | Rango de letras                 | cualquier letra en el rango especificado                                       |
+| .            | Punto                           | cualquier caracter                                                             |
+| [...]        | Clase de caracteres             | cualquier caracter de la clase                                                 |
+| [\^...]      | Negativo de clase de caracteres | cualquier caracter que no esté en la clase                                     |
+| ?            | Signo de interrogación          | Uno permitido, pero es opcional                                                |
+| \*           | Asterisco                       | Cualquier cantidad permitida, pero toda son opcional                           |
+| \+           | Más                             | Al menos uno es requerido, más son opcionales                                  |
+| \|           | Alternativa                     | Selecciona una expresión o la otra que separa                                  |
+| \^           | Caret                           | Selecciona la posición al comienzo de la línea                                 |
+| \$           | Peso                            | Selecciona la posición al final de la línea                                    |
+| {X,Y}        | Rango específico                | X es requerido, máximo Y permitidos                                            |
+
 
 ### Lookaround
 
-Los `lookaround` nos permiten identificar una posición, y no texto. Luego de identificar esa posición, podemos buscar texto. Esta posición puede ser tanto en referencia a la derecha (adelante, `lookahead` `(?=  )`) como a la izquierda (atras, `lookbehind` `(?>=  )`). Entonces deberíamos pedirle a `regex` que identifique el lugar desde donde queremos seleccionar algún patrón. Para ello podemos incluso combinarlos: despues de tal patrón y antes de este otro, y luego decirle con qué queremos hacer el match. 
+Los `lookaround` nos permiten identificar una posición, y no texto. Luego de identificar esa posición, podemos buscar texto. Esta posición puede ser tanto en referencia a la derecha (adelante, `lookahead` `(?=  )`) como a la izquierda (atras, `lookbehind` `(?>=  )`). Entonces deberíamos pedirle a `regex` que identifique el lugar desde donde queremos seleccionar algún patrón. Para ello podemos incluso combinarlos: despues de tal patrón y antes de este otro, y luego decirle con qué queremos hacer el match.
 
 ```{r, message=FALSE}
 
@@ -130,14 +145,14 @@ discurso <- "Sr. Presidente (Gioja).- Corresponde ahora pasar al tiempo destinad
 str_view_all(discurso, "(?<=Sr.?\\.\\s)(?=\\w)\\w*")
 
 ```
+
 ## Primer ejercicio
 
-La desigualdad estructural de género se manifiesta también en las mayores dificultades que tienen las mujeres para acceder a posiciones de poder. Para comenzar a remediar esto, en diversos países se adoptaron medidas de acción positiva como son las leyes de cupo femenino para garantizar un determinado porcentaje *mínimo* de diputadas mujeres en relación con los varones.
+La desigualdad estructural de género se manifiesta también en las mayores dificultades que tienen las mujeres para acceder a posiciones de poder. Para comenzar a remediar esto, en diversos países se adoptaron medidas de acción positiva, como  las leyes de cupo femenino para garantizar un determinado porcentaje _mínimo_ de diputadas mujeres en relación con los varones.
 
-Así, en Argentina, en el año 1991 se adoptó una primera ley que estableció la obligatoriedad de garantizar una mujer entre las primeros tres personas candidatas en las listas de diputados y así sucesivamente, para propender a alcanzar que accedan al 30% de las bancas en disputas. Recientemente, en el 2017 se aprobó una ley de paridad, en donde se debe garantizar el 50% de las bancas para las mujeres.
+Así, en Argentina, en el año 1991 se adoptó una primera ley que estableció la obligatoriedad de garantizar una mujer entre las primeros tres personas candidatas en las listas de diputados y así sucesivamente, para propender a alcanzar un cupo mínimo del 30% de las bancas en disputas para las mujeres. Recientemente, en el 2017 se aprobó una ley de paridad, en donde se debe garantizar el 50% de las bancas para las mujeres. 
 
-Una compañera tuvo la idea de medir esta participación en la práctica, y para ello quiso contar cuántas veces tomó la palabra una mujer y cuántas veces un varón, a partir de la implementación de la paridad. En este ejercicio vamos a intentar medir esto.
-
+Una investigadora tuvo la idea de medir esta participación en la práctica, y para ello contó cuántas veces tomó la palabra una mujer y cuántas veces un varón, a partir de la implementación de la ley de paridad. En este ejercicio vamos a intentar medir esto con los regex.
 
 Antes de continuar, vamos a instalar un nuevo paquetes de funciones: `pdftools`, que permite extraer el texto de archivos en formato PDF.
 
@@ -147,10 +162,9 @@ Para instalarlo usamos `install.packages()`, tal como hicimos antes para instala
 install.packages("pdftools")
 ```
 
-:::tip
-Recordemos que sólo hace falta instalar paquetes una vez. Es decir, habiendo ejecutado con éxito la línea `install.packages("pdftools")` ya no hace falta volver hacerlo la próxima vez que necesitemos recurrir al paquete. Ya quedó instalado en nuestro sistema 
+::: tip
+Recordemos que sólo hace falta instalar paquetes una vez. Es decir, habiendo ejecutado con éxito la línea `install.packages("pdftools")` ya no hace falta volver hacerlo la próxima vez que necesitemos recurrir al paquete. Ya quedó instalado en nuestro sistema
 :::
-
 
 ### Consiguiendo los datos
 
@@ -162,11 +176,11 @@ library(pdftools)
 sesiones <- read.csv("https://cdaj.netlify.app/data/sesiones/sesiones.csv")
 ```
 
-:::tip
+::: tip
 Una ventaja de la programación es la reproducibilidad. Y para ello, en general, es útil descargar las bases de datos directamente desde las paginas web. Sin embargo, los links muchas veces cambian y las paginas cuando menos lo esperamos, caen. Por ello, siempre es mejor tener una copia de la base en nuestra PC o nuestra nube y referenciarla de allí.
 :::
 
-Para este ejercicio utilizaremos solamente el período del año 2020, número 138. Del sitio web de la Cámara de Diputados podemos o bien vincular las versiones taquigráficas o bien descargarlas a la PC. Con ello, podremos cargarlas en nuestra tabla. 
+Para este ejercicio utilizaremos solamente el período del año 2020, que es el número de sesiones 138. Del sitio web de la Cámara de Diputados podemos, o bien vincular las versiones taquigráficas con el link,  o bien descargarlas a la PC. Con ello, podremos cargarlas en nuestra tabla.
 
 Una vez descargadas o identificados los links, agregamos una columna con el link para luego descargar el texto.
 
@@ -188,26 +202,26 @@ Nuestra lista de sesiones, ahora con una columna con el link a su transcripción
 periodo138
 ```
 
-Y ahora leemos los documentos y los agregamos a nuestra tabla. Las celdas no tienen limite de capacidad, y entonces colocamos cada versión taquigráfica en una celda en la fila de la sesión respectiva. Para hacer esto usaremos la función `map` para que la función que lee PDFs (`pdf_text`) se ejecute cada vez en cada fila de nuestro dataframe.
+Y ahora leemos los documentos y los agregamos a nuestra tabla. Las celdas no tienen limite máximo de capacidad, y entonces colocamos cada versión taquigráfica en una celda en la fila de la sesión respectiva. Para hacer esto usaremos la función `map` para que la función que lee PDFs (`pdf_text`) se ejecute cada vez en cada fila de nuestro dataframe.
 
 ```{r cache=TRUE}
 periodo138 <- periodo138 %>% 
   mutate(texto = map(link, pdf_text)) # puede demorar algunos minutos!
 ```
 
-:::warning
+::: warning
 Ojo. Ahora en la tabla hay mucha información, lo que resulta pesado para las computadoras. Puede ser que si queremos visualizar la tabla se cuelgue la computadora o se haga muy lenta. Entonces, habrá que evitar abrir la tabla entera. Mejor es llamar a las celdas individualmente desde la consola
 :::
 
 ### Limpieza de datos
 
-El texto tiene muchos caracteres que son parte del formato, y que deberíamos limpiar de modo previo a hacer el análisis. La etapa de limpieza debe tener en cuenta cuál es el objetivo de los datos y del análisis. 
+El texto tiene muchos caracteres que son parte del formato, y que deberíamos limpiar de modo previo a hacer el análisis. La etapa de limpieza debe tener en cuenta cuál es el objetivo de los datos y del análisis.
 
-Para nuestro ejercicio, en tanto vamos a medir cuántas veces toman la palabra los diputados y las diputadas, deberíamos eliminar cada vez que toma la palabra el Sr. Presidente o el Sr. Secretario. Eliminamos también todos los saltos que figuran como `\\n` (recuerden que para seleccionar una barra tenemos que escaparla cuatro veces).
+Para nuestro ejercicio, en tanto vamos a medir cuántas veces toman la palabra los diputados y las diputadas, deberíamos eliminar cada vez que toma la palabra el Sr. Presidente o el Sr. Secretario. Eliminamos también todos los saltos que figuran como `\\n` (recuerden que para seleccionar una barra tenemos que escaparla dos veces).
 
 ```{r, warning=FALSE}
 limpio <- periodo138 %>% 
-  mutate(texto = str_replace_all(texto, "\\s|\\\\\\\\n|\\\\n?|\\\\f|\\\\\\\\n?|\\n", " "))
+  mutate(texto = str_replace_all(texto, "\s|\\s|\\\\\\\\n|\\\\n?|\\\\f|\\\\\\\\n?|\\n", " "))
 
 limpio <- periodo138 %>% 
   mutate(texto = str_remove_all(texto, "Sr. Presidente|Sr. Secretario|Sra. Presidenta"))
@@ -215,11 +229,9 @@ limpio <- periodo138 %>%
 rm(periodo138) #remuevo el objeto para liberar un poco de memoria
 ```
 
-
-### Análisis 
+### Análisis
 
 En este ejercicio sólo queremos contar cuántas veces toma la palabra una diputada mujer y cuántas uno varón. Afortunadamente, en la versión taquigráfica, cada vez que comienza a hablar un diputado varón lo refieren como "Sr. xxxx" y cada vez que comienza a hablar una diputada mujer la refieren como "Sra. yyyy". Por ello, nos alcanza con contar cuántas veces dice "Sr." y cuántas "Sra.".
-
 
 ```{r}
 cantidad <- limpio %>% 
@@ -231,8 +243,8 @@ cantidad <- limpio %>%
 cantidad
 ```
 
-
 Y si queremos ver el promedio, calculamos
+
 ```{r}
 mean(cantidad$ratio)
 ```
@@ -241,7 +253,7 @@ Esto significa que en promedio, durante el período de estudio, los varones habl
 
 ### Quienes hablaron?
 
-Y también podemos analizar quiénes tomaron la palabra en cada sesión, con el código de _lookaround_ que hicimos arriba. Agregaremos una listado por fila.
+Y también podemos analizar quiénes tomaron la palabra en cada sesión, con el código de *lookaround* que hicimos arriba. Agregaremos una listado por fila.
 
 ```{r}
 quienes <- limpio %>% 
@@ -254,10 +266,8 @@ listado <- tibble(as.data.frame(table(quienes$quienes[1]) )) %>%
 listado
 ```
 
-
 ## Ejercicios
 
-1. En la última tabla pudimos ver en concreto quién habló y cuántas veces lo hizo. Pero notemos que aparecen algunos "del" y "de" sueltos... ¡falta el resto de esos apellidos!. ¿Cómo podríamos obtener el apellido completo de
-`"DE LA SOTA, NATALIA"`,  `"DE LOREDO, RODRIGO"`, `"DEL PLA, ROMINA"`, etc?
+1.  En la última tabla pudimos ver en concreto quién habló y cuántas veces lo hizo. Pero notemos que aparecen algunos "del" y "de" sueltos... ¡falta el resto de esos apellidos!. ¿Cómo podríamos obtener el apellido completo de `"DE LA SOTA, NATALIA"`, `"DE LOREDO, RODRIGO"`, `"DEL PLA, ROMINA"`, etc?
 
-2. Descarguemos un tomo de jurisprudencia de la Corte Suprema de Justicia de la Nación (https://sjservicios.csjn.gov.ar/sj/tomosFallos.do?method=iniciar), o la similar en otros países, y extraigamos las citas a precedentes: `"Fallos xxx:xxx"`
+2.  Descarguemos un tomo de jurisprudencia de la Corte Suprema de Justicia de la Nación (<https://sjservicios.csjn.gov.ar/sj/tomosFallos.do?method=iniciar>), o la similar en otros países, y extraigamos las citas a precedentes: `"Fallos xxx:xxx"`
