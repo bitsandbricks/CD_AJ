@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Analisis de Texto | Ciencia de Datos para Activismo Jurídico</title>
+  <meta name="description" content="7 Analisis de Texto | Ciencia de Datos para Activismo Jurídico" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Analisis de Texto | Ciencia de Datos para Activismo Jurídico" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="bitsandbricks/CD_AJ" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Analisis de Texto | Ciencia de Datos para Activismo Jurídico" />
+  
+  
+  
+
+<meta name="author" content="Antonio Vazquez Brust" />
+<meta name="author" content="Demian Zayat" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="información-geográfica-y-mapas.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Ciencia de Datos para Activismo Jurídico</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section"></a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>¿Para quién es esto?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#antes-de-empezar"><i class="fa fa-check"></i>Antes de empezar</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="qué-es-la-ciencia-de-datos.html"><a href="qué-es-la-ciencia-de-datos.html"><i class="fa fa-check"></i><b>1</b> ¿Qué es la ciencia de datos?</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="qué-es-la-ciencia-de-datos.html"><a href="qué-es-la-ciencia-de-datos.html#qué-significa-hacer-ciencia-de-datos"><i class="fa fa-check"></i><b>1.1</b> ¿Qué significa hacer ciencia de datos?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html"><i class="fa fa-check"></i><b>2</b> Una presentación a toda marcha de R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#nuestro-primer-proyecto-en-r"><i class="fa fa-check"></i><b>2.1</b> Nuestro primer proyecto en R</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#a-investigar-cual-es-la-diferencia-en-mortalidad-infantil-entre-el-sur-y-el-norte-de-la-ciudad-autónoma-de-buenos-aires"><i class="fa fa-check"></i><b>2.1.1</b> A investigar: ¿Cual es la diferencia en mortalidad infantil entre el sur y el norte de la Ciudad Autónoma de Buenos Aires?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#crear-un-proyecto-en-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Crear un proyecto en RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#escribiendo-un-script"><i class="fa fa-check"></i><b>2.1.3</b> Escribiendo un script</a></li>
+<li class="chapter" data-level="2.1.4" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#cargar-los-datos"><i class="fa fa-check"></i><b>2.1.4</b> Cargar los datos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#visualización-la-exploración-gráfica-de-la-información"><i class="fa fa-check"></i><b>2.2</b> Visualización: la exploración gráfica de la información</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#haciendo-mapas"><i class="fa fa-check"></i><b>2.2.1</b> Haciendo mapas</a></li>
+<li class="chapter" data-level="2.2.2" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#agregando-datos"><i class="fa fa-check"></i><b>2.2.2</b> Agregando datos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#el-veredicto-final"><i class="fa fa-check"></i><b>2.3</b> El veredicto final</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#cuál-es-la-diferencia-en-mortalidad-infantil-entre-el-sur-y-el-norte-de-la-ciudad-autónoma-de-buenos-aires"><i class="fa fa-check"></i><b>2.3.1</b> ¿Cuál es la diferencia en mortalidad infantil entre el sur y el norte de la Ciudad Autónoma de Buenos Aires?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#ejercicios"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html"><i class="fa fa-check"></i><b>3</b> Poniendo los datos en forma</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#primeros-pasos-al-examinar-un-conjunto-de-datos-nuevo"><i class="fa fa-check"></i><b>3.1</b> Primeros pasos al examinar un conjunto de datos nuevo</a></li>
+<li class="chapter" data-level="3.2" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#cruzando-variables-la-operación-join"><i class="fa fa-check"></i><b>3.2</b> Cruzando variables: la operación <code>join</code></a></li>
+<li class="chapter" data-level="3.3" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#transformando-los-datos"><i class="fa fa-check"></i><b>3.3</b> Transformando los datos</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#seleccionar-columnas-con-select"><i class="fa fa-check"></i><b>3.3.1</b> Seleccionar columnas con <code>select()</code></a></li>
+<li class="chapter" data-level="3.3.2" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#filtrar-filas-con-filter"><i class="fa fa-check"></i><b>3.3.2</b> Filtrar filas con <code>filter()</code></a></li>
+<li class="chapter" data-level="3.3.3" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#ordenar-filas-con-arrange"><i class="fa fa-check"></i><b>3.3.3</b> Ordenar filas con <code>arrange()</code></a></li>
+<li class="chapter" data-level="3.3.4" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#agregar-nuevas-variables-con-mutate"><i class="fa fa-check"></i><b>3.3.4</b> Agregar nuevas variables con <code>mutate()</code></a></li>
+<li class="chapter" data-level="3.3.5" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#extraer-sumarios-con-summarise"><i class="fa fa-check"></i><b>3.3.5</b> Extraer sumarios con <code>summarise()</code></a></li>
+<li class="chapter" data-level="3.3.6" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#bonus-el-operador-pipe"><i class="fa fa-check"></i><b>3.3.6</b> ¡BONUS! El operador “pipe”: <code>%&gt;%</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualización.html"><a href="visualización.html"><i class="fa fa-check"></i><b>4</b> Visualización</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="visualización.html"><a href="visualización.html#una-buena-visualización-para-empezar-el-scatterplot"><i class="fa fa-check"></i><b>4.1</b> Una buena visualización para empezar: el <em>scatterplot</em></a></li>
+<li class="chapter" data-level="4.2" data-path="visualización.html"><a href="visualización.html#ajustando-color-y-tamaño"><i class="fa fa-check"></i><b>4.2</b> Ajustando color y tamaño</a></li>
+<li class="chapter" data-level="4.3" data-path="visualización.html"><a href="visualización.html#facetado"><i class="fa fa-check"></i><b>4.3</b> Facetado</a></li>
+<li class="chapter" data-level="4.4" data-path="visualización.html"><a href="visualización.html#gráficos-de-barras"><i class="fa fa-check"></i><b>4.4</b> Gráficos de barras</a></li>
+<li class="chapter" data-level="4.5" data-path="visualización.html"><a href="visualización.html#histogramas"><i class="fa fa-check"></i><b>4.5</b> Histogramas</a></li>
+<li class="chapter" data-level="4.6" data-path="visualización.html"><a href="visualización.html#preparando-una-visualización-para-compartir"><i class="fa fa-check"></i><b>4.6</b> Preparando una visualización para compartir</a></li>
+<li class="chapter" data-level="4.7" data-path="visualización.html"><a href="visualización.html#otras-visualizaciones"><i class="fa fa-check"></i><b>4.7</b> Otras visualizaciones</a></li>
+<li class="chapter" data-level="4.8" data-path="visualización.html"><a href="visualización.html#ejercicios-2"><i class="fa fa-check"></i><b>4.8</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html"><i class="fa fa-check"></i><b>5</b> Analisis de texto</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#bolsa-de-palabras"><i class="fa fa-check"></i><b>5.1</b> Bolsa de Palabras</a></li>
+<li class="chapter" data-level="5.2" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#expresiones-regulares."><i class="fa fa-check"></i><b>5.2</b> <span>Expresiones regulares.</span></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#caracteres-especiales."><i class="fa fa-check"></i><b>5.2.1</b> Caracteres especiales.</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#primer-ejercicio-uso-de-la-palabra-en-las-sesiones-de-la-cámara-de-diputados"><i class="fa fa-check"></i><b>5.3</b> Primer ejercicio: Uso de la palabra en las sesiones de la Cámara de Diputados</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#consiguiendo-los-datos"><i class="fa fa-check"></i><b>5.3.1</b> Consiguiendo los datos</a></li>
+<li class="chapter" data-level="5.3.2" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#limpieza-de-datos"><i class="fa fa-check"></i><b>5.3.2</b> Limpieza de datos</a></li>
+<li class="chapter" data-level="5.3.3" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#análisis"><i class="fa fa-check"></i><b>5.3.3</b> Análisis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html"><i class="fa fa-check"></i><b>6</b> Información geográfica y mapas</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#los-datos-georreferenciados"><i class="fa fa-check"></i><b>6.1</b> Los datos georreferenciados</a></li>
+<li class="chapter" data-level="6.2" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#formatos-de-archivo"><i class="fa fa-check"></i><b>6.2</b> Formatos de archivo</a></li>
+<li class="chapter" data-level="6.3" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#explorando-un-archivo-con-información-geográfica"><i class="fa fa-check"></i><b>6.3</b> Explorando un archivo con información geográfica</a></li>
+<li class="chapter" data-level="6.4" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#visualizando-información-geográfica"><i class="fa fa-check"></i><b>6.4</b> Visualizando información geográfica</a></li>
+<li class="chapter" data-level="6.5" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#volcando-en-el-mapa-información-de-múltiples-fuentes"><i class="fa fa-check"></i><b>6.5</b> Volcando en el mapa información de múltiples fuentes</a></li>
+<li class="chapter" data-level="6.6" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#combinando-capas-geográficas"><i class="fa fa-check"></i><b>6.6</b> Combinando capas geográficas</a></li>
+<li class="chapter" data-level="6.7" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#ejercicios-3"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="analisis-de-texto-1.html"><a href="analisis-de-texto-1.html"><i class="fa fa-check"></i><b>7</b> Analisis de Texto</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="analisis-de-texto-1.html"><a href="analisis-de-texto-1.html#manipulación-de-texto"><i class="fa fa-check"></i><b>7.1</b> Manipulación de texto</a></li>
+<li class="chapter" data-level="7.2" data-path="analisis-de-texto-1.html"><a href="analisis-de-texto-1.html#metacaracteres"><i class="fa fa-check"></i><b>7.2</b> Metacaracteres</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="analisis-de-texto-1.html"><a href="analisis-de-texto-1.html#comienzo-y-fin-de-línea"><i class="fa fa-check"></i><b>7.2.1</b> Comienzo y fin de línea</a></li>
+<li class="chapter" data-level="7.2.2" data-path="analisis-de-texto-1.html"><a href="analisis-de-texto-1.html#clases-de-palabras"><i class="fa fa-check"></i><b>7.2.2</b> Clases de Palabras</a></li>
+<li class="chapter" data-level="7.2.3" data-path="analisis-de-texto-1.html"><a href="analisis-de-texto-1.html#lookaround"><i class="fa fa-check"></i><b>7.2.3</b> Lookaround</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ciencia de Datos para Activismo Jurídico</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analisis-de-texto-1" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Analisis de Texto<a href="analisis-de-texto-1.html#analisis-de-texto-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A veces, lo que queremos analizar es un texto. Los textos, audios e imágenes son datos no estructurados y hay que realizar algun tipo de preparación o estructuración para poder procesarlos automáticamente.</p>
+<p>En el análisis automático de texto se suelen partir los documentos, y armar lo que se llama un <em>bolsa de palabras</em>, donde se rompe la sintáxis . Ello sirve para medir frecuencias de palabras, cercanía entre ellas, clasificarlas como “positivas” o “negativas” sentimentalmente hablando, etc. La minería de texto tiene diversas herramientas para realizar este tipo de tareas.</p>
+<p>Las palabras, por su parte, son cadenas de caracteres, y también se pueden manipular de modo automático. Para hacer ello usaremos lo que se conoce como <em>expresiones regulares</em> (“regular expressions” o regex) que permitirá detectar patrones y manipularlos. Las <code>regex</code> son relativamente antiguas (circa 1980) y tuvieron un desarrollo paralelo a la ciencia de datos. Por ello, vienen en varios sabores, cada uno sutilmente diferente al otro. <code>R</code> utiliza <code>regex</code>a través de varios paquetes, entre ellos el <code>stringr</code> de la constelación <code>tidyverse</code>.</p>
+<div id="manipulación-de-texto" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Manipulación de texto<a href="analisis-de-texto-1.html#manipulación-de-texto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En <code>stringr</code> todas las funciones comienza con <code>str_</code>. Si se apreta la tecla <code>tab</code>luego de ello Para unir o más bien <em>c</em>oncatenar caracteres se utiliza <code>str_c</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="analisis-de-texto-1.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="analisis-de-texto-1.html#cb1-2" aria-hidden="true" tabindex="-1"></a>oracion <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Esta&quot;</span>, <span class="st">&quot;es&quot;</span>, <span class="st">&quot;una&quot;</span>, <span class="st">&quot;cadena&quot;</span>, <span class="st">&quot;de&quot;</span>, <span class="st">&quot;palabras.&quot;</span>)</span>
+<span id="cb1-3"><a href="analisis-de-texto-1.html#cb1-3" aria-hidden="true" tabindex="-1"></a>oracion</span></code></pre></div>
+<pre><code>## [1] &quot;Esta&quot;      &quot;es&quot;        &quot;una&quot;       &quot;cadena&quot;    &quot;de&quot;        &quot;palabras.&quot;</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="analisis-de-texto-1.html#cb3-1" aria-hidden="true" tabindex="-1"></a>oracion <span class="ot">&lt;-</span> <span class="fu">str_c</span>(oracion, <span class="at">collapse =</span> <span class="st">&quot; &quot;</span>) <span class="co">#con collapse le digo que los junte y los separe con un espacio</span></span>
+<span id="cb3-2"><a href="analisis-de-texto-1.html#cb3-2" aria-hidden="true" tabindex="-1"></a>oracion</span></code></pre></div>
+<pre><code>## [1] &quot;Esta es una cadena de palabras.&quot;</code></pre>
+<p>Para extraer caracteres de una palabra se utiliza <code>str_sub</code>. Hay que señalar el comienzo y el final de lo que se quiera extraer:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="analisis-de-texto-1.html#cb5-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Manzana&quot;</span>, <span class="st">&quot;Banana&quot;</span>, <span class="st">&quot;Pera&quot;</span>)</span>
+<span id="cb5-2"><a href="analisis-de-texto-1.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sub</span>(frutas, <span class="dv">1</span>, <span class="dv">3</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Man&quot; &quot;Ban&quot; &quot;Per&quot;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="analisis-de-texto-1.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sub</span>(frutas, <span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;ana&quot; &quot;ana&quot; &quot;era&quot;</code></pre>
+<p>Se puede pasar a mayúscula, o a minúscula todo un objeto:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="analisis-de-texto-1.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_to_lower</span>(frutas)</span></code></pre></div>
+<pre><code>## [1] &quot;manzana&quot; &quot;banana&quot;  &quot;pera&quot;</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="analisis-de-texto-1.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_to_upper</span>(frutas)</span></code></pre></div>
+<pre><code>## [1] &quot;MANZANA&quot; &quot;BANANA&quot;  &quot;PERA&quot;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="analisis-de-texto-1.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_to_sentence</span>(<span class="fu">str_c</span>(frutas, <span class="at">collapse =</span> <span class="st">&quot; &quot;</span>))</span></code></pre></div>
+<pre><code>## [1] &quot;Manzana banana pera&quot;</code></pre>
+<p>Una función muy importante nos permite detectar patrones, <code>str_detect</code>. Utilizaremos <code>str_view</code> para que la señale en el texto cuando la detecte:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="analisis-de-texto-1.html#cb15-1" aria-hidden="true" tabindex="-1"></a>frutas</span></code></pre></div>
+<pre><code>## [1] &quot;Manzana&quot; &quot;Banana&quot;  &quot;Pera&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="analisis-de-texto-1.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(frutas, <span class="st">&quot;an&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-12c628cf927eb1aac9d9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-12c628cf927eb1aac9d9">{"x":{"html":"<ul>\n  <li>M<span class='match'>an<\/span>zana<\/li>\n  <li>B<span class='match'>an<\/span>ana<\/li>\n  <li>Pera<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Y ahora es donde comienzan a resultar interesantes las <code>regex</code>. Por ejemplo, el punto (.) puede reemplazar a cualquie caracter, excepto el salto de línea</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="analisis-de-texto-1.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(frutas, <span class="st">&quot;.an&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-33cd2b17663c718d75ed" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-33cd2b17663c718d75ed">{"x":{"html":"<ul>\n  <li><span class='match'>Man<\/span>zana<\/li>\n  <li><span class='match'>Ban<\/span>ana<\/li>\n  <li>Pera<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Pero si el “punto” reemplaza a cualquier caracter, ¿cómo seleccionamos al caracter “.”? Tenemos que utilizar un “escape” que le diga que estamos refiriendo al caracter y no al <code>regex</code>. para ello, se usa la barra invertida, que se denomina <code>escape</code>. Pero para que sepa que es un escape y no una barra invertida, debemos usar dos barras invertidas…</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="analisis-de-texto-1.html#cb19-1" aria-hidden="true" tabindex="-1"></a>oracion</span></code></pre></div>
+<pre><code>## [1] &quot;Esta es una cadena de palabras.&quot;</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="analisis-de-texto-1.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(oracion, <span class="st">&quot;.as</span><span class="sc">\\</span><span class="st">.&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-387c5b5fa62b2a6e7932" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-387c5b5fa62b2a6e7932">{"x":{"html":"<ul>\n  <li>Esta es una cadena de palab<span class='match'>ras.<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="analisis-de-texto-1.html#cb22-1" aria-hidden="true" tabindex="-1"></a>saludo <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Quiero saludar a los Sres. padres y las Sras. madres&quot;</span>)</span>
+<span id="cb22-2"><a href="analisis-de-texto-1.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(saludo, <span class="st">&quot;Sr.s</span><span class="sc">\\</span><span class="st">.&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-bb75c46e9605e0e83d41" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bb75c46e9605e0e83d41">{"x":{"html":"<ul>\n  <li>Quiero saludar a los <span class='match'>Sres.<\/span> padres y las Sras. madres<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="analisis-de-texto-1.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view_all</span>(saludo, <span class="st">&quot;Sr.s</span><span class="sc">\\</span><span class="st">.&quot;</span>) <span class="co">#para que detecte todas las coincidencias y no solo la primera.</span></span></code></pre></div>
+<div id="htmlwidget-8ee77453de5c34a26a5a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8ee77453de5c34a26a5a">{"x":{"html":"<ul>\n  <li>Quiero saludar a los <span class='match'>Sres.<\/span> padres y las <span class='match'>Sras.<\/span> madres<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="metacaracteres" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Metacaracteres<a href="analisis-de-texto-1.html#metacaracteres" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="comienzo-y-fin-de-línea" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Comienzo y fin de línea<a href="analisis-de-texto-1.html#comienzo-y-fin-de-línea" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>-<code>^</code>para buscar solo al comienzo de la línea - <code>$</code> para buscar solo al final de la línea</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="analisis-de-texto-1.html#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;arándano&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pera&quot;</span>)</span>
+<span id="cb24-2"><a href="analisis-de-texto-1.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;^a&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-ac616a28c7a94244d6b8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ac616a28c7a94244d6b8">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>rándano<\/li>\n  <li>banana<\/li>\n  <li>pera<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="analisis-de-texto-1.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;a$&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-f3bd971ef994044f3a19" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f3bd971ef994044f3a19">{"x":{"html":"<ul>\n  <li>arándano<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>per<span class='match'>a<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="clases-de-palabras" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Clases de Palabras<a href="analisis-de-texto-1.html#clases-de-palabras" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Cuando se usan los corchetes, se pueden coincidir una de varias opciones. Mientras que <code>a</code> identifica una “a” y <code>e</code> identifica una “e”, <code>[ae]</code> identifica una “a” o una “e”.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="analisis-de-texto-1.html#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;Esto es muy necesario&quot;</span></span>
+<span id="cb26-2"><a href="analisis-de-texto-1.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;ne[cs]e[cs]ario&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-ea11dc8d409b8ebc88d8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ea11dc8d409b8ebc88d8">{"x":{"html":"<ul>\n  <li>Esto es muy <span class='match'>necesario<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<p>Se pueden listar muchas clases de caracteres. Por ejemplo</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="analisis-de-texto-1.html#cb27-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">&quot;Telefono: 3321-4430&quot;</span></span>
+<span id="cb27-2"><a href="analisis-de-texto-1.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;[0123456789]&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-b7bbe7cbe8aaaa132ab6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b7bbe7cbe8aaaa132ab6">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3<\/span>321-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="analisis-de-texto-1.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;[0-9]&quot;</span>) <span class="co"># el guión es un metacaracter que indica rango</span></span></code></pre></div>
+<div id="htmlwidget-6ee18014bb0103e5c50a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6ee18014bb0103e5c50a">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3<\/span>321-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="analisis-de-texto-1.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;[0-9]{8}&quot;</span>) <span class="co"># ¿ por qué no selecciona los ocho números?</span></span></code></pre></div>
+<div id="htmlwidget-e2732b90353b5c49096f" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e2732b90353b5c49096f">{"x":{"html":"<ul>\n  <li>Telefono: 3321-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="analisis-de-texto-1.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;[0-9]{4}&quot;</span>) <span class="co"># ahora solo cuatro...</span></span></code></pre></div>
+<div id="htmlwidget-fea642b456cecabcf1bc" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fea642b456cecabcf1bc">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3321<\/span>-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="analisis-de-texto-1.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(x, <span class="st">&quot;[0-9]{4}.[0-9]{4}&quot;</span>) <span class="co">#vean el punto entre los grupos de números</span></span></code></pre></div>
+<div id="htmlwidget-6a509a082ab2839be8b8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6a509a082ab2839be8b8">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3321-4430<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="analisis-de-texto-1.html#cb32-1" aria-hidden="true" tabindex="-1"></a>(telefono <span class="ot">&lt;-</span> <span class="fu">str_extract</span>(x, <span class="st">&quot;[0-9]{4}.[0-9]{4}&quot;</span>))</span></code></pre></div>
+<pre><code>## [1] &quot;3321-4430&quot;</code></pre>
+<p>Con <code>str_extrac()</code> asigné a una variable <code>telefono</code> el número que leimos automáticamente. Si esto está en un mail o formulario, o algún otro texto, puedo ejecutar el código y leer a través del <code>regex</code> lo que dice. Claro que para ello hay que conocer el tipo de texto que se trata: tengo que saber que el número de teléfono son ocho dígitos separados por un guión. Cuando sé que tipo de patrón estoy buscando, puedo armar un <code>regex</code> para leerlo y procesarlo automágicamente.</p>
+<p>Y si queremos identificar todos los números de telefono de una planilla, también lo podemos hacer de modo automático.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="analisis-de-texto-1.html#cb34-1" aria-hidden="true" tabindex="-1"></a>listado <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">nombre =</span> <span class="fu">c</span>(<span class="st">&quot;carlos&quot;</span>, <span class="st">&quot;laura&quot;</span>, <span class="st">&quot;pedro&quot;</span>, <span class="st">&quot;maria&quot;</span>, <span class="st">&quot;juan carlos&quot;</span>, <span class="st">&quot;miguel&quot;</span>, <span class="st">&quot;teresa&quot;</span>),</span>
+<span id="cb34-2"><a href="analisis-de-texto-1.html#cb34-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">telefono =</span> <span class="fu">c</span>(<span class="st">&quot;4323-3341&quot;</span>,<span class="st">&quot;4664-9800&quot;</span>, <span class="st">&quot;4121-9073&quot;</span>, <span class="cn">NA</span>, <span class="st">&quot;4112-5440&quot;</span>, <span class="st">&quot;3442-1009&quot;</span>, <span class="cn">NA</span>))</span>
+<span id="cb34-3"><a href="analisis-de-texto-1.html#cb34-3" aria-hidden="true" tabindex="-1"></a>listado</span></code></pre></div>
+<pre><code>## # A tibble: 7 × 2
+##   nombre      telefono 
+##   &lt;chr&gt;       &lt;chr&gt;    
+## 1 carlos      4323-3341
+## 2 laura       4664-9800
+## 3 pedro       4121-9073
+## 4 maria       &lt;NA&gt;     
+## 5 juan carlos 4112-5440
+## 6 miguel      3442-1009
+## 7 teresa      &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="analisis-de-texto-1.html#cb36-1" aria-hidden="true" tabindex="-1"></a>telefonos <span class="ot">&lt;-</span> <span class="fu">str_extract_all</span>(listado, <span class="st">&quot;[0-9]{4}.[0-9]{4}&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="analisis-de-texto-1.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unlist</span>()</span>
+<span id="cb36-3"><a href="analisis-de-texto-1.html#cb36-3" aria-hidden="true" tabindex="-1"></a>telefonos</span></code></pre></div>
+<pre><code>## [1] &quot;4323-3341&quot; &quot;4664-9800&quot; &quot;4121-9073&quot; &quot;4112-5440&quot; &quot;3442-1009&quot;</code></pre>
+<p>Hay otros metacaracteres muy útiles. <code>[a-z]</code>es una secuencia de todas las letras en minúscula; <code>[A-Z]</code> en mayúscula. Para elegir todos los dígitos, lo podemos hacer con <code>\\d</code>, y todos los no dígitos con <code>\\D</code>. Con <code>\\s</code> podemos elegir todos los espacios en blanco.</p>
+<p>Luego, un [^ ] niega lo anterior: [^a-z] matchea lo que no tenga alguna letra (Ojo, <code>^</code> actúa distinto si está dentro o fuera de los corchetes. Fuera es un ancla de inicio de línea, dentro es negación de lo siguiente). Una que es muy importante es la alternación <code>|</code>, donde matchea una expresión u otra: <code>"(Julio|Jul)"</code> para detectar tanto cuando dice “Julio” o si dice “Jul”. Los paréntesis se usan igual que en matemática, para encerrar conceptos y tratarlos como un único concepto (por ejemplo, para que comience con Julio o Jul puedo poner: <code>^(Julio|Jul)</code>. Sin los paréntesis, sólo buscaría que comience con “J”).</p>
+<p>El listado es el siguiente: <img src="https://www.researchgate.net/profile/Osama-Amehdi/publication/289116519/figure/tbl1/AS:786584169377792@1564547688801/The-most-common-metacharacters-in-regular-expression.png" /></p>
+</div>
+<div id="lookaround" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Lookaround<a href="analisis-de-texto-1.html#lookaround" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los <code>lookaround</code> nos permiten identificar una posición, y no texto. Luego de identificar esa posición, podemos buscar texto ya sea para la derecha (adelante, <code>lookahead</code> <code>(?=  )</code>) como para la izquierda (atras, <code>lookbehind</code> <code>(?&gt;=  )</code>). Entonces deberíamos pedirle a <code>regex</code> que identifique el lugar desde donde queremos seleccionar algún patrón. Para ello podemos incluso combinarlos: despues de tal patrón y antes de este otro, y luego decirle con qué queremos hacer el match.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="analisis-de-texto-1.html#cb38-1" aria-hidden="true" tabindex="-1"></a>discurso <span class="ot">&lt;-</span> <span class="st">&quot;Sr. Presidente (Gioja).- Corresponde ahora pasar al tiempo destinado a los representantes de los bloques. En primer lugar, el Frente de Todos. Tiene la palabra la señora diputada Aparicio, por Buenos Aires.  Sra. Aparicio.- Señor presidente: hoy debatimos de cara a la sociedad, con responsabilidad y transparencia, como nunca se lo ha hecho en este Congreso, la triste historia de procesos de endeudamiento. Sr. Allende.- Señor presidente: quiero destacar la posibilidad que tenemos de analizar este acuerdo con elFondo. &quot;</span></span>
+<span id="cb38-2"><a href="analisis-de-texto-1.html#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="analisis-de-texto-1.html#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view_all</span>(discurso, <span class="st">&quot;(?&lt;=Sr.?</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">s)(?=</span><span class="sc">\\</span><span class="st">w)</span><span class="sc">\\</span><span class="st">w*&quot;</span>)</span></code></pre></div>
+<div id="htmlwidget-c7549aaea95f3634d038" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c7549aaea95f3634d038">{"x":{"html":"<ul>\n  <li>Sr. <span class='match'>Presidente<\/span> (Gioja).- Corresponde ahora pasar al tiempo destinado a los representantes de los bloques. En primer lugar, el Frente de Todos. Tiene la palabra la señora diputada Aparicio, por Buenos Aires.  Sra. <span class='match'>Aparicio<\/span>.- Señor presidente: hoy debatimos de cara a la sociedad, con responsabilidad y transparencia, como nunca se lo ha hecho en este Congreso, la triste historia de procesos de endeudamiento. Sr. <span class='match'>Allende<\/span>.- Señor presidente: quiero destacar la posibilidad que tenemos de analizar este acuerdo con elFondo. <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="información-geográfica-y-mapas.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CD_AJ.pdf", "CD_AJ.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
