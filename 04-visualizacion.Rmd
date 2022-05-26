@@ -174,7 +174,7 @@ delitos %>%
     count(tipo, subtipo)
 ```
 
-Para el tipo "Homicidio" encontramos los subtipos "Doloso", "Femicidio", Femicidio Intrafamiliar", "Siniestro Vial", y "Travesticidio/Transfemicidio". Podemos usar esas subcategorías para mostrar como componen el total de homicidios de cada comuna.
+Para el tipo "Homicidio" encontramos los subtipos "Doloso", "Femicidio", "Femicidio Intrafamiliar", "Siniestro Vial", y "Travesticidio/Transfemicidio". Podemos usar esas subcategorías para mostrar como componen el total de homicidios de cada comuna.
 
 Agrupamos entonces nuestra data de homicidios por comuna y también por subtipo, sin olvidar agregar luego los datos de población  
 
