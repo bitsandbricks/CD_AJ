@@ -39,7 +39,7 @@ Teniendo en cuenta que el dataset es del 2020, el Primer Año de la Pandemia COV
 
 La fecha es un tipo de dato que puede ser expresado de muchas maneras, dependiendo de que nos interese tener en cuenta: el día de la semana al que corresponde, el mes, el año, etc. El paquete [`lubridate`](https://lubridate.tidyverse.org/) hace fácil tomar una variable que contiene fechas en cualquier formato (por ejemplo "20/07/2020") para extraer el atributo relacionado que deseemos (como su día, "lunes", o su mes, "julio").
 
-Para empezar, convertimos el campo "fecha" al tipo de dato especializado, que se llama... fecha (_date_). Aquí tenemos que prestar atención al formato en que aparecen los datos de la columna, en general algo como "2018-07-21" (mes, día y año) o "2018-07-21 12:14:24" (mes, día, año y hora, minutos, segundos). Con nuestros datos se da el primer caso, por lo cual la función para convertir ese campo en fecha es `dmy()`; para el segundo caso, seria `dmy_hms()`
+Para empezar, convertimos el campo "fecha" al tipo de dato especializado, que se llama... fecha (_date_). Aquí tenemos que prestar atención al formato en que aparecen los datos de la columna, en general algo como "30-07-2018" (día, mes, año) o "30-07-2018 12:14:24" (día, mes, año y hora, minutos, segundos). Con nuestros datos se da el primer caso, por lo cual la función para convertir ese campo en fecha es `dmy()`; para el segundo caso, seria `dmy_hms()`
 
 
 ```{r}
@@ -52,7 +52,7 @@ delitos$fecha <- dmy(delitos$fecha)
 `lubridate` usa un formato memotécnico para nombrar sus funciones de conversión de texto a fecha. 
 Para saber que función utilizar según el formato en que aparecen las fechas, es cuestión de determinar en que orden aparecen año, mes y día (y horas y minutos si estuvieran).
 
-Por ejemplo, un campo que registran fechas en formato similar a "4/26/17" o a "4-26-2017" implica "mes - día - año" y por tanto puede convertirse a tipo fecha con `mdy()` en ambos casos (la "y" es por _year_). 
+Por ejemplo, un campo que registran fechas en formato similar a "4/26/17" o a "4-26-2017" implica "mes - día - año" y por tanto en ambos casos puede convertirse a fecha con `mdy()` (la "y" es por _year_). 
 ```
 
 Repasemos algunas de los nuevos trucos que podemos hacer con el tiempo. Tomemos cinco fechas elegidas al azar:
@@ -162,11 +162,35 @@ library(ggmap)
 
 ### Obteniendo un mapa base
 
-Como vimos en la clase previa, para obtener un mapa de fondo o "mapa base" necesitamos obtener una _bounding box_ de nuestros datos, que luego pasamos a `get_stamenmap()`.
+>>> MANDAR UN GGPLOT DE SCATTER CON PUNTOS GEORREF SOBFRE FONDO VACIO
 
-La diferencia con nuestra experiencia anterior es que antes trabajamos con dataframes espaciales, que contenían geometrías georreferencias: polígonos, líneas, puntos. Pero este dataframe no tiene nada de eso. La buena noticia es que igual podemos hacer mapas, porque contiene dos columnas clave para ello: las de "longitud" y "latitud", que permiten ubicar puntos sobre la faz de la tierra. Y de puntos se trata, porque en general sólo podremos trabajar con columnas de coordenadas cuando los datos espaciales representen puntos, pero no líneas y polígonos. Estas geoemtrías de mayor complejidad se manejan de forma cómodo usando dataframes espaciales como los que exploramos en la clase anterior.
 
-Así como contamos con `st_bbox()` para obtener la _bounding box_ de dataframes espaciales, cuando tenemos las coordenadas en un par de columnas recurrimos a `make_bbox()`,:
+Podemos mostrar nuestros datos georreferenciados "flotando" sobre espacio vacío. Pero para dar contexto que guíe a la audiencia, muchas veces es útil proyectar la información sobre un mapa de fondo que muestre la posición de caminos, nombres de localidades, accidentes geográficos y otros hitos. Estos mapas usados como capa de fondo sobre la cual mostrar datos espaciales son conocidos como "mapas base", o _basemaps_. Guardar por nuestra cuenta información cartográfica con alto nivel de detalle de cualquier lugar del mundo es impracticable, pero por suerte existen servicios en internet que lo hacen por nosotros como [Stamen Maps](http://maps.stamen.com), ¡que es de uso gratuito!.
+
+```{r echo=FALSE, fig.align="center", out.width="85%"}
+knitr::include_graphics('imagenes/stamen.png')
+```
+<center>
+_El sitio web de Stamen Maps_
+
+</center>
+
+Para incluir mapas base en nuestras visualizaciones podemos usar las funciones del paquete [`ggmap`](https://github.com/dkahle/ggmap), que complementa a ggplot agregando funciones que permiten adquirir y visualizar mapas en forma fácil.
+
+Lo activamos:
+
+```{r eval=FALSE}
+library(ggmap)
+```
+
+Ahora, para obtener un mapa base del área donde se encuentran los datos que queremos mostrar, necesitamos determinar su “bounding box”: el rango de latitud y longitud que forma un rectángulo conteniendo todas sus posiciones. En resumidas cuentas, se trata de los valores de latitud máxima y mínima, y de longitud máxima y mínima, de nuestros datos georreferenciados.
+
+Los proveedores de mapas online suelen solicitar los valores en este orden: izquierda, abajo, derecha, arriba. Es decir, posición mas al oeste, posición mas al sur, posición mas al este, posición mas al norte. 
+Cuando disponemos de un daataframe georreferenciado, obtener la _bounding box_ de su contenido es bastante fácil usando `st_bbox`, una función del paquete `sf` que recupera esas cuatro coordenadas clave. Por ejemplo `st_bbox(radios)` obtiene las coordenadas del rectángulo de territorio que abarca los radios censales de Buenos Aires. Luego de guardar las coordenadas en una variable, les ponemos los nombres que permitirán que `ggmap` las identifique:
+
+
+Para obtener un mapa de fondo o "mapa base" necesitamos obtener una _bounding box_ de nuestros datos: el rango de latitud y longitud que forma un rectángulo conteniendo todas sus posiciones. En resumidas cuentas, se trata de los valores de latitud máxima y mínima, y de longitud máxima y mínima, de nuestros datos georreferenciados.
+No es algo que deba preocuparnos demasiado, porque podemos obtener esta información con una simple función incluida en `ggmap`:
 
 ```{r}
 bbox <- make_bbox(delitos$longitud, delitos$latitud)
@@ -177,7 +201,7 @@ bbox
 En base a la "bounding box" solicitamos nuestro mapa base:
 
 ```{r}
-CABA <- get_stamenmap(bbox = bbox, maptype = "toner-lite", zoom = 12)
+CABA <- get_stamenmap(bbox = bbox, maptype = "toner", zoom = 12)
 ```
 
 Para verlo:
@@ -186,64 +210,53 @@ Para verlo:
 ggmap(CABA)
 ```
 
+```tip
+Stamen ofrece varios estilos de mapa base, que pueden revisarse en su [sitio web](http://maps.stamen.com). 
+Entre ellos: 
+
+- `terrain` (usado por defecto)
+- `toner` (monocromático)
+- `toner-lite` (versión alternativa de toner, de menos contraste visual)
+- `watercolor` (hay que probarlo para apreciarlo, pero digamos que es artístico)
+
+Se adquieren usando el parámetro _maptype_. 
+Por ejemplo, `get_stamenmap(bbox = bbox, maptype = "watercolor", zoom = 12)`
+```
+
 ### De coordenadas al mapa
 
-De aquí en más podemos suporponer nuestros datos en distintas capas, con la misma sintaxis que conocemos de ggplot. Para mapear las ubicaciones de los delitos en el dataset, usamos `geom_point()` y los campos de longitud y latitud para los ejes $x$ e $y$:
+De aquí en más podemos suporponer nuestros datos en distintas capas sobre el mapa, con la misma sintaxis que conocemos de ggplot. Para mapear las ubicaciones de los delitos en el dataset, usamos `geom_point()` y los campos de longitud y latitud para los ejes $x$ e $y$:
 
-```{r mapa1, exercise = TRUE}
-ggmap(CABA) +
-    geom____(data = delitos, aes(___))
+
+```warning
+En ocasiones los datos de longitud y latitud son leídos como texto (tipo "chr"), en lugar de números. Si eso ocurre el mapeo no va a funcionar, porque necesita datos numéricos para latitud y longitud. Para solucionarlo, podemos intentar convertir las columnas de coordenadas a tipo numérico. Algo así como `misdatos$longitud <- as.numeric(misdatos$longitud)` 
 ```
 
-```{r mapa1-hint}
-ggmap(CABA) +
-    geom_point(data = delitos, aes(x = ___, y = ___))
-```
-
-
-```{r mapa1-solution}
+```{r}
 ggmap(CABA) +
     geom_point(data = delitos, aes(x = longitud, y = latitud))
 ```
-
 
 Aquí nos topamos con un problema habitual al trabajar con grandes volúmenes de datos. Hay tantos puntos proyectados sobre el mapa, que se hace imposible interpretar dónde existen más o menos. Hacemos algunos ajustes: 
 - un color que resalte más contra el mapa base, y que no se confunda con él
 - un tamaño de punto más pequeño
 -y aplicación de una ligera transparencia
 
-Todo ello vía los atributos "color", "size" y "alpha". ¿Cuál es el valor ideal para cada uno? En general, no queda otra que recurrir a la prueba y error para encontrar la receta justa. Probemos con `color = "orange"`, `size = 0.1` y `alpha = 0.1`:
+Todo ello vía los atributos "color", "size" y "alpha". ¿Cuál es el valor ideal para cada uno? En general, hay que recurrir a la prueba y error para encontrar la receta justa. Probemos con `color = "orange"`, `size = 0.1` y `alpha = 0.1`:
 
-```{r mapa2, exercise = TRUE}
-ggmap(CABA) +
-    geom_point(data = delitos, aes(x = longitud, y = latitud),
-               ___)
-```
-
-```{r mapa2-hint}
-ggmap(CABA) +
-    geom_point(data = delitos, aes(x = longitud, y = latitud),
-               color = ___, size = ___, alpha = ___)
-```
-
-```{r mapa2-solution}
+```{r}
 ggmap(CABA) +
     geom_point(data = delitos, aes(x = longitud, y = latitud),
                color = "orange", size = 0.1, alpha = 0.1)
 ```
 
-Ahora si aparecen ciertos patrones, por ejemplo la mayor frecuencia de casos de casos cerca de las principales de circulación de la ciudad. Aún así, se hace difícil identificar de un golpe de vista las "zonas calientes", los puntos de máxima concentración. 
+Ahora si aparecen ciertos patrones, por ejemplo la mayor frecuencia de casos de casos cerca de las principales de circulación de la ciudad. Aún así, se hace difícil identificar de un golpe de vista las "zonas calientes", las áreas de máxima concentración. 
 
 ### Mapas de densidad
 
 Una solución práctica para el problema de la cantidad de puntos es una técnica llamada "binning": dividir el espacio en una grilla de celdas, contar cuantos puntos caen dentro de cada una, y visualizar las cantidades agregadas. En el mundo `ggplot` esto se lleva a cabo con `geom_bind2d()`.
 
-```{r binning, exercise = TRUE}
-ggmap(CABA) +
-    ___(data = delitos, aes(x = longitud, y = latitud))
-```
-
-```{r binning-solution}
+```{r}
 ggmap(CABA) +
     geom_bin2d(data = delitos, aes(x = longitud, y = latitud))
 ```
@@ -255,19 +268,7 @@ Ahora si, resaltan las áreas de mayor concentración de incidentes. Se puede me
 
 la cantidad de celdas se define con el parámetro "bins", por ejemplo `bins = 100`. La escala de color Viridis, como ya habíamos visto, se agrega sumando una llamada a `scale_fill_viridis_c()` -porque aquí la data es continua, si fuera discreta usaríamos `scale_fill_viridis_d()`.
 
-```{r binning2, exercise = TRUE}
-ggmap(CABA) +
-    geom_bin2d(data = delitos, aes(x = longitud, y = latitud), ___) +
-    ___
-```
-
-```{r binning2-hint}
-ggmap(CABA) +
-    geom_bin2d(data = delitos, aes(x = longitud, y = latitud), bins = ___) +
-    scale_fill_viridis_c()
-```
-
-```{r binning2-solution}
+```{r}
 ggmap(CABA) +
     geom_bin2d(data = delitos, aes(x = longitud, y = latitud), bins = 100) +
     scale_fill_viridis_c()
@@ -276,12 +277,7 @@ ggmap(CABA) +
 
 Una alternativa al _binning_ es la llamada _kernel density estimation_, muy utilizada en aplicaciones de análisis espacial para estimar la intensidad de una determinada variable en cualquier punto del área analizada, incluso en aquellos para los cuales no hay observaciones. La idea es asumir que los valores observados corresponden a una distribución continua sobre el espacio, y determinar cual es la más probable en base a los puntos donde existen datos. Podemos visualizar esta distribución estimada `geom_density2d_filled` así:
 
-```{r density, exercise = TRUE}
-ggmap(CABA) +
-    ___(data = delitos, aes(x = longitud, y = latitud), alpha = 0.5) 
-```
-
-```{r density-solution}
+```{r}
 ggmap(CABA) +
     geom_density2d_filled(data = delitos, aes(x = longitud, y = latitud), alpha = 0.5) 
 ```
@@ -292,21 +288,8 @@ Nótese que aplicamos transparencia usando el parámetro `alpha = 0.5`. ¿Por qu
 
 Hasta aquí hemos analizado la distribución espacial de eventos en su totalidad, sin diferenciar su tipo. Veamos ahora las diferencias por categoría. Podemos reintentar el mapa de puntos, esta vez diferenciándolos por color. Recuperamos el código que usamos antes para mostrar puntos, y esta vez asignamos la columna "tipo" al atributo estético `color`:
 
-```{r mapa_categorias, exercise = TRUE}
-ggmap(CABA) +
-    geom_point(data = delitos, 
-               aes(x = longitud, y = latitud, ___),
-               size = 0.1, alpha = 0.1)
-```
 
-```{r mapa_categorias-hint}
-ggmap(CABA) +
-    geom_point(data = delitos, 
-               aes(x = longitud, y = latitud, color = ___),
-               size = 0.1, alpha = 0.1)
-```
-
-```{r mapa_categorias-solution}
+```{r}
 ggmap(CABA) +
     geom_point(data = delitos, 
                aes(x = longitud, y = latitud, color = tipo),
@@ -345,13 +328,8 @@ El facetado ayuda a que no se nos mezclen los colores, y hace evidente cuales ca
 
 Para hacer las diferencias aún mas nítidas, podemos facetar una estimación de densidad en lugar de puntos. ¿Cómo lo haríamos?
 
-```{r facetado_densidad, exercise = TRUE}
-ggmap(CABA) +
-    ___(data = delitos, aes(x = longitud, y = latitud), alpha = 0.5) +
-    facet_wrap(vars(tipo))
-```
 
-```{r facetado_densidad-solution}
+```{r}
 ggmap(CABA) +
     geom_density2d_filled(data = delitos, aes(x = longitud, y = latitud), alpha = 0.5) +
     facet_wrap(vars(tipo))
@@ -376,29 +354,14 @@ Y luego mostramos sólo las filas del dataframe donde la columna tipo contiene "
  - y un facetado por día de la semana (`facet_wrap(vars(wday(fecha, label = TRUE)))`)
 
 
-```{r homicidios_por_dia, exercise = TRUE}
-ggmap(CABA) +
-    ___(data = filter(delitos, ___),
-               aes(x = longitud, y = latitud, ___), alpha = .5) +
-    ___(vars(wday(fecha, label = TRUE)))
-
-```
-
-```{r homicidios_por_dia-hint}
-ggmap(CABA) +
-    geom_point(data = filter(delitos, tipo == ___),
-               aes(x = longitud, y = latitud, color = ___), alpha = .5) +
-    facet_wrap(vars(wday(fecha, label = TRUE)))
-
-```
-
-```{r homicidios_por_dia-solution}
+```{r}
 ggmap(CABA) +
     geom_point(data = filter(delitos, tipo == "Homicidio"),
                aes(x = longitud, y = latitud, color = subtipo), alpha = .5) +
     facet_wrap(vars(wday(fecha, label = TRUE)))
 
 ```
+
 Vale aclarar que el poco elegante `facet_wrap(vars(wday(fecha, label = TRUE)))` podría cambiarse por un más legible `facet_wrap(vars(dia_semana))` si como paso previo agregamos al dataframe la columna "dia_semana", guardando allí el valor obtenido con `wday()`. 
 
 Volviendo al tiempo y el espacio, también podemos concentrarnos en un tipo de delito en particular, y evaluar en que zonas se concentra de acuerdo a la hora del día. Nuestra data ya tiene la hora del día declarada en una columna, "franja". Si no fuera así, y tuviéramos la hora como parte de la fecha (estilo "2020-09-18 14:00:00") podríamos obtenerla con ayuda de `hour()` que funciona de forma similar a las ya vistas `month()` y `wday()`.
@@ -408,26 +371,13 @@ Entonces, mostremos sólo las filas del dataframe donde la columna tipo contiene
  - y un facetado por hora del día (`facet_wrap(vars(franja))`)
 
 
-```{r hurtos_por_hora, exercise = TRUE}
-ggmap(CABA) +
-    ___(data = filter(delitos, ___),
-               aes(x = longitud, y = latitud), alpha = .5) +
-    ___
-```
-
-```{r hurtos_por_hora-hint}
-ggmap(CABA) +
-    geom_density2d_filled(data = filter(delitos, tipo == ___),
-               aes(x = longitud, y = latitud), alpha = .5) +
-    facet_wrap(___)
-```
-
-```{r hurtos_por_hora-solution}
+```{r}
 ggmap(CABA) +
     geom_density2d_filled(data = filter(delitos, tipo == "Hurto (sin violencia)"),
                aes(x = longitud, y = latitud), alpha = .5) +
     facet_wrap(vars(franja))
 ```
+
 En el resultado se puede ver como los hurtos se concentran nítidamente en las áreas de mayor actividad comercial durante el día (lo que los porteños llaman "el centro"), sobre todo desde el mediodía hasta 4 o 5 de la tarde, cuando pierde intensidad y se dispersa en la dirección de las principales avenidas de la ciudad. 
 
 Para terminar, pulimos la visualización 
@@ -453,22 +403,17 @@ ggmap(CABA) +
 
 ## Ejercicios
 
-I. Obtengamos un dataset cuyos registros incluyan datos de ubicación en barrio, comuna o radio censal en la Ciudad de Buenos Aires. Por ejemplo, cualquiera de las [bases de datos anuales con reclamos registrados en el Sistema Único de Atención Ciudadana](https://data.buenosaires.gob.ar/dataset/sistema-unico-atencion-ciudadana).
+I.X
 
-II. Abrámoslo, y realicemos las transformaciones necesarias para hacer:
+II.X
 
-- un mapa que muestre la distribución geográfica de una variable numérica del dataset (puede analizarse por comuna, barrio, radio censal, etc).
-
-- un mapa que muestre la distribución geográfica de una variable categórica del dataset (puede analizarse por comuna, barrio, radio censal, etc). 
-
-III. Elijamos uno de los mapas anteriores e incorporarle una o más geometrías que sean relevantes al análisis. Estas pueden ser: estaciones y recorrido de trenes, recorrido de ciclovías, ubicación de comercios, o cualquier otra que les resulte interesante. Las geometrías pueden descargarse del portal de datos abiertos de la ciudad (https://data.buenosaires.gob.ar/). Por ejemplo, aquí hay un [dataset georeferenciado con la ubicación de locales de gastronomía](https://data.buenosaires.gob.ar/dataset/oferta-establecimientos-gastronomicos). 
-
+III. X
 
 
 ---
 
 Con eso cerramos el capítulo, y el manual.
 
-Sólo queda un mensaje final, que es fácil de resumir. Esperamos haber provisto una introducción satisfactoria al análisis, modelado y visualización de información, y que haya sido tan sólo el inicio de un largo y gratificante recorrido.
+Esperamos haber provisto una introducción satisfactoria al análisis, modelado y visualización de información, y que haya sido tan sólo el inicio de un largo y gratificante recorrido.
 
 ¡Gracias por haber llegado hasta aquí! 
