@@ -215,15 +215,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#ejercicios-3"><i class="fa fa-check"></i><b>5.4</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html"><i class="fa fa-check"></i><b>6</b> Información geográfica y mapas</a>
+<li class="chapter" data-level="6" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html"><i class="fa fa-check"></i><b>6</b> Trabajando con datos espaciales y temporales</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#los-datos-georreferenciados"><i class="fa fa-check"></i><b>6.1</b> Los datos georreferenciados</a></li>
-<li class="chapter" data-level="6.2" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#formatos-de-archivo"><i class="fa fa-check"></i><b>6.2</b> Formatos de archivo</a></li>
-<li class="chapter" data-level="6.3" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#explorando-un-archivo-con-información-geográfica"><i class="fa fa-check"></i><b>6.3</b> Explorando un archivo con información geográfica</a></li>
-<li class="chapter" data-level="6.4" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#visualizando-información-geográfica"><i class="fa fa-check"></i><b>6.4</b> Visualizando información geográfica</a></li>
-<li class="chapter" data-level="6.5" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#volcando-en-el-mapa-información-de-múltiples-fuentes"><i class="fa fa-check"></i><b>6.5</b> Volcando en el mapa información de múltiples fuentes</a></li>
-<li class="chapter" data-level="6.6" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#combinando-capas-geográficas"><i class="fa fa-check"></i><b>6.6</b> Combinando capas geográficas</a></li>
-<li class="chapter" data-level="6.7" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#ejercicios-4"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a></li>
+<li class="chapter" data-level="6.1" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#trabajando-con-fechas"><i class="fa fa-check"></i><b>6.1</b> Trabajando con fechas</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#la-fecha-como-clase-de-variable"><i class="fa fa-check"></i><b>6.1.1</b> La fecha como clase de variable</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#mirando-al-espacio"><i class="fa fa-check"></i><b>6.2</b> Mirando al espacio</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#obteniendo-un-mapa-base"><i class="fa fa-check"></i><b>6.2.1</b> Obteniendo un mapa base</a></li>
+<li class="chapter" data-level="6.2.2" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#de-coordenadas-al-mapa"><i class="fa fa-check"></i><b>6.2.2</b> De coordenadas al mapa</a></li>
+<li class="chapter" data-level="6.2.3" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#mapas-de-densidad"><i class="fa fa-check"></i><b>6.2.3</b> Mapas de densidad</a></li>
+<li class="chapter" data-level="6.2.4" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#visualizando-multiples-categorías"><i class="fa fa-check"></i><b>6.2.4</b> Visualizando multiples categorías</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#combinando-espacio-y-tiempo"><i class="fa fa-check"></i><b>6.3</b> Combinando espacio y tiempo</a></li>
+<li class="chapter" data-level="6.4" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#ejercicios-4"><i class="fa fa-check"></i><b>6.4</b> Ejercicios</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
@@ -323,6 +329,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

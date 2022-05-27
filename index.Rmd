@@ -19,6 +19,10 @@ output:
 
 # {-}
 
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+```
+
 ```{r echo=FALSE, out.width="100%"}
 knitr::include_graphics('imagenes/balanza.jpg')
 ```

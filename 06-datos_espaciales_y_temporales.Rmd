@@ -48,12 +48,12 @@ library(lubridate)
 delitos$fecha <- dmy(delitos$fecha)
 ```
 
-```tip
+::: tip
 `lubridate` usa un formato memotécnico para nombrar sus funciones de conversión de texto a fecha. 
 Para saber que función utilizar según el formato en que aparecen las fechas, es cuestión de determinar en que orden aparecen año, mes y día (y horas y minutos si estuvieran).
 
 Por ejemplo, un campo que registran fechas en formato similar a "4/26/17" o a "4-26-2017" implica "mes - día - año" y por tanto en ambos casos puede convertirse a fecha con `mdy()` (la "y" es por _year_). 
-```
+:::
 
 Repasemos algunas de los nuevos trucos que podemos hacer con el tiempo. Tomemos cinco fechas elegidas al azar:
 
@@ -162,10 +162,7 @@ library(ggmap)
 
 ### Obteniendo un mapa base
 
->>> MANDAR UN GGPLOT DE SCATTER CON PUNTOS GEORREF SOBFRE FONDO VACIO
-
-
-Podemos mostrar nuestros datos georreferenciados "flotando" sobre espacio vacío. Pero para dar contexto que guíe a la audiencia, muchas veces es útil proyectar la información sobre un mapa de fondo que muestre la posición de caminos, nombres de localidades, accidentes geográficos y otros hitos. Estos mapas usados como capa de fondo sobre la cual mostrar datos espaciales son conocidos como "mapas base", o _basemaps_. Guardar por nuestra cuenta información cartográfica con alto nivel de detalle de cualquier lugar del mundo es impracticable, pero por suerte existen servicios en internet que lo hacen por nosotros como [Stamen Maps](http://maps.stamen.com), ¡que es de uso gratuito!.
+Para dar contexto que guíe a la audiencia es útil proyectar nuestra información georreferenciada sobre un mapa de fondo que muestre la posición de caminos, nombres de localidades, accidentes geográficos y otros hitos. Estos mapas usados como lienzo sobre el cual mostrar datos espaciales son conocidos como "mapas base", o _basemaps_. Guardar por nuestra cuenta información cartográfica con alto nivel de detalle de cualquier lugar del mundo es impracticable, pero por suerte existen servicios en internet que lo hacen por nosotros como [Stamen Maps](http://maps.stamen.com), ¡que es de uso gratuito!.
 
 ```{r echo=FALSE, fig.align="center", out.width="85%"}
 knitr::include_graphics('imagenes/stamen.png')
@@ -210,37 +207,38 @@ Para verlo:
 ggmap(CABA)
 ```
 
-```tip
+::: tip
 Stamen ofrece varios estilos de mapa base, que pueden revisarse en su [sitio web](http://maps.stamen.com). 
 Entre ellos: 
 
 - `terrain` (usado por defecto)
-- `toner` (monocromático)
-- `toner-lite` (versión alternativa de toner, de menos contraste visual)
+- `toner` (monocromático, buena opción para visualizar datos proyectados por encima)
+- `toner-lite` (versión alternativa de toner, con menos contraste visual)
 - `watercolor` (hay que probarlo para apreciarlo, pero digamos que es artístico)
 
 Se adquieren usando el parámetro _maptype_. 
 Por ejemplo, `get_stamenmap(bbox = bbox, maptype = "watercolor", zoom = 12)`
-```
+:::
 
 ### De coordenadas al mapa
 
 De aquí en más podemos suporponer nuestros datos en distintas capas sobre el mapa, con la misma sintaxis que conocemos de ggplot. Para mapear las ubicaciones de los delitos en el dataset, usamos `geom_point()` y los campos de longitud y latitud para los ejes $x$ e $y$:
 
 
-```warning
+::: warning
 En ocasiones los datos de longitud y latitud son leídos como texto (tipo "chr"), en lugar de números. Si eso ocurre el mapeo no va a funcionar, porque necesita datos numéricos para latitud y longitud. Para solucionarlo, podemos intentar convertir las columnas de coordenadas a tipo numérico. Algo así como `misdatos$longitud <- as.numeric(misdatos$longitud)` 
-```
+:::
 
 ```{r}
 ggmap(CABA) +
     geom_point(data = delitos, aes(x = longitud, y = latitud))
 ```
 
-Aquí nos topamos con un problema habitual al trabajar con grandes volúmenes de datos. Hay tantos puntos proyectados sobre el mapa, que se hace imposible interpretar dónde existen más o menos. Hacemos algunos ajustes: 
+Aquí nos topamos con un problema habitual al trabajar con grandes volúmenes de datos. Hay tantos puntos proyectados sobre el mapa, que se hace imposible interpretar dónde existen más o menos. Hacemos algunos ajustes:
+
 - un color que resalte más contra el mapa base, y que no se confunda con él
 - un tamaño de punto más pequeño
--y aplicación de una ligera transparencia
+- y aplicación de una ligera transparencia
 
 Todo ello vía los atributos "color", "size" y "alpha". ¿Cuál es el valor ideal para cada uno? En general, hay que recurrir a la prueba y error para encontrar la receta justa. Probemos con `color = "orange"`, `size = 0.1` y `alpha = 0.1`:
 
