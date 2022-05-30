@@ -109,11 +109,11 @@ telefonos <- str_extract_all(listado, "[0-9]{4}.[0-9]{4}") %>%
 telefonos
 ```
 
-Hay otros metacaracteres muy útiles. `[a-z]`es una secuencia de todas las letras en minúscula; `[A-Z]` en mayúscula. Para elegir todos los dígitos, lo podemos hacer con `\\d`, y todos los no dígitos con `\\D`. Con `\\w` todos los caracteres alfanuméricos ([a-zA-Z0-9\_]) y con `\\W` todos los no alfanuméricos (símbolos, puntos, etc). Con `\\s` podemos elegir todos los espacios en blanco.
+Hay otros metacaracteres muy útiles. `[a-z]`es una secuencia de todas las letras en minúscula; `[A-Z]` en mayúscula. Para elegir todos los dígitos, lo podemos hacer con `\\d`, y todos los no dígitos con `\\D`. Con `\\w` todos los caracteres alfanuméricos ([a-zA-Z0-9\_]) y con `\\W` todos los no alfanuméricos (símbolos, puntos, etc). Con `\\s` podemos elegir los espacios en blanco (tabulaciones, saltos de línea, etc).
 
 Luego, un [\^ ] niega lo anterior: [\^a-z] matchea lo que no tenga alguna letra (Ojo, `^` actúa distinto si está dentro o fuera de los corchetes. Fuera es un ancla de inicio de línea, dentro es negación de lo siguiente). Una que es muy importante es la alternación `|`, donde matchea una expresión u otra: `"(Julio|Jul)"` para detectar tanto cuando dice "Julio" o si dice "Jul". Los paréntesis se usan igual que en matemática, para encerrar conceptos y tratarlos como un único concepto (por ejemplo, para que comience con Julio o Jul puedo poner: `^(Julio|Jul)`. Sin los paréntesis, sólo buscaría que no comience con "J").
 
-También hay otros metacaracteres para indicar repeticiones: `?` repite el anterior una vez: `.?` será cualquier caracter una vez, o ninguno (es opcional). Luego `+` repetirá una vez al menos y el resto opcional. Y `*` repetirá muchas veces de modo opcional. Como vimos, en este *sabor* de regex, un número entre corchetes dice exacto cuántas veces se debe repetir el patrón: {4}.
+También hay otros metacaracteres para indicar repeticiones: `?` repite el anterior una vez: `.?` será cualquier caracter una vez, o ninguno (es opcional). Luego `+` repetirá una vez al menos y el resto opcional. Y `*` repetirá muchas veces de modo opcional o ninguna. Como vimos, en este *sabor* de regex, un número entre corchetes dice exacto cuántas veces se debe repetir el patrón: {4}.
 
 El listado es el siguiente:
 
@@ -135,7 +135,7 @@ El listado es el siguiente:
 
 ### Lookaround
 
-Los `lookaround` nos permiten identificar una posición, y no texto. Luego de identificar esa posición, podemos buscar texto. Esta posición puede ser tanto en referencia a la derecha (adelante, `lookahead` `(?=  )`) como a la izquierda (atras, `lookbehind` `(?>=  )`). Entonces deberíamos pedirle a `regex` que identifique el lugar desde donde queremos seleccionar algún patrón. Para ello podemos incluso combinarlos: despues de tal patrón y antes de este otro, y luego decirle con qué queremos hacer el match.
+Los `lookaround` nos permiten identificar una posición, y no texto. Luego de identificar esa posición, podemos buscar texto. Esta posición puede ser tanto en referencia a la derecha de... (adelante, `lookahead` `(?=  )`) como a la izquierda de... (atras, `lookbehind` `(?>=  )`). Entonces deberíamos pedirle a `regex` que identifique el lugar desde donde queremos seleccionar algún patrón. Para ello podemos incluso combinarlos: despues de tal patrón y antes de este otro, y luego decirle con qué queremos hacer el match.
 
 ```{r, message=FALSE}
 
@@ -222,8 +222,8 @@ Para nuestro ejercicio, en tanto vamos a medir cuántas veces toman la palabra l
 limpio <- periodo138 %>% 
  mutate(texto = str_replace_all(texto, '\\s|\\n|\\\\n|\\\"', " "))
 
-limpio <- periodo138 %>% 
-  mutate(texto = str_remove_all(texto, "Sr. Presidente|Sr. Secretario|Sra. Presidenta"))
+limpio <- limpio %>% 
+  mutate(texto = str_remove_all(texto, "Sr.\\s+Presidente|Sr.\\s+Secretario|Sra.\\s+Presidenta"))
          
 rm(periodo138) #remuevo el objeto para liberar un poco de memoria
 ```
@@ -267,6 +267,8 @@ listado
 
 ## Ejercicios
 
-1.  En la última tabla pudimos ver en concreto quién habló y cuántas veces lo hizo. Pero notemos que aparecen algunos "del" y "de" sueltos... ¡falta el resto de esos apellidos!. ¿Cómo podríamos obtener el apellido completo de `"DE LA SOTA, NATALIA"`, `"DE LOREDO, RODRIGO"`, `"DEL PLA, ROMINA"`, etc?
+1.  En la última tabla pudimos ver en concreto quién habló y cuántas veces lo hizo. Pero notemos que aparecen algunos "del" y "de" sueltos... ¡falta el resto de esos apellidos!. ¿Cómo podríamos identificarlos y contarlos de modo separado a `"DE LA SOTA, NATALIA"`, `"DE LOREDO, RODRIGO"`, `"DEL PLA, ROMINA"`, etc?
+
+
 
 2.  Descarguemos un tomo de jurisprudencia de la Corte Suprema de Justicia de la Nación (<https://sjservicios.csjn.gov.ar/sj/tomosFallos.do?method=iniciar>), o la similar en otros países, y extraigamos las citas a precedentes: `"Fallos xxx:xxx"`
