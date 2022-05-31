@@ -285,25 +285,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="analisis-de-texto.html#cb145-1"></a>frutas</span></code></pre></div>
 <pre><code>## [1] &quot;Manzana&quot; &quot;Banana&quot;  &quot;Pera&quot;</code></pre>
 <div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="analisis-de-texto.html#cb147-1"></a><span class="kw">str_view</span>(frutas, <span class="st">&quot;an&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-42311d56efd4dca85e6e" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-42311d56efd4dca85e6e">{"x":{"html":"<ul>\n  <li>M<span class='match'>an<\/span>zana<\/li>\n  <li>B<span class='match'>an<\/span>ana<\/li>\n  <li>Pera<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-35989f148fcdd911f0e4" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-35989f148fcdd911f0e4">{"x":{"html":"<ul>\n  <li>M<span class='match'>an<\/span>zana<\/li>\n  <li>B<span class='match'>an<\/span>ana<\/li>\n  <li>Pera<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>Y ahora es donde comienzan a ponerse interesantes las <code>regex</code>. Por ejemplo, el punto (.) puede reemplazar a cualquie caracter, excepto el salto de línea</p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="analisis-de-texto.html#cb148-1"></a><span class="kw">str_view</span>(frutas, <span class="st">&quot;.an&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-514efa15e43b465867fd" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-514efa15e43b465867fd">{"x":{"html":"<ul>\n  <li><span class='match'>Man<\/span>zana<\/li>\n  <li><span class='match'>Ban<\/span>ana<\/li>\n  <li>Pera<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8434e9a0a3153eb66c64" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8434e9a0a3153eb66c64">{"x":{"html":"<ul>\n  <li><span class='match'>Man<\/span>zana<\/li>\n  <li><span class='match'>Ban<\/span>ana<\/li>\n  <li>Pera<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>Pero si el “punto” reemplaza a cualquier caracter, ¿cómo seleccionamos al caracter “.”? Tenemos que utilizar un “escape” que le diga que estamos refiriendo al caracter y no al <code>regex</code>. para ello, se usa la barra invertida <code>\</code>, que se denomina <code>escape</code>. Pero, y entonces, ¿cómo difereciamos al escape de la barra invertida?: Para que sepa que es un escape y no una barra invertida, debemos <em>escaparla</em>, de modo que serán dos barras invertidas, más el caracter que queremos escapar…</p>
 <div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="analisis-de-texto.html#cb149-1"></a>oracion</span></code></pre></div>
 <pre><code>## [1] &quot;Esta es una cadena de palabras.&quot;</code></pre>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="analisis-de-texto.html#cb151-1"></a><span class="kw">str_view</span>(oracion, <span class="st">&quot;.as</span><span class="ch">\\</span><span class="st">.&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-75d03ecb66b06b47b59b" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-75d03ecb66b06b47b59b">{"x":{"html":"<ul>\n  <li>Esta es una cadena de palab<span class='match'>ras.<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a26d11d281cb53dc0cb9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a26d11d281cb53dc0cb9">{"x":{"html":"<ul>\n  <li>Esta es una cadena de palab<span class='match'>ras.<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="analisis-de-texto.html#cb152-1"></a>saludo &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Quiero saludar a los Sres. padres y las Sras. madres&quot;</span>)</span>
 <span id="cb152-2"><a href="analisis-de-texto.html#cb152-2"></a><span class="kw">str_view</span>(saludo, <span class="st">&quot;Sr.s</span><span class="ch">\\</span><span class="st">.&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-8c80ced7db53fe6f05dc" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8c80ced7db53fe6f05dc">{"x":{"html":"<ul>\n  <li>Quiero saludar a los <span class='match'>Sres.<\/span> padres y las Sras. madres<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-eb06bbbb6bc28f315ee6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-eb06bbbb6bc28f315ee6">{"x":{"html":"<ul>\n  <li>Quiero saludar a los <span class='match'>Sres.<\/span> padres y las Sras. madres<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="analisis-de-texto.html#cb153-1"></a><span class="kw">str_view_all</span>(saludo, <span class="st">&quot;Sr.s</span><span class="ch">\\</span><span class="st">.&quot;</span>) <span class="co">#para que detecte todas las coincidencias y no solo la primera.</span></span></code></pre></div>
-<div id="htmlwidget-d0c0f26ae54ad535852f" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d0c0f26ae54ad535852f">{"x":{"html":"<ul>\n  <li>Quiero saludar a los <span class='match'>Sres.<\/span> padres y las <span class='match'>Sras.<\/span> madres<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-10b1939a17ffe02eda14" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-10b1939a17ffe02eda14">{"x":{"html":"<ul>\n  <li>Quiero saludar a los <span class='match'>Sres.<\/span> padres y las <span class='match'>Sras.<\/span> madres<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="metacaracteres" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Metacaracteres</h2>
@@ -312,36 +312,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>-<code>^</code>para buscar solo al comienzo de la línea - <code>$</code> para buscar solo al final de la línea</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="analisis-de-texto.html#cb154-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;arándano&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;pera&quot;</span>)</span>
 <span id="cb154-2"><a href="analisis-de-texto.html#cb154-2"></a><span class="kw">str_view</span>(x, <span class="st">&quot;^a&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-edd8c6c0f78bb979d613" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-edd8c6c0f78bb979d613">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>rándano<\/li>\n  <li>banana<\/li>\n  <li>pera<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-301c409b6c937872d7b8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-301c409b6c937872d7b8">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>rándano<\/li>\n  <li>banana<\/li>\n  <li>pera<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="analisis-de-texto.html#cb155-1"></a><span class="kw">str_view</span>(x, <span class="st">&quot;a$&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-6ee748f29b4d2d156890" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6ee748f29b4d2d156890">{"x":{"html":"<ul>\n  <li>arándano<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>per<span class='match'>a<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bb0aee60c5b4be5fe97b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bb0aee60c5b4be5fe97b">{"x":{"html":"<ul>\n  <li>arándano<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>per<span class='match'>a<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="clases-de-palabras" class="section level3" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Clases de Palabras</h3>
 <p>Cuando se usan los corchetes, se pueden coincidir una de varias opciones. Mientras que <code>a</code> identifica una “a” y <code>e</code> identifica una “e”, <code>[ae]</code> identifica ya sea una “a” o una “e”. Esto es muy útil para las dudas ortográficas…</p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="analisis-de-texto.html#cb156-1"></a>x &lt;-<span class="st"> &quot;Esto es muy necesario, o nesesario?&quot;</span></span>
 <span id="cb156-2"><a href="analisis-de-texto.html#cb156-2"></a><span class="kw">str_view_all</span> (x, <span class="st">&quot;ne[cs]e[cs]ario&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-a932b380f18f8e971054" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a932b380f18f8e971054">{"x":{"html":"<ul>\n  <li>Esto es muy <span class='match'>necesario<\/span>, o <span class='match'>nesesario<\/span>?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3d4cdcc97a39bb7f2a62" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3d4cdcc97a39bb7f2a62">{"x":{"html":"<ul>\n  <li>Esto es muy <span class='match'>necesario<\/span>, o <span class='match'>nesesario<\/span>?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <p>Entre corchetes, se pueden listar muchas clases de caracteres. Por ejemplo:</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="analisis-de-texto.html#cb157-1"></a>x &lt;-<span class="st"> &quot;Telefono: 3321-4430&quot;</span></span>
 <span id="cb157-2"><a href="analisis-de-texto.html#cb157-2"></a><span class="kw">str_view</span>(x, <span class="st">&quot;[0123456789]&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-b03147d0939296e6476d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b03147d0939296e6476d">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3<\/span>321-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e6ad373418884b18b37c" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e6ad373418884b18b37c">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3<\/span>321-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="analisis-de-texto.html#cb158-1"></a><span class="kw">str_view</span>(x, <span class="st">&quot;[0-9]&quot;</span>) <span class="co"># el guión es un metacaracter que indica rango</span></span></code></pre></div>
-<div id="htmlwidget-dd7078d86146cdfe332d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dd7078d86146cdfe332d">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3<\/span>321-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ed80680f15e3c69d305d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ed80680f15e3c69d305d">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3<\/span>321-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="analisis-de-texto.html#cb159-1"></a><span class="kw">str_view</span>(x, <span class="st">&quot;[0-9]{8}&quot;</span>) <span class="co"># ¿ por qué no selecciona los ocho números?</span></span></code></pre></div>
-<div id="htmlwidget-def576df510a3be0f6ad" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-def576df510a3be0f6ad">{"x":{"html":"<ul>\n  <li>Telefono: 3321-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b496f8acfa9d252be150" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b496f8acfa9d252be150">{"x":{"html":"<ul>\n  <li>Telefono: 3321-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="analisis-de-texto.html#cb160-1"></a><span class="kw">str_view</span>(x, <span class="st">&quot;[0-9]{4}&quot;</span>) <span class="co"># ahora solo cuatro...</span></span></code></pre></div>
-<div id="htmlwidget-3db39c2ca07d8e910081" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3db39c2ca07d8e910081">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3321<\/span>-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c60281c7b163445f66ca" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c60281c7b163445f66ca">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3321<\/span>-4430<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="analisis-de-texto.html#cb161-1"></a><span class="kw">str_view</span>(x, <span class="st">&quot;[0-9]{4}.[0-9]{4}&quot;</span>) <span class="co">#vean el punto entre los grupos de números</span></span></code></pre></div>
-<div id="htmlwidget-2a3d4dba33b02e60f160" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2a3d4dba33b02e60f160">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3321-4430<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b25958ee0ef29a6bcd87" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b25958ee0ef29a6bcd87">{"x":{"html":"<ul>\n  <li>Telefono: <span class='match'>3321-4430<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="analisis-de-texto.html#cb162-1"></a>(telefono &lt;-<span class="st"> </span><span class="kw">str_extract</span>(x, <span class="st">&quot;[0-9]{4}.[0-9]{4}&quot;</span>))</span></code></pre></div>
 <pre><code>## [1] &quot;3321-4430&quot;</code></pre>
 <p>Con <code>str_extract()</code> asignamos a la variable <code>telefono</code> el número que leimos automáticamente. Si esto está en un mail o formulario, o algún otro texto, puedo ejecutar el código y leer a través del <code>regex</code> lo que dice. Claro que para ello hay que conocer el tipo de texto que se trata: tengo que saber que el número de teléfono son ocho dígitos separados por un guión. Cuando sé que tipo de patrón estoy buscando, puedo armar un <code>regex</code> para leerlo y procesarlo <em>automágicamente</em>.</p>
@@ -450,8 +450,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="analisis-de-texto.html#cb167-1"></a>discurso &lt;-<span class="st"> &quot;Sr. Presidente (Gioja).- Corresponde ahora pasar al tiempo destinado a los representantes de los bloques. En primer lugar, el Frente de Todos. Tiene la palabra la señora diputada Aparicio, por Buenos Aires.  Sra. Aparicio.- Señor presidente: hoy debatimos de cara a la sociedad, con responsabilidad y transparencia, como nunca se lo ha hecho en este Congreso, la triste historia de procesos de endeudamiento. Sr. Allende.- Señor presidente: quiero destacar la posibilidad que tenemos de analizar este acuerdo con elFondo. &quot;</span></span>
 <span id="cb167-2"><a href="analisis-de-texto.html#cb167-2"></a></span>
 <span id="cb167-3"><a href="analisis-de-texto.html#cb167-3"></a><span class="kw">str_view_all</span>(discurso, <span class="st">&quot;(?&lt;=Sr.?</span><span class="ch">\\</span><span class="st">.</span><span class="ch">\\</span><span class="st">s)(?=</span><span class="ch">\\</span><span class="st">w)</span><span class="ch">\\</span><span class="st">w*&quot;</span>)</span></code></pre></div>
-<div id="htmlwidget-1c5f98cad064eaeb6905" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1c5f98cad064eaeb6905">{"x":{"html":"<ul>\n  <li>Sr. <span class='match'>Presidente<\/span> (Gioja).- Corresponde ahora pasar al tiempo destinado a los representantes de los bloques. En primer lugar, el Frente de Todos. Tiene la palabra la señora diputada Aparicio, por Buenos Aires.  Sra. <span class='match'>Aparicio<\/span>.- Señor presidente: hoy debatimos de cara a la sociedad, con responsabilidad y transparencia, como nunca se lo ha hecho en este Congreso, la triste historia de procesos de endeudamiento. Sr. <span class='match'>Allende<\/span>.- Señor presidente: quiero destacar la posibilidad que tenemos de analizar este acuerdo con elFondo. <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d796368a3f90866b99f6" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d796368a3f90866b99f6">{"x":{"html":"<ul>\n  <li>Sr. <span class='match'>Presidente<\/span> (Gioja).- Corresponde ahora pasar al tiempo destinado a los representantes de los bloques. En primer lugar, el Frente de Todos. Tiene la palabra la señora diputada Aparicio, por Buenos Aires.  Sra. <span class='match'>Aparicio<\/span>.- Señor presidente: hoy debatimos de cara a la sociedad, con responsabilidad y transparencia, como nunca se lo ha hecho en este Congreso, la triste historia de procesos de endeudamiento. Sr. <span class='match'>Allende<\/span>.- Señor presidente: quiero destacar la posibilidad que tenemos de analizar este acuerdo con elFondo. <\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="primer-ejercicio" class="section level2" number="5.3">

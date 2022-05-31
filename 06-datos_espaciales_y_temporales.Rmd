@@ -37,9 +37,9 @@ Teniendo en cuenta que el dataset es del 2020, el Primer Año de la Pandemia COV
 
 ### La fecha como clase de variable
 
-La fecha es un tipo de dato que puede ser expresado de muchas maneras, dependiendo de que nos interese tener en cuenta: el día de la semana al que corresponde, el mes, el año, etc. El paquete [`lubridate`](https://lubridate.tidyverse.org/) hace fácil tomar una variable que contiene fechas en cualquier formato (por ejemplo "20/07/2020") para extraer el atributo relacionado que deseemos (como su día, "lunes", o su mes, "julio").
+La fecha es un tipo de dato que puede ser expresado de muchas maneras, dependiendo de que nos interese tener en cuenta: el día de la semana al que corresponde, el mes, el año, etc. El paquete [`lubridate`](https://lubridate.tidyverse.org/) hace fácil tomar una variable que contiene fechas en cualquier formato (por ejemplo "20/07/2020") para extraer el atributo relacionado que deseemos (como su día, "lunes", o su mes, "julio"). Cuando instalamos `tidyverse` recibimos también `lubridate` -es parte del "pack"-, así que ya deberíamos tenerlo listo para usar.
 
-Para empezar, convertimos el campo "fecha" al tipo de dato especializado, que se llama... fecha (_date_). Aquí tenemos que prestar atención al formato en que aparecen los datos de la columna, en general algo como "30-07-2018" (día, mes, año) o "30-07-2018 12:14:24" (día, mes, año y hora, minutos, segundos). Con nuestros datos se da el primer caso, por lo cual la función para convertir ese campo en fecha es `dmy()`; para el segundo caso, seria `dmy_hms()`
+Para empezar, convertimos el campo "fecha" al tipo de dato especializado, que se llama... fecha (_date_). Aquí tenemos que prestar atención al formato en que aparecen los datos de la columna, en general algo como "30-07-2018" (día, mes, año) o "30-07-2018 12:14:24" (día, mes, año y hora, minutos, segundos). Con nuestros datos se da el primer caso, por lo cual la función para convertir ese campo en fecha es `dmy()`; para el segundo caso, seria `dmy_hms()`.
 
 
 ```{r}
@@ -155,6 +155,14 @@ También podemos evaluar el ritmo según la hora del día. ¿Cómo se haría con
 ## Mirando al espacio
 
 Pasemos ahora al análisis espacial de nuestros datos. Para facilitar la visualización volveremos a usar el paquete `ggmap`, que aporta funciones que facilitan la creación de mapas.
+
+Como siempre, si es la primera vez que vamos a usar el paquete tenemos que instalarlo:
+
+```{r eval=FALSE}
+install.packages("ggmap")
+```
+
+Y con eso resuelto ya podremos activarlo cuando lo necesitemos:
 
 ```{r}
 library(ggmap)
