@@ -252,17 +252,47 @@ Esto significa que en promedio, durante el período de estudio, los varones habl
 
 ### Quienes hablaron?
 
-Y también podemos analizar quiénes tomaron la palabra en cada sesión, con el código de *lookaround* que hicimos arriba. Agregaremos una listado por fila.
+Y también podemos analizar quiénes tomaron la palabra en cada sesión. 
+
+Con el código de *lookaround* que usamos arriba, podemos agregar una columna "toman_palabra" que contenga una lista con los nombres que se registran tomando la palabra en cada sesión:
 
 ```{r}
 quienes <- limpio %>% 
-  mutate(quienes = str_extract_all(texto, "(?<=Sr.?\\.\\s)(?=\\w)\\w*")) %>% 
+  mutate(toman_palabra = str_extract_all(texto, "(?<=Sr.?\\.\\s)(?=\\w)\\w*")) %>% 
   select(-reunion_numero, -sesion_numero,-texto, -link, -sesion_camara, -periodo_id, -reunion_fin)
 
-listado <- tibble(as.data.frame(table(quienes$quienes[1]) )) %>% 
-  arrange(desc(Freq))
 
-listado
+quienes
+```
+
+Notamos que el contenido de la nueva columna es un tipo de dato complejo: un lista (_list_) de cadenas de texto.
+
+Para ver el contenido de estas listas podemos extraerlas con `quienes$toman_palabra`, y eso va a generar un montón de salida de texto en pantalla. O para algo más acotado, podemos ver sólo el contenido de la fila _n_ (por ejemplo, la fila 3 con `quienes$toman_palabra[3]`). O podemos usar `filter()` para ver el contenido de la lista en las filas que cumplan alguna condición. Por ejemplo:
+
+```{r}
+quienes %>% 
+  filter(reunion_nombre == "138-16") %>% 
+  pull(toman_palabra)
+```
+(la función `pull()` extrae el contenido de una columna dada, tiene el mismo efecto que el simbolillo "$" en `quienes$toman_palabra`)
+
+
+Ahora podemos crear una columna que contenga conteos de la cantidad de veces que aparece cada nombre tomando la palabra, en cada fila. Esta vez el contenido de cada item en la nueva columna será una tabla de frecuencias, que en R se representan con su propio tipo de datos:
+
+
+```{r}
+quienes <- quienes %>% 
+  mutate(frecuencia = map(toman_palabra, table)) 
+
+quienes
+```
+
+Para revisar estas tablas de frecuencia, podemos usar cualquiera de los métodos mencionados antes, como:
+
+```{r}
+quienes %>% 
+  filter(reunion_nombre == "138-16") %>% 
+  pull(frecuencia) 
 ```
 
 ## Ejercicios
