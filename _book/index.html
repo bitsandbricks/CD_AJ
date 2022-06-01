@@ -52,8 +52,13 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
+<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -176,7 +181,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.2" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#filtrar-filas-con-filter"><i class="fa fa-check"></i><b>3.3.2</b> Filtrar filas con <code>filter()</code></a></li>
 <li class="chapter" data-level="3.3.3" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#ordenar-filas-con-arrange"><i class="fa fa-check"></i><b>3.3.3</b> Ordenar filas con <code>arrange()</code></a></li>
 <li class="chapter" data-level="3.3.4" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#agregar-nuevas-variables-con-mutate"><i class="fa fa-check"></i><b>3.3.4</b> Agregar nuevas variables con <code>mutate()</code></a></li>
-<li class="chapter" data-level="3.3.5" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#extraer-sumarios-con-summarise"><i class="fa fa-check"></i><b>3.3.5</b> Extraer sumarios con <code>summarise()</code></a></li>
+<li class="chapter" data-level="3.3.5" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#extraer-resúmenes-con-summarise"><i class="fa fa-check"></i><b>3.3.5</b> Extraer resúmenes con <code>summarise()</code></a></li>
 <li class="chapter" data-level="3.3.6" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#bonus-el-operador-pipe"><i class="fa fa-check"></i><b>3.3.6</b> ¡BONUS! El operador “pipe”: <code>%&gt;%</code></a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a></li>
@@ -194,17 +199,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html"><i class="fa fa-check"></i><b>5</b> Analisis de texto</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#ejercicios-3"><i class="fa fa-check"></i><b>5.1</b> Ejercicios</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html"><i class="fa fa-check"></i><b>6</b> Información geográfica y mapas</a>
+<li class="chapter" data-level="5.1" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#manipulación-de-texto"><i class="fa fa-check"></i><b>5.1</b> Manipulación de texto</a></li>
+<li class="chapter" data-level="5.2" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#metacaracteres"><i class="fa fa-check"></i><b>5.2</b> Metacaracteres</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#los-datos-georreferenciados"><i class="fa fa-check"></i><b>6.1</b> Los datos georreferenciados</a></li>
-<li class="chapter" data-level="6.2" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#formatos-de-archivo"><i class="fa fa-check"></i><b>6.2</b> Formatos de archivo</a></li>
-<li class="chapter" data-level="6.3" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#explorando-un-archivo-con-información-geográfica"><i class="fa fa-check"></i><b>6.3</b> Explorando un archivo con información geográfica</a></li>
-<li class="chapter" data-level="6.4" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#visualizando-información-geográfica"><i class="fa fa-check"></i><b>6.4</b> Visualizando información geográfica</a></li>
-<li class="chapter" data-level="6.5" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#volcando-en-el-mapa-información-de-múltiples-fuentes"><i class="fa fa-check"></i><b>6.5</b> Volcando en el mapa información de múltiples fuentes</a></li>
-<li class="chapter" data-level="6.6" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#combinando-capas-geográficas"><i class="fa fa-check"></i><b>6.6</b> Combinando capas geográficas</a></li>
-<li class="chapter" data-level="6.7" data-path="información-geográfica-y-mapas.html"><a href="información-geográfica-y-mapas.html#ejercicios-4"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a></li>
+<li class="chapter" data-level="5.2.1" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#comienzo-y-fin-de-línea"><i class="fa fa-check"></i><b>5.2.1</b> Comienzo y fin de línea</a></li>
+<li class="chapter" data-level="5.2.2" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#clases-de-palabras"><i class="fa fa-check"></i><b>5.2.2</b> Clases de Palabras</a></li>
+<li class="chapter" data-level="5.2.3" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#lookaround"><i class="fa fa-check"></i><b>5.2.3</b> Lookaround</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#primer-ejercicio"><i class="fa fa-check"></i><b>5.3</b> Primer ejercicio</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#consiguiendo-los-datos"><i class="fa fa-check"></i><b>5.3.1</b> Consiguiendo los datos</a></li>
+<li class="chapter" data-level="5.3.2" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#limpieza-de-datos"><i class="fa fa-check"></i><b>5.3.2</b> Limpieza de datos</a></li>
+<li class="chapter" data-level="5.3.3" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#análisis"><i class="fa fa-check"></i><b>5.3.3</b> Análisis</a></li>
+<li class="chapter" data-level="5.3.4" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#quienes-hablaron"><i class="fa fa-check"></i><b>5.3.4</b> Quienes hablaron?</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#ejercicios-3"><i class="fa fa-check"></i><b>5.4</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html"><i class="fa fa-check"></i><b>6</b> Trabajando con datos espaciales y temporales</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#trabajando-con-fechas"><i class="fa fa-check"></i><b>6.1</b> Trabajando con fechas</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#la-fecha-como-clase-de-variable"><i class="fa fa-check"></i><b>6.1.1</b> La fecha como clase de variable</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#mirando-al-espacio"><i class="fa fa-check"></i><b>6.2</b> Mirando al espacio</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#obteniendo-un-mapa-base"><i class="fa fa-check"></i><b>6.2.1</b> Obteniendo un mapa base</a></li>
+<li class="chapter" data-level="6.2.2" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#de-coordenadas-al-mapa"><i class="fa fa-check"></i><b>6.2.2</b> De coordenadas al mapa</a></li>
+<li class="chapter" data-level="6.2.3" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#mapas-de-densidad"><i class="fa fa-check"></i><b>6.2.3</b> Mapas de densidad</a></li>
+<li class="chapter" data-level="6.2.4" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#visualizando-multiples-categorías"><i class="fa fa-check"></i><b>6.2.4</b> Visualizando multiples categorías</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#combinando-espacio-y-tiempo"><i class="fa fa-check"></i><b>6.3</b> Combinando espacio y tiempo</a></li>
+<li class="chapter" data-level="6.4" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#ejercicios-4"><i class="fa fa-check"></i><b>6.4</b> Ejercicios</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
@@ -304,6 +329,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
