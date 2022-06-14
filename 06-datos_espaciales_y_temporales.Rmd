@@ -154,7 +154,13 @@ También podemos evaluar el ritmo según la hora del día. ¿Cómo se haría con
 
 ## Mirando al espacio
 
-Pasemos ahora al análisis espacial de nuestros datos. Para facilitar la visualización volveremos a usar el paquete `ggmap`, que aporta funciones que facilitan la creación de mapas.
+Pasemos ahora al análisis espacial de nuestros datos. Nuestro dataset incluye columnas de _longitud_ y _latitud_ para cada registro, lo cual identifica su posición sobre la superficie de la Tierra... ¡y nos permite realizar mapas!. Para ello usaremos el paquete `ggmap`, que aporta funciones para hacer visualizaciones de tipo mapa usando las técnicas de ggplot que ya hemos practicado.
+
+::: tip
+Representar en forma precisa una posición geográfica es un todo un reto cuando necesitamos mostrar rasgos de una superficie tridimensional cuasi-esférica (¡la Tierra!) en superficies planas (papel o pantallas). La solución toma la forma de sistemas de coordenadas de referencia (CRS por sus siglas en inglés), y de proyecciones cartográficas.
+
+Los CRS son un sistema de números que definen ubicaciones sobre la superficie de la Tierra; funcionan como direcciones usando latitud y longitud para definir posiciones en los ejes norte-sur y este-oeste. Hay muchos, muchos tipos de CRS, y en general hace falta saber con cuál trabajamos. Sin embargo, existe una especie de regla no escrita: si nuestros datos georreferenciados no aclaran cuál es su sistema de coordenadas, podemos asumir que usan el llamado WGS84 o "Mercator". Eso mismo presupone `ggmap`, y como nuestro dataset efectivamente usa coordenadas WGS84, todos los ejercicios que siguen saldrán bien aún sin especificar el CRS.
+:::
 
 Como siempre, si es la primera vez que vamos a usar el paquete tenemos que instalarlo:
 
@@ -409,11 +415,9 @@ ggmap(CABA) +
 
 ## Ejercicios
 
-I.X
+I. Utilizando la información disponible en el dataset de delitos, creemos un gráfico un gráfico de líneas con `geom_line()` que muestre el ritmo horario para cada tipo. ¿Qué patrones se vislumbran? ¿Qué franja horaria representan la "hora pico" (u "hora punta") para cada categoría?
 
-II.X
-
-III. X
+II.  Volvamos al mapa de puntos que realizamos en la seción 5.1.2, donde ajustamos los atributos "color", "size" y "alpha" para mejorar los resultados, además de probar con facetados y mapas de densidad. ¿Qué otras técnicas podemos usar para lidiar con el exceso de información volcada en pantalla? Sugerencia: intentar con `geom_count()`, que se emplea de forma similar a`geom_point()` (véase https://ggplot2.tidyverse.org/reference/geom_count.html)
 
 
 ---
