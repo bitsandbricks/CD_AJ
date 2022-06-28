@@ -123,7 +123,7 @@ A todo esto... ¿no se suponía que íbamos a investigar la mortalidad infantil 
 ### Cargar los datos
 
 
-Vamos a cargar datos de mortalidad infantil, por comuna de la ciudad, en el año 2016, publicados por la [Dirección General de Estadística y Censos](https://www.estadisticaciudad.gob.ar/eyc/) de Buenos Aires. El formato original de los datos es ".xls" (planilla de hojas de cálculo). Yo lo he convertido a .csv ("comma separated values") un formato muy popular en el mundo de la ciencia de datos, ya que es muy fácil de manipular y compartir entre sistemas... es posible abrir un archivo .csv hasta con el [humilde block de notas](https://es.wikipedia.org/wiki/Bloc_de_notas). Al igual que los archivos .xls, los .csv se utilizan para guardar información tabular: un rectángulo con filas y columnas. R incluye una función que lee archivos .csv, que se llama  `read.csv`. La usamos así:
+Vamos a cargar datos de mortalidad infantil, por comuna de la ciudad, en el año 2020, publicados por la [Dirección General de Estadística y Censos](https://www.estadisticaciudad.gob.ar/eyc/) de Buenos Aires. El formato original de los datos es ".xls" (planilla de hojas de cálculo). Yo lo he convertido a .csv ("comma separated values") un formato muy popular en el mundo de la ciencia de datos, ya que es muy fácil de manipular y compartir entre sistemas... es posible abrir un archivo .csv hasta con el [humilde block de notas](https://es.wikipedia.org/wiki/Bloc_de_notas). Al igual que los archivos .xls, los .csv se utilizan para guardar información tabular: un rectángulo con filas y columnas. R incluye una función que lee archivos .csv, que se llama  `read.csv`. La usamos así:
 
 
 ```{r}
@@ -138,7 +138,7 @@ Una vez leído el archivo, para ver el contenido de la variable donde guardamos 
 mortalidad
 ```
 
-Vemos que la tabla tiene 15 filas (una por [cada comuna de la ciudad](https://es.wikipedia.org/wiki/Comunas_de_la_ciudad_de_Buenos_Aires)) y 2 columnas (una que indica la comuna, y otra con el valor de mortalidad infantil para el año 2016).
+Vemos que la tabla tiene 15 filas (una por [cada comuna de la ciudad](https://es.wikipedia.org/wiki/Comunas_de_la_ciudad_de_Buenos_Aires)) y 2 columnas (una que indica la comuna, y otra con el valor de mortalidad infantil para el año 2020).
 
 :::tip
 Sobre __dataframes__ y __datasets__: En R, las tablas son llamadas __dataframes__. El dataframe es el objeto por excelencia del análisis de datos. En concepto, es muy similar a una tabla de Excel; ambos formatos guardan información en celdas identificadas por fila y columna. El dataframe es una estructura de datos digitales en forma de tabla.
