@@ -127,7 +127,7 @@ Vamos a cargar datos de mortalidad infantil, por comuna de la ciudad, en el año
 
 
 ```{r}
-mortalidad <- read.csv('_book/data/mortalidad_infantil_caba_2020.csv')
+mortalidad <- read.csv('https://cdaj.netlify.app/data/mortalidad_infantil_caba_2020.csv')
 ```
 
 Obsérvese que los datos están alojados en un servidor de internet (accesibles vía una dirección web). Eso no es problema para la función `read.csv()`, que con la misma soltura lee archivos guardados en nuestra PC o publicados en un sitio _online_. 
@@ -159,7 +159,7 @@ head(mortalidad)
 
 Ahora es vamos a pisar el acelerador. Insisto: nadie debe preocuparse si algunos conceptos parecen ser demasiado complejos. En las próximas secciones practicaremos de forma gradual las técnicas que vamos a usar ahora, y todo tendrá sentido -¡lo prometo!. Pero antes, seamos un poquito irresponsables con el poder de R y empleemos un arsenal sofisticado de herramientas para ver de que somos capaces.
 
-En la introducción hablamos de los paquetes, conjuntos de programas que extienden la funcionalidad de R. Vamos a cargar uno de los paquetes más usados, `tidyverse`. Tidyverse incluye una gran cantidad de funciones diseñadas por y para practicantes de la ciencia de datos. Estas funciones comparten una filosofía y una sintaxis común, por lo que al aprender una en cierto modo aprendemos a usar todas. El valor que aportan es que, sin dudas, ayudan a realizar de manera más fácil las tareas típicas de la ciencia de datos: importar, limpiar, comprender y comunicar datos.  
+En la introducción hablamos de los paquetes, conjuntos de programas que extienden la funcionalidad de R. Vamos a cargar uno de los paquetes más usados, [`tidyverse`](https://www.tidyverse.org/). Tidyverse incluye una gran cantidad de funciones diseñadas por y para practicantes de la ciencia de datos. Estas funciones comparten una filosofía y una sintaxis común, por lo que al aprender una en cierto modo aprendemos a usar todas. El valor que aportan es que, sin dudas, ayudan a realizar de manera más fácil las tareas típicas de la ciencia de datos: importar, limpiar, comprender y comunicar datos.  
 
 Si acabamos de instalar R y RStudio, el paquete aún no estará disponible en nuestro sistema. Para instalarlo, usamos la función `install.packages()` y le pasamos el nombre del paquete deseado, "tidyverse", entre comillas. 
 
@@ -186,11 +186,11 @@ ggplot(mortalidad) +
     geom_col(aes(x = factor(Comuna), y = Tasa2020))
 ```
 
-Para realizar una visualización con ésta herramienta, siempre se comienza con la función ggplot(), que crea un eje de coordenadas sobre el cual se pueden agregar capas. El primer parámetro que recibe ggplot() es el dataframe que queremos usar para el gráfico; en nuestro caso, ggplot(mortalidad). Ejecutar sólo ggplot(mortalidad) nos devuelve un gráfico vacío; la gracia está en agregar una o más capas especificando cómo queremos mostrar los datos. Estas capas se agregan con un signo `+`.
+Para realizar una visualización con ésta herramienta, siempre se comienza con la función `ggplot()`, que crea un eje de coordenadas sobre el cual se pueden agregar capas. El primer parámetro que recibe `ggplot()` es el dataframe que queremos usar para el gráfico; en nuestro caso, `ggplot(mortalidad)`. Ejecutar sólo `ggplot(mortalidad)` nos devuelve un gráfico vacío; la gracia está en agregar una o más capas especificando cómo queremos mostrar los datos. Estas capas se agregan con un signo `+`.
 
-En nuestro ejemplo, `geom_col()` crea columnas cuya posición en el eje de las x depende de la variable "Comuna", mientas que la altura (posición en el eje de las y) depende del valor de la variable "Tasa2020". Existen muchas funciones de tipo "geom_XXX", que agregan distintas clases de capas al gráfico: geom_point, geom_polygon, geom_text y muchos, muchos más que iremos viendo más adelante.
+En nuestro ejemplo, `geom_col()` crea columnas cuya posición en el eje de las x depende de la variable "Comuna", mientas que la altura (posición en el eje de las y) depende del valor de la variable "Tasa2020". Existen muchas funciones de tipo "*geom_XXX*", que agregan distintas clases de capas al gráfico: `geom_point`, `geom_polygon`, `geom_text` y muchos, muchos más que iremos viendo más adelante.
 
-Cada función "geom_" toma como parámetro un conjunto de definiciones "estéticas" que le indican una variable a graficar ("mortalidad" en nuestro caso), cómo (color, tamaño, etc) y dónde (posición x, posición y del eje). Estos parámetros van siempre dentro de una función auxiliar, `aes()`. En nuestro ejemplo, "geom_col(aes(x = factor(Comuna), y = Tasa2020))". 
+Cada función "*geom_*" toma como parámetro un conjunto de definiciones "estéticas" que le indican una variable a graficar ("mortalidad" en nuestro caso), cómo (color, tamaño, etc) y dónde (posición x, posición y del eje). Estos parámetros van siempre dentro de una función auxiliar, `aes()`. En nuestro ejemplo, `geom_col(aes(x = factor(Comuna), y = Tasa2020))`. 
 
 No se preocupen que iremos practicando el uso de ggplot, y su uso se volverá familiar.
 
@@ -201,7 +201,7 @@ Pero no se distingue aquello que queríamos comprender: la diferencia entre el n
 
 ### Haciendo mapas
 
-Vamos a presentar un paquete más, el último para éste capítulo: `sf`. Quizás algunos tengan experiencia con sistemas de información geográfica (GIS por sus siglas en inglés), al estilo de [QGIS](https://qgis.org/en/site/) o [ArcGIS](https://www.arcgis.com/features/index.html), que permiten crear, manipular y combinar archivos con datos espaciales para producir mapas que pueden ser simples o en extremo sofisticados. En R, el paquete `sf` brinda herramientas que permiten realizar tares similares. 
+Vamos a presentar un paquete más, el último para éste capítulo: [`sf`](https://r-spatial.github.io/sf/). Quizás algunos tengan experiencia con sistemas de información geográfica (GIS por sus siglas en inglés), al estilo de [QGIS](https://qgis.org/en/site/) o [ArcGIS](https://www.arcgis.com/features/index.html), que permiten crear, manipular y combinar archivos con datos espaciales para producir mapas que pueden ser simples o en extremo sofisticados. En R, el paquete `sf` brinda herramientas que permiten realizar tares similares. 
 
 Nuestro objetivo es obtener un mapa de la ciudad de Buenos Aires con sus comunas. 
 
