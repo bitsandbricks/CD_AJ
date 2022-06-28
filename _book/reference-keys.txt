@@ -61,5 +61,3 @@ mapas-de-densidad
 visualizando-multiples-categorías
 combinando-espacio-y-tiempo
 ejercicios-4
-fig:unnamed-chunk-2
-fig:unnamed-chunk-3
