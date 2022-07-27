@@ -1,5 +1,9 @@
-
 # Modelado estadístico
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics('imagenes/modelado.jpg')
+
+```
 
 Llegamos a un tema de gran interés para quienes realizan investigaciones formales. La posición central que tiene el modelado en la investigación científica se debe a que cuantifica relaciones: permite pasar de decir "La luz solar abundante mejora el crecimiento de las plantas" a "por cada hora adicional de exposición mensual a la luz solar, los cultivos aumentaron su rendimiento en un 1%". La cuantificación permite realizar comparaciones, algo clave para entender un fenómeno estudiado: antes y después, con o sin tratamiento, en un lugar o en otro.
 
@@ -72,7 +76,7 @@ Variable | Definición
 cat(tabl) 
 ```
 
-Con el poder de `summary()`, comprobar que la incidencia de crímenes de odio varía de forma considerable entre estados. El promedio anual 2010-2015 reportado por el FBI (variable "avg_hatecrimes_per_100k_fbi") va de 0,2 a casi 11 incidentes cada 100.000 habitantes. Algo similar ocurre con la cantidad reportada con otra metodología, los datos para 2016 del *Southern Poverty Law Center* ("hate_crimes_per_100k_splc"): el rango va de apenas 0.06 incidentes cada 100.000 habitantes hasta 1,5 (¡22 veces más!).
+Con el poder de `summary()`, comprobar que la incidencia de crímenes de odio varía de forma considerable entre estados. El promedio anual 2010-2015 reportado por el FBI (variable "crimenes_odio_prom_100k_fbi") va de 0,2 a casi 5 incidentes cada 100.000 habitantes. Algo similar ocurre con la cantidad reportada con otra metodología, los datos para 2016 del *Southern Poverty Law Center* ("crimenes_odio_100k_splc"): el rango va de apenas 0,067 incidentes cada 100.000 habitantes hasta 0,83 (¡12 veces más!).
 
 
 ### Regresión con una variable numérica
@@ -116,7 +120,7 @@ Usamos el parámetro `na.rm = TRUE` para descartar las filas donde no contamos c
     - menor a 0,3: de nula a débil
 
 
-El valor que obtuvimos no supera por mucho el 0,3, podemos decir que la correlación es débil. Pero aún desconocemos algo quizás más importante: un valor preciso del "efecto" que la variable de ingresos tiene sobre la tasa de crímenes. Eso es lo que vamos a determinar con la regresión lineal. Usamos la palabra "efecto" entre comillas para aclarar una de las limitaciones del modelado estadístico: podemos probar correlación, pero no causalidad. Es decir, no podemos probar que una variable causa a la otra; en todo caso, probamos que se mueven juntas y en base a ello podríamos diseñar un experimento que permita comprobar causalidad.
+El valor que obtuvimos no supera por mucho el 0,3; podemos decir que la correlación es débil. Pero aún desconocemos algo quizás más importante: un valor preciso del "efecto" que la variable de ingresos tiene sobre la tasa de crímenes. Eso es lo que vamos a determinar con la regresión lineal. Usamos la palabra "efecto" entre comillas para aclarar una de las limitaciones del modelado estadístico: podemos probar correlación, pero no causalidad. Es decir, no podemos probar que una variable causa a la otra; en todo caso, probamos que se mueven juntas y en base a ello podríamos diseñar un experimento que permita comprobar causalidad.
 
 Vamos a la regresión lineal entonces, para establecer de una buena vez la correlación entre ingresos y crímenes de odio. Usamos la función `lm()` (por "linear model"), así:
 
@@ -128,15 +132,16 @@ modelo_crimenes <- lm(crimenes_odio_prom_100k_fbi ~ mediana_ingreso_hogares, dat
 
 El resultado de `lm()`, que hemos guardado dentro de la variable `modelo_crimenes` es un tipo de objecto con el que no hemos trabajado hasta ahora. No es un dataframe, sino una lista que contiene distintos atributos del modelo estadístico. No hace falta detenernos en eso ahora.
 
-Retomando nuestra pregunta... ¿cuál es el efecto? Lo obtenemos, en una prolija tabla, con la función `get_regression_table()`:
+Retomando nuestra pregunta... ¿cuál es el efecto? Lo obtenemos dándole el modelo que generamos a la función `get_regression_table()`, que devuelve una prolija tabla:
 
 ```{r}
 get_regression_table(modelo_crimenes)
 ```
 
-Ahí está. En nuestro modelo, el efecto _estimado_ de la variable _mediana_ingreso_hogares_ es de 0,061. Significado: incrementando en una unidad la variable predictora, la variable a predecir se incrementa en 0.2317. Dicho de otra manera, y expresándolo en las unidades de nuestras variables: por cada mil dólares de incremento en la mediana de ingresos por hogar, la tasa de crímenes de odio cada 100.000 habitantes se incrementa en 0.061 casos.
 
-El otro coeficiente que aparece, "intercept" es la intersección. Para interpetar el modelo, la intersección rara vez tiene utilidad. Para lo que sí sirve es para trazar la línea que permite "predecir" valores para años en los que no tenemos observaciones. Recordemos la fórmula que define una línea recta:
+Ahí está. En nuestro modelo, el efecto *estimado* de la variable *mediana_ingreso_hogares* es de 0,061. Significado: incrementando en una unidad la variable predictora, la variable a predecir se incrementa en 0.2317. Dicho de otra manera, y expresándolo en las unidades de nuestras variables: por cada mil dólares de incremento en la mediana de ingresos por hogar, la tasa de crímenes de odio cada 100.000 habitantes se incrementa en 0.061 casos.
+
+El otro término que aparece, "intercept" es la _intersección_. Para interpretar el modelo, la intersección rara vez tiene utilidad. Para lo que sí sirve es para trazar la línea que permite "predecir" valores para años en los que no tenemos observaciones. Recordemos la fórmula que define una línea recta:
 
 $$ y = a + b \times x $$
 
@@ -145,7 +150,7 @@ A cada punto en $x$ le corresponde un valor en $y$ que se obtiene multiplicando 
 
 En una regresión lineal, el "modelo" que creamos es precisamente eso: una línea. Tan simple como eso. Lo que la hace tan potente es que la podemos usar como bola de cristal: para saber cuanto valdría la variable dependiente ante un valor determinado de la variable predictora, revisamos por donde pasa la línea.
 
-Lo podemos visualizar con ayuda de `ggplot()`, que por supuesto incluye una función para trazar líneas. Parámetros necesarios: _intercept_ (intersección) y _slope_ (pendiente). Usamos los respectivos valores que nos indica el modelo, `-0.956` y `0.061`. 
+Lo podemos visualizar con ayuda de `ggplot()`, que por supuesto incluye una función para trazar líneas. Parámetros necesarios: _intercept_ (intersección) y _slope_ (pendiente). Usamos los respectivos valores que nos indica el modelo, `0.412` y `0.033`. 
 
 
 ```{r}
@@ -156,13 +161,13 @@ ggplot(data = crimenes_odio) +
          x = "mediana de ingresos por hogar (miles USD)",
          y = "tasa de crímenes",
          caption = "con línea de regresión") +
-    geom_abline(aes(intercept = -0.956, slope = 0.061), color = "blue")
+    geom_abline(aes(intercept = 0.412, slope = 0.033), color = "blue")
 ```
 
 Es hora de dar una definición oficial para una regresión lineal, y es esta: es la línea que describe la ecuación:
 
 $$ \hat{y} = b_0 + b_1 \times x $$
-Obsérvese que se trata de la ecuación de una recta, $y = a + b \times x$, con otros nombres. En voz alta, se leería así "Cada predicción del valor de y, llamada $\hat{y}$, se obtiene multiplicando a la variable predictora $x$ por su coeficiente $b_1$ y sumándole el valor de la intersección $b_0$". En otras palabras, a cada valor de $x$ (las observaciones de la variable explicativa) le corresponde un punto en la recta trazada por el modelo. La altura sobre la recta de las $y$ para ese punto es el valor predicho para la variable dependiente.
+Obsérvese que se trata de la ecuación de una recta, $y = a + b \times x$, con otros nombres. En voz alta, se leería así "Cada predicción del valor de y, llamada $\hat{y}$, se obtiene multiplicando a la variable predictora $x$ por su coeficiente $b_1$ y sumándole el valor de la intersección $b_0$". En otras palabras, a cada valor de $x$ (las observaciones de la variable explicativa) le corresponde un punto en la recta trazada por el modelo. La altura sobre la recta de las $y$ para ese punto es el valor predicho para la variable dependiente. Por ejemplo, si quisiéramos estimar la 
 
 Ya que estamos, aprendamos otro truco. `ggplot()` puede agregar a nuestros scatterplots una capa con la línea de la regresión lineal, en forma automática. La función `geom_smooth()` se usar para explicitar patrones en los datos. Tal como otras de la familia ggplot, espera que se le diga que variables asignar a `x` e `y`, más un parámetro `method` con el método solicitado para trazar una línea de tendencia. Aquí usamos `method = "lm"` por _linear model_, el modelo lineal.
 
@@ -179,95 +184,84 @@ ggplot(data = crimenes_odio) +
 
 Hacer una regresión lineal se trata de encontrar la línea que atraviesa nuestra nube de puntos de modo tal que la suma de las distancias de cada punto a la línea sea la menor posible. Es un problema matemático que puede resolverse con distintas técnicas (álgebra lineal, geometría, etc) que no vamos a discutir aquí. Confiaremos en R para hacer los cálculos.  
 
-En la relación año - expectativa de vida las distancias entre los puntos (las observaciones) y la línea (el modelo) son muy pequeñas. Eso indica que el modelo describe con gran precisión la dinámica de la relación entre las variables analizadas.
+En la relación ingresos - crímenes las distancias entre los puntos (las observaciones) y la línea (el modelo) varían bastante entre casos. Eso indica que el modelo no describe con gran precisión la dinámica de la relación entre las variables analizadas.
 
-En general, es inusual encontrar una correlación tan nítida entre variables "en la vida real", sobre todo cuando estudiamos procesos complejos cuyo comportamiento describe patrones más complejos que una relación lineal pura. No hace falta ir demasiado lejos para encontrar un ejemplo. Usando el mismo dataset, visualicemos un scatterplot de PBI vs año, agregando la línea de regresión para:
+En general, es inusual encontrar una correlación nítida entre variables "en la vida real", sobre todo cuando estudiamos procesos complejos cuyo comportamiento describe patrones más complejos que una relación lineal pura. 
 
-```{r}
-ggplot(data = data_arg) + 
-    geom_point(aes(x = anio, y = PBI_PC)) +
-    labs(title = "Correlación entre PBI y expectativa de vida",
-         subtitle = "Argentina",
-         y = "PBI per cápita") +
-    geom_smooth(aes(x = anio, y = PBI_PC), method = "lm")
-```
+¿Debería preocuparnos eso? No siempre. A veces la regresión sirve más para cuantificar la relación entre dos variables, en sentido general, y no para realizar certeras predicciones o caracterizar de forma exacta un fenómeno con solo disponer de una variable explicativa. Si nos conformamos con eso, lo importante es que nuestro modelo sea "justo", proveyendo un estimado con errores mas o menos parejos. Es decir, sin observaciones puntuales para las que el modelo resulta mucho peor que para otras.
 
-Sigue siendo evidente una fuerte tendencia lineal, pero las observaciones ya no se ciñen de forma tan estrecha a la línea idealizada de la regresión.
-
-Obtengamos el modelo del PBI per cápita de la Argentina en relación al paso del tiempo:
-
-```{r}
-modelo_PBI <- lm(PBI_PC ~ anio, data = data_arg)
-
-modelo_PBI
-```
-
-Tal como indicaba el _scatterplot_, obtuvimos un coeficiente positivo. Según el modelo, cada año que pasa resulta en un incremento de 86 dólares en el PBI per cápita del país. Sin embargo, sabemos que no en todos los años se cumple al pie de la letra tal incremento. ¿Debería preocuparnos eso? Una parte importante del análisis basado en regresiones es revisar los desvíos, y decidir si ameritan buscar una explicación. Para ello, lo mejor es empezar por prestar atención a los residuos.
+Una parte importante del análisis basado en regresiones es revisar estos errores -la distancia entre el valor predicho y la observación-, y decidir si ameritan buscar una explicación. Para ello, lo mejor es empezar por prestar atención a los residuos.
 
 ### Revolviendo los residuos
 
 Los residuos, en la jerga estadística, no son otra cosa que las diferencias encontradas entre el valor que predice un modelo para una variable y el valor observado en la práctica. Es decir, el valor para cada punto de $y - \widehat{y}$. Los residuos representan el desvío de cada observación respecto al valor "esperado" por el modelo.
 
-Cuando los desvíos son pequeños, es decir cuando los residuos son pequeños, decimos que nuestro modelo se ajusta bien a los datos observados. Cuando los residuos son grandes ocurre lo contrario, y quizás deberíamos buscar otra forma de describir, de modelar, la relación entre las variables.
+Cuando los desvíos son pequeños, es decir cuando los residuos son pequeños, decimos que nuestro modelo se ajusta bien a los datos observados. Cuando los residuos son grandes ocurre lo contrario, y quizás deberíamos buscar otra forma de describir -de modelar-, la relación entre las variables.
 
-Prestemos atención a los residuos de nuestro modelo de PBV vs. tiempo. Podemos extraer los residuos usando la función `residuals()`,
-
-```{r}
-residuos <- residuals(modelo_PBI)
-
-residuos
-```
-
-agregarlos a nuestro dataframe,
+Prestemos atención a los residuos de nuestro modelo. Podemos extraer los residuos (y algunas cosillas más!) usando la función `get_regression_points()`,
 
 ```{r}
-data_arg <- data_arg %>% mutate(residuo_ml = residuos)
+resultados_regresion <- get_regression_points(modelo_crimenes)
+resultados_regresion
 ```
 
+Obtenemos los resultados del modelo para cada observación, o sea cada fila de nuestro dataframe original.
+La columna que buscamos está al final (`residual`). También tenemos
 
-y visualizarlos comparados con una línea que indica el cero, trazada por `geom_hline()`. Los residuos cercanos a ese valor son los que corresponden a observaciones a las que el modelo se ajusta bien.
+* `crimenes_odio_prom_100k_fbi`: El valor observado en los datos que usamos para el modelo, para la variable que intentamos predecir; es el valor de $y$
+* `mediana_ingreso_hogares`: El valor que toma la variable predictora, alias $x$ 
+* `crimenes_odio_prom_100k_fbi_hat`: Este es el valor que "predice" el modelo, alias "y con sombrerito" (de ahí lo de _hat_), o $\hat{y}$ 
+* `residual`: y por fin los residuos, la diferencia $y - \hat{y}$ para cada fila.
 
-```{r}
-ggplot(data_arg) +
-    geom_point(aes(x = anio, y = residuo_ml)) +
-    geom_hline(yintercept = 0, col = "blue") +
-    labs(x = "año", y = "residuo del modelo lineal")
-```
 
-Siempre podemos esperar una cierta divergencia entre las predicciones y los valores observados, por lo que los residuos siempre tendrán (en general) un valor distinto a cero. Lo que quisiéramos ver en un gráfico como este es que los residuos se distribuyan al azar, sin indicios de _patrones sistemáticos_. Si así fuere, podemos considerar que nuestro modelo es adecuado. 
+Podemos notar que en algunos casos el error / residuo / desvío es bastante grande, en relación a la magnitud de la variable a predecir. Esto era esperable dada la débil correlación entre variables.
+
+Siempre podemos esperar una cierta divergencia entre las predicciones y los valores observados, por lo que los residuos siempre tendrán (en general) un valor distinto a cero. Pero es importante que los residuos se distribuyan al azar, sin indicios de _patrones sistemáticos_. Si así fuere, podemos considerar que nuestro modelo es adecuado. 
 
 ¿Cómo determinamos que no exhiben patrones sistemáticos? Una vez mas, se trata de una evaluación bastante subjetiva, y cada quien estará conforme dependiendo del contexto y la experiencia previa. Aún así podemos argumentar en favor de la adecuación del modelo cuando:
 
 1. El promedio de los residuos se aproxima a cero; es decir, que los residuos positivos se cancelan con los negativos, promediando cerca de cero.
 2. El valor de los residuos no depende del valor de $x$; es decir, no se observa un crecimiento (o decrecimiento) sistemático de la magnitud de los residuos a medida que$x$ crece
-    
 
-Por lo visto, nuestro modelo cumple con `1.` pero no con `2`, ya que la magnitud de los residuos parece crecer con el paso de los años. Entre todos los puntos, los mayores transgresores son los últimos y corresponden a los años 2002 y 2007. El valor del PBI per cápita observado en 2002 año resultó ser más de 2000 dólares menor al esperado por el modelo, todo un derrumbe. ¿A qué se debe tanta discrepancia? Nuestro modelo no tiene la culpa, es que la realidad tiene sus bemoles. A fines del 2001 la Argentina sufrió la peor crisis financiera de su historia, factor que explica la brusca caída del PBI que revirtió la tendencia al crecimiento de décadas anteriores. Una función que aún no habíamos usado, `geom_line()`, nos va a permitir trazar una línea que siga el PBI a lo largo de los años, y otra novedad, `geom_vline()`, se encargará de agregar una línea vertical que señale el año de la crisis:
+
+Veamos si nuestro modelo cumple con `1.`, calculando el promedio de los residuos:
 
 ```{r}
-ggplot(data_arg) + 
-    geom_line(aes(x = anio, y = PBI_PC)) +
-    geom_vline(aes(xintercept = 2001), color = "red") +
-    labs(title = "Evolución del PBI en la Argentina",
-         y = "PBI per cápita",
-         caption = "La línea roja indica la ocurrencia de la crisis del 2001")
+mean(resultados_regresion$residual)
 ```
 
-Es claro que el modelo se beneficiaría de poder tener en cuenta la irrupción de las crisis en el país. Esto se lograría agregando una variable categórica para cada año, que indique si se trata de un período de crisis. En ese caso, seria un modelo de regresión lineal múltiple (con más de una variable explicativa),  incorporando una variable explicativa numérica y otra categórica. Que lástima que nuestro dataset no incluye la variable de las crisis financieras. Si quisiéramos mejorar nuestro modelo con esa información, no nos quedaría mas remedio que salir a buscar los datos. Con suerte, alguien los habrá recopilado por nosotros, y si no, tendríamos que hacerlo por nuestra cuenta. ¡La investigación es un sacerdocio!  
+Dio un resultado infinitesimal, cercano a 0, así que condición cumplida.
 
-En aras de la simplicidad, sigamos practicando con los datos disponibles.
+
+¿Y que pasa con `2`, la magnitud de los residuos sin crecer ni decrecer de forma notable a medida que se incrementa la variable predictora? Veamoslo en un gráfico de dispersión:
+
+```{r}
+ggplot(resultados_regresion) +
+    geom_point(aes(x = mediana_ingreso_hogares, y = residual)) +
+    labs(x = "Mediana del ingreso de hogares", y = "residuo del modelo lineal")
+```
+
+No se ve una "rampa" ascendente o descendente de los residuos a medida que aumenta la variable de ingresos, así que condición cumplida.
+
 
 ### Regresión con una variable categórica
 
-El dataset con datos del mundo provisto por Gapminder incluye dos variables categóricas: país y continente. Con 142 países representados, podemos descartar a la primera como variable para realizar un modelo -recordemos que para entender la interrelación de variables, cuantas menos involucremos mejor. Los cinco continentes habitados representan un conjunto mucho más práctico, por lo que la pregunta será "¿Cuánto incide el continente en la expectativa de vida de los países?"
+El dataset de crímenes de odio no incluye variables categóricas además de la de estado. Pero podemos crearnos una con facilidad: "¿Ganó Donald Trump en las elecciones presidenciales de 2016?". Para sumar esta variable podemos usar `mutate()` para sumar una columna, y como contenido asignarle el resultado de evaluar si Trump obtuvo al menos el 47% de los votos. Es un umbral de corte definido revisando los [resultados](https://www.nytimes.com/elections/2016/results/president) de aquella elección, nada riguroso pero servirá para practicar ahora:
 
-Comencemos por explorar los datos tomando las observaciones más recientes, las de 2007.
 
 ```{r}
-data_mundial_2007 <- data_mundial %>% filter(anio == 2007)
+crimenes_odio <- crimenes_odio %>% 
+  mutate("trump_electo" = pct_votantes_trump > 0.46)
+```
 
-ggplot(data = data_mundial_2007) +
-    geom_point(aes(x = continente, y = expVida, color = continente)) +
+Esto nos da una columna `trump_electo` de tipo "logical". Es decir que contiene "cierto" o "falso" (`TRUE` o `FALSE`). Una variable dicotómica, que cae dentro del tipo categórico.
+
+Comencemos por explorar los datos con una visualización.
+
+```{r}
+ggplot(data = crimenes_odio) +
+    geom_point(aes(x = trump_electo, y = crimenes_odio_prom_100k_fbi
+, color = trump_electo)) +
     labs(title = "Expectativa de vida por continente",
          y = "expectativa de vida")
 ```
