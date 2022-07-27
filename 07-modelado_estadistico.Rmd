@@ -125,17 +125,19 @@ El valor que obtuvimos no supera por mucho el 0,3; podemos decir que la correlac
 Vamos a la regresión lineal entonces, para establecer de una buena vez la correlación entre ingresos y crímenes de odio. Usamos la función `lm()` (por "linear model"), así:
 
 ```{r}
-modelo_crimenes <- lm(crimenes_odio_prom_100k_fbi ~ mediana_ingreso_hogares, data = crimenes_odio)
+modelo_ingresos <- lm(crimenes_odio_prom_100k_fbi ~ mediana_ingreso_hogares, data = crimenes_odio)
+
+modelo_ingresos
 ```
 
 ¡Eso es todo! Hemos construido un modelo estadístico; ahora tenemos que aprender a usarlo. Obsérvese que volvió aparecer el simbolillo que denota una fórmula, `~`. Usado como primer argumento de `lm()`, significa "_crimenes_odio_prom_100k_fbi_ vs _mediana_ingreso_hogares_", es decir "estimar el efecto en la variable _crimenes_odio_prom_100k_fbi_ cuando incrementa el valor de _mediana_ingreso_hogares_ ", usando los datos contenidos en el dataframe _crimenes_odio_.
 
-El resultado de `lm()`, que hemos guardado dentro de la variable `modelo_crimenes` es un tipo de objecto con el que no hemos trabajado hasta ahora. No es un dataframe, sino una lista que contiene distintos atributos del modelo estadístico. No hace falta detenernos en eso ahora.
+El resultado de `lm()`, que hemos guardado dentro de la variable `modelo_ingresos` es un tipo de objecto con el que no hemos trabajado hasta ahora. No es un dataframe, sino una lista que contiene distintos atributos del modelo estadístico. No hace falta detenernos en eso ahora.
 
 Retomando nuestra pregunta... ¿cuál es el efecto? Lo obtenemos dándole el modelo que generamos a la función `get_regression_table()`, que devuelve una prolija tabla:
 
 ```{r}
-get_regression_table(modelo_crimenes)
+get_regression_table(modelo_ingresos)
 ```
 
 
@@ -201,7 +203,7 @@ Cuando los desvíos son pequeños, es decir cuando los residuos son pequeños, d
 Prestemos atención a los residuos de nuestro modelo. Podemos extraer los residuos (y algunas cosillas más!) usando la función `get_regression_points()`,
 
 ```{r}
-resultados_regresion <- get_regression_points(modelo_crimenes)
+resultados_regresion <- get_regression_points(modelo_ingresos)
 resultados_regresion
 ```
 
@@ -260,45 +262,29 @@ Comencemos por explorar los datos con una visualización.
 
 ```{r}
 ggplot(data = crimenes_odio) +
-    geom_point(aes(x = trump_electo, y = crimenes_odio_prom_100k_fbi
-, color = trump_electo)) +
-    labs(title = "Expectativa de vida por continente",
-         y = "expectativa de vida")
+    geom_point(aes(x = trump_electo, 
+                   y = crimenes_odio_prom_100k_fbi, 
+                   color = trump_electo)) 
 ```
 
-Ya podemos vislumbrar que el continente incide en la expectativa de vida, con África sufriendo los números más bajos. La profusión de puntos hace que muchos terminen superpuestos, haciendo imposible determinar cuántos ocupan cada posición (un problema llamado _overplotting_ en inglés). Una variante de `geom_point()` llamada `geom_jitter()` resuelve este problema al "sacudir" los puntos, sumando a cada uno un pequeño valor al azar para que se separe de los que comparten su posición. Es un buen ejemplo de la paradoja por la cual reducir la precisión de la información a veces permite entender mejor lo que está ocurriendo. Usamos `geom_jitter()` igual que `geom_point()`:
+Se vislumbra que una menor tasa de crímenes de odio parece estar asociada a los estados donde Trump ganó la elección en 2016. Eso si, la profusión de puntos hace que muchos terminen superpuestos, haciendo imposible determinar cuántos ocupan cada posición (un problema llamado _overplotting_ en inglés). Una variante de `geom_point()` llamada `geom_jitter()` resuelve este problema al "sacudir" los puntos, sumando a cada uno un pequeño valor al azar para que se separe de los que comparten su posición. Es un buen ejemplo de la paradoja por la cual reducir la precisión de la información a veces permite entender mejor lo que está ocurriendo. Usamos `geom_jitter()` igual que `geom_point()`:
 
 ```{r}
-ggplot(data = data_mundial_2007) +
-    geom_jitter(aes(x = continente, y = expVida, color = continente)) +
-    labs(title = "Expectativa de vida por continente",
-         y = "expectativa de vida")
+ggplot(data = crimenes_odio) +
+    geom_jitter(aes(x = trump_electo, 
+                   y = crimenes_odio_prom_100k_fbi, 
+                   color = trump_electo)) 
 ```
 
-Algún ojo avizor habrá notado que la clasificación por color no es necesaria, ya que el continente ya está señalado por su posición en el eje de las `x`. El color cumple aquí una función más que nada cosmética, en pos de hacer al gráfico maś atractivo a la vista.
+Algún ojo avizor habrá notado que la clasificación por color no es necesaria, ya que el resultado de la elección está señalado por la posición en el eje de las `x`. El color cumple aquí una función más que nada cosmética, en pos de hacer al gráfico maś atractivo a la vista.
 
-
-También podemos visualizar la diferencia de distribución de expectativa de vida de los países, con un histograma facetado por continente:
-
-```{r}
-ggplot(data = data_mundial_2007) +
-    geom_histogram(aes(x = expVida, fill = continente)) +
-    facet_wrap(~continente) +
-    labs(title = "Expectativa de vida por continente",
-         subtitle = "histogramas",
-        x = "expectativa de vida",
-        y = "cantidad")
-```
-
-
-Bien, estamos convencidos de que hay una relación entre continente y expectativa de vida, aunque no la hemos cuantificado. Para eso, recurrimos a una regresión lineal con variable explicativa categórica. Se obtiene de la misma manera que antes, no hay cambios en la forma de invocar `lm()` por el hecho de que la variable ahora sea categórica en vez de numérica.
+Bien, parece haber una relación entre resultados electorales y crímenes de odio, aunque no la hemos cuantificado. Para eso, recurrimos a una regresión lineal con variable explicativa categórica. Se obtiene de la misma manera que antes, no hay cambios en la forma de invocar `lm()` por el hecho de que la variable ahora sea categórica en vez de numérica.
 
 
 ```{r}
-modelo_exp_continente <- lm(expVida ~ continente, data = data_mundial_2007)
+modelo_eleccion <- lm(crimenes_odio_prom_100k_fbi ~ trump_electo, data = crimenes_odio)
 
-
-modelo_exp_continente
+modelo_eleccion
 ```
 
 ¿Qué ocurrió aquí? `lm()` inspeccionó el contenido de la variable "continente" y encontró cinco niveles o categorías. Tomó el primero en orden alfabético, "Africa", como línea de base. El primer coeficiente de la regresión (la intersección) es el promedio de la expectativa de vida en África. Para cada una de las categorías restantes, el coeficiente representa la diferencia respecto a África de la expectativa de vida promedio en cada uno de los otros continentes. He allí la cuantificación: para un país en las Américas, podemos esperar -en promedio- una expectativa de vida que supera en 18.8 años la de los países africanos. Para un país en Asia, son 15.92 los años adicionales, y así.
