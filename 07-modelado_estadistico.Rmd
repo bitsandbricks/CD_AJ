@@ -1,8 +1,8 @@
 # Modelado estadístico
 
 ```{r echo=FALSE, out.width="100%"}
+options(scipen = 20)
 knitr::include_graphics('imagenes/modelado.jpg')
-
 ```
 
 Llegamos a un tema de gran interés para quienes realizan investigaciones formales. La posición central que tiene el modelado en la investigación científica se debe a que cuantifica relaciones: permite pasar de decir "La luz solar abundante mejora el crecimiento de las plantas" a "por cada hora adicional de exposición mensual a la luz solar, los cultivos aumentaron su rendimiento en un 1%". La cuantificación permite realizar comparaciones, algo clave para entender un fenómeno estudiado: antes y después, con o sin tratamiento, en un lugar o en otro.
@@ -236,6 +236,14 @@ mean(residuos_regresion$residual)
 ```
 
 Dio un resultado infinitesimal, cercano a 0, así que condición cumplida.
+
+:::tip
+Es probable que al ejecutar la línea de código el resultado aparezca expresado en notación científica: `2.040816e-05`, que significa $2.040816 * 10^{-5}$.
+En palabras, "2.040816 multiplicado por 10 elevado a la potencia -5". Lo cual efectivamente es 0.00002040816.
+
+Por defecto, R utiliza notación científica para representar de forma compacta los números con muchos espacios decimales. Si -como la mayoría de los seres humanos- estamos poco acostumbrados a ese formato, podemos desactivarlo ejecutando esta línea: `options(scipen = 999)`.
+Esto hace que R se abstenga de usarlo por el resto de la sesión de trabajo. Podemos comprobarlo ejecutando una vez más la línea de código que calcula el promedio, y el resultado saldrá en todo su esplendor de espacios decimales.
+:::
 
 ¿Y que pasa con `2.`, la magnitud de los residuos sin crecer ni decrecer de forma notable a medida que se incrementa la variable predictora? Veamoslo en un gráfico de dispersión:
 
