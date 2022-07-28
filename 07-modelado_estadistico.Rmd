@@ -278,6 +278,16 @@ ggplot(data = crimenes_odio) +
 
 Algún ojo avizor habrá notado que la clasificación por color no es necesaria, ya que el resultado de la elección está señalado por la posición en el eje de las `x`. El color cumple aquí una función más que nada cosmética, en pos de hacer al gráfico maś atractivo a la vista.
 
+Otra forma de visualizar la diferencia es con un histograma facetado por la variable "trump_electo":
+
+```{r}
+ggplot(crimenes_odio) +
+  geom_histogram(aes(crimenes_odio_prom_100k_fbi, fill = trump_electo)) +
+  facet_wrap(~ trump_electo)
+```
+
+
+
 Bien, parece haber una relación entre resultados electorales y crímenes de odio, aunque no la hemos cuantificado. Para eso, recurrimos a una regresión lineal con variable explicativa categórica. Se obtiene de la misma manera que antes, no hay cambios en la forma de invocar `lm()` por el hecho de que la variable ahora sea categórica en vez de numérica.
 
 
