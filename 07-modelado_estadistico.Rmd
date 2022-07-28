@@ -94,25 +94,26 @@ library(tidyverse)
 ggplot(data = crimenes_odio) + 
     geom_point(aes(x = mediana_ingreso_hogares, y = crimenes_odio_prom_100k_fbi)) +
     labs(title = "Correlación entre ingesos medios por hogar y crímenes de odio",
-         subtitle = "Crímenes cada 100.000 habitanes, promedio 2010-2016",
+         subtitle = "Crímenes cada 100.000 habitantes, promedio 2010-2016",
          x = "mediana de ingresos por hogar (miles USD)",
          y = "tasa de crímenes")
 ```
 
 Los opiniones pueden variar pero aquí parece mostrarse una correlación más bien débil entre las variables, en forma positiva. Esto es, el incremento de una unidad de tiempo en general resulta en el incremento de la expectativa de vida, pero en este caso no de forma drástica. Una correlación _negativa_ sería lo opuesto: que el incremento de la variable explicativa estuviera asociado a un decremento de la variable explicada. Además del _signo_ de una correlación, otra medida importante es su intensidad. La intensidad de una correlación va de -1 (correlación negativa total) a 1 (correlación positiva total). Una correlación de cero significa que las dos variables son por completo independientes. En en ese caso, saber cuánto vale una no nos ayuda a estimar el valor de la otra. 
 
-Para obtener la correlación entre dos variables podemos usar `get_correlation`, una función provista por el paquete `moderndive`. Ponemos el nombre de la variable a explicar en el lado izquierdo del signo "~" (o "tilde"), y ponemos el nombre de la variable explicativa en el lado derecho. Esta forma de escribir la relación entre variables es común en las funciones estadísticas de *R*, y se le llama "notación de fórmula". Por ahora no hay que preocuparse mucho por ella, y ya la encontraremos luego.
+Para obtener la correlación entre dos variables podemos usar `get_correlation`, una función provista por el paquete `moderndive`. Ponemos el nombre de la variable a explicar en el lado izquierdo del signo "~" (o "tilde"), y ponemos el nombre de la variable explicativa en el lado derecho. Esta forma de escribir la relación entre variables es común en las funciones estadísticas de *R*, y se le llama "notación de fórmula". No hay que preocuparse mucho por ella, ya nos acostumbraremos a usarla.
 
 ```{r}
 crimenes_odio %>% 
-  get_correlation(formula = crimenes_odio_prom_100k_fbi ~ mediana_ingreso_hogares, na.rm = TRUE)
+  get_correlation(crimenes_odio_prom_100k_fbi ~ mediana_ingreso_hogares, 
+                  na.rm = TRUE)
 ```
 ::: warning
 Usamos el parámetro `na.rm = TRUE` para descartar las filas donde no contamos con un valor para cualquiera de las dos variables de interés. Nuestro dataset efectivamente tiene algunos valores faltantes (véase otra vez la salida de `summary(crimenes_odio)` para comprobarlo), así que con eso evitamos que la función falle al intentar calcular la correlación.
 :::
 
 
-¿A partir de qué valor consideramos que existe una correlación considerable? La verdad es que no hay una regla a seguir, pero inventemos una. Si el valor absoluto de la correlación es..
+¿A partir de qué valor consideramos que existe una correlación considerable? La verdad es que no hay una regla a seguir, pero inventemos una. Si el valor absoluto de la correlación es...
 
     - de 0,7 a 1: de fuerte a total
     - de 0,5 a 0,7: de moderada a fuerte
@@ -125,7 +126,8 @@ El valor que obtuvimos no supera por mucho el 0,3; podemos decir que la correlac
 Vamos a la regresión lineal entonces, para establecer de una buena vez la correlación entre ingresos y crímenes de odio. Usamos la función `lm()` (por "linear model"), así:
 
 ```{r}
-modelo_ingresos <- lm(crimenes_odio_prom_100k_fbi ~ mediana_ingreso_hogares, data = crimenes_odio)
+modelo_ingresos <- lm(crimenes_odio_prom_100k_fbi ~ mediana_ingreso_hogares, 
+                      data = crimenes_odio)
 
 modelo_ingresos
 ```
@@ -177,11 +179,12 @@ Ya que estamos, aprendamos otro truco. `ggplot()` puede agregar a nuestros scatt
 ggplot(data = crimenes_odio) + 
     geom_point(aes(x = mediana_ingreso_hogares, y = crimenes_odio_prom_100k_fbi)) +
     labs(title = "Correlación entre ingesos medios por hogar y crímenes de odio",
-         subtitle = "Crímenes cada 100.000 habitanes, promedio 2010-2016",
+         subtitle = "Crímenes cada 100.000 habitantes, promedio 2010-2016",
          x = "mediana de ingresos por hogar (miles USD)",
          y = "tasa de crímenes",
          caption = "con línea de regresión vía geom_smooth()") +
-    geom_smooth(aes(x = mediana_ingreso_hogares, y = crimenes_odio_prom_100k_fbi), method = "lm")
+    geom_smooth(aes(x = mediana_ingreso_hogares, y = crimenes_odio_prom_100k_fbi), 
+                method = "lm")
 ```
 
 Hacer una regresión lineal se trata de encontrar la línea que atraviesa nuestra nube de puntos de modo tal que la suma de las distancias de cada punto a la línea sea la menor posible. Es un problema matemático que puede resolverse con distintas técnicas (álgebra lineal, geometría, etc) que no vamos a discutir aquí. Confiaremos en R para hacer los cálculos.  
@@ -203,8 +206,8 @@ Cuando los desvíos son pequeños, es decir cuando los residuos son pequeños, d
 Prestemos atención a los residuos de nuestro modelo. Podemos extraer los residuos (y algunas cosillas más!) usando la función `get_regression_points()`,
 
 ```{r}
-resultados_regresion <- get_regression_points(modelo_ingresos)
-resultados_regresion
+residuos_regresion <- get_regression_points(modelo_ingresos)
+residuos_regresion
 ```
 
 Obtenemos los resultados del modelo para cada observación, o sea cada fila de nuestro dataframe original.
@@ -229,21 +232,38 @@ Siempre podemos esperar una cierta divergencia entre las predicciones y los valo
 Veamos si nuestro modelo cumple con `1.`, calculando el promedio de los residuos:
 
 ```{r}
-mean(resultados_regresion$residual)
+mean(residuos_regresion$residual)
 ```
 
 Dio un resultado infinitesimal, cercano a 0, así que condición cumplida.
 
-
-¿Y que pasa con `2`, la magnitud de los residuos sin crecer ni decrecer de forma notable a medida que se incrementa la variable predictora? Veamoslo en un gráfico de dispersión:
+¿Y que pasa con `2.`, la magnitud de los residuos sin crecer ni decrecer de forma notable a medida que se incrementa la variable predictora? Veamoslo en un gráfico de dispersión:
 
 ```{r}
-ggplot(resultados_regresion) +
+ggplot(residuos_regresion) +
     geom_point(aes(x = mediana_ingreso_hogares, y = residual)) +
     labs(x = "Mediana del ingreso de hogares", y = "residuo del modelo lineal")
 ```
 
 No se ve una "rampa" ascendente o descendente de los residuos a medida que aumenta la variable de ingresos, así que condición cumplida.
+
+
+### ¿Cómo estamos de confianza?
+
+¿Ya estamos parra considerar que el modelo útil, o al menos "significativo", que aporta evidencia para considerar que hay una relación entre nuestras dos variables? 
+
+Falta un chequeo más, y más importante aún. Es el de evaluar que tanta certeza, o confianza, tenemos en que hay una correlación entre estas variables en la vida real, más allá de la que se ve en los datos que tenemos disponibles. Para eso recurrimos al llamado _intervalo de confianza_. Volvamos a revisar la tabla con los estimados de nuestro modelo:
+
+```{r}
+get_regression_table(modelo_ingresos)
+```
+
+El efecto estimado de "mediana_ingreso_hogares" es de 0.033, un números positivo. Esto indica que cuando esa variable predictora crece, también crece la variable a predecir -la tasa de crímenes-. Pero en todo análisis estadístico siempre hay una incertidumbre. Una forma de cuantificarla es con un rango de valores, llamado intervalo de confianza. El rango incluye al valor estimado para el efecto, que es el más probable, pero nos recuerda que no tenemos certeza absoluta de que ese número sea exacto, es sólo una aproximación. Por eso ofrece un valor mínimo que sería razonable, y un valor máximo: los vemos en las columnas `lower_ci` y `upper_ci`. 
+
+Y aquí la mala noticia: si revisamos los valores para nuestra variable predictora, vemos que su estimado máximo es 0.071 y su mínimo es -0,006. ¡Un valor negativo! Esto implica que, aún cuando el estimado más probable es un efecto positivo, cabe dentro del rango de valores razonables que el efecto sea 0, o sea nada. E incluso ligeramente negativo, cambiando el sentido de lo que nos indica el estimado del modelo.
+
+Cuando ocurre esto, que el intervalo de confianza pasa por el cero, decimos que nuestro modelo no es estadísticamente signifcativo. O sea, no aporta evidencia acerca de la relación entre variables que estamos investigando. Pero a no ponernos tristes: esto es normal, y útil, porque nos permite verificar nuestras hipótesis de trabajo.
+
 
 
 ### Regresión con una variable categórica
@@ -253,7 +273,7 @@ El dataset de crímenes de odio no incluye variables categóricas además de la 
 
 ```{r}
 crimenes_odio <- crimenes_odio %>% 
-  mutate("trump_electo" = pct_votantes_trump > 0.46)
+  mutate("trump_electo" = pct_votantes_trump > 46)
 ```
 
 Esto nos da una columna `trump_electo` de tipo "logical". Es decir que contiene "cierto" o "falso" (`TRUE` o `FALSE`). Una variable dicotómica, que cae dentro del tipo categórico.
@@ -273,20 +293,19 @@ Se vislumbra que una menor tasa de crímenes de odio parece estar asociada a los
 ggplot(data = crimenes_odio) +
     geom_jitter(aes(x = trump_electo, 
                    y = crimenes_odio_prom_100k_fbi, 
-                   color = trump_electo)) 
+                   color = trump_electo))
 ```
 
 Algún ojo avizor habrá notado que la clasificación por color no es necesaria, ya que el resultado de la elección está señalado por la posición en el eje de las `x`. El color cumple aquí una función más que nada cosmética, en pos de hacer al gráfico maś atractivo a la vista.
 
-Otra forma de visualizar la diferencia es con un histograma facetado por la variable "trump_electo":
+Otra forma de visualizar la diferencia es con un histograma, facetado por la variable "trump_electo":
 
 ```{r}
 ggplot(crimenes_odio) +
   geom_histogram(aes(crimenes_odio_prom_100k_fbi, fill = trump_electo)) +
   facet_wrap(~ trump_electo)
 ```
-
-
+Aquí vemos que en los estados donde Trump resultó electo es más frecuente una tasa baja de crímenes, incluso menores a 1 cada 100.000 (valores mínimos que no se alcanzan en la otra categoría.)
 
 Bien, parece haber una relación entre resultados electorales y crímenes de odio, aunque no la hemos cuantificado. Para eso, recurrimos a una regresión lineal con variable explicativa categórica. Se obtiene de la misma manera que antes, no hay cambios en la forma de invocar `lm()` por el hecho de que la variable ahora sea categórica en vez de numérica.
 
@@ -294,58 +313,52 @@ Bien, parece haber una relación entre resultados electorales y crímenes de odi
 ```{r}
 modelo_eleccion <- lm(crimenes_odio_prom_100k_fbi ~ trump_electo, data = crimenes_odio)
 
-modelo_eleccion
+
+get_regression_table(modelo_eleccion)
+
 ```
 
-¿Qué ocurrió aquí? `lm()` inspeccionó el contenido de la variable "continente" y encontró cinco niveles o categorías. Tomó el primero en orden alfabético, "Africa", como línea de base. El primer coeficiente de la regresión (la intersección) es el promedio de la expectativa de vida en África. Para cada una de las categorías restantes, el coeficiente representa la diferencia respecto a África de la expectativa de vida promedio en cada uno de los otros continentes. He allí la cuantificación: para un país en las Américas, podemos esperar -en promedio- una expectativa de vida que supera en 18.8 años la de los países africanos. Para un país en Asia, son 15.92 los años adicionales, y así.
+¿Qué ocurrió aquí? `lm()` inspeccionó el contenido de la variable "trump_electo" y encontró dos niveles o categorías (`TRUE` y `FALSE`). Tomó el primero en orden alfabético, "FALSE", como línea de base. La intersección (*intercept*) de la regresión es el promedio de crímenes cada 100.000 habitantes para los estados donde Trumpo no ganó la elección -donde es `FALSE` ese hecho.
 
-Prestemos atención a los residuos. Agregamos al dataframe una columna con el residuo para cada observación,
+Para la categoría restante, el estimado representa la diferencia respecto a la línea de base: para un esatdo donde Trump si fue electo ("TRUE"), podemos esperar -en promedio- una tasa menor en 0.705 unidades.
+
+Prestemos atención a los residuos. 
 
 ```{r}
+residuos_modelo_eleccion <- get_regression_points(modelo_eleccion)
 
-data_mundial_2007 <- data_mundial_2007 %>% 
-    mutate(residuo_ml = residuals(modelo_exp_continente))
+residuos_modelo_eleccion
 ```
 
-y graficamos la dispersión de los residuos en torno a cero, el valor ideal:
+Calculemos el promedio de los residuos, para verificar que están cerca del cero,
 
 ```{r}
-ggplot(data_mundial_2007) +
-    geom_jitter(aes(x = continente, y = residuo_ml), width = 0.1) +
-    geom_hline(yintercept = 0, col = "blue") +
-    labs(x = "año", y = "residuo del modelo lineal")
+mean(residuos_modelo_eleccion$residual)
+```
+y grafiquemos su dispersion de acuerdo a l categoría que les toca, para ver si es similar:
+
+```{r}
+ggplot(residuos_modelo_eleccion) +
+    geom_jitter(aes(x = trump_electo, y = residual, color = trump_electo)) +
+    labs(x = "Trump electo en 2016", y = "residuo del modelo lineal")
 ```
 
 Notamos que:
 
-1. Los residuos están repartidos en forma pareja entre positivos y negativos. Eso indica que su promedio será cercano a cero, lo cual es bueno.
-2. En Asia hay un país cuyo valor observado está muy por debajo del esperado por el modelo. Se separa tanto de los demás que debemos considerarlo un _outlier_, un valor tan inusual que amerita ser revisado.
+1. Los residuos tienen un promedio cercano a cero, o sea que están repartidos en forma pareja entre positivos y negativos. Condición cumplida.
+2. La dispersión no crece ni decrece en forma drástica en categorías distintas, rasgo de un buen modelo. Esto es un poco subjetivo -lo evaluamos a ojo- pero damos por cumplida la condición.
     
-Con la magia de los verbos de transformación que sabemos, aislemos a los países en Asia con menor expectativa de vida para identificar al _outlier_.
+Ahora vamos al veredicto final: ¿Es estadísticamente significativo el resultado?
+
+Prestemos atención al intervalo de confianza, dado por las columnas `lower_ci` y `upper_ci`
     
 ```{r}
-data_mundial_2007 %>% 
-    filter(continente == "Asia") %>% 
-    arrange(expVida) %>% 
-    head()
+get_regression_table(modelo_eleccion)
 ```
 
+El intervalo no pasa por el cero! El rango va de -1,396	a -0,014. Por tenue que pueda llegar a ser, tenemos confianza en que habrá algún efecto. 
     
-Se trata de Afganistán. Como explicación, uno piensa de inmediato en las largas guerras libradas en ese territorio, y en particular la invasión por parte de los Estados Unidos en 2001 -¡otra vez ese año!-. Podemos verificarlo con un gráfico que muestre la evolución de la expectativa de vida según los años.
-
-```{r}
-
-data_afganistan <- data_mundial %>% filter(pais == "Afghanistan")
-
-ggplot(data_afganistan) + 
-    geom_line(aes(x = anio, y = expVida)) +
-    labs(title = "Expectativa de vida en Afganistán",
-         y = "expectativa de vida")
-```
-
-Vaya sorpresa. A pesar de ser en extremo baja comparada con el resto de Asia, la expectativa de vida en Afganistán en el 2007 es la más alta de la historia, y no sólo eso: ha aumentado con rapidez _después_ del año de la invasión. ¿A qué podemos atribuir entonces la bajísima expectativa de vida? Teniendo en cuenta que el país ha sufrido conflictos bélicos en forma continua desde fines de los '70, podría tratarse de una tragedia histórica: los años que faltan son los que el país habría alcanzado si las guerras no hubieran alterado su ritmo de progreso. 
-
-Dependiendo del esfuerzo que requiera determinar la causa de un _outlier_, una alternativa razonable es dejarlo de lado. Es un poco cruel, pero realista: cuando tenemos cientos, miles o millones de observaciones, hacer una "poda" de los valores extremos que nuestros modelos no pueden explicar termina siendo la opción más razonable. Dedicar recursos limitados a la caza de una explicación o a complejizar el modelo agregando variables hasta lograr predecir los _outliers_ no tiene sentido cuando se trata de casos aislados y fortuitos. Por otra parte, eliminarlos antes de tiempo podría hacernos ignorar los casos más interesantes de un dataset, los que más información podrían revelar. Existen tratados completos dedicados a la cuestión de como manejar los _outliers_, pero el conocimiento de dominio es la principal herramienta para decidir que hacer ante casos inusuales... como siempre. 
+¡Hemos realizado un modelo estadísticamente significativo!
 
 
 ## Regresión con múltiples variables
@@ -354,92 +367,47 @@ Hasta aquí hemos usado la regresión lineal para hacer explícita la relación 
 
 Una buena noticia es que, en general, agregar variables a nuestro modelo estadístico no requiere mucho esfuerzo adicional. En la época en que los cálculos matemáticos debían hacerse sin la ayuda de una computadora, sumar variables sin ton ni son debía tener poca gracia, debido a la creciente cantidad de cálculos a resolver. Para nosotros que dejamos la tarea en manos de software especializado, el problema es el opuesto. Es tan fácil sumar variables al modelo, que debemos evitar la tentación de arrojar todo dentro de la fórmula de regresión lineal y decidir luego que parece importante y que no. 
 
-Pasemos a la práctica. Vamos a modelar la expectativa como resultante de la población y del PBI per cápita de los países, usando los datos más reciente (tomados en 2007). La única diferencia respecto a una regresión lineal simple es que usamos `+` para agregar variables en la fórmula de `lm()`
+Aclarado eso, en este caso tenemos un dataset en el que las variables han sido elegidas precisamente por su potencial para afectar el fenómeno a estudiar. Por eso podemos incluir todas las variables un modelo complejo, asumiendo que el nivel de ingresos, el porcentaje de desocupados, el de habitantes indocumentados, etc. pueden explicar en alguna medida la incidencia de crímenes de odio.
+
+Vamos a modelar el promedio 2010-2016 de crímenes de odio cada 100.000 habitantes, como resultante de todas las variables disponibles excepto "estado" y "crimenes_odio_100k_splc". Esta última debido a que se parece mucho a la variable que queremos predecir -con seguridad estan estrechamente relacionadas-, por lo cual es de esperarse que si la agregamos al modelo nos de una altísima correlación, pero sin mucho valor: ya lo sabíamos. También vamos a dejar fuera a la variable "trump_electo", ya que no es otra cosa que una versión simplificada, con menos información, de la variable de porcentaje de electores.
+
+Pasando a la práctica, la única diferencia respecto a una regresión lineal simple es que usamos `+` para agregar variables en la fórmula de `lm()`:
 
 
 ```{r}
-modelo_exp_multiple <- lm(expVida ~ pobl + PBI_PC, data = data_mundial_2007)
-
-modelo_exp_multiple
-
+modelo_mult <- lm(crimenes_odio_prom_100k_fbi ~ 
+                    mediana_ingreso_hogares + pct_desocupados + pct_reside_area_metro +
+                    pct_secundaria_completa + pct_no_ciudadanos + pct_pobreza_blancos + 
+                    indice_gini + pct_no_blancos + pct_votantes_trump,
+                  data = crimenes_odio)
 ```
 
-¿Cómo interpretamos esos resultados? Más o menos de la misma manera que con la regresión simple. Como antes, tenemos un coeficiente para la intersección, al que no prestamos mucha atención porque no nos dice nada de la relación entre las variables. Lo que cambia es que esta vez tenemos dos variables predictoras en lugar a una, cada una con su coeficiente. Los coeficientes positivos indican que la relación de la población con la expectativa de vida es de correlación positiva (cuando una crece la otra tiende a crecer también), y lo mismo ocurre con el PBI. La magnitud de los coeficientes es pequeña (minúscula en el caso de la población), lo cual dificulta "narrar" los resultados, pero podemos hacerlo así:
+Veamos la tabla con los resultados:
+
+```{r}
+get_regression_table(modelo_mult)
+```
+
+
+¿Cómo interpretamos esos resultados? Más o menos de la misma manera que con la regresión simple. Como antes, tenemos un coeficiente para la intersección, al que no prestamos mucha atención porque no nos dice nada de la relación entre las variables. Lo que cambia es que esta vez tenemos muchas variables predictoras en lugar de una, cada una con su estimado Los estimados positivos indican que la relación entre la variable predictora y la resultante es de correlación positiva (cuando una crece la otra tiende a crecer también) y lo opuesto para los estimados negativos. 
+
+Pero vayamos a lo que ya sabemos que es muy importante: ¿Alguno de estos estimados es estadísticamente significativo? Si prestamos atención a las columnas del intervalo de confianza, vemos que sólo "pct_no_ciudadanos" tiene un rango que no pasa por el cero: su mínimo y su máximo son positivos. Al estimar el efecto de todas estas variables juntas -o como suele decirse, "controlando" por todas estas variables- el porcentaje de residentes sin ciudadanía es la única con efecto significativo. 
+
+Notemos que el porcentaje de votantes de Trump, que en un modelo simple había sido una variable significativa, ahora ya no lo es. A eso se le llama controlar por una variable: Otra forma de decirlo es que "controlando por el porcentaje de población sin ciudadanía" el voto a Trump no tiene efecto significativo en la incidencia de crímenes de odio. 
+
+Para _narrar_ estos resultados, podemos intentar algo así:
     
-* Cuando las demás variables se mantienen constantes (es decir, en países con PBI similar) el incremento de una unidad de población -un habitante- está asociado a un incremento de 0,000000007 años en la expectativa de vida del país... unas dos décimas de segundo.
-* Cuando las demás variables se mantienen constantes (es decir, en países con población similar) el incremento de una unidad de PBI -un dólar per cápita- está asociado a un incremento de 0,00064 años en la expectativa de vida del país... un poco más de cinco horas y media.
-    
-Pensemos un poco si los resultados tienen sentido. La correlación positiva entre PBI y longevidad es de lo más razonable. No nos extraña que los países de mayores ingresos tiendan a ser aquellos cuyos habitantes viven más tiempo. La correlación con la población es quizás inesperada. Si la longevidad se incrementa junto a la cantidad de habitantes, ¿acaso no deberíamos encontrar a varios de los países más populosos entre los más longevos?
+* Cuando las demás variables se mantienen constantes (es decir, en estados con atributos similares en ingresos, desocupación, índice Gini, etc.) con el incremento de una unidad en el porcentaje de residentes indocumentados es esperable un incremento de 0,232 crímenes de odio en el promedio interanual cada 100.000 habitantes.
 
-Veamos el _top ten_ de países más poblados:
+Pensemos un poco si esto tienen sentido. La correlación positiva entre presencia de población "sin papeles" y crímenes de odio es esperable si asumimos que la población indocumentada, migrantes viviendo en condiciones irregulares y carente de derechos, es precisamente la más vulnerable a los crímenes de odio. Por otra parte, quizás tenga tanto sentido como para ser algo obvio. En ese caso, ¡no hemos descubierto nada trascendental! Pero tampoco se le puede pedir tanto a un ejercicio. 
 
-```{r}
-data_mundial_2007 %>% 
-    arrange(desc(expVida)) %>% 
-    head(n = 10)
-```
+Quedan muchos más datos para explorar, hipótesis para comprobar, e interrelaciones para revelar.
 
-y el de países con mayor expectativa de vida:
-
-```{r}
-data_mundial_2007 %>% 
-    arrange(desc(pobl)) %>% 
-    head(n = 10)
-```
-
-El único país presente en ambas listas es Japón. Ni nuestro conocimiento del mundo, ni los datos parecen apoyar la noción de que población y longevidad van juntos. Ya hemos usado `cor()` para obtener una medida de la intensidad de la correlación entre dos variables. Veamos que pasa con longevidad vs. población:
-
-```{r}
-cor(data_mundial_2007$expVida, data_mundial_2007$pobl)
-```
-
-Recordemos que la intensidad de una correlación es su valor absoluto, que toma un máximo de 1, mientras que el signo (positivo o negativo) indica si la relación entre variables es directa o inversa. Aquí obtuvimos un valor bien bajo, cercano a cero: la correlación es nula. Entonces ¿Por qué aparece en nuestro modelo de regresión lineal?
-
-En resumidas cuentas, aparece porque nosotros le pedimos que aparezca. Es decir, instruimos en forma específica a `lm()` para que incorpore a la población en el modelo. El caso es que población no es un buen predictor de longevidad (la correlación es bajísima), pero si lo pedimos, lo tenemos: el coeficiente nos indica el valor que minimiza las discrepancias entre valores observado y valores predichos trazando una línea recta. Lo que no indica por si solo es el grado en el cual podemos confiar en esa variable para darnos buenas predicciones o estimados.
-
-Sería muy útil que el resultado de `lm()` indique cuáles variables son buenas predictoras y cuáles no. Y por suerte, lo hace cuando lo interrogamos con `summary()`, la misma función que hemos estado usando para obtener el resumen de un dataframe. Cuando la usamos con un objeto de R que contiene un modelo estadístico, lo que obtenemos son sus detalles:   
-
-```{r}
-summary(modelo_exp_multiple)
-```
-
-El resumen incluye los parámetros que definieron al modelo, los valores por cuartil de los residuos, y una tabla con variables numéricas. En esa tabla, bajo la columna `Estimate` tenemos el "efecto" estimado de cada variable explicativa sobre la dependiente. Es decir, los coeficientes que ya conocemos. Luego aparecen tres columnas con atributos estadísticos: `Std. Error`, `t value`, y `Pr(>|t|)`. En castellano las llamaríamos, respectivamente, _error estándar_, _valor t_ y _valor p_. Interpretar estos valores cae fuera de nuestros objetivos, pero podemos señalar que el más famoso entre ellos es el _valor p_, porque se usa como medida: si vale menos de 0,5, se considera que la capacidad de predicción de la variable asociada es significativa. Para interpretar todo esto de manera sencilla, una vez más vamos a confiar en R para guiarnos. He aquí la curiosa forma de determinar si una variable es buena predictora o no: contar estrellitas. Junto a cada fila aparecen, a veces, de uno a tres asteriscos. Son la forma de R de decirnos cuales son las variables explicativas que muestran una relación "estadísticamente significativa" con nuestra variable dependiente. Cuanto más bajo el valor p, más significativa es la relación y más estrellitas aparecen:
-
-
-- `.` o nada: No se encuentra una relación entre esta variable y la que queremos predecir.
-- `*`: Es muy probable que esta variable tenga una relación con la que queremos predecir. Ya podemos publicar estos resultados en un paper científico.
-- `**`: Es muy, pero muy probable que esta variable tenga una relación con la que queremos predecir. 99% seguro.
-- `***`: Juramos que las variables están relacionadas. Más no se puede pedir.
-
-Lo de un asterisco/estrella (`*`) indicando que los resultados ya alcanzan rigor científico no es broma. El asterisco solitario indica que, a nivel estadístico, se supera el 95% de confianza en que la relación existe en la realidad y no es producto de una casualidad en los datos. Pasando ese umbral se considera que los datos son "estadísticamente significativos", y desde hace muchos años encontrar un _valor p_ menor a 0,05 es la meta dorada de los investigadores que emplean análisis estadístico. ¿Porqué un 95% de confianza alcanza? ¿Porqué no relajar el límite a 90%, o quizás mejor, exigir al menos un 99 o 99,9% de seguridad? La verdad es que no hay ninguna razón trascendental. El 95% de certeza es tan sólo un umbral arbitrario que en algún momento se volvió estándar. Es importante aclarar que en los últimos años ha crecido una reacción de rechazo a esta norma arbitraria, dentro de la propia comunidad científica. Quienes siguen confiando en los _valores p_ son llamados "frecuentistas"; los que proponen cuantificar de otra forma nuestro grado de certeza son llamados "bayesianos". Google mediante, quien quiera saber más sobre la apasionante rivalidad tendrá horas de diversión aseguradas.
-
-En lo que a nosotros respecta, por ahora vamos a aceptar el enfoque frecuentista, y cuando veamos una estrella diremos que la variable asociada es un buen predictor. O para ser más precisos, que su relación con la variable dependiente es estadísticamente significativa.
-
-
-Volvamos a nuestros modelos. Cuando hicimos regresiones simples no sabíamos aún de valores p, y no revisamos la significancia de las variables predictoras. Hagámoslo ahora con el modelo de expectativa de vida en Argentina vs. PBI :
-
-
-```{r}
-summary(modelo_exp)
-```
-
-Las tres estrellitas, distinción máxima, indican que sin dudas el año está relacionado con la expectativa de vida. Esto no es una sorpresa: la linea de la regresión lineal se ajusta con tanta precisión a los valores observados, que no podía ser de otra manera.
-
-
-Continuando con las regresiones múltiples, intentemos un modelo con tres variables predictoras. A población y PBI, las que ya teníamos en cuenta, vamos a agregar una variable categórica: el continente. 
-
-```{r}
-modelo_exp_multiple <- lm(expVida ~ pobl + PBI_PC + continente, data = data_mundial_2007)
-
-summary(modelo_exp_multiple)
-```
-
-Observamos que la variable categórica es significativa. Con las demás variables fijas -es decir, en países de similar PBI y población- el continente de origen explica en gran medida las diferencias en expectativa de vida en cada país, y con un efecto estimado enorme - ¡de 12 a 16 años!-. Notemos de todos modos que el coeficiente de la variable continente había sido mayor en el modelo simple, llegando a casi 26 años para Oceanía. ¿Porqué es menor ahora? Porque nuestro modelo es más completo, y tiene en cuenta más variables. Cuando lo único que teníamos para comparar países era su continente, era era la única variable a la que atribuir diferencias. Ahora que consideramos múltiples variables para explicar las diferencias, notamos la parte de la influencia que se lleva el PBI, reduciendo la del continente.
 
 
 ## Ejercicios
 
-I. En base a un dataset de nuestra preferencia, mostremos la relación entre dos variables continuas o numéricas usando un gráfico de dispersión (geom_point). Expliquemos lo que muestra el gráfico.
+I. En base a un dataset de nuestra preferencia, mostremos la relación entre dos variables continuas o numéricas usando un gráfico de dispersión (vía `geom_point()`) y expliquemos lo que muestra el gráfico. Vale usar el dataset que hemos presentado en este capítulo, pero tendrá mucha más gracia jugar con algún otro.
 
 II. Realicemos un modelo de regresión lineal para esas dos variables. Describamos los resultados, ofreciendo una interpretación.
 
@@ -447,7 +415,7 @@ III. Mostremos la relación entre una variables categórica y otra continua/num�
 
 IV. Realicemos un modelo de regresión lineal para esas dos variables, describiendo los resultados sin olvidar interpretarlos.
 
-V. Realicemos una regresión lineal con la variable a predecir de 5.1  o 5.3, con la misma variable predictora ya utilizada junto con otras adicionales. Es decir, realizar una regresión con múltiples variables predictoras.  Describamos los resultados, interpretándolos. ¿En qué cambian respecto al modelo que usa sólo un predictor?
+V. Realicemos una regresión lineal con la variable a predecir de I  o III, junto con otras adicionales. Es decir, realizar una regresión con múltiples variables predictoras.  Describamos los resultados, interpretándolos. ¿En qué cambian respecto al modelo que usa sólo un predictor?
 
 
 ---

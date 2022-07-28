@@ -61,3 +61,11 @@ mapas-de-densidad
 visualizando-multiples-categorías
 combinando-espacio-y-tiempo
 ejercicios-4
+modelado-estadístico
+regresión-lineal-simple
+regresión-con-una-variable-numérica
+revolviendo-los-residuos
+cómo-estamos-de-confianza
+regresión-con-una-variable-categórica
+regresión-con-múltiples-variables
+ejercicios-5

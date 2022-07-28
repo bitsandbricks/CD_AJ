@@ -197,7 +197,7 @@ library(ggmap)
 Ahora, para obtener un mapa base del área donde se encuentran los datos que queremos mostrar, necesitamos determinar su “bounding box”: el rango de latitud y longitud que forma un rectángulo conteniendo todas sus posiciones. En resumidas cuentas, se trata de los valores de latitud máxima y mínima, y de longitud máxima y mínima, de nuestros datos georreferenciados.
 
 Los proveedores de mapas online suelen solicitar los valores en este orden: izquierda, abajo, derecha, arriba. Es decir, posición mas al oeste, posición mas al sur, posición mas al este, posición mas al norte. 
-Cuando disponemos de un daataframe georreferenciado, obtener la _bounding box_ de su contenido es bastante fácil usando `st_bbox`, una función del paquete `sf` que recupera esas cuatro coordenadas clave. Por ejemplo `st_bbox(radios)` obtiene las coordenadas del rectángulo de territorio que abarca los radios censales de Buenos Aires. Luego de guardar las coordenadas en una variable, les ponemos los nombres que permitirán que `ggmap` las identifique:
+Cuando disponemos de un dataframe georreferenciado, obtener la _bounding box_ de su contenido es bastante fácil usando `st_bbox`, una función del paquete `sf` que recupera esas cuatro coordenadas clave. Por ejemplo `st_bbox(radios)` obtiene las coordenadas del rectángulo de territorio que abarca los radios censales de Buenos Aires. Luego de guardar las coordenadas en una variable, les ponemos los nombres que permitirán que `ggmap` las identifique:
 
 
 Para obtener un mapa de fondo o "mapa base" necesitamos obtener una _bounding box_ de nuestros datos: el rango de latitud y longitud que forma un rectángulo conteniendo todas sus posiciones. En resumidas cuentas, se trata de los valores de latitud máxima y mínima, y de longitud máxima y mínima, de nuestros datos georreferenciados.
@@ -419,11 +419,3 @@ I. Utilizando la información disponible en el dataset de delitos, creemos un gr
 
 II.  Volvamos al mapa de puntos que realizamos en la seción 5.1.2, donde ajustamos los atributos "color", "size" y "alpha" para mejorar los resultados, además de probar con facetados y mapas de densidad. ¿Qué otras técnicas podemos usar para lidiar con el exceso de información volcada en pantalla? Sugerencia: intentar con `geom_count()`, que se emplea de forma similar a`geom_point()` (véase https://ggplot2.tidyverse.org/reference/geom_count.html)
 
-
----
-
-Con eso cerramos el capítulo, y el manual.
-
-Esperamos haber provisto una introducción satisfactoria al análisis, modelado y visualización de información, y que haya sido tan sólo el inicio de un largo y gratificante recorrido.
-
-¡Gracias por haber llegado hasta aquí! 
