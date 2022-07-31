@@ -5,25 +5,26 @@ options(scipen = 20)
 knitr::include_graphics('imagenes/modelado.jpg')
 ```
 
-Llegamos a un tema de gran interés para quienes realizan investigaciones formales. La posición central que tiene el modelado en la investigación científica se debe a que cuantifica relaciones: permite pasar de decir "La luz solar abundante mejora el crecimiento de las plantas" a "por cada hora adicional de exposición mensual a la luz solar, los cultivos aumentaron su rendimiento en un 1%". La cuantificación permite realizar comparaciones, algo clave para entender un fenómeno estudiado: antes y después, con o sin tratamiento, en un lugar o en otro.
+Llegamos a un tema de gran interés para quienes realizan investigaciones formales. La posición central que tiene el modelado en la investigación científica se debe a que cuantifica relaciones: permite pasar de decir "Los afroamericanos suelen pagar más en la adquisición de autos" a "Los vendedores hacen ofertas finales a los afroamericanos \$287 dólares más caras que a los blancos"[^07-modelado_estadistico-1]. La cuantificación permite realizar comparaciones, algo clave para entender un fenómeno estudiado: antes y después, con o sin tratamiento, en un lugar o en otro.
+
+[^07-modelado_estadistico-1]: Véase Aires, Ian "Venta de Autos justa. La discriminación de género y raza en las negociaciones de venta de autos", 1991, versión en español en Ian Ayres, *La discriminación en el Mercado* Univ. Palermo, Buenos Aires, 2012
 
 En términos matemáticos, se habla de "modelar" debido a que estamos creando un modelo, una reconstrucción simplificada (¡simplificada en extremo!) de cómo funciona un proceso observado en el mundo real. En un modelo de datos, siempre tenemos al menos
 
-* Una variable resultante, también llamada variable "dependiente", 
-* Una o más variables predictoras, también llamadas "explicativas"
+-   Una variable resultante, también llamada variable "dependiente",
+-   Una o más variables predictoras, también llamadas "explicativas"
 
 El modelado de datos puede ser utilizado para dos propósitos:
 
-1. __Predecir__ el valor de una variable resultante en base a valores conocidos de las variables predictoras. Aquí no interesa tanto entender cómo es que las variables interactúan entre sí, o por qué lo hacen. Mientras las predicciones sean acertadas, o se acerquen lo suficiente, el modelo cumple su cometido. Los modelos predictivos se emplean en una enorme variedad de aplicaciones: inversión en bolsa, prevención de fraude, publicidad online, fijación de primas en seguros de riesgo, etc.
+1.  **Predecir** el valor de una variable resultante en base a valores conocidos de las variables predictoras. Aquí no interesa tanto entender cómo es que las variables interactúan entre sí, o por qué lo hacen. Mientras las predicciones sean acertadas, o se acerquen lo suficiente, el modelo cumple su cometido. Los modelos predictivos se emplean en una enorme variedad de aplicaciones: inversión en bolsa, prevención de fraude, publicidad online, fijación de primas en seguros de riesgo, etc.
 
-2. __Explicar__ la relación entre una variable dependiente y todas las demás (las explicativas), buscando determinar si la relación es significativa. Los modelos explicativos son los que se favorecen en investigación académica, ya que ayudan a entender el fenómeno modelado.
+2.  **Explicar** la relación entre una variable dependiente y todas las demás (las explicativas), buscando determinar si la relación es significativa. Los modelos explicativos son los que se favorecen en investigación académica, ya que ayudan a entender el fenómeno modelado.
 
-
-Existen muchísimas técnicas para modelar datos, algunas de ellas simples como la regresión lineal, y otras mucho más complejas, como las redes neuronales. Vamos a practicar con las primeras. 
+Existen muchísimas técnicas para modelar datos, algunas de ellas simples como la regresión lineal, y otras mucho más complejas, como las redes neuronales. Vamos a practicar con las primeras.
 
 La humilde regresión lineal, fácil de explicar y muy fácil de resolver con la ayuda de una computadora, es el caballito de batalla del modelado estadístico. A pesar de que no es adecuada para ciertos tipo de datos, y de que existen métodos más modernos que explotan mucho más el potencial de las computadoras, la regresión lineal sigue siendo una herramienta de uso muy extendido. Un poco por costumbre, y otro porque es el método más fácil de interpretar, lo que favorece entender y comunicar sus resultados.
 
-Este capítulo le debe mucho a _ModernDive: An Introduction to Statistical and Data Sciences via R_ por Chester Ismay y Albert Y. Kim, disponible en forma gratuita en http://moderndive.com/. ModernDive es un recurso muy recomendable para quienes quieran profundizar su conocimiento más allá de los temas que veremos a continuación. Vamos a usar el paquete de R homónimo, `moderndive`, que acompaña al libro y provee funciones que facilitan el aprendizaje de modelos estadísticos.
+Este capítulo le debe mucho a *ModernDive: An Introduction to Statistical and Data Sciences via R* por Chester Ismay y Albert Y. Kim, disponible en forma gratuita en <http://moderndive.com/>. ModernDive es un recurso muy recomendable para quienes quieran profundizar su conocimiento más allá de los temas que veremos a continuación. Vamos a usar el paquete de R homónimo, `moderndive`, que acompaña al libro y provee funciones que facilitan el aprendizaje de modelos estadísticos.
 
 Antes de continuar, lo instalamos (¡sólo hace falta realizar esto una vez!)
 
@@ -37,12 +38,11 @@ Y lo activamos:
 library(moderndive)
 ```
 
-
 ## Regresión lineal simple
 
 La encarnación más sencilla de la regresión lineal es la simple o univariada. Tenemos nuestra variable $y$, numérica, y una sola variable predictora $x$, que puede ser numérica o categórica.
 
-Para poner en práctica los conceptos repasados en este capítulo, vamos a recurrir a un dataset compilado por [*FiveThirtyEight*](https://fivethirtyeight.com/), un sitio web dedicado al análisis estadístico y periodístico de datos de política, economía y deportes. Sus artículos suelen ser acompañados de los datos originales utilizados para el análisis, lo que permite a la audiencia verificar los hallazgos y realizar sus propias pesquisas. 
+Para poner en práctica los conceptos repasados en este capítulo, vamos a recurrir a un dataset compilado por [*FiveThirtyEight*](https://fivethirtyeight.com/), un sitio web dedicado al análisis estadístico y periodístico de datos de política, economía y deportes. Sus artículos suelen ser acompañados de los datos originales utilizados para el análisis, lo que permite a la audiencia verificar los hallazgos y realizar sus propias pesquisas.
 
 El dataset con el que trabajaremos registra la tasa promedio de [crímenes de odio](https://victimconnect.org/tipos-de-delitos/crimenes-de-odio/) reportados en Estados Unidos durante el período 2010-2015, a nivel estado, junto con indicadores demográficos de cada lugar. Los [datos](https://github.com/fivethirtyeight/data/tree/master/hate-crimes) fueron presentados por *FiveThirtyEight* en un [artículo](https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/) que explora la relación entre desigualdad socioeconómica y crímenes de odio.
 
@@ -78,7 +78,6 @@ cat(tabl)
 
 Con el poder de `summary()`, comprobar que la incidencia de crímenes de odio varía de forma considerable entre estados. El promedio anual 2010-2015 reportado por el FBI (variable "crimenes_odio_prom_100k_fbi") va de 0,2 a casi 5 incidentes cada 100.000 habitantes. Algo similar ocurre con la cantidad reportada con otra metodología, los datos para 2016 del *Southern Poverty Law Center* ("crimenes_odio_100k_splc"): el rango va de apenas 0,067 incidentes cada 100.000 habitantes hasta 0,83 (¡12 veces más!).
 
-
 ### Regresión con una variable numérica
 
 Hagamos nuestra pregunta pregunta a contestar con una regresión lineal: ¿Cómo ha se relaciona el nivel de ingresos con la incidencia de crímenes de odio?
@@ -99,29 +98,30 @@ ggplot(data = crimenes_odio) +
          y = "tasa de crímenes")
 ```
 
-Los opiniones pueden variar pero aquí parece mostrarse una correlación más bien débil entre las variables, en forma positiva. Esto es, el incremento de una unidad de tiempo en general resulta en el incremento de la expectativa de vida, pero en este caso no de forma drástica. Una correlación _negativa_ sería lo opuesto: que el incremento de la variable explicativa estuviera asociado a un decremento de la variable explicada. Además del _signo_ de una correlación, otra medida importante es su intensidad. La intensidad de una correlación va de -1 (correlación negativa total) a 1 (correlación positiva total). Una correlación de cero significa que las dos variables son por completo independientes. En en ese caso, saber cuánto vale una no nos ayuda a estimar el valor de la otra. 
+Los opiniones pueden variar pero aquí parece mostrarse una correlación más bien débil entre las variables, en forma positiva. Esto es, el incremento de la mediana de ingresos por hogar resulta en un incremento en la tasa de crímenes de odio, pero en este caso no de forma drástica. Una correlación *negativa* sería lo opuesto: que el incremento de la variable explicativa estuviera asociado a un decremento de la variable explicada. Además del *signo* de una correlación, otra medida importante es su intensidad. La intensidad de una correlación va de -1 (correlación negativa total) a 1 (correlación positiva total). Una correlación de cero significa que las dos variables son por completo independientes. En en ese caso, saber cuánto vale una no nos ayuda a estimar el valor de la otra.
 
-Para obtener la correlación entre dos variables podemos usar `get_correlation`, una función provista por el paquete `moderndive`. Ponemos el nombre de la variable a explicar en el lado izquierdo del signo "~" (o "tilde"), y ponemos el nombre de la variable explicativa en el lado derecho. Esta forma de escribir la relación entre variables es común en las funciones estadísticas de *R*, y se le llama "notación de fórmula". No hay que preocuparse mucho por ella, ya nos acostumbraremos a usarla.
+Para obtener la correlación entre dos variables podemos usar `get_correlation`, una función provista por el paquete `moderndive`. Ponemos el nombre de la variable a explicar en el lado izquierdo del signo "\~" (o "tilde"), y ponemos el nombre de la variable explicativa en el lado derecho. Esta forma de escribir la relación entre variables es común en las funciones estadísticas de *R*, y se le llama "notación de fórmula". No hay que preocuparse mucho por ella, ya nos acostumbraremos a usarla.
 
 ```{r}
 crimenes_odio %>% 
   get_correlation(crimenes_odio_prom_100k_fbi ~ mediana_ingreso_hogares, 
                   na.rm = TRUE)
 ```
+
 ::: warning
 Usamos el parámetro `na.rm = TRUE` para descartar las filas donde no contamos con un valor para cualquiera de las dos variables de interés. Nuestro dataset efectivamente tiene algunos valores faltantes (véase otra vez la salida de `summary(crimenes_odio)` para comprobarlo), así que con eso evitamos que la función falle al intentar calcular la correlación.
 :::
-
 
 ¿A partir de qué valor consideramos que existe una correlación considerable? La verdad es que no hay una regla a seguir, pero inventemos una. Si el valor absoluto de la correlación es...
 
     - de 0,7 a 1: de fuerte a total
     - de 0,5 a 0,7: de moderada a fuerte
-    - de 0,3 a 0,7: de débil a moderada
+    - de 0,3 a 0,5: de débil a moderada
     - menor a 0,3: de nula a débil
 
+El valor que obtuvimos no llega al 0,3; podemos decir que la correlación es débil. Pero aún desconocemos algo quizás más importante: un valor preciso del "efecto" que la variable de ingresos tiene sobre la tasa de crímenes. Eso es lo que vamos a determinar con la regresión lineal. Usamos la palabra "efecto" entre comillas para aclarar una de las limitaciones del modelado estadístico: podemos probar correlación, pero no causalidad. Es decir, no podemos probar que una variable causa a la otra; en todo caso, probamos que se mueven juntas y en base a ello podríamos diseñar un experimento que permita comprobar causalidad.
 
-El valor que obtuvimos no supera por mucho el 0,3; podemos decir que la correlación es débil. Pero aún desconocemos algo quizás más importante: un valor preciso del "efecto" que la variable de ingresos tiene sobre la tasa de crímenes. Eso es lo que vamos a determinar con la regresión lineal. Usamos la palabra "efecto" entre comillas para aclarar una de las limitaciones del modelado estadístico: podemos probar correlación, pero no causalidad. Es decir, no podemos probar que una variable causa a la otra; en todo caso, probamos que se mueven juntas y en base a ello podríamos diseñar un experimento que permita comprobar causalidad.
+![](https://imgs.xkcd.com/comics/correlation.png)
 
 Vamos a la regresión lineal entonces, para establecer de una buena vez la correlación entre ingresos y crímenes de odio. Usamos la función `lm()` (por "linear model"), así:
 
@@ -132,7 +132,7 @@ modelo_ingresos <- lm(crimenes_odio_prom_100k_fbi ~ mediana_ingreso_hogares,
 modelo_ingresos
 ```
 
-¡Eso es todo! Hemos construido un modelo estadístico; ahora tenemos que aprender a usarlo. Obsérvese que volvió aparecer el simbolillo que denota una fórmula, `~`. Usado como primer argumento de `lm()`, significa "_crimenes_odio_prom_100k_fbi_ vs _mediana_ingreso_hogares_", es decir "estimar el efecto en la variable _crimenes_odio_prom_100k_fbi_ cuando incrementa el valor de _mediana_ingreso_hogares_ ", usando los datos contenidos en el dataframe _crimenes_odio_.
+¡Eso es todo! Hemos construido un modelo estadístico; ahora tenemos que aprender a usarlo. Obsérvese que volvió aparecer el simbolillo que denota una fórmula, `~`. Usado como primer argumento de `lm()`, significa "*crimenes_odio_prom_100k_fbi* vs *mediana_ingreso_hogares*", es decir "estimar el efecto en la variable *crimenes_odio_prom_100k_fbi* cuando incrementa el valor de *mediana_ingreso_hogares*", usando los datos contenidos en el dataframe *crimenes_odio*.
 
 El resultado de `lm()`, que hemos guardado dentro de la variable `modelo_ingresos` es un tipo de objecto con el que no hemos trabajado hasta ahora. No es un dataframe, sino una lista que contiene distintos atributos del modelo estadístico. No hace falta detenernos en eso ahora.
 
@@ -142,20 +142,17 @@ Retomando nuestra pregunta... ¿cuál es el efecto? Lo obtenemos dándole el mod
 get_regression_table(modelo_ingresos)
 ```
 
+Ahí está. En nuestro modelo, el efecto *estimado* de la variable *mediana_ingreso_hogares* es de `r round(modelo_ingresos[[1]][2],3)`. Significado: incrementando en una unidad la variable predictora, la variable a predecir se incrementa en `r round(modelo_ingresos[[1]][2],3)`. Dicho de otra manera, y expresándolo en las unidades de nuestras variables: por cada mil dólares de incremento en la mediana de ingresos por hogar, la tasa de crímenes de odio cada 100.000 habitantes se incrementa en `r round(modelo_ingresos[[1]][2],3)` casos.
 
-Ahí está. En nuestro modelo, el efecto *estimado* de la variable *mediana_ingreso_hogares* es de 0,061. Significado: incrementando en una unidad la variable predictora, la variable a predecir se incrementa en 0.2317. Dicho de otra manera, y expresándolo en las unidades de nuestras variables: por cada mil dólares de incremento en la mediana de ingresos por hogar, la tasa de crímenes de odio cada 100.000 habitantes se incrementa en 0.061 casos.
-
-El otro término que aparece, "intercept" es la _intersección_. Para interpretar el modelo, la intersección rara vez tiene utilidad. Para lo que sí sirve es para trazar la línea que permite "predecir" valores para años en los que no tenemos observaciones. Recordemos la fórmula que define una línea recta:
+El otro término que aparece, "intercept" es la *intersección*. Para interpretar el modelo, la intersección rara vez tiene utilidad. Para lo que sí sirve es para trazar la línea que permite "predecir" valores para años en los que no tenemos observaciones. Recordemos la fórmula que define una línea recta:
 
 $$ y = a + b \times x $$
 
-A cada punto en $x$ le corresponde un valor en $y$ que se obtiene multiplicando a $x$ por la _pendiente_, $b$, y sumando la intersección, $a$. Se le llama "intersección" u "ordenada al origen" porque es el valor donde la recta intersecta con el eje de las `y`: cuando $x$ vale $0$, la fórmula nos da $y = b$.
-
+A cada punto en $x$ le corresponde un valor en $y$ que se obtiene multiplicando a $x$ por la *pendiente*, $b$, y sumando la intersección, $a$. Se le llama "intersección" u "ordenada al origen" porque es el valor donde la recta intersecta con el eje de las `y`: cuando $x$ vale $0$, la fórmula nos da $y = b$.
 
 En una regresión lineal, el "modelo" que creamos es precisamente eso: una línea. Tan simple como eso. Lo que la hace tan potente es que la podemos usar como bola de cristal: para saber cuanto valdría la variable dependiente ante un valor determinado de la variable predictora, revisamos por donde pasa la línea.
 
-Lo podemos visualizar con ayuda de `ggplot()`, que por supuesto incluye una función para trazar líneas. Parámetros necesarios: _intercept_ (intersección) y _slope_ (pendiente). Usamos los respectivos valores que nos indica el modelo, `0.412` y `0.033`. 
-
+Lo podemos visualizar con ayuda de `ggplot()`, que por supuesto incluye una función para trazar líneas. Parámetros necesarios: *intercept* (intersección) y *slope* (pendiente). Usamos los respectivos valores que nos indica el modelo, `0.412` y `0.033`.
 
 ```{r}
 ggplot(data = crimenes_odio) + 
@@ -170,10 +167,9 @@ ggplot(data = crimenes_odio) +
 
 Es hora de dar una definición oficial para una regresión lineal, y es esta: es la línea que describe la ecuación:
 
-$$ \hat{y} = b_0 + b_1 \times x $$
-Obsérvese que se trata de la ecuación de una recta, $y = a + b \times x$, con otros nombres. En voz alta, se leería así "Cada predicción del valor de y, llamada $\hat{y}$, se obtiene multiplicando a la variable predictora $x$ por su coeficiente $b_1$ y sumándole el valor de la intersección $b_0$". En otras palabras, a cada valor de $x$ (las observaciones de la variable explicativa) le corresponde un punto en la recta trazada por el modelo. La altura sobre la recta de las $y$ para ese punto es el valor predicho para la variable dependiente. Por ejemplo, si quisiéramos estimar la 
+$$ \hat{y} = b_0 + b_1 \times x $$ Obsérvese que se trata de la ecuación de una recta, $y = a + b \times x$, con otros nombres. En voz alta, se leería así "Cada predicción del valor de y, llamada $\hat{y}$, se obtiene multiplicando a la variable predictora $x$ por su coeficiente $b_1$ y sumándole el valor de la intersección $b_0$". En otras palabras, a cada valor de $x$ (las observaciones de la variable explicativa) le corresponde un punto en la recta trazada por el modelo. La altura sobre la recta de las $y$ para ese punto es el valor predicho para la variable dependiente. Por ejemplo, si quisiéramos estimar la
 
-Ya que estamos, aprendamos otro truco. `ggplot()` puede agregar a nuestros scatterplots una capa con la línea de la regresión lineal, en forma automática. La función `geom_smooth()` se usar para explicitar patrones en los datos. Tal como otras de la familia ggplot, espera que se le diga que variables asignar a `x` e `y`, más un parámetro `method` con el método solicitado para trazar una línea de tendencia. Aquí usamos `method = "lm"` por _linear model_, el modelo lineal.
+Ya que estamos, aprendamos otro truco. `ggplot()` puede agregar a nuestros scatterplots una capa con la línea de la regresión lineal, en forma automática. La función `geom_smooth()` se usar para explicitar patrones en los datos. Tal como otras de la familia ggplot, espera que se le diga que variables asignar a `x` e `y`, más un parámetro `method` con el método solicitado para trazar una línea de tendencia. Aquí usamos `method = "lm"` por *linear model*, el modelo lineal.
 
 ```{r}
 ggplot(data = crimenes_odio) + 
@@ -187,11 +183,11 @@ ggplot(data = crimenes_odio) +
                 method = "lm")
 ```
 
-Hacer una regresión lineal se trata de encontrar la línea que atraviesa nuestra nube de puntos de modo tal que la suma de las distancias de cada punto a la línea sea la menor posible. Es un problema matemático que puede resolverse con distintas técnicas (álgebra lineal, geometría, etc) que no vamos a discutir aquí. Confiaremos en R para hacer los cálculos.  
+Hacer una regresión lineal se trata de encontrar la línea que atraviesa nuestra nube de puntos de modo tal que la suma de las distancias de cada punto a la línea sea la menor posible. Es un problema matemático que puede resolverse con distintas técnicas (álgebra lineal, geometría, etc) que no vamos a discutir aquí. Confiaremos en R para hacer los cálculos.
 
 En la relación ingresos - crímenes las distancias entre los puntos (las observaciones) y la línea (el modelo) varían bastante entre casos. Eso indica que el modelo no describe con gran precisión la dinámica de la relación entre las variables analizadas.
 
-En general, es inusual encontrar una correlación nítida entre variables "en la vida real", sobre todo cuando estudiamos procesos complejos cuyo comportamiento describe patrones más complejos que una relación lineal pura. 
+En general, es inusual encontrar una correlación nítida entre variables "en la vida real", sobre todo cuando estudiamos procesos complejos cuyo comportamiento describe patrones más complejos que una relación lineal pura.
 
 ¿Debería preocuparnos eso? No siempre. A veces la regresión sirve más para cuantificar la relación entre dos variables, en sentido general, y no para realizar certeras predicciones o caracterizar de forma exacta un fenómeno con solo disponer de una variable explicativa. Si nos conformamos con eso, lo importante es que nuestro modelo sea "justo", proveyendo un estimado con errores mas o menos parejos. Es decir, sin observaciones puntuales para las que el modelo resulta mucho peor que para otras.
 
@@ -210,24 +206,21 @@ residuos_regresion <- get_regression_points(modelo_ingresos)
 residuos_regresion
 ```
 
-Obtenemos los resultados del modelo para cada observación, o sea cada fila de nuestro dataframe original.
-La columna que buscamos está al final (`residual`). También tenemos
+Obtenemos los resultados del modelo para cada observación, o sea cada fila de nuestro dataframe original. La columna que buscamos está al final (`residual`). También tenemos
 
-* `crimenes_odio_prom_100k_fbi`: El valor observado en los datos que usamos para el modelo, para la variable que intentamos predecir; es el valor de $y$
-* `mediana_ingreso_hogares`: El valor que toma la variable predictora, alias $x$ 
-* `crimenes_odio_prom_100k_fbi_hat`: Este es el valor que "predice" el modelo, alias "y con sombrerito" (de ahí lo de _hat_), o $\hat{y}$ 
-* `residual`: y por fin los residuos, la diferencia $y - \hat{y}$ para cada fila.
-
+-   `crimenes_odio_prom_100k_fbi`: El valor observado en los datos que usamos para el modelo, para la variable que intentamos predecir; es el valor de $y$
+-   `mediana_ingreso_hogares`: El valor que toma la variable predictora, alias $x$
+-   `crimenes_odio_prom_100k_fbi_hat`: Este es el valor que "predice" el modelo, alias "y con sombrerito" (de ahí lo de *hat*), o $\hat{y}$
+-   `residual`: y por fin los residuos, la diferencia $y - \hat{y}$ para cada fila.
 
 Podemos notar que en algunos casos el error / residuo / desvío es bastante grande, en relación a la magnitud de la variable a predecir. Esto era esperable dada la débil correlación entre variables.
 
-Siempre podemos esperar una cierta divergencia entre las predicciones y los valores observados, por lo que los residuos siempre tendrán (en general) un valor distinto a cero. Pero es importante que los residuos se distribuyan al azar, sin indicios de _patrones sistemáticos_. Si así fuere, podemos considerar que nuestro modelo es adecuado. 
+Siempre podemos esperar una cierta divergencia entre las predicciones y los valores observados, por lo que los residuos siempre tendrán (en general) un valor distinto a cero. Pero es importante que los residuos se distribuyan al azar, sin indicios de *patrones sistemáticos*. Si así fuere, podemos considerar que nuestro modelo es adecuado.
 
 ¿Cómo determinamos que no exhiben patrones sistemáticos? Una vez mas, se trata de una evaluación bastante subjetiva, y cada quien estará conforme dependiendo del contexto y la experiencia previa. Aún así podemos argumentar en favor de la adecuación del modelo cuando:
 
-1. El promedio de los residuos se aproxima a cero; es decir, que los residuos positivos se cancelan con los negativos, promediando cerca de cero.
-2. El valor de los residuos no depende del valor de $x$; es decir, no se observa un crecimiento (o decrecimiento) sistemático de la magnitud de los residuos a medida que$x$ crece
-
+1.  El promedio de los residuos se aproxima a cero; es decir, que los residuos positivos se cancelan con los negativos, promediando cerca de cero.
+2.  El valor de los residuos no depende del valor de $x$; es decir, no se observa un crecimiento (o decrecimiento) sistemático de la magnitud de los residuos a medida que$x$ crece
 
 Veamos si nuestro modelo cumple con `1.`, calculando el promedio de los residuos:
 
@@ -237,12 +230,10 @@ mean(residuos_regresion$residual)
 
 Dio un resultado infinitesimal, cercano a 0, así que condición cumplida.
 
-:::tip
-Es probable que al ejecutar la línea de código el resultado aparezca expresado en notación científica: `2.040816e-05`, que significa $2.040816 * 10^{-5}$.
-En palabras, "2.040816 multiplicado por 10 elevado a la potencia -5". Lo cual efectivamente es 0.00002040816.
+::: tip
+Es probable que al ejecutar la línea de código el resultado aparezca expresado en notación científica: `2.040816e-05`, que significa $2.040816 * 10^{-5}$. En palabras, "2.040816 multiplicado por 10 elevado a la potencia -5". Lo cual efectivamente es 0.00002040816.
 
-Por defecto, R utiliza notación científica para representar de forma compacta los números con muchos espacios decimales. Si -como la mayoría de los seres humanos- estamos poco acostumbrados a ese formato, podemos desactivarlo ejecutando esta línea: `options(scipen = 999)`.
-Esto hace que R se abstenga de usarlo por el resto de la sesión de trabajo. Podemos comprobarlo ejecutando una vez más la línea de código que calcula el promedio, y el resultado saldrá en todo su esplendor de espacios decimales.
+Por defecto, R utiliza notación científica para representar de forma compacta los números con muchos espacios decimales. Si -como la mayoría de los seres humanos- estamos poco acostumbrados a ese formato, podemos desactivarlo ejecutando esta línea: `options(scipen = 999)`. Esto hace que R se abstenga de usarlo por el resto de la sesión de trabajo. Podemos comprobarlo ejecutando una vez más la línea de código que calcula el promedio, y el resultado saldrá en todo su esplendor de espacios decimales.
 :::
 
 ¿Y que pasa con `2.`, la magnitud de los residuos sin crecer ni decrecer de forma notable a medida que se incrementa la variable predictora? Veamoslo en un gráfico de dispersión:
@@ -255,29 +246,25 @@ ggplot(residuos_regresion) +
 
 No se ve una "rampa" ascendente o descendente de los residuos a medida que aumenta la variable de ingresos, así que condición cumplida.
 
-
 ### ¿Cómo estamos de confianza?
 
-¿Ya estamos parra considerar que el modelo útil, o al menos "significativo", que aporta evidencia para considerar que hay una relación entre nuestras dos variables? 
+¿Ya estamos parra considerar que el modelo útil, o al menos "significativo", que aporta evidencia para considerar que hay una relación entre nuestras dos variables?
 
-Falta un chequeo más, y más importante aún. Es el de evaluar que tanta certeza, o confianza, tenemos en que hay una correlación entre estas variables en la vida real, más allá de la que se ve en los datos que tenemos disponibles. Para eso recurrimos al llamado _intervalo de confianza_. Volvamos a revisar la tabla con los estimados de nuestro modelo:
+Falta un chequeo más, y más importante aún. Es el de evaluar que tanta certeza, o confianza, tenemos en que hay una correlación entre estas variables en la vida real, más allá de la que se ve en los datos que tenemos disponibles. Para eso recurrimos al llamado *intervalo de confianza*. Volvamos a revisar la tabla con los estimados de nuestro modelo:
 
 ```{r}
 get_regression_table(modelo_ingresos)
 ```
 
-El efecto estimado de "mediana_ingreso_hogares" es de 0.033, un números positivo. Esto indica que cuando esa variable predictora crece, también crece la variable a predecir -la tasa de crímenes-. Pero en todo análisis estadístico siempre hay una incertidumbre. Una forma de cuantificarla es con un rango de valores, llamado intervalo de confianza. El rango incluye al valor estimado para el efecto, que es el más probable, pero nos recuerda que no tenemos certeza absoluta de que ese número sea exacto, es sólo una aproximación. Por eso ofrece un valor mínimo que sería razonable, y un valor máximo: los vemos en las columnas `lower_ci` y `upper_ci`. 
+El efecto estimado de "mediana_ingreso_hogares" es de 0.033, un números positivo. Esto indica que cuando esa variable predictora crece, también crece la variable a predecir -la tasa de crímenes-. Pero en todo análisis estadístico siempre hay una incertidumbre. Una forma de cuantificarla es con un rango de valores, llamado intervalo de confianza. El rango incluye al valor estimado para el efecto, que es el más probable, pero nos recuerda que no tenemos certeza absoluta de que ese número sea exacto, es sólo una aproximación. Por eso ofrece un valor mínimo que sería razonable, y un valor máximo: los vemos en las columnas `lower_ci` y `upper_ci`.
 
 Y aquí la mala noticia: si revisamos los valores para nuestra variable predictora, vemos que su estimado máximo es 0.071 y su mínimo es -0,006. ¡Un valor negativo! Esto implica que, aún cuando el estimado más probable es un efecto positivo, cabe dentro del rango de valores razonables que el efecto sea 0, o sea nada. E incluso ligeramente negativo, cambiando el sentido de lo que nos indica el estimado del modelo.
 
 Cuando ocurre esto, que el intervalo de confianza pasa por el cero, decimos que nuestro modelo no es estadísticamente signifcativo. O sea, no aporta evidencia acerca de la relación entre variables que estamos investigando. Pero a no ponernos tristes: esto es normal, y útil, porque nos permite verificar nuestras hipótesis de trabajo.
 
-
-
 ### Regresión con una variable categórica
 
 El dataset de crímenes de odio no incluye variables categóricas además de la de estado. Pero podemos crearnos una con facilidad: "¿Ganó Donald Trump en las elecciones presidenciales de 2016?". Para sumar esta variable podemos usar `mutate()` para sumar una columna, y como contenido asignarle el resultado de evaluar si Trump obtuvo al menos el 47% de los votos. Es un umbral de corte definido revisando los [resultados](https://www.nytimes.com/elections/2016/results/president) de aquella elección, nada riguroso pero servirá para practicar ahora:
-
 
 ```{r}
 crimenes_odio <- crimenes_odio %>% 
@@ -295,7 +282,7 @@ ggplot(data = crimenes_odio) +
                    color = trump_electo)) 
 ```
 
-Se vislumbra que una menor tasa de crímenes de odio parece estar asociada a los estados donde Trump ganó la elección en 2016. Eso si, la profusión de puntos hace que muchos terminen superpuestos, haciendo imposible determinar cuántos ocupan cada posición (un problema llamado _overplotting_ en inglés). Una variante de `geom_point()` llamada `geom_jitter()` resuelve este problema al "sacudir" los puntos, sumando a cada uno un pequeño valor al azar para que se separe de los que comparten su posición. Es un buen ejemplo de la paradoja por la cual reducir la precisión de la información a veces permite entender mejor lo que está ocurriendo. Usamos `geom_jitter()` igual que `geom_point()`:
+Se vislumbra que una menor tasa de crímenes de odio parece estar asociada a los estados donde Trump ganó la elección en 2016. Eso si, la profusión de puntos hace que muchos terminen superpuestos, haciendo imposible determinar cuántos ocupan cada posición (un problema llamado *overplotting* en inglés). Una variante de `geom_point()` llamada `geom_jitter()` resuelve este problema al "sacudir" los puntos, sumando a cada uno un pequeño valor al azar para que se separe de los que comparten su posición. Es un buen ejemplo de la paradoja por la cual reducir la precisión de la información a veces permite entender mejor lo que está ocurriendo. Usamos `geom_jitter()` igual que `geom_point()`:
 
 ```{r}
 ggplot(data = crimenes_odio) +
@@ -313,10 +300,10 @@ ggplot(crimenes_odio) +
   geom_histogram(aes(crimenes_odio_prom_100k_fbi, fill = trump_electo)) +
   facet_wrap(~ trump_electo)
 ```
+
 Aquí vemos que en los estados donde Trump resultó electo es más frecuente una tasa baja de crímenes, incluso menores a 1 cada 100.000 (valores mínimos que no se alcanzan en la otra categoría.)
 
 Bien, parece haber una relación entre resultados electorales y crímenes de odio, aunque no la hemos cuantificado. Para eso, recurrimos a una regresión lineal con variable explicativa categórica. Se obtiene de la misma manera que antes, no hay cambios en la forma de invocar `lm()` por el hecho de que la variable ahora sea categórica en vez de numérica.
-
 
 ```{r}
 modelo_eleccion <- lm(crimenes_odio_prom_100k_fbi ~ trump_electo, data = crimenes_odio)
@@ -330,7 +317,7 @@ get_regression_table(modelo_eleccion)
 
 Para la categoría restante, el estimado representa la diferencia respecto a la línea de base: para un esatdo donde Trump si fue electo ("TRUE"), podemos esperar -en promedio- una tasa menor en 0.705 unidades.
 
-Prestemos atención a los residuos. 
+Prestemos atención a los residuos.
 
 ```{r}
 residuos_modelo_eleccion <- get_regression_points(modelo_eleccion)
@@ -343,6 +330,7 @@ Calculemos el promedio de los residuos, para verificar que están cerca del cero
 ```{r}
 mean(residuos_modelo_eleccion$residual)
 ```
+
 y grafiquemos su dispersion de acuerdo a l categoría que les toca, para ver si es similar:
 
 ```{r}
@@ -353,34 +341,32 @@ ggplot(residuos_modelo_eleccion) +
 
 Notamos que:
 
-1. Los residuos tienen un promedio cercano a cero, o sea que están repartidos en forma pareja entre positivos y negativos. Condición cumplida.
-2. La dispersión no crece ni decrece en forma drástica en categorías distintas, rasgo de un buen modelo. Esto es un poco subjetivo -lo evaluamos a ojo- pero damos por cumplida la condición.
-    
+1.  Los residuos tienen un promedio cercano a cero, o sea que están repartidos en forma pareja entre positivos y negativos. Condición cumplida.
+2.  La dispersión no crece ni decrece en forma drástica en categorías distintas, rasgo de un buen modelo. Esto es un poco subjetivo -lo evaluamos a ojo- pero damos por cumplida la condición.
+
 Ahora vamos al veredicto final: ¿Es estadísticamente significativo el resultado?
 
 Prestemos atención al intervalo de confianza, dado por las columnas `lower_ci` y `upper_ci`
-    
+
 ```{r}
 get_regression_table(modelo_eleccion)
 ```
 
-El intervalo no pasa por el cero! El rango va de -1,396	a -0,014. Por tenue que pueda llegar a ser, tenemos confianza en que habrá algún efecto. 
-    
-¡Hemos realizado un modelo estadísticamente significativo!
+El intervalo no pasa por el cero! El rango va de -1,396 a -0,014. Por tenue que pueda llegar a ser, tenemos confianza en que habrá algún efecto.
 
+¡Hemos realizado un modelo estadísticamente significativo!
 
 ## Regresión con múltiples variables
 
-Hasta aquí hemos usado la regresión lineal para hacer explícita la relación entre una variable _resultante_ $y$ y una única variable _predictiva_ o _explicativa_ $x$. En algunos de nuestros resultados pudimos intuir que el agregado de alguna variable explicativa adicional podría mejorar nuestras predicciones. De eso se trata la regresión lineal múltiple: incorporar una cantidad arbitraria de variables al modelo, buscando representar las múltiples dinámicas que inciden en el fenómeno estudiado.
+Hasta aquí hemos usado la regresión lineal para hacer explícita la relación entre una variable *resultante* $y$ y una única variable *predictiva* o *explicativa* $x$. En algunos de nuestros resultados pudimos intuir que el agregado de alguna variable explicativa adicional podría mejorar nuestras predicciones. De eso se trata la regresión lineal múltiple: incorporar una cantidad arbitraria de variables al modelo, buscando representar las múltiples dinámicas que inciden en el fenómeno estudiado.
 
-Una buena noticia es que, en general, agregar variables a nuestro modelo estadístico no requiere mucho esfuerzo adicional. En la época en que los cálculos matemáticos debían hacerse sin la ayuda de una computadora, sumar variables sin ton ni son debía tener poca gracia, debido a la creciente cantidad de cálculos a resolver. Para nosotros que dejamos la tarea en manos de software especializado, el problema es el opuesto. Es tan fácil sumar variables al modelo, que debemos evitar la tentación de arrojar todo dentro de la fórmula de regresión lineal y decidir luego que parece importante y que no. 
+Una buena noticia es que, en general, agregar variables a nuestro modelo estadístico no requiere mucho esfuerzo adicional. En la época en que los cálculos matemáticos debían hacerse sin la ayuda de una computadora, sumar variables sin ton ni son debía tener poca gracia, debido a la creciente cantidad de cálculos a resolver. Para nosotros que dejamos la tarea en manos de software especializado, el problema es el opuesto. Es tan fácil sumar variables al modelo, que debemos evitar la tentación de arrojar todo dentro de la fórmula de regresión lineal y decidir luego que parece importante y que no.
 
 Aclarado eso, en este caso tenemos un dataset en el que las variables han sido elegidas precisamente por su potencial para afectar el fenómeno a estudiar. Por eso podemos incluir todas las variables un modelo complejo, asumiendo que el nivel de ingresos, el porcentaje de desocupados, el de habitantes indocumentados, etc. pueden explicar en alguna medida la incidencia de crímenes de odio.
 
 Vamos a modelar el promedio 2010-2016 de crímenes de odio cada 100.000 habitantes, como resultante de todas las variables disponibles excepto "estado" y "crimenes_odio_100k_splc". Esta última debido a que se parece mucho a la variable que queremos predecir -con seguridad estan estrechamente relacionadas-, por lo cual es de esperarse que si la agregamos al modelo nos de una altísima correlación, pero sin mucho valor: ya lo sabíamos. También vamos a dejar fuera a la variable "trump_electo", ya que no es otra cosa que una versión simplificada, con menos información, de la variable de porcentaje de electores.
 
 Pasando a la práctica, la única diferencia respecto a una regresión lineal simple es que usamos `+` para agregar variables en la fórmula de `lm()`:
-
 
 ```{r}
 modelo_mult <- lm(crimenes_odio_prom_100k_fbi ~ 
@@ -396,22 +382,19 @@ Veamos la tabla con los resultados:
 get_regression_table(modelo_mult)
 ```
 
+¿Cómo interpretamos esos resultados? Más o menos de la misma manera que con la regresión simple. Como antes, tenemos un coeficiente para la intersección, al que no prestamos mucha atención porque no nos dice nada de la relación entre las variables. Lo que cambia es que esta vez tenemos muchas variables predictoras en lugar de una, cada una con su estimado Los estimados positivos indican que la relación entre la variable predictora y la resultante es de correlación positiva (cuando una crece la otra tiende a crecer también) y lo opuesto para los estimados negativos.
 
-¿Cómo interpretamos esos resultados? Más o menos de la misma manera que con la regresión simple. Como antes, tenemos un coeficiente para la intersección, al que no prestamos mucha atención porque no nos dice nada de la relación entre las variables. Lo que cambia es que esta vez tenemos muchas variables predictoras en lugar de una, cada una con su estimado Los estimados positivos indican que la relación entre la variable predictora y la resultante es de correlación positiva (cuando una crece la otra tiende a crecer también) y lo opuesto para los estimados negativos. 
+Pero vayamos a lo que ya sabemos que es muy importante: ¿Alguno de estos estimados es estadísticamente significativo? Si prestamos atención a las columnas del intervalo de confianza, vemos que sólo "pct_no_ciudadanos" tiene un rango que no pasa por el cero: su mínimo y su máximo son positivos. Al estimar el efecto de todas estas variables juntas -o como suele decirse, "controlando" por todas estas variables- el porcentaje de residentes sin ciudadanía es la única con efecto significativo.
 
-Pero vayamos a lo que ya sabemos que es muy importante: ¿Alguno de estos estimados es estadísticamente significativo? Si prestamos atención a las columnas del intervalo de confianza, vemos que sólo "pct_no_ciudadanos" tiene un rango que no pasa por el cero: su mínimo y su máximo son positivos. Al estimar el efecto de todas estas variables juntas -o como suele decirse, "controlando" por todas estas variables- el porcentaje de residentes sin ciudadanía es la única con efecto significativo. 
+Notemos que el porcentaje de votantes de Trump, que en un modelo simple había sido una variable significativa, ahora ya no lo es. A eso se le llama controlar por una variable: Otra forma de decirlo es que "controlando por el porcentaje de población sin ciudadanía" el voto a Trump no tiene efecto significativo en la incidencia de crímenes de odio.
 
-Notemos que el porcentaje de votantes de Trump, que en un modelo simple había sido una variable significativa, ahora ya no lo es. A eso se le llama controlar por una variable: Otra forma de decirlo es que "controlando por el porcentaje de población sin ciudadanía" el voto a Trump no tiene efecto significativo en la incidencia de crímenes de odio. 
+Para *narrar* estos resultados, podemos intentar algo así:
 
-Para _narrar_ estos resultados, podemos intentar algo así:
-    
-* Cuando las demás variables se mantienen constantes (es decir, en estados con atributos similares en ingresos, desocupación, índice Gini, etc.) con el incremento de una unidad en el porcentaje de residentes indocumentados es esperable un incremento de 0,232 crímenes de odio en el promedio interanual cada 100.000 habitantes.
+-   Cuando las demás variables se mantienen constantes (es decir, en estados con atributos similares en ingresos, desocupación, índice Gini, etc.) con el incremento de una unidad en el porcentaje de residentes indocumentados es esperable un incremento de 0,232 crímenes de odio en el promedio interanual cada 100.000 habitantes.
 
-Pensemos un poco si esto tienen sentido. La correlación positiva entre presencia de población "sin papeles" y crímenes de odio es esperable si asumimos que la población indocumentada, migrantes viviendo en condiciones irregulares y carente de derechos, es precisamente la más vulnerable a los crímenes de odio. Por otra parte, quizás tenga tanto sentido como para ser algo obvio. En ese caso, ¡no hemos descubierto nada trascendental! Pero tampoco se le puede pedir tanto a un ejercicio. 
+Pensemos un poco si esto tienen sentido. La correlación positiva entre presencia de población migrante o en situación irregular y crímenes de odio es esperable si asumimos que este grupo suele ser el más vulnerable a los crímenes de odio. Por otra parte, quizás tenga tanto sentido como para ser algo obvio. En ese caso, ¡no hemos descubierto nada trascendental! Pero tampoco se le puede pedir tanto a un ejercicio.
 
 Quedan muchos más datos para explorar, hipótesis para comprobar, e interrelaciones para revelar.
-
-
 
 ## Ejercicios
 
@@ -419,17 +402,16 @@ I. En base a un dataset de nuestra preferencia, mostremos la relación entre dos
 
 II. Realicemos un modelo de regresión lineal para esas dos variables. Describamos los resultados, ofreciendo una interpretación.
 
-III. Mostremos la relación entre una variables categórica y otra continua/numérica, con un gráfico _boxplot_ (mediante `geom_boxplot()`) o un gráfico de puntos "sacudidos" (mediante `geom_jitter()`). Expliquemos lo que muestra el gráfico.
+III. Mostremos la relación entre una variables categórica y otra continua/numérica, con un gráfico *boxplot* (mediante `geom_boxplot()`) o un gráfico de puntos "sacudidos" (mediante `geom_jitter()`). Expliquemos lo que muestra el gráfico.
 
 IV. Realicemos un modelo de regresión lineal para esas dos variables, describiendo los resultados sin olvidar interpretarlos.
 
-V. Realicemos una regresión lineal con la variable a predecir de I  o III, junto con otras adicionales. Es decir, realizar una regresión con múltiples variables predictoras.  Describamos los resultados, interpretándolos. ¿En qué cambian respecto al modelo que usa sólo un predictor?
+V. Realicemos una regresión lineal con la variable a predecir de I o III, junto con otras adicionales. Es decir, realizar una regresión con múltiples variables predictoras. Describamos los resultados, interpretándolos. ¿En qué cambian respecto al modelo que usa sólo un predictor?
 
-
----
+------------------------------------------------------------------------
 
 Con eso cerramos el capítulo, y el manual.
 
 Esperamos haber provisto una introducción satisfactoria al análisis, modelado y visualización de información, y que haya sido tan sólo el inicio de un largo y gratificante recorrido.
 
-¡Gracias por haber llegado hasta aquí! 
+¡Gracias por haber llegado hasta aquí!
