@@ -2,6 +2,7 @@
 
 ```{r echo=FALSE, out.width="100%"}
 options(scipen = 20)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
 knitr::include_graphics('imagenes/modelado.jpg')
 ```
 
@@ -46,7 +47,7 @@ Para poner en práctica los conceptos repasados en este capítulo, vamos a recur
 
 El dataset con el que trabajaremos registra la tasa promedio de [crímenes de odio](https://victimconnect.org/tipos-de-delitos/crimenes-de-odio/) reportados en Estados Unidos durante el período 2010-2015, a nivel estado, junto con indicadores demográficos de cada lugar. Los [datos](https://github.com/fivethirtyeight/data/tree/master/hate-crimes) fueron presentados por *FiveThirtyEight* en un [artículo](https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/) que explora la relación entre desigualdad socioeconómica y crímenes de odio.
 
-Descarguemos entonces el dataset (que hemos traducido pra facilitar su uso), y echemosle un vistazo como ya sabemos hacer:
+Descarguemos entonces el dataset (que hemos traducido para facilitar su uso), y echemos un vistazo como ya sabemos hacer:
 
 ```{r}
 crimenes_odio <- read.csv("https://cdaj.netlify.app/data/crimenes_odio_EEUU.csv")
@@ -121,7 +122,12 @@ Usamos el parámetro `na.rm = TRUE` para descartar las filas donde no contamos c
 
 El valor que obtuvimos no llega al 0,3; podemos decir que la correlación es débil. Pero aún desconocemos algo quizás más importante: un valor preciso del "efecto" que la variable de ingresos tiene sobre la tasa de crímenes. Eso es lo que vamos a determinar con la regresión lineal. Usamos la palabra "efecto" entre comillas para aclarar una de las limitaciones del modelado estadístico: podemos probar correlación, pero no causalidad. Es decir, no podemos probar que una variable causa a la otra; en todo caso, probamos que se mueven juntas y en base a ello podríamos diseñar un experimento que permita comprobar causalidad.
 
-![](https://imgs.xkcd.com/comics/correlation.png)
+<center>
+![](https://cdaj.netlify.app/imagenes/xkcd_correlacion.png)
+
+_[xkcd](https://es.xkcd.com/strips/correlacion/) ilustrando el punto. Publicado bajo licencia abierta [CC BY-NC 2.5](https://creativecommons.org/licenses/by-nc/2.5/deed.es)._
+
+</center>
 
 Vamos a la regresión lineal entonces, para establecer de una buena vez la correlación entre ingresos y crímenes de odio. Usamos la función `lm()` (por "linear model"), así:
 
@@ -134,7 +140,7 @@ modelo_ingresos
 
 ¡Eso es todo! Hemos construido un modelo estadístico; ahora tenemos que aprender a usarlo. Obsérvese que volvió aparecer el simbolillo que denota una fórmula, `~`. Usado como primer argumento de `lm()`, significa "*crimenes_odio_prom_100k_fbi* vs *mediana_ingreso_hogares*", es decir "estimar el efecto en la variable *crimenes_odio_prom_100k_fbi* cuando incrementa el valor de *mediana_ingreso_hogares*", usando los datos contenidos en el dataframe *crimenes_odio*.
 
-El resultado de `lm()`, que hemos guardado dentro de la variable `modelo_ingresos` es un tipo de objecto con el que no hemos trabajado hasta ahora. No es un dataframe, sino una lista que contiene distintos atributos del modelo estadístico. No hace falta detenernos en eso ahora.
+El resultado de `lm()`, que hemos guardado dentro de la variable `modelo_ingresos` es un tipo de objeto con el que no hemos trabajado hasta ahora. No es un dataframe, sino una lista que contiene distintos atributos del modelo estadístico. No hace falta detenernos en eso ahora.
 
 Retomando nuestra pregunta... ¿cuál es el efecto? Lo obtenemos dándole el modelo que generamos a la función `get_regression_table()`, que devuelve una prolija tabla:
 
@@ -167,9 +173,9 @@ ggplot(data = crimenes_odio) +
 
 Es hora de dar una definición oficial para una regresión lineal, y es esta: es la línea que describe la ecuación:
 
-$$ \hat{y} = b_0 + b_1 \times x $$ Obsérvese que se trata de la ecuación de una recta, $y = a + b \times x$, con otros nombres. En voz alta, se leería así "Cada predicción del valor de y, llamada $\hat{y}$, se obtiene multiplicando a la variable predictora $x$ por su coeficiente $b_1$ y sumándole el valor de la intersección $b_0$". En otras palabras, a cada valor de $x$ (las observaciones de la variable explicativa) le corresponde un punto en la recta trazada por el modelo. La altura sobre la recta de las $y$ para ese punto es el valor predicho para la variable dependiente. Por ejemplo, si quisiéramos estimar la
+$$ \hat{y} = b_0 + b_1 \times x $$ Obsérvese que se trata de la ecuación de una recta, $y = a + b \times x$, con otros nombres. En voz alta, se leería así "Cada predicción del valor de y, llamada $\hat{y}$, se obtiene multiplicando a la variable predictora $x$ por su coeficiente $b_1$ y sumándole el valor de la intersección $b_0$". En otras palabras, a cada valor de $x$ (las observaciones de la variable explicativa) le corresponde un punto en la recta trazada por el modelo. La altura sobre la recta de las $y$ para ese punto es el valor predicho para la variable dependiente.
 
-Ya que estamos, aprendamos otro truco. `ggplot()` puede agregar a nuestros scatterplots una capa con la línea de la regresión lineal, en forma automática. La función `geom_smooth()` se usar para explicitar patrones en los datos. Tal como otras de la familia ggplot, espera que se le diga que variables asignar a `x` e `y`, más un parámetro `method` con el método solicitado para trazar una línea de tendencia. Aquí usamos `method = "lm"` por *linear model*, el modelo lineal.
+Ya que estamos, aprendamos otro truco. `ggplot()` puede agregar a nuestros *scatterplots* una capa con la línea de la regresión lineal, en forma automática. La función `geom_smooth()` se usar para explicitar patrones en los datos. Tal como otras de la familia ggplot, espera que se le diga que variables asignar a `x` e `y`, más un parámetro `method` con el método solicitado para trazar una línea de tendencia. Aquí usamos `method = "lm"` por *linear model*, el modelo lineal.
 
 ```{r}
 ggplot(data = crimenes_odio) + 
@@ -260,7 +266,7 @@ El efecto estimado de "mediana_ingreso_hogares" es de 0.033, un números positiv
 
 Y aquí la mala noticia: si revisamos los valores para nuestra variable predictora, vemos que su estimado máximo es 0.071 y su mínimo es -0,006. ¡Un valor negativo! Esto implica que, aún cuando el estimado más probable es un efecto positivo, cabe dentro del rango de valores razonables que el efecto sea 0, o sea nada. E incluso ligeramente negativo, cambiando el sentido de lo que nos indica el estimado del modelo.
 
-Cuando ocurre esto, que el intervalo de confianza pasa por el cero, decimos que nuestro modelo no es estadísticamente signifcativo. O sea, no aporta evidencia acerca de la relación entre variables que estamos investigando. Pero a no ponernos tristes: esto es normal, y útil, porque nos permite verificar nuestras hipótesis de trabajo.
+Cuando ocurre esto, que el intervalo de confianza pasa por el cero, decimos que nuestro modelo no es estadísticamente significativo. O sea, no aporta evidencia acerca de la relación entre variables que estamos investigando. Pero a no ponernos tristes: esto es normal, y útil, porque nos permite verificar nuestras hipótesis de trabajo.
 
 ### Regresión con una variable categórica
 
@@ -291,7 +297,7 @@ ggplot(data = crimenes_odio) +
                    color = trump_electo))
 ```
 
-Algún ojo avizor habrá notado que la clasificación por color no es necesaria, ya que el resultado de la elección está señalado por la posición en el eje de las `x`. El color cumple aquí una función más que nada cosmética, en pos de hacer al gráfico maś atractivo a la vista.
+Algún ojo avizor habrá notado que la clasificación por color no es necesaria, ya que el resultado de la elección está señalado por la posición en el eje de las `x`. El color cumple aquí una función más que nada cosmética, en pos de hacer al gráfico más atractivo a la vista.
 
 Otra forma de visualizar la diferencia es con un histograma, facetado por la variable "trump_electo":
 
@@ -313,9 +319,9 @@ get_regression_table(modelo_eleccion)
 
 ```
 
-¿Qué ocurrió aquí? `lm()` inspeccionó el contenido de la variable "trump_electo" y encontró dos niveles o categorías (`TRUE` y `FALSE`). Tomó el primero en orden alfabético, "FALSE", como línea de base. La intersección (*intercept*) de la regresión es el promedio de crímenes cada 100.000 habitantes para los estados donde Trumpo no ganó la elección -donde es `FALSE` ese hecho.
+¿Qué ocurrió aquí? `lm()` inspeccionó el contenido de la variable "trump_electo" y encontró dos niveles o categorías (`TRUE` y `FALSE`). Tomó el primero en orden alfabético, "FALSE", como línea de base. La intersección (*intercept*) de la regresión es el promedio de crímenes cada 100.000 habitantes para los estados donde Trump no ganó la elección -donde es `FALSE` ese hecho.
 
-Para la categoría restante, el estimado representa la diferencia respecto a la línea de base: para un esatdo donde Trump si fue electo ("TRUE"), podemos esperar -en promedio- una tasa menor en 0.705 unidades.
+Para la categoría restante, el estimado representa la diferencia respecto a la línea de base: para un estado donde Trump si fue electo ("TRUE"), podemos esperar -en promedio- una tasa menor en 0.705 unidades.
 
 Prestemos atención a los residuos.
 
@@ -331,7 +337,7 @@ Calculemos el promedio de los residuos, para verificar que están cerca del cero
 mean(residuos_modelo_eleccion$residual)
 ```
 
-y grafiquemos su dispersion de acuerdo a l categoría que les toca, para ver si es similar:
+y grafiquemos su dispersión de acuerdo a la categoría que les toca, para ver si es similar:
 
 ```{r}
 ggplot(residuos_modelo_eleccion) +
@@ -364,7 +370,7 @@ Una buena noticia es que, en general, agregar variables a nuestro modelo estadí
 
 Aclarado eso, en este caso tenemos un dataset en el que las variables han sido elegidas precisamente por su potencial para afectar el fenómeno a estudiar. Por eso podemos incluir todas las variables un modelo complejo, asumiendo que el nivel de ingresos, el porcentaje de desocupados, el de habitantes indocumentados, etc. pueden explicar en alguna medida la incidencia de crímenes de odio.
 
-Vamos a modelar el promedio 2010-2016 de crímenes de odio cada 100.000 habitantes, como resultante de todas las variables disponibles excepto "estado" y "crimenes_odio_100k_splc". Esta última debido a que se parece mucho a la variable que queremos predecir -con seguridad estan estrechamente relacionadas-, por lo cual es de esperarse que si la agregamos al modelo nos de una altísima correlación, pero sin mucho valor: ya lo sabíamos. También vamos a dejar fuera a la variable "trump_electo", ya que no es otra cosa que una versión simplificada, con menos información, de la variable de porcentaje de electores.
+Vamos a modelar el promedio 2010-2016 de crímenes de odio cada 100.000 habitantes, como resultante de todas las variables disponibles excepto "estado" y "crimenes_odio_100k_splc". Esta última debido a que se parece mucho a la variable que queremos predecir -con seguridad están estrechamente relacionadas-, por lo cual es de esperarse que si la agregamos al modelo nos de una altísima correlación, pero sin mucho valor: ya lo sabíamos. También vamos a dejar fuera a la variable "trump_electo", ya que no es otra cosa que una versión simplificada, con menos información, de la variable de porcentaje de electores.
 
 Pasando a la práctica, la única diferencia respecto a una regresión lineal simple es que usamos `+` para agregar variables en la fórmula de `lm()`:
 
@@ -390,7 +396,7 @@ Notemos que el porcentaje de votantes de Trump, que en un modelo simple había s
 
 Para *narrar* estos resultados, podemos intentar algo así:
 
--   Cuando las demás variables se mantienen constantes (es decir, en estados con atributos similares en ingresos, desocupación, índice Gini, etc.) con el incremento de una unidad en el porcentaje de residentes indocumentados es esperable un incremento de 0,232 crímenes de odio en el promedio interanual cada 100.000 habitantes.
+-   Cuando las demás variables se mantienen constantes (es decir, en estados con atributos similares en ingresos, desocupación, [índice Gini](https://es.wikipedia.org/wiki/Coeficiente_de_Gini), etc.) con el incremento de una unidad en el porcentaje de residentes indocumentados es esperable un incremento de 0,232 crímenes de odio en el promedio interanual cada 100.000 habitantes.
 
 Pensemos un poco si esto tienen sentido. La correlación positiva entre presencia de población migrante o en situación irregular y crímenes de odio es esperable si asumimos que este grupo suele ser el más vulnerable a los crímenes de odio. Por otra parte, quizás tenga tanto sentido como para ser algo obvio. En ese caso, ¡no hemos descubierto nada trascendental! Pero tampoco se le puede pedir tanto a un ejercicio.
 
