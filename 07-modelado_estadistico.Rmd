@@ -2,11 +2,10 @@
 
 ```{r echo=FALSE, out.width="100%"}
 options(scipen = 20)
-knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
 knitr::include_graphics('imagenes/modelado.jpg')
 ```
 
-Llegamos a un tema de gran interés para quienes realizan investigaciones formales. La posición central que tiene el modelado en la investigación científica se debe a que cuantifica relaciones: permite pasar de decir "Los afroamericanos suelen pagar más en la adquisición de autos" a "Los vendedores hacen ofertas finales a los afroamericanos \$287 dólares más caras que a los blancos"[^07-modelado_estadistico-1]. La cuantificación permite realizar comparaciones, algo clave para entender un fenómeno estudiado: antes y después, con o sin tratamiento, en un lugar o en otro.
+Llegamos a un tema de gran interés para quienes realizan investigaciones formales. La posición central que tiene el modelado en la investigación científica se debe a que cuantifica relaciones: permite pasar de decir "Los afroamericanos suelen pagar más en la adquisición de autos" a "Los vendedores hacen ofertas finales a los afroamericanos 287 dólares más caras que a los blancos"[^07-modelado_estadistico-1]. La cuantificación permite realizar comparaciones, algo clave para entender un fenómeno estudiado: antes y después, con o sin tratamiento, en un lugar o en otro.
 
 [^07-modelado_estadistico-1]: Véase Aires, Ian "Venta de Autos justa. La discriminación de género y raza en las negociaciones de venta de autos", 1991, versión en español en Ian Ayres, *La discriminación en el Mercado* Univ. Palermo, Buenos Aires, 2012
 
@@ -85,12 +84,12 @@ Hagamos nuestra pregunta pregunta a contestar con una regresión lineal: ¿Cómo
 
 Como dijimos en el capítulo de visualización, los *scatterplots* son útiles para mostrar la relación entre dos variables. Usemos uno para visualizar la relación entre estas dos variables, para intentar anticipar los resultados de la regresión lineal.
 
-```{r}
+```{r eval=FALSE}
 # Si no lo hicimos antes, activamos el paquete tidyverse
 library(tidyverse)
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot(data = crimenes_odio) + 
     geom_point(aes(x = mediana_ingreso_hogares, y = crimenes_odio_prom_100k_fbi)) +
     labs(title = "Correlación entre ingesos medios por hogar y crímenes de odio",
@@ -160,7 +159,7 @@ En una regresión lineal, el "modelo" que creamos es precisamente eso: una líne
 
 Lo podemos visualizar con ayuda de `ggplot()`, que por supuesto incluye una función para trazar líneas. Parámetros necesarios: *intercept* (intersección) y *slope* (pendiente). Usamos los respectivos valores que nos indica el modelo, `0.412` y `0.033`.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot(data = crimenes_odio) + 
     geom_point(aes(x = mediana_ingreso_hogares, y = crimenes_odio_prom_100k_fbi)) +
     labs(title = "Correlación entre ingesos medios por hogar y crímenes de odio",
@@ -177,7 +176,7 @@ $$ \hat{y} = b_0 + b_1 \times x $$ Obsérvese que se trata de la ecuación de un
 
 Ya que estamos, aprendamos otro truco. `ggplot()` puede agregar a nuestros *scatterplots* una capa con la línea de la regresión lineal, en forma automática. La función `geom_smooth()` se usar para explicitar patrones en los datos. Tal como otras de la familia ggplot, espera que se le diga que variables asignar a `x` e `y`, más un parámetro `method` con el método solicitado para trazar una línea de tendencia. Aquí usamos `method = "lm"` por *linear model*, el modelo lineal.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot(data = crimenes_odio) + 
     geom_point(aes(x = mediana_ingreso_hogares, y = crimenes_odio_prom_100k_fbi)) +
     labs(title = "Correlación entre ingesos medios por hogar y crímenes de odio",
@@ -281,7 +280,7 @@ Esto nos da una columna `trump_electo` de tipo "logical". Es decir que contiene 
 
 Comencemos por explorar los datos con una visualización.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot(data = crimenes_odio) +
     geom_point(aes(x = trump_electo, 
                    y = crimenes_odio_prom_100k_fbi, 
@@ -290,7 +289,7 @@ ggplot(data = crimenes_odio) +
 
 Se vislumbra que una menor tasa de crímenes de odio parece estar asociada a los estados donde Trump ganó la elección en 2016. Eso si, la profusión de puntos hace que muchos terminen superpuestos, haciendo imposible determinar cuántos ocupan cada posición (un problema llamado *overplotting* en inglés). Una variante de `geom_point()` llamada `geom_jitter()` resuelve este problema al "sacudir" los puntos, sumando a cada uno un pequeño valor al azar para que se separe de los que comparten su posición. Es un buen ejemplo de la paradoja por la cual reducir la precisión de la información a veces permite entender mejor lo que está ocurriendo. Usamos `geom_jitter()` igual que `geom_point()`:
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot(data = crimenes_odio) +
     geom_jitter(aes(x = trump_electo, 
                    y = crimenes_odio_prom_100k_fbi, 
@@ -301,7 +300,7 @@ Algún ojo avizor habrá notado que la clasificación por color no es necesaria,
 
 Otra forma de visualizar la diferencia es con un histograma, facetado por la variable "trump_electo":
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ggplot(crimenes_odio) +
   geom_histogram(aes(crimenes_odio_prom_100k_fbi, fill = trump_electo)) +
   facet_wrap(~ trump_electo)

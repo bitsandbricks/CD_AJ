@@ -352,13 +352,7 @@ ggmap(CABA) +
 
 El facetado también nos permite visualizar el cambio de posición a través del tiempo.
 
-Por ejemplo, podemos comparar cierto tipo delito (hurto sin violencia) mostrando dónde ocurre en cada día de la semana.
-
-Primero activamos el paquete `dplyr` para acceder a su función de filtrado de datos,
-
-```{r}
-library(dplyr)
-```
+Por ejemplo, podemos comparar cierto tipo delito (hurto sin violencia) mostrando dónde ocurre en cada día de la semana. 
 
 Y luego mostramos sólo las filas del dataframe donde la columna tipo contiene "Homicidio", 
  - en forma de puntos en el mapa (`geom_point()`), 
