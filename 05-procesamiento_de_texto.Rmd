@@ -208,6 +208,8 @@ cantidad <- limpio %>%
          mujer = str_count(texto, "Sra."),
          ratio = round(varon/mujer,3)) 
 
+cantidad %>% select(varon, mujer, ratio)
+
 ```
 
 

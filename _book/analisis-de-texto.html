@@ -494,7 +494,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="analisis-de-texto.html#cb54-1" aria-hidden="true" tabindex="-1"></a>cantidad <span class="ot">&lt;-</span> limpio <span class="sc">%&gt;%</span> </span>
 <span id="cb54-2"><a href="analisis-de-texto.html#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">varon =</span> <span class="fu">str_count</span>(texto, <span class="st">&quot;Sr.&quot;</span>),</span>
 <span id="cb54-3"><a href="analisis-de-texto.html#cb54-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">mujer =</span> <span class="fu">str_count</span>(texto, <span class="st">&quot;Sra.&quot;</span>),</span>
-<span id="cb54-4"><a href="analisis-de-texto.html#cb54-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">ratio =</span> <span class="fu">round</span>(varon<span class="sc">/</span>mujer,<span class="dv">3</span>)) </span></code></pre></div>
+<span id="cb54-4"><a href="analisis-de-texto.html#cb54-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">ratio =</span> <span class="fu">round</span>(varon<span class="sc">/</span>mujer,<span class="dv">3</span>)) </span>
+<span id="cb54-5"><a href="analisis-de-texto.html#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="analisis-de-texto.html#cb54-6" aria-hidden="true" tabindex="-1"></a>cantidad <span class="sc">%&gt;%</span> <span class="fu">select</span>(varon, mujer, ratio)</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["varon"],"name":[1],"type":["int"],"align":["right"]},{"label":["mujer"],"name":[2],"type":["int"],"align":["right"]},{"label":["ratio"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"255","2":"80","3":"3.188"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 <p>Esto significa que en promedio, durante el período de estudio, los varones hablaron 3.188 veces más que las mujeres.</p>
 </div>
 <div id="quienes-hablaron" class="section level3 hasAnchor" number="5.3.4">
