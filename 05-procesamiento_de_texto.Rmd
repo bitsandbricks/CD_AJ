@@ -96,7 +96,7 @@ str_view(x, "[0-9]{4}.[0-9]{4}") #vean el punto entre los grupos de números
 (telefono <- str_extract(x, "[0-9]{4}.[0-9]{4}"))
 ```
 
-Con `str_extract()` asignamos a la variable `telefono` el número que leimos automáticamente. Si esto está en un mail o formulario, o algún otro texto, puedo ejecutar el código y leer a través del `regex` lo que dice. Claro que para ello hay que conocer el tipo de texto que se trata: tengo que saber que el número de teléfono son ocho dígitos separados por un guión. Cuando sé que tipo de patrón estoy buscando, puedo armar un `regex` para leerlo y procesarlo *automágicamente*.
+Con `str_extract()` asignamos a la variable `telefono` el número que leimos automáticamente. Si esto está en un mail o formulario, o algún otro texto, puedo ejecutar el código y leer a través del `regex` lo que dice. Claro que para ello hay que conocer el tipo de texto que se trata: tengo que saber que el número de teléfono son ocho dígitos separados por un guión. Cuando sé que tipo de patrón estoy buscando, puedo armar un `regex` para leerlo y procesarlo automáticamente.
 
 Y si queremos identificar todos los números de telefono de una planilla, también lo podemos hacer de modo automático.
 
@@ -139,7 +139,7 @@ Los `lookaround` nos permiten identificar una posición, y no texto. Luego de id
 
 ```{r, message=FALSE}
 
-discurso <- "Sr. Presidente (Gioja).- Corresponde ahora pasar al tiempo destinado a los representantes de los bloques. En primer lugar, el Frente de Todos. Tiene la palabra la señora diputada Aparicio, por Buenos Aires.  Sra. Aparicio.- Señor presidente: hoy debatimos de cara a la sociedad, con responsabilidad y transparencia, como nunca se lo ha hecho en este Congreso, la triste historia de procesos de endeudamiento. Sr. Allende.- Señor presidente: quiero destacar la posibilidad que tenemos de analizar este acuerdo con elFondo. "
+discurso <- "Sr. Presidente (Gioja).- Corresponde ahora pasar al tiempo destinado a los representantes de los bloques. En primer lugar, el Frente de Todos. Tiene la palabra la señora diputada Aparicio, por Buenos Aires.  Sra. Aparicio.- Señor presidente: hoy debatimos de cara a la sociedad, con responsabilidad y transparencia, como nunca se lo ha hecho en este Congreso, la triste historia de procesos de endeudamiento. Sr. Allende.- Señor presidente: quiero destacar la posibilidad que tenemos de analizar este acuerdo con el Fondo. "
 
 str_view_all(discurso, "(?<=Sr.?\\.\\s)(?=\\w)\\w*")
 
@@ -167,56 +167,27 @@ Recordemos que sólo hace falta instalar paquetes una vez. Es decir, habiendo ej
 
 ### Consiguiendo los datos
 
-La página de la Cámara de Diputados de Argentina tiene una pequeña sección de datos abiertos, en <https://datos.hcdn.gob.ar/>. De allí podemos descargar un dataset con todas las sesiones que hubo, por período parlamentario.
+La página de la Cámara de Diputados de Argentina tiene cargadas los diarios de las sesiones de los distintos años. De allí, tomamos una que nos interese y la descargamos. Vamos a empezar con la sesión 19 del período 138. Para ello leeremos el texto del archivo pdf con `pdf_text()` y como lo lee por página, luego lo collapsaremos con `str_c()` como ya vimos.
 
 ```{r message=FALSE, warning=FALSE}
 library(pdftools)
 
-sesiones <- read.csv("https://cdaj.netlify.app/data/sesiones/sesiones.csv")
+periodo138 <- tibble (texto = pdf_text("https://cdaj.netlify.app/data/sesiones/138-19.pdf") %>% 
+                        str_c(collapse = " "))
 ```
 
 ::: tip
 Una ventaja de la programación es la reproducibilidad. Y para ello, en general, es útil descargar las bases de datos directamente desde las paginas web. Sin embargo, los links muchas veces cambian y las paginas cuando menos lo esperamos, caen. Por ello, siempre es mejor tener una copia de la base en nuestra PC o nuestra nube y referenciarla de allí.
 :::
 
-Para este ejercicio utilizaremos solamente el período del año 2020, que es el número de sesiones 138. Del sitio web de la Cámara de Diputados podemos, o bien vincular las versiones taquigráficas con el link, o bien descargarlas a la PC. Con ello, podremos cargarlas en nuestra tabla.
 
-Una vez descargadas o identificados los links, agregamos una columna con el link para luego descargar el texto.
-
-```{r}
-periodo138 <- sesiones %>% 
-  filter(str_detect(periodo_id, "138"),
-         reunion_tipo != "Apertura Ordinarias")
-
-periodo138 <- periodo138 %>% 
-  mutate(reunion_nombre = paste0("138-", reunion_numero))
-
-periodo138 <- periodo138 %>% 
-  mutate(link = paste0("https://cdaj.netlify.app/data/sesiones/", reunion_nombre, ".pdf"))
-```
-
-Nuestra lista de sesiones, ahora con una columna con el link a su transcripción, luce así:
-
-```{r}
-periodo138
-```
-
-Y ahora leemos los documentos y los agregamos a nuestra tabla. Las celdas no tienen limite máximo de capacidad, y entonces colocamos cada versión taquigráfica en una celda en la fila de la sesión respectiva. Para hacer esto usaremos la función `map` para que la función que lee PDFs (`pdf_text`) se ejecute cada vez en cada fila de nuestro dataframe.
-
-```{r cache=TRUE}
-periodo138 <- periodo138 %>% 
-  mutate(texto = map(link, pdf_text)) # puede demorar algunos minutos!
-```
-
-::: warning
-Ojo. Ahora en la tabla hay mucha información, lo que resulta pesado para las computadoras. Puede ser que si queremos visualizar la tabla se cuelgue la computadora o se haga muy lenta. Entonces, habrá que evitar abrir la tabla entera. Mejor es llamar a las celdas individualmente desde la consola
-:::
+Las celdas no tienen limite máximo de capacidad, y entonces colocamos toda la versión taquigráfica en una celda en una fila.
 
 ### Limpieza de datos
 
 El texto tiene muchos caracteres que son parte del formato, y que deberíamos limpiar de modo previo a hacer el análisis. La etapa de limpieza debe tener en cuenta cuál es el objetivo de los datos y del análisis.
 
-Para nuestro ejercicio, en tanto vamos a medir cuántas veces toman la palabra los diputados y las diputadas, deberíamos eliminar cada vez que toma la palabra el Sr. Presidente o el Sr. Secretario. Eliminamos también todos los saltos que figuran como `\\n` (recuerden que para seleccionar una barra tenemos que escaparla dos veces).
+Para nuestro ejercicio, en tanto vamos a medir cuántas veces toman la palabra los diputados y las diputadas, deberíamos eliminar cada vez que toma la palabra el Sr. o la Sra. Presidenta o el Sr. Secretario. Eliminamos también todos los saltos que figuran como `\\n` (recuerden que para seleccionar una barra tenemos que escaparla dos veces).
 
 ```{r, warning=FALSE}
 limpio <- periodo138 %>% 
@@ -225,7 +196,6 @@ limpio <- periodo138 %>%
 limpio <- limpio %>% 
   mutate(texto = str_remove_all(texto, "Sr.\\s+Presidente|Sr.\\s+Secretario|Sra.\\s+Presidenta"))
          
-rm(periodo138) #remuevo el objeto para liberar un poco de memoria
 ```
 
 ### Análisis
@@ -236,19 +206,12 @@ En este ejercicio sólo queremos contar cuántas veces toma la palabra una diput
 cantidad <- limpio %>% 
   mutate(varon = str_count(texto, "Sr."),
          mujer = str_count(texto, "Sra."),
-         ratio = round(varon/mujer,3)) %>% 
-  select(-reunion_numero, -sesion_numero,-texto, -link, -sesion_camara, -periodo_id, -reunion_fin)
+         ratio = round(varon/mujer,3)) 
 
-cantidad
 ```
 
-Y si queremos ver el promedio, calculamos
 
-```{r}
-mean(cantidad$ratio)
-```
-
-Esto significa que en promedio, durante el período de estudio, los varones hablaron `r round(mean(cantidad$ratio,1))` veces más que las mujeres.
+Esto significa que en promedio, durante el período de estudio, los varones hablaron `r cantidad$ratio[1]` veces más que las mujeres.
 
 ### Quienes hablaron?
 
@@ -258,41 +221,23 @@ Con el código de *lookaround* que usamos arriba, podemos agregar una columna "t
 
 ```{r}
 quienes <- limpio %>% 
-  mutate(toman_palabra = str_extract_all(texto, "(?<=Sr.?\\.\\s)(?=\\w)\\w*")) %>% 
-  select(-reunion_numero, -sesion_numero,-texto, -link, -sesion_camara, -periodo_id, -reunion_fin)
+  mutate(toman_palabra = str_extract_all(texto, "(?<=Sr.?\\.\\s)\\w+"))
 
-quienes
+quienes$toman_palabra
 ```
 
-Notamos que el contenido de la nueva columna es un tipo de dato complejo: un lista (_list_) de cadenas de texto.
 
-Para ver el contenido de estas listas podemos extraerlas con `quienes$toman_palabra`, y eso va a generar un montón de salida de texto en pantalla. O para algo más acotado, podemos ver sólo el contenido de la fila _n_ (por ejemplo, la fila 3 con `quienes$toman_palabra[3]`). O podemos usar `filter()` para ver el contenido de la lista en las filas que cumplan alguna condición. Por ejemplo:
-
-```{r}
-quienes %>% 
-  filter(reunion_nombre == "138-16") %>% 
-  pull(toman_palabra)
-```
-(la función `pull()` extrae el contenido de una columna dada, tiene el mismo efecto que el simbolillo "$" en `quienes$toman_palabra`)
-
-
-Ahora podemos crear una columna que contenga conteos de la cantidad de veces que aparece cada nombre tomando la palabra, en cada fila. Esta vez el contenido de cada item en la nueva columna será una tabla de frecuencias, que en R se representan con su propio tipo de datos:
+Ahora podemos crear una columna que contenga conteos de la cantidad de veces que aparece cada nombre tomando la palabra, en cada fila. Esta vez el contenido de cada item en la nueva columna será una tabla de frecuencias:
 
 
 ```{r}
-quienes <- quienes %>% 
-  mutate(frecuencia = map(toman_palabra, table)) 
+quienes <- table(quienes$toman_palabra) %>% 
+  as.data.frame() %>% 
+  arrange(desc(Freq))
 
-quienes
+head(quienes,10)
 ```
 
-Para revisar estas tablas de frecuencia, podemos usar cualquiera de los métodos mencionados antes, como:
-
-```{r}
-quienes %>% 
-  filter(reunion_nombre == "138-16") %>% 
-  pull(frecuencia) 
-```
 
 ## Ejercicios
 
