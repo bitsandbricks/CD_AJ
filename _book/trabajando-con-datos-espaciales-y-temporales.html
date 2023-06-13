@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Trabajando con datos espaciales y temporales | Ciencia de Datos para Activismo Jurídico</title>
   <meta name="description" content="6 Trabajando con datos espaciales y temporales | Ciencia de Datos para Activismo Jurídico" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Trabajando con datos espaciales y temporales | Ciencia de Datos para Activismo Jurídico" />
   <meta property="og:type" content="book" />
-  
   
   
   <meta name="github-repo" content="bitsandbricks/CD_AJ" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="analisis-de-texto.html"/>
 <link rel="next" href="modelado-estadístico.html"/>
-<script src="libs/header-attrs-2.14/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,15 +49,11 @@
 
 
 
-
 <link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
 <script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<link href="libs/str_view-0.1.0/str_view.css" rel="stylesheet" />
-<script src="libs/str_view-binding-1.4.0/str_view.js"></script>
 
 
 <style type="text/css">
@@ -99,7 +94,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -112,7 +107,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -126,6 +121,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -145,104 +144,104 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li><a href="index.html#section" id="toc-section"></a>
 <ul>
-<li><a href="index.html#para-quién-es-esto" id="toc-para-quién-es-esto">¿Para quién es esto?<span></span></a></li>
-<li><a href="index.html#antes-de-empezar" id="toc-antes-de-empezar">Antes de empezar<span></span></a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>¿Para quién es esto?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#antes-de-empezar"><i class="fa fa-check"></i>Antes de empezar</a></li>
 </ul></li>
-<li><a href="qué-es-la-ciencia-de-datos.html#qué-es-la-ciencia-de-datos" id="toc-qué-es-la-ciencia-de-datos"><span class="toc-section-number">1</span> ¿Qué es la ciencia de datos?<span></span></a>
+<li class="chapter" data-level="1" data-path="qué-es-la-ciencia-de-datos.html"><a href="qué-es-la-ciencia-de-datos.html"><i class="fa fa-check"></i><b>1</b> ¿Qué es la ciencia de datos?</a>
 <ul>
-<li><a href="qué-es-la-ciencia-de-datos.html#qué-significa-hacer-ciencia-de-datos" id="toc-qué-significa-hacer-ciencia-de-datos"><span class="toc-section-number">1.1</span> ¿Qué significa hacer ciencia de datos?<span></span></a></li>
+<li class="chapter" data-level="1.1" data-path="qué-es-la-ciencia-de-datos.html"><a href="qué-es-la-ciencia-de-datos.html#qué-significa-hacer-ciencia-de-datos"><i class="fa fa-check"></i><b>1.1</b> ¿Qué significa hacer ciencia de datos?</a></li>
 </ul></li>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#una-presentación-a-toda-marcha-de-r" id="toc-una-presentación-a-toda-marcha-de-r"><span class="toc-section-number">2</span> Una presentación a toda marcha de R<span></span></a>
+<li class="chapter" data-level="2" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html"><i class="fa fa-check"></i><b>2</b> Una presentación a toda marcha de R</a>
 <ul>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#nuestro-primer-proyecto-en-r" id="toc-nuestro-primer-proyecto-en-r"><span class="toc-section-number">2.1</span> Nuestro primer proyecto en R<span></span></a>
+<li class="chapter" data-level="2.1" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#nuestro-primer-proyecto-en-r"><i class="fa fa-check"></i><b>2.1</b> Nuestro primer proyecto en R</a>
 <ul>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#a-investigar-cual-es-la-diferencia-en-mortalidad-infantil-entre-el-sur-y-el-norte-de-la-ciudad-autónoma-de-buenos-aires" id="toc-a-investigar-cual-es-la-diferencia-en-mortalidad-infantil-entre-el-sur-y-el-norte-de-la-ciudad-autónoma-de-buenos-aires"><span class="toc-section-number">2.1.1</span> A investigar: ¿Cual es la diferencia en mortalidad infantil entre el sur y el norte de la Ciudad Autónoma de Buenos Aires?<span></span></a></li>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#crear-un-proyecto-en-rstudio" id="toc-crear-un-proyecto-en-rstudio"><span class="toc-section-number">2.1.2</span> Crear un proyecto en RStudio<span></span></a></li>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#escribiendo-un-script" id="toc-escribiendo-un-script"><span class="toc-section-number">2.1.3</span> Escribiendo un script<span></span></a></li>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#cargar-los-datos" id="toc-cargar-los-datos"><span class="toc-section-number">2.1.4</span> Cargar los datos<span></span></a></li>
+<li class="chapter" data-level="2.1.1" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#a-investigar-cual-es-la-diferencia-en-mortalidad-infantil-entre-el-sur-y-el-norte-de-la-ciudad-autónoma-de-buenos-aires"><i class="fa fa-check"></i><b>2.1.1</b> A investigar: ¿Cual es la diferencia en mortalidad infantil entre el sur y el norte de la Ciudad Autónoma de Buenos Aires?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#crear-un-proyecto-en-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Crear un proyecto en RStudio</a></li>
+<li class="chapter" data-level="2.1.3" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#escribiendo-un-script"><i class="fa fa-check"></i><b>2.1.3</b> Escribiendo un script</a></li>
+<li class="chapter" data-level="2.1.4" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#cargar-los-datos"><i class="fa fa-check"></i><b>2.1.4</b> Cargar los datos</a></li>
 </ul></li>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#visualización-la-exploración-gráfica-de-la-información" id="toc-visualización-la-exploración-gráfica-de-la-información"><span class="toc-section-number">2.2</span> Visualización: la exploración gráfica de la información<span></span></a>
+<li class="chapter" data-level="2.2" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#visualización-la-exploración-gráfica-de-la-información"><i class="fa fa-check"></i><b>2.2</b> Visualización: la exploración gráfica de la información</a>
 <ul>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#haciendo-mapas" id="toc-haciendo-mapas"><span class="toc-section-number">2.2.1</span> Haciendo mapas<span></span></a></li>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#agregando-datos" id="toc-agregando-datos"><span class="toc-section-number">2.2.2</span> Agregando datos<span></span></a></li>
+<li class="chapter" data-level="2.2.1" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#haciendo-mapas"><i class="fa fa-check"></i><b>2.2.1</b> Haciendo mapas</a></li>
+<li class="chapter" data-level="2.2.2" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#agregando-datos"><i class="fa fa-check"></i><b>2.2.2</b> Agregando datos</a></li>
 </ul></li>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#el-veredicto-final" id="toc-el-veredicto-final"><span class="toc-section-number">2.3</span> El veredicto final<span></span></a>
+<li class="chapter" data-level="2.3" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#el-veredicto-final"><i class="fa fa-check"></i><b>2.3</b> El veredicto final</a>
 <ul>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#cuál-es-la-diferencia-en-mortalidad-infantil-entre-el-sur-y-el-norte-de-la-ciudad-autónoma-de-buenos-aires" id="toc-cuál-es-la-diferencia-en-mortalidad-infantil-entre-el-sur-y-el-norte-de-la-ciudad-autónoma-de-buenos-aires"><span class="toc-section-number">2.3.1</span> ¿Cuál es la diferencia en mortalidad infantil entre el sur y el norte de la Ciudad Autónoma de Buenos Aires?<span></span></a></li>
+<li class="chapter" data-level="2.3.1" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#cuál-es-la-diferencia-en-mortalidad-infantil-entre-el-sur-y-el-norte-de-la-ciudad-autónoma-de-buenos-aires"><i class="fa fa-check"></i><b>2.3.1</b> ¿Cuál es la diferencia en mortalidad infantil entre el sur y el norte de la Ciudad Autónoma de Buenos Aires?</a></li>
 </ul></li>
-<li><a href="una-presentación-a-toda-marcha-de-r.html#ejercicios" id="toc-ejercicios"><span class="toc-section-number">2.4</span> Ejercicios<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="una-presentación-a-toda-marcha-de-r.html"><a href="una-presentación-a-toda-marcha-de-r.html#ejercicios"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a></li>
 </ul></li>
-<li><a href="poniendo-los-datos-en-forma.html#poniendo-los-datos-en-forma" id="toc-poniendo-los-datos-en-forma"><span class="toc-section-number">3</span> Poniendo los datos en forma<span></span></a>
+<li class="chapter" data-level="3" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html"><i class="fa fa-check"></i><b>3</b> Poniendo los datos en forma</a>
 <ul>
-<li><a href="poniendo-los-datos-en-forma.html#primeros-pasos-al-examinar-un-conjunto-de-datos-nuevo" id="toc-primeros-pasos-al-examinar-un-conjunto-de-datos-nuevo"><span class="toc-section-number">3.1</span> Primeros pasos al examinar un conjunto de datos nuevo<span></span></a></li>
-<li><a href="poniendo-los-datos-en-forma.html#cruzando-variables-la-operación-join" id="toc-cruzando-variables-la-operación-join"><span class="toc-section-number">3.2</span> Cruzando variables: la operación <code>join</code><span></span></a></li>
-<li><a href="poniendo-los-datos-en-forma.html#transformando-los-datos" id="toc-transformando-los-datos"><span class="toc-section-number">3.3</span> Transformando los datos<span></span></a>
+<li class="chapter" data-level="3.1" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#primeros-pasos-al-examinar-un-conjunto-de-datos-nuevo"><i class="fa fa-check"></i><b>3.1</b> Primeros pasos al examinar un conjunto de datos nuevo</a></li>
+<li class="chapter" data-level="3.2" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#cruzando-variables-la-operación-join"><i class="fa fa-check"></i><b>3.2</b> Cruzando variables: la operación <code>join</code></a></li>
+<li class="chapter" data-level="3.3" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#transformando-los-datos"><i class="fa fa-check"></i><b>3.3</b> Transformando los datos</a>
 <ul>
-<li><a href="poniendo-los-datos-en-forma.html#seleccionar-columnas-con-select" id="toc-seleccionar-columnas-con-select"><span class="toc-section-number">3.3.1</span> Seleccionar columnas con <code>select()</code><span></span></a></li>
-<li><a href="poniendo-los-datos-en-forma.html#filtrar-filas-con-filter" id="toc-filtrar-filas-con-filter"><span class="toc-section-number">3.3.2</span> Filtrar filas con <code>filter()</code><span></span></a></li>
-<li><a href="poniendo-los-datos-en-forma.html#ordenar-filas-con-arrange" id="toc-ordenar-filas-con-arrange"><span class="toc-section-number">3.3.3</span> Ordenar filas con <code>arrange()</code><span></span></a></li>
-<li><a href="poniendo-los-datos-en-forma.html#agregar-nuevas-variables-con-mutate" id="toc-agregar-nuevas-variables-con-mutate"><span class="toc-section-number">3.3.4</span> Agregar nuevas variables con <code>mutate()</code><span></span></a></li>
-<li><a href="poniendo-los-datos-en-forma.html#extraer-resúmenes-con-summarise" id="toc-extraer-resúmenes-con-summarise"><span class="toc-section-number">3.3.5</span> Extraer resúmenes con <code>summarise()</code><span></span></a></li>
-<li><a href="poniendo-los-datos-en-forma.html#bonus-el-operador-pipe" id="toc-bonus-el-operador-pipe"><span class="toc-section-number">3.3.6</span> ¡BONUS! El operador “pipe”: <code>%&gt;%</code><span></span></a></li>
+<li class="chapter" data-level="3.3.1" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#seleccionar-columnas-con-select"><i class="fa fa-check"></i><b>3.3.1</b> Seleccionar columnas con <code>select()</code></a></li>
+<li class="chapter" data-level="3.3.2" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#filtrar-filas-con-filter"><i class="fa fa-check"></i><b>3.3.2</b> Filtrar filas con <code>filter()</code></a></li>
+<li class="chapter" data-level="3.3.3" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#ordenar-filas-con-arrange"><i class="fa fa-check"></i><b>3.3.3</b> Ordenar filas con <code>arrange()</code></a></li>
+<li class="chapter" data-level="3.3.4" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#agregar-nuevas-variables-con-mutate"><i class="fa fa-check"></i><b>3.3.4</b> Agregar nuevas variables con <code>mutate()</code></a></li>
+<li class="chapter" data-level="3.3.5" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#extraer-resúmenes-con-summarise"><i class="fa fa-check"></i><b>3.3.5</b> Extraer resúmenes con <code>summarise()</code></a></li>
+<li class="chapter" data-level="3.3.6" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#bonus-el-operador-pipe"><i class="fa fa-check"></i><b>3.3.6</b> ¡BONUS! El operador “pipe”: <code>%&gt;%</code></a></li>
 </ul></li>
-<li><a href="poniendo-los-datos-en-forma.html#ejercicios-1" id="toc-ejercicios-1"><span class="toc-section-number">3.4</span> Ejercicios<span></span></a></li>
+<li class="chapter" data-level="3.4" data-path="poniendo-los-datos-en-forma.html"><a href="poniendo-los-datos-en-forma.html#ejercicios-1"><i class="fa fa-check"></i><b>3.4</b> Ejercicios</a></li>
 </ul></li>
-<li><a href="visualización.html#visualización" id="toc-visualización"><span class="toc-section-number">4</span> Visualización<span></span></a>
+<li class="chapter" data-level="4" data-path="visualización.html"><a href="visualización.html"><i class="fa fa-check"></i><b>4</b> Visualización</a>
 <ul>
-<li><a href="visualización.html#una-buena-visualización-para-empezar-el-scatterplot" id="toc-una-buena-visualización-para-empezar-el-scatterplot"><span class="toc-section-number">4.1</span> Una buena visualización para empezar: el <em>scatterplot</em><span></span></a></li>
-<li><a href="visualización.html#ajustando-color-y-tamaño" id="toc-ajustando-color-y-tamaño"><span class="toc-section-number">4.2</span> Ajustando color y tamaño<span></span></a></li>
-<li><a href="visualización.html#facetado" id="toc-facetado"><span class="toc-section-number">4.3</span> Facetado<span></span></a></li>
-<li><a href="visualización.html#gráficos-de-barras" id="toc-gráficos-de-barras"><span class="toc-section-number">4.4</span> Gráficos de barras<span></span></a></li>
-<li><a href="visualización.html#histogramas" id="toc-histogramas"><span class="toc-section-number">4.5</span> Histogramas<span></span></a></li>
-<li><a href="visualización.html#preparando-una-visualización-para-compartir" id="toc-preparando-una-visualización-para-compartir"><span class="toc-section-number">4.6</span> Preparando una visualización para compartir<span></span></a></li>
-<li><a href="visualización.html#otras-visualizaciones" id="toc-otras-visualizaciones"><span class="toc-section-number">4.7</span> Otras visualizaciones<span></span></a></li>
-<li><a href="visualización.html#ejercicios-2" id="toc-ejercicios-2"><span class="toc-section-number">4.8</span> Ejercicios<span></span></a></li>
+<li class="chapter" data-level="4.1" data-path="visualización.html"><a href="visualización.html#una-buena-visualización-para-empezar-el-scatterplot"><i class="fa fa-check"></i><b>4.1</b> Una buena visualización para empezar: el <em>scatterplot</em></a></li>
+<li class="chapter" data-level="4.2" data-path="visualización.html"><a href="visualización.html#ajustando-color-y-tamaño"><i class="fa fa-check"></i><b>4.2</b> Ajustando color y tamaño</a></li>
+<li class="chapter" data-level="4.3" data-path="visualización.html"><a href="visualización.html#facetado"><i class="fa fa-check"></i><b>4.3</b> Facetado</a></li>
+<li class="chapter" data-level="4.4" data-path="visualización.html"><a href="visualización.html#gráficos-de-barras"><i class="fa fa-check"></i><b>4.4</b> Gráficos de barras</a></li>
+<li class="chapter" data-level="4.5" data-path="visualización.html"><a href="visualización.html#histogramas"><i class="fa fa-check"></i><b>4.5</b> Histogramas</a></li>
+<li class="chapter" data-level="4.6" data-path="visualización.html"><a href="visualización.html#preparando-una-visualización-para-compartir"><i class="fa fa-check"></i><b>4.6</b> Preparando una visualización para compartir</a></li>
+<li class="chapter" data-level="4.7" data-path="visualización.html"><a href="visualización.html#otras-visualizaciones"><i class="fa fa-check"></i><b>4.7</b> Otras visualizaciones</a></li>
+<li class="chapter" data-level="4.8" data-path="visualización.html"><a href="visualización.html#ejercicios-2"><i class="fa fa-check"></i><b>4.8</b> Ejercicios</a></li>
 </ul></li>
-<li><a href="analisis-de-texto.html#analisis-de-texto" id="toc-analisis-de-texto"><span class="toc-section-number">5</span> Analisis de texto<span></span></a>
+<li class="chapter" data-level="5" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html"><i class="fa fa-check"></i><b>5</b> Analisis de texto</a>
 <ul>
-<li><a href="analisis-de-texto.html#manipulación-de-texto" id="toc-manipulación-de-texto"><span class="toc-section-number">5.1</span> Manipulación de texto<span></span></a></li>
-<li><a href="analisis-de-texto.html#metacaracteres" id="toc-metacaracteres"><span class="toc-section-number">5.2</span> Metacaracteres<span></span></a>
+<li class="chapter" data-level="5.1" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#manipulación-de-texto"><i class="fa fa-check"></i><b>5.1</b> Manipulación de texto</a></li>
+<li class="chapter" data-level="5.2" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#metacaracteres"><i class="fa fa-check"></i><b>5.2</b> Metacaracteres</a>
 <ul>
-<li><a href="analisis-de-texto.html#comienzo-y-fin-de-línea" id="toc-comienzo-y-fin-de-línea"><span class="toc-section-number">5.2.1</span> Comienzo y fin de línea<span></span></a></li>
-<li><a href="analisis-de-texto.html#clases-de-palabras" id="toc-clases-de-palabras"><span class="toc-section-number">5.2.2</span> Clases de Palabras<span></span></a></li>
-<li><a href="analisis-de-texto.html#lookaround" id="toc-lookaround"><span class="toc-section-number">5.2.3</span> Lookaround<span></span></a></li>
+<li class="chapter" data-level="5.2.1" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#comienzo-y-fin-de-línea"><i class="fa fa-check"></i><b>5.2.1</b> Comienzo y fin de línea</a></li>
+<li class="chapter" data-level="5.2.2" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#clases-de-palabras"><i class="fa fa-check"></i><b>5.2.2</b> Clases de Palabras</a></li>
+<li class="chapter" data-level="5.2.3" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#lookaround"><i class="fa fa-check"></i><b>5.2.3</b> Lookaround</a></li>
 </ul></li>
-<li><a href="analisis-de-texto.html#primer-ejercicio" id="toc-primer-ejercicio"><span class="toc-section-number">5.3</span> Primer ejercicio<span></span></a>
+<li class="chapter" data-level="5.3" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#primer-ejercicio"><i class="fa fa-check"></i><b>5.3</b> Primer ejercicio</a>
 <ul>
-<li><a href="analisis-de-texto.html#consiguiendo-los-datos" id="toc-consiguiendo-los-datos"><span class="toc-section-number">5.3.1</span> Consiguiendo los datos<span></span></a></li>
-<li><a href="analisis-de-texto.html#limpieza-de-datos" id="toc-limpieza-de-datos"><span class="toc-section-number">5.3.2</span> Limpieza de datos<span></span></a></li>
-<li><a href="analisis-de-texto.html#análisis" id="toc-análisis"><span class="toc-section-number">5.3.3</span> Análisis<span></span></a></li>
-<li><a href="analisis-de-texto.html#quienes-hablaron" id="toc-quienes-hablaron"><span class="toc-section-number">5.3.4</span> Quienes hablaron?<span></span></a></li>
+<li class="chapter" data-level="5.3.1" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#consiguiendo-los-datos"><i class="fa fa-check"></i><b>5.3.1</b> Consiguiendo los datos</a></li>
+<li class="chapter" data-level="5.3.2" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#limpieza-de-datos"><i class="fa fa-check"></i><b>5.3.2</b> Limpieza de datos</a></li>
+<li class="chapter" data-level="5.3.3" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#análisis"><i class="fa fa-check"></i><b>5.3.3</b> Análisis</a></li>
+<li class="chapter" data-level="5.3.4" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#quienes-hablaron"><i class="fa fa-check"></i><b>5.3.4</b> Quienes hablaron?</a></li>
 </ul></li>
-<li><a href="analisis-de-texto.html#ejercicios-3" id="toc-ejercicios-3"><span class="toc-section-number">5.4</span> Ejercicios<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="analisis-de-texto.html"><a href="analisis-de-texto.html#ejercicios-3"><i class="fa fa-check"></i><b>5.4</b> Ejercicios</a></li>
 </ul></li>
-<li><a href="trabajando-con-datos-espaciales-y-temporales.html#trabajando-con-datos-espaciales-y-temporales" id="toc-trabajando-con-datos-espaciales-y-temporales"><span class="toc-section-number">6</span> Trabajando con datos espaciales y temporales<span></span></a>
+<li class="chapter" data-level="6" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html"><i class="fa fa-check"></i><b>6</b> Trabajando con datos espaciales y temporales</a>
 <ul>
-<li><a href="trabajando-con-datos-espaciales-y-temporales.html#trabajando-con-fechas" id="toc-trabajando-con-fechas"><span class="toc-section-number">6.1</span> Trabajando con fechas<span></span></a>
+<li class="chapter" data-level="6.1" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#trabajando-con-fechas"><i class="fa fa-check"></i><b>6.1</b> Trabajando con fechas</a>
 <ul>
-<li><a href="trabajando-con-datos-espaciales-y-temporales.html#la-fecha-como-clase-de-variable" id="toc-la-fecha-como-clase-de-variable"><span class="toc-section-number">6.1.1</span> La fecha como clase de variable<span></span></a></li>
+<li class="chapter" data-level="6.1.1" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#la-fecha-como-clase-de-variable"><i class="fa fa-check"></i><b>6.1.1</b> La fecha como clase de variable</a></li>
 </ul></li>
-<li><a href="trabajando-con-datos-espaciales-y-temporales.html#mirando-al-espacio" id="toc-mirando-al-espacio"><span class="toc-section-number">6.2</span> Mirando al espacio<span></span></a>
+<li class="chapter" data-level="6.2" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#mirando-al-espacio"><i class="fa fa-check"></i><b>6.2</b> Mirando al espacio</a>
 <ul>
-<li><a href="trabajando-con-datos-espaciales-y-temporales.html#obteniendo-un-mapa-base" id="toc-obteniendo-un-mapa-base"><span class="toc-section-number">6.2.1</span> Obteniendo un mapa base<span></span></a></li>
-<li><a href="trabajando-con-datos-espaciales-y-temporales.html#de-coordenadas-al-mapa" id="toc-de-coordenadas-al-mapa"><span class="toc-section-number">6.2.2</span> De coordenadas al mapa<span></span></a></li>
-<li><a href="trabajando-con-datos-espaciales-y-temporales.html#mapas-de-densidad" id="toc-mapas-de-densidad"><span class="toc-section-number">6.2.3</span> Mapas de densidad<span></span></a></li>
-<li><a href="trabajando-con-datos-espaciales-y-temporales.html#visualizando-multiples-categorías" id="toc-visualizando-multiples-categorías"><span class="toc-section-number">6.2.4</span> Visualizando multiples categorías<span></span></a></li>
+<li class="chapter" data-level="6.2.1" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#obteniendo-un-mapa-base"><i class="fa fa-check"></i><b>6.2.1</b> Obteniendo un mapa base</a></li>
+<li class="chapter" data-level="6.2.2" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#de-coordenadas-al-mapa"><i class="fa fa-check"></i><b>6.2.2</b> De coordenadas al mapa</a></li>
+<li class="chapter" data-level="6.2.3" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#mapas-de-densidad"><i class="fa fa-check"></i><b>6.2.3</b> Mapas de densidad</a></li>
+<li class="chapter" data-level="6.2.4" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#visualizando-multiples-categorías"><i class="fa fa-check"></i><b>6.2.4</b> Visualizando multiples categorías</a></li>
 </ul></li>
-<li><a href="trabajando-con-datos-espaciales-y-temporales.html#combinando-espacio-y-tiempo" id="toc-combinando-espacio-y-tiempo"><span class="toc-section-number">6.3</span> Combinando espacio y tiempo<span></span></a></li>
-<li><a href="trabajando-con-datos-espaciales-y-temporales.html#ejercicios-4" id="toc-ejercicios-4"><span class="toc-section-number">6.4</span> Ejercicios<span></span></a></li>
+<li class="chapter" data-level="6.3" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#combinando-espacio-y-tiempo"><i class="fa fa-check"></i><b>6.3</b> Combinando espacio y tiempo</a></li>
+<li class="chapter" data-level="6.4" data-path="trabajando-con-datos-espaciales-y-temporales.html"><a href="trabajando-con-datos-espaciales-y-temporales.html#ejercicios-4"><i class="fa fa-check"></i><b>6.4</b> Ejercicios</a></li>
 </ul></li>
-<li><a href="modelado-estadístico.html#modelado-estadístico" id="toc-modelado-estadístico"><span class="toc-section-number">7</span> Modelado estadístico<span></span></a>
+<li class="chapter" data-level="7" data-path="modelado-estadístico.html"><a href="modelado-estadístico.html"><i class="fa fa-check"></i><b>7</b> Modelado estadístico</a>
 <ul>
-<li><a href="modelado-estadístico.html#regresión-lineal-simple" id="toc-regresión-lineal-simple"><span class="toc-section-number">7.1</span> Regresión lineal simple<span></span></a>
+<li class="chapter" data-level="7.1" data-path="modelado-estadístico.html"><a href="modelado-estadístico.html#regresión-lineal-simple"><i class="fa fa-check"></i><b>7.1</b> Regresión lineal simple</a>
 <ul>
-<li><a href="modelado-estadístico.html#regresión-con-una-variable-numérica" id="toc-regresión-con-una-variable-numérica"><span class="toc-section-number">7.1.1</span> Regresión con una variable numérica<span></span></a></li>
-<li><a href="modelado-estadístico.html#revolviendo-los-residuos" id="toc-revolviendo-los-residuos"><span class="toc-section-number">7.1.2</span> Revolviendo los residuos<span></span></a></li>
-<li><a href="modelado-estadístico.html#cómo-estamos-de-confianza" id="toc-cómo-estamos-de-confianza"><span class="toc-section-number">7.1.3</span> ¿Cómo estamos de confianza?<span></span></a></li>
-<li><a href="modelado-estadístico.html#regresión-con-una-variable-categórica" id="toc-regresión-con-una-variable-categórica"><span class="toc-section-number">7.1.4</span> Regresión con una variable categórica<span></span></a></li>
+<li class="chapter" data-level="7.1.1" data-path="modelado-estadístico.html"><a href="modelado-estadístico.html#regresión-con-una-variable-numérica"><i class="fa fa-check"></i><b>7.1.1</b> Regresión con una variable numérica</a></li>
+<li class="chapter" data-level="7.1.2" data-path="modelado-estadístico.html"><a href="modelado-estadístico.html#revolviendo-los-residuos"><i class="fa fa-check"></i><b>7.1.2</b> Revolviendo los residuos</a></li>
+<li class="chapter" data-level="7.1.3" data-path="modelado-estadístico.html"><a href="modelado-estadístico.html#cómo-estamos-de-confianza"><i class="fa fa-check"></i><b>7.1.3</b> ¿Cómo estamos de confianza?</a></li>
+<li class="chapter" data-level="7.1.4" data-path="modelado-estadístico.html"><a href="modelado-estadístico.html#regresión-con-una-variable-categórica"><i class="fa fa-check"></i><b>7.1.4</b> Regresión con una variable categórica</a></li>
 </ul></li>
-<li><a href="modelado-estadístico.html#regresión-con-múltiples-variables" id="toc-regresión-con-múltiples-variables"><span class="toc-section-number">7.2</span> Regresión con múltiples variables<span></span></a></li>
-<li><a href="modelado-estadístico.html#ejercicios-5" id="toc-ejercicios-5"><span class="toc-section-number">7.3</span> Ejercicios<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="modelado-estadístico.html"><a href="modelado-estadístico.html#regresión-con-múltiples-variables"><i class="fa fa-check"></i><b>7.2</b> Regresión con múltiples variables</a></li>
+<li class="chapter" data-level="7.3" data-path="modelado-estadístico.html"><a href="modelado-estadístico.html#ejercicios-5"><i class="fa fa-check"></i><b>7.3</b> Ejercicios</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
@@ -275,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.1</span> Trabajando con fechas<a href="trabajando-con-datos-espaciales-y-temporales.html#trabajando-con-fechas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Continuemos aprovechando el dataset con delitos registrados durante el 2020 en Buenos Aires, ahora para practicar el manejo de fechas y horas.</p>
 <p>Esta vez usaremos una versión aún más completa, que incluye columnas con la fecha completa, la hora, y la ubicación de cada incidente:</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb183-1" aria-hidden="true" tabindex="-1"></a>delitos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://cdaj.netlify.app/data/delitos_fecha_lugar.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb187-1" aria-hidden="true" tabindex="-1"></a>delitos <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://cdaj.netlify.app/data/delitos_fecha_lugar.csv&quot;</span>)</span></code></pre></div>
 <p>Las primeras filas del dataset lucen así (:</p>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -287,70 +286,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.1.1</span> La fecha como clase de variable<a href="trabajando-con-datos-espaciales-y-temporales.html#la-fecha-como-clase-de-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La fecha es un tipo de dato que puede ser expresado de muchas maneras, dependiendo de que nos interese tener en cuenta: el día de la semana al que corresponde, el mes, el año, etc. El paquete <a href="https://lubridate.tidyverse.org/"><code>lubridate</code></a> hace fácil tomar una variable que contiene fechas en cualquier formato (por ejemplo “20/07/2020”) para extraer el atributo relacionado que deseemos (como su día, “lunes”, o su mes, “julio”). Cuando instalamos <code>tidyverse</code> recibimos también <code>lubridate</code> -es parte del “pack”-, así que ya deberíamos tenerlo listo para usar.</p>
 <p>Para empezar, convertimos el campo “fecha” al tipo de dato especializado, que se llama… fecha (<em>date</em>). Aquí tenemos que prestar atención al formato en que aparecen los datos de la columna, en general algo como “30-07-2018” (día, mes, año) o “30-07-2018 12:14:24” (día, mes, año y hora, minutos, segundos). Con nuestros datos se da el primer caso, por lo cual la función para convertir ese campo en fecha es <code>dmy()</code>; para el segundo caso, seria <code>dmy_hms()</code>.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb184-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb184-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb184-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb184-3" aria-hidden="true" tabindex="-1"></a>delitos<span class="sc">$</span>fecha <span class="ot">&lt;-</span> <span class="fu">dmy</span>(delitos<span class="sc">$</span>fecha)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb188-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb188-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb188-3" aria-hidden="true" tabindex="-1"></a>delitos<span class="sc">$</span>fecha <span class="ot">&lt;-</span> <span class="fu">dmy</span>(delitos<span class="sc">$</span>fecha)</span></code></pre></div>
 <div class="tip">
 <p><code>lubridate</code> usa un formato memotécnico para nombrar sus funciones de conversión de texto a fecha.
 Para saber que función utilizar según el formato en que aparecen las fechas, es cuestión de determinar en que orden aparecen año, mes y día (y horas y minutos si estuvieran).</p>
 <p>Por ejemplo, un campo que registran fechas en formato similar a “4/26/17” o a “4-26-2017” implica “mes - día - año” y por tanto en ambos casos puede convertirse a fecha con <code>mdy()</code> (la “y” es por <em>year</em>).</p>
 </div>
 <p>Repasemos algunas de los nuevos trucos que podemos hacer con el tiempo. Tomemos cinco fechas elegidas al azar:</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb185-1" aria-hidden="true" tabindex="-1"></a>muestra_de_fechas <span class="ot">&lt;-</span> <span class="fu">sample</span>(delitos<span class="sc">$</span>fecha, <span class="dv">5</span>)</span>
-<span id="cb185-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb185-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb185-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb185-3" aria-hidden="true" tabindex="-1"></a>muestra_de_fechas</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb189-1" aria-hidden="true" tabindex="-1"></a>muestra_de_fechas <span class="ot">&lt;-</span> <span class="fu">sample</span>(delitos<span class="sc">$</span>fecha, <span class="dv">5</span>)</span>
+<span id="cb189-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb189-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb189-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb189-3" aria-hidden="true" tabindex="-1"></a>muestra_de_fechas</span></code></pre></div>
 <pre><code>## [1] &quot;2020-12-07&quot; &quot;2020-11-05&quot; &quot;2020-09-21&quot; &quot;2020-09-27&quot; &quot;2020-02-21&quot;</code></pre>
 <p>Mediante las funciones disponibles en <code>lubridate</code>, podemos extraer:</p>
 <ul>
 <li>El día de la semana al que corresponde cada fecha:</li>
 </ul>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(muestra_de_fechas)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(muestra_de_fechas)</span></code></pre></div>
 <pre><code>## [1] 2 5 2 1 6</code></pre>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(muestra_de_fechas, <span class="at">label =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(muestra_de_fechas, <span class="at">label =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] lun jue lun dom vie
 ## Levels: dom &lt; lun &lt; mar &lt; mié &lt; jue &lt; vie &lt; sáb</code></pre>
 <ul>
 <li>El mes:</li>
 </ul>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">month</span>(muestra_de_fechas)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">month</span>(muestra_de_fechas)</span></code></pre></div>
 <pre><code>## [1] 12 11  9  9  2</code></pre>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">month</span>(muestra_de_fechas, <span class="at">label =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">month</span>(muestra_de_fechas, <span class="at">label =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] dic nov sep sep feb
 ## 12 Levels: ene &lt; feb &lt; mar &lt; abr &lt; may &lt; jun &lt; jul &lt; ago &lt; sep &lt; ... &lt; dic</code></pre>
 <ul>
 <li>El año:</li>
 </ul>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">year</span>(muestra_de_fechas)</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">year</span>(muestra_de_fechas)</span></code></pre></div>
 <pre><code>## [1] 2020 2020 2020 2020 2020</code></pre>
 <p>Y varias opciones más, que se pueden repasar en <a href="https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html" class="uri">https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html</a></p>
 <p>Con lo visto hasta aquí, tenemos suficiente para mostrar patrones temporales en los datos.</p>
 <p>Empecemos por un gráfico de barras (<code>geom_bar()</code>) con la cantidad de eventos registrados por mes. Para que aparezca un conteo por mes del año, asignaremos al eje de las <span class="math inline">\(x\)</span> el <em>mes</em> al que corresponde cada valor de la columna “fecha”, o sea <code>month(fecha, label = TRUE)</code>:</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># cargamos la librería en caso de no haberlo hecho antes</span></span></code></pre></div>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(delitos) <span class="sc">+</span> </span>
-<span id="cb198-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb198-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">month</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>)))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-148-1.png" width="672" /></p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># cargamos la librería en caso de no haberlo hecho antes</span></span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(delitos) <span class="sc">+</span> </span>
+<span id="cb202-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb202-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">month</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>)))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-142-1.png" width="672" /></p>
 <p>(Hemos usado el parámetro <code>label = TRUE</code> para obtener el nombre del mes en lugar de su número, o sea “dic” en lugar de “12”. Prueben realizar el gráfico sin ese parámetro en la llamada a <code>month()</code> para ver que pasa.)</p>
 <p>En el gráfico, se ve una reducción drástica a partir de la cuarentena decretada en abril. Y también un incremento gradual y sostenido a partir de allí, que de todos modos no llega a los niveles pre-pandemia de enero y febrero.</p>
 <p>Para ver la composición interna de los conteos mensuales, cuantos casos corresponden a cada categoría, podemos hacer un gráfico de “barras apiladas” como vimos en la clase 3. La sintaxis es igual que antes, pero esta vez asignamos la variable <em>tipo</em>”_ al color de relleno de las barras determinado por el parámetro <code>fill</code>.</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(delitos) <span class="sc">+</span> </span>
-<span id="cb199-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb199-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">month</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>), <span class="at">fill =</span> tipo))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-149-1.png" width="672" /></p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(delitos) <span class="sc">+</span> </span>
+<span id="cb203-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb203-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">month</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>), <span class="at">fill =</span> tipo))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-143-1.png" width="672" /></p>
 <p>Las barras apiladas son prolijas, pero pueden hacer difícil evaluar la evolución de categorías individuales. Recordemos que para mostrar los subconjuntos en barras independientes, una al lado de la otra, podemos usar el parámetro <code>position = "dodge"</code>. Inténtenlo agregando el parámetro al ejercicio anterior para ver como queda.</p>
 <p>Ahora comparemos la cantidad de eventos registrados, por tipo, para cada día de la semana. Basta con usar la función que extrae el día de la semana, <code>wday()</code>, en lugar de <code>month()</code>. Lo demás es idéntico, incluyendo el uso de <code>label = TRUE</code> para que obtener el nombre del día -“lun”-, en lugar de su posición en la semana -“2”, porque para <code>lubridate</code> las semanas empiezan el domingo-.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(delitos) <span class="sc">+</span> </span>
-<span id="cb200-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb200-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">wday</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>), <span class="at">fill =</span> tipo))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-150-1.png" width="672" /></p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(delitos) <span class="sc">+</span> </span>
+<span id="cb204-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb204-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">wday</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>), <span class="at">fill =</span> tipo))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-144-1.png" width="672" /></p>
 <p>Como era de esperar, durante los fines de semana se observa una menor cantidad de eventos, aunque quizás no en la categoría Homicidio, que es difícil de discernir por su relativa escasez. Para solucionar el problema podríamos filtrar los datos antes de visualizarlos, como hemos hecho antes con la función <code>filter()</code>, mostrando sólo la categoría de interés.</p>
 <p>Otra opción, que probaremos ahora, es una visualización en “facetas”. Se trata de generar una visualización que muestra distintos aspectos de los datos en paneles separados. Con un ejemplo vamos a dejarlo mas claro. Para realizar un gráfico en facetas, basta con sumar una línea con la función <code>facet_wrap(vars(x, y, ...))</code>, dónde “x”, “y”, etc son los nombres de las variables cuyas categorías recibirán paneles distintos. Intentémoslo con el último gráfico, agregando “tipo” como variable a facetar:</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(delitos) <span class="sc">+</span> </span>
-<span id="cb201-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb201-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">wday</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>), <span class="at">fill =</span> tipo)) <span class="sc">+</span></span>
-<span id="cb201-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb201-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(tipo))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-151-1.png" width="672" /></p>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(delitos) <span class="sc">+</span> </span>
+<span id="cb205-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb205-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">wday</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>), <span class="at">fill =</span> tipo)) <span class="sc">+</span></span>
+<span id="cb205-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb205-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(tipo))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-145-1.png" width="672" /></p>
 <p>Obtuvimos barras separadas, pero los homicidios siguen difíciles de distinguir. Se debe a que por defecto <code>facet_wrap()</code> mantiene a escala todos los paneles, de manera que se puedan comparar cantidades de forma directa. La desventaja es que se pierde legibilidad de categorías con valores ínfimos en comparación con otras. Por eso disponemos del parámetro <code>scales</code>, que permite graficar los datos con escala libre, vía <code>scales = "free"</code>. Probemos:</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(delitos) <span class="sc">+</span> </span>
-<span id="cb202-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb202-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">wday</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>), <span class="at">fill =</span> tipo)) <span class="sc">+</span></span>
-<span id="cb202-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb202-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(tipo), <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-152-1.png" width="672" />
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(delitos) <span class="sc">+</span> </span>
+<span id="cb206-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb206-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">wday</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>), <span class="at">fill =</span> tipo)) <span class="sc">+</span></span>
+<span id="cb206-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb206-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(tipo), <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>)</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-146-1.png" width="672" />
 Ahora queda más claro que los homicidios siguen un patrón diario distinto al de las demás categorías. También que, en términos relativos, las lesiones son las que mas se reducen durante los fines de semana.</p>
 <p>También podemos evaluar el ritmo según la hora del día. ¿Cómo se haría con nuestro dataset?</p>
 </div>
@@ -363,9 +362,9 @@ Ahora queda más claro que los homicidios siguen un patrón diario distinto al d
 <p>Los CRS son un sistema de números que definen ubicaciones sobre la superficie de la Tierra; funcionan como direcciones usando latitud y longitud para definir posiciones en los ejes norte-sur y este-oeste. Hay muchos, muchos tipos de CRS, y en general hace falta saber con cuál trabajamos. Sin embargo, existe una especie de regla no escrita: si nuestros datos georreferenciados no aclaran cuál es su sistema de coordenadas, podemos asumir que usan el llamado WGS84 o “Mercator”. Eso mismo presupone <code>ggmap</code>, y como nuestro dataset efectivamente usa coordenadas WGS84, todos los ejercicios que siguen saldrán bien aún sin especificar el CRS.</p>
 </div>
 <p>Como siempre, si es la primera vez que vamos a usar el paquete tenemos que instalarlo:</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggmap&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggmap&quot;</span>)</span></code></pre></div>
 <p>Y con eso resuelto ya podremos activarlo cuando lo necesitemos:</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span></code></pre></div>
 <div id="obteniendo-un-mapa-base" class="section level3 hasAnchor" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Obteniendo un mapa base<a href="trabajando-con-datos-espaciales-y-temporales.html#obteniendo-un-mapa-base" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para dar contexto que guíe a la audiencia es útil proyectar nuestra información georreferenciada sobre un mapa de fondo que muestre la posición de caminos, nombres de localidades, accidentes geográficos y otros hitos. Estos mapas usados como lienzo sobre el cual mostrar datos espaciales son conocidos como “mapas base”, o <em>basemaps</em>. Guardar por nuestra cuenta información cartográfica con alto nivel de detalle de cualquier lugar del mundo es impracticable, pero por suerte existen servicios en internet que lo hacen por nosotros como <a href="http://maps.stamen.com">Stamen Maps</a>, ¡que es de uso gratuito!.</p>
@@ -375,22 +374,22 @@ Ahora queda más claro que los homicidios siguen un patrón diario distinto al d
 </center>
 <p>Para incluir mapas base en nuestras visualizaciones podemos usar las funciones del paquete <a href="https://github.com/dkahle/ggmap"><code>ggmap</code></a>, que complementa a ggplot agregando funciones que permiten adquirir y visualizar mapas en forma fácil.</p>
 <p>Lo activamos:</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggmap)</span></code></pre></div>
 <p>Ahora, para obtener un mapa base del área donde se encuentran los datos que queremos mostrar, necesitamos determinar su “bounding box”: el rango de latitud y longitud que forma un rectángulo conteniendo todas sus posiciones. En resumidas cuentas, se trata de los valores de latitud máxima y mínima, y de longitud máxima y mínima, de nuestros datos georreferenciados.</p>
 <p>Los proveedores de mapas online suelen solicitar los valores en este orden: izquierda, abajo, derecha, arriba. Es decir, posición mas al oeste, posición mas al sur, posición mas al este, posición mas al norte.
 Cuando disponemos de un dataframe georreferenciado, obtener la <em>bounding box</em> de su contenido es bastante fácil usando <code>st_bbox</code>, una función del paquete <code>sf</code> que recupera esas cuatro coordenadas clave. Por ejemplo <code>st_bbox(radios)</code> obtiene las coordenadas del rectángulo de territorio que abarca los radios censales de Buenos Aires. Luego de guardar las coordenadas en una variable, les ponemos los nombres que permitirán que <code>ggmap</code> las identifique:</p>
 <p>Para obtener un mapa de fondo o “mapa base” necesitamos obtener una <em>bounding box</em> de nuestros datos: el rango de latitud y longitud que forma un rectángulo conteniendo todas sus posiciones. En resumidas cuentas, se trata de los valores de latitud máxima y mínima, y de longitud máxima y mínima, de nuestros datos georreferenciados.
 No es algo que deba preocuparnos demasiado, porque podemos obtener esta información con una simple función incluida en <code>ggmap</code>:</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb206-1" aria-hidden="true" tabindex="-1"></a>bbox <span class="ot">&lt;-</span> <span class="fu">make_bbox</span>(delitos<span class="sc">$</span>longitud, delitos<span class="sc">$</span>latitud)</span>
-<span id="cb206-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb206-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb206-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb206-3" aria-hidden="true" tabindex="-1"></a>bbox</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb210-1" aria-hidden="true" tabindex="-1"></a>bbox <span class="ot">&lt;-</span> <span class="fu">make_bbox</span>(delitos<span class="sc">$</span>longitud, delitos<span class="sc">$</span>latitud)</span>
+<span id="cb210-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb210-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb210-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb210-3" aria-hidden="true" tabindex="-1"></a>bbox</span></code></pre></div>
 <pre><code>##      left    bottom     right       top 
 ## -58.54046 -34.71247 -58.33403 -34.52172</code></pre>
 <p>En base a la “bounding box” solicitamos nuestro mapa base:</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb208-1" aria-hidden="true" tabindex="-1"></a>CABA <span class="ot">&lt;-</span> <span class="fu">get_stamenmap</span>(<span class="at">bbox =</span> bbox, <span class="at">maptype =</span> <span class="st">&quot;toner&quot;</span>, <span class="at">zoom =</span> <span class="dv">12</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb212-1" aria-hidden="true" tabindex="-1"></a>CABA <span class="ot">&lt;-</span> <span class="fu">get_stamenmap</span>(<span class="at">bbox =</span> bbox, <span class="at">maptype =</span> <span class="st">&quot;toner&quot;</span>, <span class="at">zoom =</span> <span class="dv">12</span>)</span></code></pre></div>
 <p>Para verlo:</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb209-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA)</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-159-1.png" width="672" /></p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA)</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-153-1.png" width="672" /></p>
 <div class="tip">
 <p>Stamen ofrece varios estilos de mapa base, que pueden revisarse en su <a href="http://maps.stamen.com">sitio web</a>.
 Entre ellos:</p>
@@ -410,9 +409,9 @@ Por ejemplo, <code>get_stamenmap(bbox = bbox, maptype = "watercolor", zoom = 12)
 <div class="warning">
 <p>En ocasiones los datos de longitud y latitud son leídos como texto (tipo “chr”), en lugar de números. Si eso ocurre el mapeo no va a funcionar, porque necesita datos numéricos para latitud y longitud. Para solucionarlo, podemos intentar convertir las columnas de coordenadas a tipo numérico. Algo así como <code>misdatos$longitud &lt;- as.numeric(misdatos$longitud)</code></p>
 </div>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb210-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb210-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-160-1.png" width="672" /></p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb214-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb214-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-154-1.png" width="672" /></p>
 <p>Aquí nos topamos con un problema habitual al trabajar con grandes volúmenes de datos. Hay tantos puntos proyectados sobre el mapa, que se hace imposible interpretar dónde existen más o menos. Hacemos algunos ajustes:</p>
 <ul>
 <li>un color que resalte más contra el mapa base, y que no se confunda con él</li>
@@ -420,68 +419,68 @@ Por ejemplo, <code>get_stamenmap(bbox = bbox, maptype = "watercolor", zoom = 12)
 <li>y aplicación de una ligera transparencia</li>
 </ul>
 <p>Todo ello vía los atributos “color”, “size” y “alpha”. ¿Cuál es el valor ideal para cada uno? En general, hay que recurrir a la prueba y error para encontrar la receta justa. Probemos con <code>color = "orange"</code>, <code>size = 0.1</code> y <code>alpha = 0.1</code>:</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb211-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb211-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud),</span>
-<span id="cb211-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb211-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>)</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-161-1.png" width="672" /></p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb215-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb215-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud),</span>
+<span id="cb215-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb215-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-155-1.png" width="672" /></p>
 <p>Ahora si aparecen ciertos patrones, por ejemplo la mayor frecuencia de casos de casos cerca de las principales de circulación de la ciudad. Aún así, se hace difícil identificar de un golpe de vista las “zonas calientes”, las áreas de máxima concentración.</p>
 </div>
 <div id="mapas-de-densidad" class="section level3 hasAnchor" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Mapas de densidad<a href="trabajando-con-datos-espaciales-y-temporales.html#mapas-de-densidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Una solución práctica para el problema de la cantidad de puntos es una técnica llamada “binning”: dividir el espacio en una grilla de celdas, contar cuantos puntos caen dentro de cada una, y visualizar las cantidades agregadas. En el mundo <code>ggplot</code> esto se lleva a cabo con <code>geom_bind2d()</code>.</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb212-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb212-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bin2d</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-162-1.png" width="672" /></p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb216-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb216-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bin2d</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-156-1.png" width="672" /></p>
 <p>Ahora si, resaltan las áreas de mayor concentración de incidentes. Se puede mejorar un poco el gráfico usando:</p>
 <ul>
 <li>una mayor cantidad de celdas para aumentar la resolución</li>
 <li>una escala de colores diseñada para ayudar a detectar diferencias por tonalidad, como Viridis.</li>
 </ul>
 <p>la cantidad de celdas se define con el parámetro “bins”, por ejemplo <code>bins = 100</code>. La escala de color Viridis, como ya habíamos visto, se agrega sumando una llamada a <code>scale_fill_viridis_c()</code> -porque aquí la data es continua, si fuera discreta usaríamos <code>scale_fill_viridis_d()</code>.</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb213-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb213-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb213-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bin2d</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud), <span class="at">bins =</span> <span class="dv">100</span>) <span class="sc">+</span></span>
-<span id="cb213-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb213-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis_c</span>()</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-163-1.png" width="672" /></p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb217-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb217-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bin2d</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud), <span class="at">bins =</span> <span class="dv">100</span>) <span class="sc">+</span></span>
+<span id="cb217-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb217-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis_c</span>()</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-157-1.png" width="672" /></p>
 <p>Una alternativa al <em>binning</em> es la llamada <em>kernel density estimation</em>, muy utilizada en aplicaciones de análisis espacial para estimar la intensidad de una determinada variable en cualquier punto del área analizada, incluso en aquellos para los cuales no hay observaciones. La idea es asumir que los valores observados corresponden a una distribución continua sobre el espacio, y determinar cual es la más probable en base a los puntos donde existen datos. Podemos visualizar esta distribución estimada <code>geom_density2d_filled</code> así:</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb214-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb214-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density2d_filled</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud), <span class="at">alpha =</span> <span class="fl">0.5</span>) </span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-164-1.png" width="672" />
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb218-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb218-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density2d_filled</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud), <span class="at">alpha =</span> <span class="fl">0.5</span>) </span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-158-1.png" width="672" />
 Nótese que aplicamos transparencia usando el parámetro <code>alpha = 0.5</code>. ¿Por qué? ¿Qué pasa si lo quitamos?</p>
 </div>
 <div id="visualizando-multiples-categorías" class="section level3 hasAnchor" number="6.2.4">
 <h3><span class="header-section-number">6.2.4</span> Visualizando multiples categorías<a href="trabajando-con-datos-espaciales-y-temporales.html#visualizando-multiples-categorías" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Hasta aquí hemos analizado la distribución espacial de eventos en su totalidad, sin diferenciar su tipo. Veamos ahora las diferencias por categoría. Podemos reintentar el mapa de puntos, esta vez diferenciándolos por color. Recuperamos el código que usamos antes para mostrar puntos, y esta vez asignamos la columna “tipo” al atributo estético <code>color</code>:</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb215-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb215-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> delitos, </span>
-<span id="cb215-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb215-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud, <span class="at">color =</span> tipo),</span>
-<span id="cb215-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb215-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>)</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-165-1.png" width="672" /></p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb219-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb219-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> delitos, </span>
+<span id="cb219-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb219-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud, <span class="at">color =</span> tipo),</span>
+<span id="cb219-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb219-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-159-1.png" width="672" /></p>
 <p>Aquí tenemos dos problemas:</p>
 <ul>
 <li><p>La leyenda (“tipo_delito”) es difícil de leer, dado que muestra los puntos tal como los definimos: pequeños y con mucha transparencia. Esos atributos son útiles en el mapa, donde tenemos cientos de miles de puntos, pero muy poco prácticos para la leyenda, donde sólo hay un minúsculo punto por etiqueta.</p></li>
 <li><p>Los puntos sobre el mapa se superponen en tal medida que es difícil identificar patrones espaciales distintos según su categoría.</p></li>
 </ul>
 <p>El primer problema se resuelve fijando “a mano” los atributos de la leyenda, asi:</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb216-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb216-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> delitos,</span>
-<span id="cb216-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb216-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud, <span class="at">color =</span> tipo),</span>
-<span id="cb216-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb216-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb216-5"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb216-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="dv">1</span>)))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-166-1.png" width="672" /></p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb220-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb220-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> delitos,</span>
+<span id="cb220-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb220-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud, <span class="at">color =</span> tipo),</span>
+<span id="cb220-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb220-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb220-5"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb220-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="dv">1</span>)))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-160-1.png" width="672" /></p>
 <p>El segundo, usando facetado para mostrar en su propio mapa a cada categoría:</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb217-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb217-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> delitos,</span>
-<span id="cb217-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb217-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud, <span class="at">color =</span> tipo),</span>
-<span id="cb217-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb217-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb217-5"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb217-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="dv">1</span>))) <span class="sc">+</span></span>
-<span id="cb217-6"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb217-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(tipo))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-167-1.png" width="672" /></p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb221-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> delitos,</span>
+<span id="cb221-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud, <span class="at">color =</span> tipo),</span>
+<span id="cb221-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="fl">0.1</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb221-5"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb221-6"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(tipo))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-161-1.png" width="672" /></p>
 <p>El facetado ayuda a que no se nos mezclen los colores, y hace evidente cuales categorías son mas frecuentes que otras. Pero con nuestra abundancia de puntos no ayuda encontrar los sitios de alta concentración, y hace que se pierdan de vista los casos de la categoría poco frecuente (homicidios).</p>
 <p>Para hacer las diferencias aún mas nítidas, podemos facetar una estimación de densidad en lugar de puntos. ¿Cómo lo haríamos?</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb218-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb218-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density2d_filled</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb218-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb218-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(tipo))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-168-1.png" width="672" /></p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb222-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb222-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density2d_filled</span>(<span class="at">data =</span> delitos, <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb222-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb222-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(tipo))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-162-1.png" width="672" /></p>
 </div>
 </div>
 <div id="combinando-espacio-y-tiempo" class="section level2 hasAnchor" number="6.3">
@@ -492,21 +491,21 @@ Nótese que aplicamos transparencia usando el parámetro <code>alpha = 0.5</code
 - en forma de puntos en el mapa (<code>geom_point()</code>),
 - con el “subtipo” de homicidio representado por el <code>color</code> de los puntos
 - y un facetado por día de la semana (<code>facet_wrap(vars(wday(fecha, label = TRUE)))</code>)</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb219-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb219-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">filter</span>(delitos, tipo <span class="sc">==</span> <span class="st">&quot;Homicidio&quot;</span>),</span>
-<span id="cb219-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb219-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud, <span class="at">color =</span> subtipo), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb219-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb219-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(<span class="fu">wday</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>)))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-169-1.png" width="672" /></p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb223-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb223-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> <span class="fu">filter</span>(delitos, tipo <span class="sc">==</span> <span class="st">&quot;Homicidio&quot;</span>),</span>
+<span id="cb223-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb223-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud, <span class="at">color =</span> subtipo), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb223-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb223-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(<span class="fu">wday</span>(fecha, <span class="at">label =</span> <span class="cn">TRUE</span>)))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-163-1.png" width="672" /></p>
 <p>Vale aclarar que el poco elegante <code>facet_wrap(vars(wday(fecha, label = TRUE)))</code> podría cambiarse por un más legible <code>facet_wrap(vars(dia_semana))</code> si como paso previo agregamos al dataframe la columna “dia_semana”, guardando allí el valor obtenido con <code>wday()</code>.</p>
 <p>Volviendo al tiempo y el espacio, también podemos concentrarnos en un tipo de delito en particular, y evaluar en que zonas se concentra de acuerdo a la hora del día. Nuestra data ya tiene la hora del día declarada en una columna, “franja”. Si no fuera así, y tuviéramos la hora como parte de la fecha (estilo “2020-09-18 14:00:00”) podríamos obtenerla con ayuda de <code>hour()</code> que funciona de forma similar a las ya vistas <code>month()</code> y <code>wday()</code>.</p>
 <p>Entonces, mostremos sólo las filas del dataframe donde la columna tipo contiene “Hurto (sin violencia)”,
 - en forma de mapa de densidad (<code>geom_density2d_filled()</code>),
 - y un facetado por hora del día (<code>facet_wrap(vars(franja))</code>)</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb220-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb220-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density2d_filled</span>(<span class="at">data =</span> <span class="fu">filter</span>(delitos, tipo <span class="sc">==</span> <span class="st">&quot;Hurto (sin violencia)&quot;</span>),</span>
-<span id="cb220-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb220-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb220-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb220-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(franja))</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-170-1.png" width="672" /></p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb224-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb224-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density2d_filled</span>(<span class="at">data =</span> <span class="fu">filter</span>(delitos, tipo <span class="sc">==</span> <span class="st">&quot;Hurto (sin violencia)&quot;</span>),</span>
+<span id="cb224-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb224-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb224-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb224-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(franja))</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-164-1.png" width="672" /></p>
 <p>En el resultado se puede ver como los hurtos se concentran nítidamente en las áreas de mayor actividad comercial durante el día (lo que los porteños llaman “el centro”), sobre todo desde el mediodía hasta 4 o 5 de la tarde, cuando pierde intensidad y se dispersa en la dirección de las principales avenidas de la ciudad.</p>
 <p>Para terminar, pulimos la visualización
 - filtrando las filas que registran la franja horaria como desconocida (<code>!is.na(franja)</code>)
@@ -514,16 +513,16 @@ Nótese que aplicamos transparencia usando el parámetro <code>alpha = 0.5</code
 - eligiendo la cantidad de filas en la que se distribuirán las facetas (<code>nrow = 4</code>)
 - agregando título, subtítulo, y nota al pie con fuente
 - eligiendo un tema apropiado</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
-<span id="cb221-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density2d_filled</span>(<span class="at">data =</span> <span class="fu">filter</span>(delitos, <span class="sc">!</span><span class="fu">is.na</span>(franja), tipo <span class="sc">==</span> <span class="st">&quot;Hurto (sin violencia)&quot;</span>),</span>
-<span id="cb221-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb221-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb221-5"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(franja), <span class="at">nrow =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb221-6"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ciudad de Buenos Aires: concentración espacial de hurtos&quot;</span>,</span>
-<span id="cb221-7"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;según hora del día, durante el año 2020&quot;</span>,</span>
-<span id="cb221-8"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;fuente: https://mapa.seguridadciudad.gob.ar&quot;</span>) <span class="sc">+</span></span>
-<span id="cb221-9"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb221-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code></pre></div>
-<p><img src="CD_AJ_files/figure-html/unnamed-chunk-171-1.png" width="672" /></p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggmap</span>(CABA) <span class="sc">+</span></span>
+<span id="cb225-2"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb225-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density2d_filled</span>(<span class="at">data =</span> <span class="fu">filter</span>(delitos, <span class="sc">!</span><span class="fu">is.na</span>(franja), tipo <span class="sc">==</span> <span class="st">&quot;Hurto (sin violencia)&quot;</span>),</span>
+<span id="cb225-3"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb225-3" aria-hidden="true" tabindex="-1"></a>               <span class="fu">aes</span>(<span class="at">x =</span> longitud, <span class="at">y =</span> latitud), <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb225-4"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb225-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">guides</span>(<span class="at">fill =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb225-5"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb225-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(franja), <span class="at">nrow =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb225-6"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb225-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Ciudad de Buenos Aires: concentración espacial de hurtos&quot;</span>,</span>
+<span id="cb225-7"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb225-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">subtitle =</span> <span class="st">&quot;según hora del día, durante el año 2020&quot;</span>,</span>
+<span id="cb225-8"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb225-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;fuente: https://mapa.seguridadciudad.gob.ar&quot;</span>) <span class="sc">+</span></span>
+<span id="cb225-9"><a href="trabajando-con-datos-espaciales-y-temporales.html#cb225-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>()</span></code></pre></div>
+<p><img src="CD_AJ_files/figure-html/unnamed-chunk-165-1.png" width="672" /></p>
 </div>
 <div id="ejercicios-4" class="section level2 hasAnchor" number="6.4">
 <h2><span class="header-section-number">6.4</span> Ejercicios<a href="trabajando-con-datos-espaciales-y-temporales.html#ejercicios-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -544,7 +543,6 @@ Nótese que aplicamos transparencia usando el parámetro <code>alpha = 0.5</code
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -583,7 +581,11 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["CD_AJ.pdf", "CD_AJ.epub"],
+"download": ["CD_AJ.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -597,7 +599,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -122,7 +122,7 @@ Usamos el parámetro `na.rm = TRUE` para descartar las filas donde no contamos c
 El valor que obtuvimos no llega al 0,3; podemos decir que la correlación es débil. Pero aún desconocemos algo quizás más importante: un valor preciso del "efecto" que la variable de ingresos tiene sobre la tasa de crímenes. Eso es lo que vamos a determinar con la regresión lineal. Usamos la palabra "efecto" entre comillas para aclarar una de las limitaciones del modelado estadístico: podemos probar correlación, pero no causalidad. Es decir, no podemos probar que una variable causa a la otra; en todo caso, probamos que se mueven juntas y en base a ello podríamos diseñar un experimento que permita comprobar causalidad.
 
 <center>
-![](https://cdaj.netlify.app/imagenes/xkcd_correlacion.png)
+![](imagenes/xkcd_correlacion.png)
 
 _[xkcd](https://es.xkcd.com/strips/correlacion/) ilustrando el punto. Publicado bajo licencia abierta [CC BY-NC 2.5](https://creativecommons.org/licenses/by-nc/2.5/deed.es)._
 
